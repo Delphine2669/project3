@@ -11,7 +11,11 @@ export default function App() {
       </div>
       <div className="content">
         composant rattacher au video et carsoussel statique/dynamique
+<<<<<<< HEAD
         <Card />
+=======
+        <Card /> <br />
+>>>>>>> 79c07c1 (videos on app.jsx)
         <Videos />
       </div>
       <br />
