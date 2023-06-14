@@ -1,14 +1,17 @@
-import Home from "./pages/Home";
-
+import NavBar from "./pages/Home/Navbar";
 import "./App.css";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <Home />
-      <p>coucou</p>
+    <div>
+      <div className="Header">
+        <NavBar />
+      </div>
+      <div className="content">
+        composant rattacher au video et carsoussel statique/dynamique
+      </div>
+      <br />
+      <div className="Footer">Footer</div>
     </div>
   );
 }
-
-export default App;
