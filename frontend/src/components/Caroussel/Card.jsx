@@ -1,10 +1,18 @@
-function videoCard() {
-  return;
-  <>
-    <figure>
-      <img src="/assets/videos/Cyberpucnk_2077_court_circuit.mp4"></img>
-      <figcaption>video categorie </figcaption>
-    </figure>
-  </>;
+import photo from "../../../../backend/public/assets/images/video1.png";
+
+function Card() {
+  return (
+    <div>
+      <figure>
+        <img
+          src={photo}
+          alt="screen court circuit "
+          width="250px"
+          height="150px"
+        />
+        <figcaption>RPG</figcaption>
+      </figure>
+    </div>
+  );
 }
-export default videoCard;
+export default Card;

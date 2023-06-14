@@ -1,2 +1,11 @@
 import "./Card.scss";
-import videoCard from "./Card";
+import Card from "./Card";
+
+function Carousel() {
+  return (
+    <div>
+      <Card />
+    </div>
+  );
+}
+export default Carousel;
