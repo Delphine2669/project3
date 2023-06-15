@@ -6,11 +6,9 @@ function Videos() {
     <div>
       <video controls src={Video1} width="300px" height="150px">
         Your browser does not support the video tag.
-        {/* <track default kind="captions" src={captionVid1} /> */}
       </video>
       <video controls src={Video2} width="300px" height="150px">
         Your browser does not support the video tag.
-        {/* <track default kind="captions" src={captionVid2} /> */}
       </video>
     </div>
   );

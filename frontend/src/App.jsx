@@ -1,9 +1,26 @@
 import NavBar from "./pages/Home/Navbar";
 import "./App.css";
-import Card from "./Components/Caroussel/Card";
 import Videos from "./Components/Video";
+import Carousel from "./Components/Caroussel/Caroussel";
+import photo1 from "../public/video1.png";
+import photo2 from "../public/video2.png";
 
-export default function App() {
+function App() {
+  const photoList = [
+    {
+      id: 1,
+      src: photo1,
+      alt: "screen video 1",
+      description: "RPG",
+    },
+    {
+      id: 2,
+      src: photo2,
+      alt: "screen video 2",
+      description: "FPS",
+    },
+  ];
+
   return (
     <div>
       <div className="Header">
@@ -11,11 +28,8 @@ export default function App() {
       </div>
       <div className="content">
         composant rattacher au video et carsoussel statique/dynamique
-<<<<<<< HEAD
-        <Card />
-=======
-        <Card /> <br />
->>>>>>> 79c07c1 (videos on app.jsx)
+        <Carousel photoList={photoList} />
+        <br />
         <Videos />
       </div>
       <br />
@@ -23,3 +37,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App;
