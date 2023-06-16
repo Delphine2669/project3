@@ -3,11 +3,9 @@ import "./VideoCard.scss";
 
 function VideoCard() {
   return (
-    <>
-      <div className="cardDynamic">
-        <Video />
-      </div>
-    </>
+    <div className="cardDynamic">
+      <Video />
+    </div>
   );
 }
 export default VideoCard;
