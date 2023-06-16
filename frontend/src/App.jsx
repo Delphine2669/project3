@@ -2,10 +2,10 @@ import NavBar from "./pages/Home/Navbar";
 import "./App.css";
 import Video from "./Components/Video";
 import Caroussel from "./Components/Caroussel/Caroussel";
-import photo1 from "../public/video1.png";
-import photo2 from "../public/video2.png";
 
 function App() {
+  const photo1 = "/video1.png";
+  const photo2 = "/video2.png";
   const photoList = [
     {
       id: 1,
