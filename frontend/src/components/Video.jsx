@@ -1,7 +1,7 @@
 import Video1 from "../../public/Cyberpucnk_2077_court_circuit.mp4";
 import Video2 from "../../public/Cyberpucnk_2077_Panam_in_trouble.mp4";
 
-function Videos() {
+function Video() {
   const caption1 = "/video1.vtt";
   const caption2 = "/video2.vtt";
 
@@ -19,4 +19,4 @@ function Videos() {
   );
 }
 
-export default Videos;
+export default Video;

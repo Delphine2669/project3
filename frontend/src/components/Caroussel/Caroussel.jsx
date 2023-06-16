@@ -1,7 +1,7 @@
 import "./Card.scss";
 import PropTypes from "prop-types";
 
-function Carousel({ photoList }) {
+function Caroussel({ photoList }) {
   return (
     <div className="carousel">
       {photoList.map((photo) => (
@@ -21,7 +21,7 @@ function Carousel({ photoList }) {
     </div>
   );
 }
-Carousel.propTypes = {
+Caroussel.propTypes = {
   photoList: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -32,4 +32,4 @@ Carousel.propTypes = {
   ).isRequired,
 };
 
-export default Carousel;
+export default Caroussel;

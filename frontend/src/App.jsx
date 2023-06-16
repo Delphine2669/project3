@@ -1,7 +1,7 @@
 import NavBar from "./pages/Home/Navbar";
 import "./App.css";
-import Videos from "./Components/Video";
-import Carousel from "./Components/Caroussel/Caroussel";
+import Video from "./Components/Video";
+import Caroussel from "./Components/Caroussel/Caroussel";
 import photo1 from "../public/video1.png";
 import photo2 from "../public/video2.png";
 
@@ -28,9 +28,9 @@ function App() {
       </div>
       <div className="content">
         composant rattacher au video et carsoussel statique/dynamique
-        <Carousel photoList={photoList} />
+        <Caroussel photoList={photoList} />
         <br />
-        <Videos />
+        <Video />
       </div>
       <br />
       <div className="Footer">Footer</div>
