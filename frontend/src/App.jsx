@@ -1,7 +1,7 @@
 import NavBar from "./pages/Home/Navbar";
 import "./App.css";
-import Video from "./Components/Video";
-import Caroussel from "./Components/Caroussel/Caroussel";
+import Video from "./components/Video";
+import Caroussel from "./components/Caroussel/Caroussel";
 
 function App() {
   const photo1 = "/video1.png";
