@@ -1,6 +1,6 @@
 import NavBar from "./pages/Home/Navbar";
-import Video from "./components/Video";
 import "./App.css";
+import CarousselDynamic from "./components/Caroussel/CarousselDynamic";
 
 export default function App() {
   return (
@@ -8,9 +8,8 @@ export default function App() {
       <div className="Header">
         <NavBar />
       </div>
-      <div className="content">
-        composant rattacher au video et carsoussel statique/dynamique
-        <Video />
+      <div>
+        <CarousselDynamic />
       </div>
       <br />
       <div className="Footer">Footer</div>
