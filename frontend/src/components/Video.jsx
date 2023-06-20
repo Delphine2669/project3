@@ -7,8 +7,8 @@ function Video() {
   ];
   return (
     <div>
-      {videos.map((video, index) => (
-        <video key={index} controls width="100%" src={videoPath + video}>
+      {videos.map((video) => (
+        <video key={video} controls width="100%" src={videoPath + video}>
           <track
             default
             kind="captions"
