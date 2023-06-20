@@ -1,18 +1,24 @@
 function Video() {
+  const videoPath = "/videos/";
+
+  const videos = [
+    "Cyberpucnk_2077_court_circuit.mp4",
+    "Cyberpucnk_2077_Panam_in_trouble.mp4",
+  ];
   return (
-    <video
-      controls
-      width="100%"
-      src="/videos/Cyberpucnk_2077_court_circuit.mp4"
-    >
-      <track
-        default
-        kind="captions"
-        srcLang="fr"
-        src="./public/videos/videos.vtt"
-      />
-      Sorry, your browser doesn't support videos.
-    </video>
+    <div>
+      {videos.map((video, index) => (
+        <video key={index} controls width="100%" src={videoPath + video}>
+          <track
+            default
+            kind="captions"
+            srcLang="fr"
+            src="./public/videos/videos.vtt"
+          />
+          Sorry, your browser doesn't support videos.
+        </video>
+      ))}
+    </div>
   );
 }
 

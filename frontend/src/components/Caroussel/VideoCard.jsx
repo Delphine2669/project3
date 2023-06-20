@@ -3,7 +3,7 @@ import "./VideoCard.scss";
 
 function VideoCard() {
   return (
-    <div className="cardDynamic">
+    <div className="card-dynamic">
       <Video />
     </div>
   );

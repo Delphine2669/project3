@@ -3,7 +3,7 @@ import VideoCard from "./VideoCard";
 
 function CarousselDynamic() {
   return (
-    <div className="carousselDynamic">
+    <div className="caroussel-dynamic">
       <VideoCard />
     </div>
   );
