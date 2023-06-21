@@ -1,8 +1,10 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "../../components/Navbar/Navbar";
+{/* 
 import Video from "../../components/Video";
 import Caroussel from "../../components/Caroussel/Caroussel";
 import CarousselDynamic from "../../components/Caroussel/CarousselDynamic";
+*/}
 
 export default function Home() {
   const photo1 = "/video1.png";
@@ -28,9 +30,11 @@ export default function Home() {
       </div>
       <div className="content">
         <Outlet />
+        {/*
         <Caroussel photoList={photoList} />
         <CarousselDynamic />
         <Video />
+        */}
       </div>
       <br />
       <div className="Footer">Footer</div>
