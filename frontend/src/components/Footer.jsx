@@ -1,5 +1,5 @@
 import "./Footer.scss";
 
 export default function Footer() {
-  return <div className="Foot">Footer test</div>;
+  return <div className="Foot">Mentions légales</div>;
 }

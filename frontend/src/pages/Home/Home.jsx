@@ -5,7 +5,7 @@ import "../../components/Footer.scss";
 
 export default function Home() {
   return (
-    <div>
+    <div className="main-container">
       <div className="Header">
         <NavBar />
       </div>

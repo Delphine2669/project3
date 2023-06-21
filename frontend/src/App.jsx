@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
-import "./App.css";
+import "./App.scss";
 
 function SignUpPage() {
   return <div>SIGn</div>;
