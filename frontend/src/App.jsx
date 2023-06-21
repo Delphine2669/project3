@@ -7,7 +7,7 @@ function LoginPage() {
 }
 
 function SignUpPage() {
-  return <div>SIGn</div>;
+  return <div>SIGN</div>;
 }
 
 const router = createBrowserRouter([
