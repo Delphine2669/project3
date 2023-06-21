@@ -1,19 +1,23 @@
 function Video() {
-  const caption1 = "/video1.vtt";
-  const caption2 = "/video2.vtt";
+  const videoPath = "/videos/";
 
-  const Video1 = "/assets/Cyberpucnk_2077_court_circuit.mp4";
-  const Video2 = "/assets/Cyberpucnk_2077_Panam_in_trouble.mp4";
+  const videos = [
+    "Cyberpucnk_2077_court_circuit.mp4",
+    "Cyberpucnk_2077_Panam_in_trouble.mp4",
+  ];
   return (
     <div>
-      <video controls src={Video1} width="300px" height="150px">
-        Your browser does not support the video tag.
-        <track default kind="captions" srcLang="fr" src={caption1} />
-      </video>
-      <video controls src={Video2} width="300px" height="150px">
-        Your browser does not support the video tag.
-        <track default kind="captions" srcLang="fr" src={caption2} />
-      </video>
+      {videos.map((video) => (
+        <video key={video} controls width="100%" src={videoPath + video}>
+          <track
+            default
+            kind="captions"
+            srcLang="fr"
+            src="./public/videos/videos.vtt"
+          />
+          Sorry, your browser doesn't support videos.
+        </video>
+      ))}
     </div>
   );
 }

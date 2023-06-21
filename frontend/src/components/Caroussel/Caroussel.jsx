@@ -1,4 +1,4 @@
-import "./Card.scss";
+import "./Caroussel.scss";
 import PropTypes from "prop-types";
 
 function Caroussel({ photoList }) {
