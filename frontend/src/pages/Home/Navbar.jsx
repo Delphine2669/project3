@@ -1,11 +1,11 @@
-import "./Navbar.css";
+// import "./Navbar.css";
 
 function NavBar() {
   return (
     <>
       <img
         className="logo"
-        src="./src/assets/Logo Tsn.png"
+        src="./src/assets/TSN_logo.png"
         alt="Logo TSN Game"
       />
       <h3>Catégories</h3>

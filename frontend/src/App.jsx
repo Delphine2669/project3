@@ -1,18 +1,32 @@
-import NavBar from "./pages/Home/Navbar";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home/Home";
 import "./App.css";
-import CarousselDynamic from "./components/Caroussel/CarousselDynamic";
+
+function LoginPage() {
+  return <div>LOGIN</div>;
+}
+
+function SignUpPage() {
+  return <div>SIGN</div>;
+}
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    children: [
+      {
+        path: "login",
+        element: <LoginPage />,
+      },
+      {
+        path: "signup",
+        element: <SignUpPage />,
+      },
+    ],
+  },
+]);
 
 export default function App() {
-  return (
-    <div>
-      <div className="Header">
-        <NavBar />
-      </div>
-      <div>
-        <CarousselDynamic />
-      </div>
-      <br />
-      <div className="Footer">Footer</div>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
