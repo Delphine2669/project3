@@ -20,7 +20,8 @@ body {
   background-color: #ffffff;
   height: 70vh;
   width: 40vh;
-  box-shadow: 0px 0px 5px #000000;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 .screen__content {
@@ -73,7 +74,7 @@ body {
   align-items: center;
   width: 100%;
   color: #0bd3da;
-  box-shadow: 0px 0.2vh 0.2vh #6b054d;
+  box-shadow: 0px 0.2vh 0.2vh #062325;
   cursor: pointer;
   transition: 0.2s;
 }
@@ -81,12 +82,12 @@ body {
 .login__submit:active,
 .login__submit:focus,
 .login__submit:hover {
-  border-color: #8ce01d;
+  border-color: #ffffff;
   outline: none;
 }
 
 .button__icon {
   font-size: 2.4vh;
   margin-left: auto;
-  color: #030307;
+  color: #a9cc4a;
 }
