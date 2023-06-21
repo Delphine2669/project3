@@ -1,12 +1,13 @@
 import "./Navbar.scss";
 import ProfileMenu from "../ProfileMenu/ProfileMenu";
+import logo from "../../assets/TSN_logo.png"
 
 function NavBar() {
   return (
     <div className="container">
       <img
         className="logo"
-        src="./src/assets/Logo Tsn.png"
+        src={logo}
         alt="Logo TSN Game"
       />
 

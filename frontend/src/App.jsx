@@ -4,7 +4,7 @@ import Login from "./pages/Login/Login";
 import "./App.scss";
 
 function SignUpPage() {
-  return <div>SIGn</div>;
+  return <div>SIGN</div>;
 }
 
 const router = createBrowserRouter([
