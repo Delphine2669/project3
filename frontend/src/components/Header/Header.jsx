@@ -1,9 +1,11 @@
-import NavBar from "../Navbar/NavBar";
-import "Header.scss"
+import Navbar from "../NavBar/Navbar";
 
-function Header () {
-    return(
-   <header>
-    <NavBar />
-   </header>
-)}
+function Header() {
+  return (
+    <header>
+      <Navbar />
+    </header>
+  );
+}
+
+export default Header;

@@ -2,11 +2,6 @@ import { Outlet } from "react-router-dom";
 import NavBar from "../../components/NavBar/Navbar";
 import Footer from "../../components/Footer";
 import "../../components/Footer.scss";
-{/* 
-import Video from "../../components/Video";
-import Caroussel from "../../components/Caroussel/Caroussel";
-import CarousselDynamic from "../../components/Caroussel/CarousselDynamic";
-*/}
 
 export default function Home() {
   const photo1 = "/video1.png";
@@ -25,6 +20,8 @@ export default function Home() {
       description: "FPS",
     },
   ];
+  console.info(photoList);
+
   return (
     <div className="main-container">
       <div className="Header">
