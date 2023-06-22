@@ -39,12 +39,12 @@ body {
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
-.screen__content {
+.screen-content {
   z-index: 1;
   height: 100%;
 }
 
-.screen__background__shape {
+.screen-background-shape {
   transform: rotate(45deg);
 }
 
@@ -54,11 +54,11 @@ body {
   padding-top: 20vh;
 }
 
-.login__field {
+.login-field {
   padding: 4vh 0vh;
 }
 
-.login__input {
+.login-input {
   border: none;
   border-bottom: 0.2vh solid $color-3;
   background: none;
@@ -69,14 +69,14 @@ body {
   transition: 0.2s;
 }
 
-.login__input:active,
-.login__input:focus,
-.login__input:hover {
+.login-input:active,
+.login-input:focus,
+.login-input:hover {
   outline: none;
   border-bottom-color: #000000;
 }
 
-.login__submit {
+.login-submit {
   background: $color-3;
   font-size: 1.4vh;
   margin-top: 4vh;
@@ -94,14 +94,14 @@ body {
   transition: 0.2s;
 }
 
-.login__submit:active,
-.login__submit:focus,
-.login__submit:hover {
+.login-submit:active,
+.login-submit:focus,
+.login-submit:hover {
   border-color: $color-3;
   outline: none;
 }
 
-.button__icon {
+.button-icon {
   font-size: 2.4vh;
   margin-left: auto;
   color: $color-3;

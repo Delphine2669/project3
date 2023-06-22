@@ -29,11 +29,6 @@ export default function Home() {
       </div>
       <div className="content">
         <Outlet />
-        {/*
-        <Caroussel photoList={photoList} />
-        <CarousselDynamic />
-        <Video />
-        */}
       </div>
       <br />
       <div className="Footer">

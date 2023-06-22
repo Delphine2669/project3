@@ -8,31 +8,31 @@ function Login() {
   return (
     <div className="container">
       <div className="screen">
-        <div className="screen__content">
+        <div className="screen-content">
           <form className="login">
-            <div className="login__field">
-              <i className="login__icon fas fa-user" />
+            <div className="login-field">
+              <i className="login-icon fas fa-user" />
               <input
                 type="text"
-                className="login__input"
+                className="login-input"
                 value={username}
                 placeholder="Nom d'utilisateur"
                 onChange={(e) => setUsername(e.target.value)}
               />
             </div>
-            <div className="login__field">
-              <i className="login__icon fas fa-lock" />
+            <div className="login-field">
+              <i className="login-icon fas fa-lock" />
               <input
                 type="password"
-                className="login__input"
+                className="login-input"
                 value={passWord}
                 placeholder="Mot de passe"
                 onChange={(e) => setPassWord(e.target.value)}
               />
             </div>
-            <button type="button" className="button login__submit">
-              <span className="button__text">Se connecter</span>
-              <i className="button__icon fas fa-chevron-right" />
+            <button type="button" className="button login-submit">
+              <span className="button-text">Se connecter</span>
+              <i className="button-icon fas fa-chevron-right" />
             </button>
           </form>
         </div>
