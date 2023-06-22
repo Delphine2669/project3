@@ -2,3 +2,20 @@
   height: 100%;
   width: 25svw;
 }
+
+.video-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 25%;
+  font-size: 8px;
+  margin-top: 5%;
+  margin-bottom: -10%;
+  margin-left: 20%;
+  color: white;
+}
+
+video {
+  width: 40svw;
+  height: 18svh;
+}

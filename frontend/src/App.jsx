@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import "./App.css";
+import "./App.scss";
 
 function LoginPage() {
   return <div>LOGIN</div>;

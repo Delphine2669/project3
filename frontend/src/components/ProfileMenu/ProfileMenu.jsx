@@ -33,7 +33,7 @@ function ProfileMenu() {
       {isOnLoginPage ? null : (
         <Dropdown menu={{ items }} trigger={["click"]}>
           <Space>
-            <Button
+            <Button className="Login"
               shape="circle"
               icon={<UserOutlined />}
               onClick={handleClick}

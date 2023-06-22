@@ -25,40 +25,34 @@ export default function Home() {
   const caption2 = "/video2.vtt";
   const caption3 = "/video1.vtt";
   const caption4 = "/video2.vtt";
-  const video1 = "/assets/Cyberpucnk_2077_court_circuit.mp4";
-  const video2 = "/assets/Cyberpucnk_2077_Panam_in_trouble.mp4";
-  const video3 = "/assets/Cyberpucnk_2077_court_circuit.mp4";
-  const video4 = "/assets/Cyberpucnk_2077_Panam_in_trouble.mp4";
+  const video1 = "/videos/Cyberpucnk_2077_court_circuit.mp4";
+  const video2 = "/videos/Cyberpucnk_2077_Panam_in_trouble.mp4";
+  const video3 = "/videos/Cyberpucnk_2077_court_circuit.mp4";
+  const video4 = "/videos/Cyberpucnk_2077_Panam_in_trouble.mp4";
 
   const videoList = [
     {
       id: 1,
-      src: video1,
+      videoSrc: video1,
       caption: caption1,
       title: "cyberpucnk court circuit",
       description: "RPG",
     },
     {
       id: 2,
-      src: video2,
+      videoSrc: video2,
       caption: caption2,
       title: "cyberpucnk panam in trouble",
       description: "FPS",
     },
     {
       id: 3,
-      src: video3,
+      videoSrc: video3,
       caption: caption3,
       title: "cyberpucnk court circuit",
       description: "RPG",
-    },
-    {
-      id: 4,
-      src: video4,
-      caption: caption4,
-      title: "cyberpucnk panam in trouble",
-      description: "FPS",
-    },
+    }
+    
   ];
 
   return (
@@ -69,7 +63,9 @@ export default function Home() {
       <div className="content">
         <Outlet />
         <Caroussel photoList={photoList} />
-        <CarousselDynamic />
+        {/*<CarousselDynamic />*/}
+        <Video videoList={videoList} />
+        <Video videoList={videoList} />
         <Video videoList={videoList} />
       </div>
       <br />

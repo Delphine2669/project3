@@ -9,6 +9,8 @@ function Video({ videoList }) {
   //   "Cyberpucnk_2077_Panam_in_trouble.mp4",
   // ];
   return (
+    <>
+      <p className="catégories"> Catégorie RPG</p>
     <div className="video-container">
       {videoList.map((video) => (
         <div key={video.id}>
@@ -20,7 +22,8 @@ function Video({ videoList }) {
           />
         </div>
       ))}
-    </div>
+      </div>
+      </>
   );
 }
 Video.propTypes = {
