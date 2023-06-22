@@ -2,6 +2,8 @@ import NavBar from "../Navbar/NavBar";
 import "Header.scss"
 
 function Header () {
-    return
+    return(
+   <header>
     <NavBar />
-}
+   </header>
+)}

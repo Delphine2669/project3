@@ -4,13 +4,12 @@ import logo from "../../assets/TSN_logo.png"
 
 function NavBar() {
   return (
-    <div className="container">
+    <div className="nav-container">
       <img
         className="logo"
         src={logo}
         alt="Logo TSN Game"
       />
-
       <div className="link">
         <ProfileMenu />
       </div>

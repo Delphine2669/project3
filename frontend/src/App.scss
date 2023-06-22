@@ -1,15 +1,20 @@
 /* -- Primary colors -- */
-$foot-color: #2D132C;
+
+$foot-color: #2D132C; 
+
 /*random var name*/
+
 $color-2: #801336;
 $color-3: #C72C41;
 $font-foot-head: #EE4540;
 
 /* -- Secondary colors -- random var name -- */
+
 $body-color: rgba(75, 59, 75, 0.78);
 $color-2scd-2: #F8F3F2;
 
 /* -- Primary fonts -- */
+
 $body-font: Arial, Helvetica, sans-serif;
 
 body {
@@ -17,10 +22,16 @@ body {
   background-color: $body-color;
 }
 header {
+  background-color: $color-2scd-2;
   color: $font-foot-head;
+  position: fixed;  
 } 
-
 footer {
   border: solid 2px $font-foot-head;
-  background-image: $foot-color;
+  background-color: $foot-color;
+  color: $font-foot-head;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 10svh;
 }
