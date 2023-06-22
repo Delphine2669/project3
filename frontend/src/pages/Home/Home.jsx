@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "../../components/Navbar/Navbar";
 import Caroussel from "../../components/Caroussel/Caroussel";
-import CarousselDynamic from "../../components/Caroussel/CarousselDynamic";
 import Video from "../../components/Video";
 
 export default function Home() {
   const photo1 = "/video1.png";
   const photo2 = "/video2.png";
+  const photo3 = "/video3.png";
   const photoList = [
     {
       id: 1,
@@ -20,15 +20,20 @@ export default function Home() {
       alt: "screen video 2",
       description: "FPS",
     },
+    {
+      id: 3,
+      src: photo3,
+      alt: "screen video 3",
+      description: "FPS",
+    },
   ];
   const caption1 = "/video1.vtt";
   const caption2 = "/video2.vtt";
   const caption3 = "/video1.vtt";
-  const caption4 = "/video2.vtt";
+
   const video1 = "/videos/Cyberpucnk_2077_court_circuit.mp4";
   const video2 = "/videos/Cyberpucnk_2077_Panam_in_trouble.mp4";
-  const video3 = "/videos/Cyberpucnk_2077_court_circuit.mp4";
-  const video4 = "/videos/Cyberpucnk_2077_Panam_in_trouble.mp4";
+  const video3 = "/videos/CoD_Modern_Warfare.mp4";
 
   const videoList = [
     {
@@ -49,10 +54,9 @@ export default function Home() {
       id: 3,
       videoSrc: video3,
       caption: caption3,
-      title: "cyberpucnk court circuit",
+      title: "call of Duty modern warfare",
       description: "RPG",
-    }
-    
+    },
   ];
 
   return (
@@ -63,7 +67,6 @@ export default function Home() {
       <div className="content">
         <Outlet />
         <Caroussel photoList={photoList} />
-        {/*<CarousselDynamic />*/}
         <Video videoList={videoList} />
         <Video videoList={videoList} />
         <Video videoList={videoList} />

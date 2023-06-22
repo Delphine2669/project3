@@ -9,21 +9,21 @@ function Video({ videoList }) {
   //   "Cyberpucnk_2077_Panam_in_trouble.mp4",
   // ];
   return (
-    <>
+    <div className="video-carousel">
       <p className="catégories"> Catégorie RPG</p>
-    <div className="video-container">
-      {videoList.map((video) => (
-        <div key={video.id}>
-          <VideoCard
-            videoSrc={video.videoSrc}
-            caption={video.caption}
-            title={video.title}
-            description={video.description}
-          />
-        </div>
-      ))}
+      <div className="video-container">
+        {videoList.map((video) => (
+          <div key={video.id}>
+            <VideoCard
+              videoSrc={video.videoSrc}
+              caption={video.caption}
+              title={video.title}
+              description={video.description}
+            />
+          </div>
+        ))}
       </div>
-      </>
+    </div>
   );
 }
 Video.propTypes = {
