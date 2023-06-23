@@ -1,7 +1,9 @@
 import { Outlet } from "react-router-dom";
-import NavBar from "../../components/Navbar/Navbar";
+import NavBar from "../../components/NavBar/Navbar";
 import Caroussel from "../../components/Caroussel/Caroussel";
 import Video from "../../components/Video";
+import Footer from "../../components/Footer";
+import "../../components/Footer.scss";
 
 export default function Home() {
   const photo1 = "/video1.png";
@@ -74,9 +76,8 @@ export default function Home() {
       description: "RPG",
     },
   ];
-
   return (
-    <div>
+    <div className="main-container">
       <div className="Header">
         <NavBar />
       </div>
@@ -88,7 +89,9 @@ export default function Home() {
         <Video videoList={videoList} />
       </div>
       <br />
-      <div className="Footer">Footer</div>
+      <div className="Footer">
+        <Footer />
+      </div>
     </div>
   );
 }
