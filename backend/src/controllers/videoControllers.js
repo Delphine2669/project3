@@ -13,7 +13,6 @@ const browse = (req, res) => {
 };
 
 const read = (req, res) => {
-  console.log("videoControllers read ", req.params)
   models.video
     .find(req.params.id)
     .then(([rows]) => {

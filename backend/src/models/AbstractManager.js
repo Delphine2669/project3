@@ -9,12 +9,6 @@ class AbstractManager {
     ]);
   }
 
-  find(title) {
-    return this.database.query(`select * from  ${this.table} where title = ?`, [
-      title,
-    ]);
-  }
-
   findAll() {
     return this.database.query(`select * from  ${this.table}`);
   }

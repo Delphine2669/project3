@@ -19,6 +19,7 @@ class VideoManager extends AbstractManager {
       [title, id, time, description, publication_date, is_favorite, is_accessible, data]
     );
   }
+
 }
 
 module.exports = VideoManager;
