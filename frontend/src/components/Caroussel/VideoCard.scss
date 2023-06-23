@@ -13,13 +13,18 @@
   color: white;
   overflow-x: scroll;
   padding-left: 2%;
+  gap: 2%;
+  margin-left: -15%;
 }
 
 video {
-  width: 35svw;
-  height: 20svh;
+  width: 40svw;
+  height: 25svh;
 }
 .card-title {
   font-size: 6px;
   text-align: center;
+}
+
+@media screen {
 }
