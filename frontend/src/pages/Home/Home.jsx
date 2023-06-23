@@ -7,6 +7,7 @@ export default function Home() {
   const photo1 = "/video1.png";
   const photo2 = "/video2.png";
   const photo3 = "/video3.png";
+  const photo4 = "/video1.png";
   const photoList = [
     {
       id: 1,
@@ -26,14 +27,22 @@ export default function Home() {
       alt: "screen video 3",
       description: "FPS",
     },
+    {
+      id: 4,
+      src: photo4,
+      alt: "screen video 4",
+      description: "RPG",
+    },
   ];
   const caption1 = "/video1.vtt";
   const caption2 = "/video2.vtt";
   const caption3 = "/video1.vtt";
+  const caption4 = "/video1.vtt";
 
   const video1 = "/videos/Cyberpucnk_2077_court_circuit.mp4";
   const video2 = "/videos/Cyberpucnk_2077_Panam_in_trouble.mp4";
   const video3 = "/videos/CoD_Modern_Warfare.mp4";
+  const video4 = "/videos/Cyberpucnk_2077_court_circuit.mp4";
 
   const videoList = [
     {
@@ -55,6 +64,13 @@ export default function Home() {
       videoSrc: video3,
       caption: caption3,
       title: "call of Duty modern warfare",
+      description: "RPG",
+    },
+    {
+      id: 4,
+      videoSrc: video4,
+      caption: caption4,
+      title: "cyberpucnk court circuit",
       description: "RPG",
     },
   ];
