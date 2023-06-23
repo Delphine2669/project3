@@ -1,0 +1,108 @@
+/* -- Primary colors -- */
+
+$foot-color: #222831;
+$body-color: #222831;
+
+/*random var name*/
+
+$color-2: #2d4059;
+$color-3: #ff5622bb;
+$font-foot-head: #222831;
+
+/* -- Secondary colors -- random var name -- */
+
+$color-2scd-2: #eeeeee;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $color-2;
+}
+
+.container {
+  margin-top: 9vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 15vh;
+}
+
+.screen {
+  background-color: $color-2;
+  height: 70vh;
+  width: 40vh;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.screen-content {
+  z-index: 1;
+  height: 100%;
+}
+
+.screen-background-shape {
+  transform: rotate(45deg);
+}
+
+.login {
+  width: 40vh;
+  padding: 4vh;
+  padding-top: 20vh;
+}
+
+.login-field {
+  padding: 4vh 0vh;
+}
+
+.login-input {
+  border: none;
+  border-bottom: 0.2vh solid $color-3;
+  background: none;
+  padding: 2vh;
+  padding-left: 4vh;
+  font-weight: 700;
+  width: 100%;
+  transition: 0.2s;
+}
+
+.login-input:active,
+.login-input:focus,
+.login-input:hover {
+  outline: none;
+  border-bottom-color: #000000;
+}
+
+.login-submit {
+  background: $color-3;
+  font-size: 1.4vh;
+  margin-top: 4vh;
+  padding: 1.6vh 2vh;
+  border-radius: 26px;
+  border: 0.1vh solid $color-2scd-2;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: $color-2;
+  box-shadow: 0px 0.2vh 0.2vh #062325;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.login-submit:active,
+.login-submit:focus,
+.login-submit:hover {
+  border-color: $color-3;
+  outline: none;
+}
+
+.button-icon {
+  font-size: 2.4vh;
+  margin-left: auto;
+  color: $color-3;
+}
