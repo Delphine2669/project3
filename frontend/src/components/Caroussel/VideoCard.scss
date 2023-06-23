@@ -1,4 +1,30 @@
 .card-dynamic {
-  height: 100%;
-  width: 25svw;
+  height: 30svh;
+  width: 60svw;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 8px;
+  margin-top: 6%;
+  margin-bottom: -5%;
+  color: white;
+  overflow-x: scroll;
+  padding-left: 2%;
+  gap: 2%;
+  margin-left: -15%;
+}
+
+video {
+  width: 40svw;
+  height: 25svh;
+}
+.card-title {
+  font-size: 6px;
+  text-align: center;
+}
+
+@media screen {
 }

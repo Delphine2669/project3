@@ -1,23 +1,22 @@
 import "./Caroussel.scss";
 import PropTypes from "prop-types";
+import PhotoCard from "./PhotoCard";
 
 function Caroussel({ photoList }) {
   return (
     <div className="carousel">
-      {photoList.map((photo) => (
-        <div key={photo.id}>
-          <figure>
-            <img
-              src={photo.src}
+      <div className="carousel-photocard-container">
+        {photoList.map((photo) => (
+          <div key={photo.id} className="carousel-photocard-body">
+            <PhotoCard
+              imageSrc={photo.src}
               alt={photo.alt}
-              className="photo-carousel"
-              width="250px"
-              height="150px"
+              title={photo.title}
+              description={photo.description}
             />
-            <figcaption>{photo.description}</figcaption>
-          </figure>
-        </div>
-      ))}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
