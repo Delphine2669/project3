@@ -1,0 +1,47 @@
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-top: 30px;
+}
+
+.hero-slider-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 290dvw;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+
+  &.active {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  img {
+    width: 300dvw;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-slider-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}

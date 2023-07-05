@@ -1,0 +1,29 @@
+// .card-dynamic {
+//   height: 30dvh;
+//   width: 60svw;
+// }
+
+.video-container {
+  display: flex;
+  width: 300dvw;
+  height: 100%;
+  gap: 5%;
+}
+.video-carousel {
+  overflow-x: scroll;
+  width: 300dvw;
+  height: 100%;
+}
+
+.video.video {
+  width: 300dvw;
+  height: 100%;
+}
+.card-title {
+  font-size: 10px;
+  text-align: center;
+}
+.video {
+  width: 300dvw;
+  height: 100%;
+}

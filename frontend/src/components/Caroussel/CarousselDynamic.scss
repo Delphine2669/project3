@@ -1,0 +1,12 @@
+.video {
+  height: 100%;
+  width: 300dvw;
+}
+.caroussel-dynamic {
+  width: 300dvw;
+  height: 100%;
+  display: flex;
+  overflow-x: scroll;
+  margin-top: 150%;
+  gap: 5%;
+}
