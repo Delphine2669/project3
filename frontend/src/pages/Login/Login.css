@@ -10,24 +10,24 @@ input::placeholder {
 
 body {
   background-color: --body-color;
-  background-size: 40% 100vh;
+  background-size: 40% 100dvh;
 }
 
 .login_container {
-  margin-top: 9vh;
+  margin-top: 5dvh;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 15vh;
-  border: 1px solid --body-color;
+  min-height: 15dvh;
+  border: 1px solid var(--font-foot-head);
   margin-left: 5dvw;
   margin-right: 5dvw;
 }
 
 .screen {
   background-color: var(--background-color);
-  height: 70vh;
-  width: 40vh;
+  height: 75dvh;
+  width: 40dvw;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
@@ -41,20 +41,20 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 40vh;
-  padding: 4vh;
+  width: 40dvh;
+  padding: 4dvh;
+  border: #000000;
 }
 
 .login-field {
-  padding: 4vh 0vh;
+  padding: 4dvh 0dvh;
 }
 
 .login-input {
   border: none;
-  border-bottom: 0.2vh solid black;
+  border-bottom: 0.2dvh solid var(--color-2scd-2);
   background: none;
-  padding: 2vh;
-  padding-left: 4vh;
+  padding: 2dvh;
   font-weight: 700;
   width: 100%;
   transition: 0.2s;
@@ -68,9 +68,9 @@ body {
 }
 
 .login-submit {
-  font-size: 1.5vh;
-  margin-top: 4vh;
-  padding: 2vh 2vh;
+  font-size: 1.5dvh;
+  margin-top: 2dvh;
+  padding: 2dvh 2dvh;
   border-radius: 26px;
   text-transform: uppercase;
   font-weight: 500;
@@ -89,7 +89,7 @@ body {
 }
 
 .subscribe {
-  background-color: var(--color-3);
+  background-color: var(--body-color);
 }
 
 .button div {
@@ -100,5 +100,5 @@ body {
   transition: all 0.3s ease-in-out;
 }
 .new-user {
-  color: var(--color-3);
+  color: var(--color-2scd-2);
 }
