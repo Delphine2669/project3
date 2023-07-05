@@ -1,21 +1,10 @@
 :root {
-  /* -- Primary colors -- */
-
   --head-foot-color: rgb(50, 50, 50);
   --body-color: rgb(26, 29, 41);
-
-  /*random var name*/
-
   --color-2: #2d4059;
   --color-3: #ff5722;
   --font-foot-head: #eeeeee;
-
-  /* -- Secondary colors -- random var name -- */
-
   --color-2scd-2: #eeeeee;
-
-  /* -- Primary fonts -- */
-
   --body-font: Arial, Helvetica, sans-serif;
 }
 .catégories {
