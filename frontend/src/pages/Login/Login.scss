@@ -73,7 +73,7 @@ body {
 .login-input:focus,
 .login-input:hover {
   outline: none;
-  border-bottom-color: #000000;
+  border-bottom-color: $color-3;
 }
 
 .login-submit {
@@ -105,4 +105,8 @@ body {
   font-size: 2.4vh;
   margin-left: auto;
   color: $color-3;
+}
+
+input.login-input {
+  color: white;
 }

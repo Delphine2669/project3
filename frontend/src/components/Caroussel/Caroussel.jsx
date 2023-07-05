@@ -1,11 +1,14 @@
 import "./Caroussel.scss";
 import PropTypes from "prop-types";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "react-responsive-carousel/lib/styles/carousel.css";
 import PhotoCard from "./PhotoCard";
 
 function Caroussel({ photoList }) {
   return (
-    <div className="carousel">
-      <div className="carousel-photocard-container">
+    <div className="carousel-photocard-container">
+      <Carousel autoPlay infiniteLoop showThumbs={false}>
         {photoList.map((photo) => (
           <div key={photo.id} className="carousel-photocard-body">
             <PhotoCard
@@ -16,7 +19,7 @@ function Caroussel({ photoList }) {
             />
           </div>
         ))}
-      </div>
+      </Carousel>
     </div>
   );
 }
