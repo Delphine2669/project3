@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./SignUp.scss";
+import "./SignUp.css";
 import { useNavigate, NavLink } from "react-router-dom";
 
 export default function SignUp() {

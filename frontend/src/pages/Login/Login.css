@@ -1,11 +1,5 @@
-$foot-color: #222831;
-$body-color: #222831;
-$color-2: #2d4059;
-$color-3: #ff5622bb;
-$color-2scd-2: #eeeeee;
-
 input::placeholder {
-  color: red;
+  color: white;
 }
 
 * {
@@ -15,7 +9,7 @@ input::placeholder {
 }
 
 body {
-  background-color: $body-color;
+  background-color: --body-color;
   background-size: 40% 100vh;
 }
 
@@ -25,7 +19,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 15vh;
-  border: 1px solid $color-3;
+  border: 1px solid --body-color;
   margin-left: 5dvw;
   margin-right: 5dvw;
 }
@@ -84,18 +78,18 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  color: black;
+  color: --color-3;
   cursor: pointer;
   border: none;
   position: relative;
 }
 
-.login-submit:hover {
-  background-color: var(--first-color);
+.button.login-submit {
+  background-color: var(--color-3);
 }
 
-.button.login-input {
-  background-color: #eeeeee;
+.subscribe {
+  background-color: var(--color-3);
 }
 
 .button div {
@@ -106,5 +100,5 @@ body {
   transition: all 0.3s ease-in-out;
 }
 .new-user {
-  color: $color-2scd-2;
+  color: var(--color-3);
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Login.scss";
+import "./Login.css";
 import { useNavigate, NavLink } from "react-router-dom";
 
 export default function Login() {
