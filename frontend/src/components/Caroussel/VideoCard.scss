@@ -1,30 +1,29 @@
-.card-dynamic {
-  height: 30svh;
-  width: 60svw;
-}
+// .card-dynamic {
+//   height: 30dvh;
+//   width: 60svw;
+// }
 
 .video-container {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  font-size: 8px;
-  margin-top: 6%;
-  margin-bottom: -5%;
-  color: white;
+  width: 300dvw;
+  height: 100%;
+  gap: 5%;
+}
+.video-carousel {
   overflow-x: scroll;
-  padding-left: 2%;
-  gap: 2%;
-  margin-left: -15%;
+  width: 300dvw;
+  height: 100%;
 }
 
-video {
-  width: 40svw;
-  height: 25svh;
+.video.video {
+  width: 300dvw;
+  height: 100%;
 }
 .card-title {
-  font-size: 6px;
+  font-size: 10px;
   text-align: center;
 }
-
-@media screen {
+.video {
+  width: 300dvw;
+  height: 100%;
 }

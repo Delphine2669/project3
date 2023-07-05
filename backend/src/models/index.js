@@ -6,7 +6,7 @@ const mysql = require("mysql2/promise");
 
 const { DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME } = process.env;
 
-const pool = mysql.createPool({
+const database = mysql.createPool({
   host: DB_HOST,
   port: DB_PORT,
   user: DB_USER,
@@ -16,7 +16,7 @@ const pool = mysql.createPool({
 
 // try a connection
 
-pool.getConnection().catch(() => {
+database.getConnection().catch(() => {
   console.warn(
     "Warning:",
     "Failed to get a DB connection.",
@@ -29,10 +29,10 @@ pool.getConnection().catch(() => {
 
 const models = {};
 
-const ItemManager = require("./ItemManager");
+const VideoManager = require("./VideoManager");
 
-models.item = new ItemManager();
-models.item.setDatabase(pool);
+models.video = new VideoManager();
+models.video.setDatabase(database);
 
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model
