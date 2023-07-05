@@ -89,4 +89,3 @@ module.exports = {
   add,
   destroy,
 };
-
