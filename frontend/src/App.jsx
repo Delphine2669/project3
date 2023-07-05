@@ -3,12 +3,12 @@ import {
   RouterProvider,
   Navigate,
 } from "react-router-dom";
-import "./App.css";
 import Home from "./pages/Home/Home";
+import "./App.css";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/Login/SignUp";
 import Caroussel from "./components/Caroussel/Caroussel";
-import Video from "./components/Video/";
+import Video from "./components/Video";
 
 const router = createBrowserRouter([
   {

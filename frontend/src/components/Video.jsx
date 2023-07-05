@@ -1,8 +1,13 @@
 import PropTypes from "prop-types";
-import VideoCard from "./VideoCard";
-import "./VideoCarousel.css";
+import VideoCard from "./Caroussel/VideoCard";
 
 function Video({ videoList }) {
+  // const videos = [
+  //   "Cyberpucnk_2077_court_circuit.mp4",
+  //   "Cyberpucnk_2077_Panam_in_trouble.mp4",
+  //   "Cyberpucnk_2077_court_circuit.mp4",
+  //   "Cyberpucnk_2077_Panam_in_trouble.mp4",
+  // ];
   return (
     <div className="video-carousel">
       <p className="catégories"> Catégorie RPG</p>

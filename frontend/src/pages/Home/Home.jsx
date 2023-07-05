@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer";
-import "../../components/Footer.scss";
+import Footer from "../../components/Footer/Footer";
+import "../../components/Footer/Footer.scss";
 
 export default function Home() {
   return (
