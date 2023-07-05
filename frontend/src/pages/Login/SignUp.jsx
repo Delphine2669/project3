@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-import "./Login.scss";
+import "./SignUp.scss";
 import { useNavigate, NavLink } from "react-router-dom";
 
-export default function Login() {
+export default function SignUp() {
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    navigate("/");
+    navigate("/Login");
   };
 
   return (
@@ -18,7 +20,6 @@ export default function Login() {
         <div className="screen-content">
           <form className="login" onSubmit={handleSubmit}>
             <div className="login-field">
-              <i className="login-icon fas fa-user" />
               <input
                 type="text"
                 className="login-input"
@@ -28,27 +29,41 @@ export default function Login() {
               />
             </div>
             <div className="login-field">
-              <i className="login-icon fas fa-lock" />
+              <input
+                type="email"
+                className="login-input"
+                value={email}
+                placeholder="Email"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className="login-field">
               <input
                 type="password"
                 className="login-input"
                 value={password}
-                placeholder="Password"
+                placeholder="password"
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <p className="new-user">
-              New user?
-              <NavLink to="/SignUp" className="subscribe">
-                Create an Account
-              </NavLink>
-            </p>
+            <div className="login-field">
+              <input
+                type="password"
+                className="login-input"
+                value={confirmPassword}
+                placeholder="Password confirmation"
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
+            </div>
+            <NavLink to="/Login" className="subscribe">
+              Sing In
+            </NavLink>
             <button
               type="submit"
               className="button login-submit"
-              data-hover="Let's Go!!"
+              data-hover="Let's Go!"
             >
-              <div className="button-text">sign in</div>
+              <div className="button-text">Sign Up</div>
             </button>
           </form>
         </div>
