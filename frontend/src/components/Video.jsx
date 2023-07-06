@@ -4,21 +4,23 @@ import "./Video.scss";
 
 function Video({ videoList }) {
   return (
-    <div className="video-carousel">
-      <p className="catégories"> Catégorie RPG</p>
-      <div className="video-container">
-        {videoList.map((video) => (
-          <div key={video.id}>
-            <VideoCard
-              videoSrc={video.videoSrc}
-              caption={video.caption}
-              title={video.title}
-              description={video.description}
-            />
-          </div>
-        ))}
+    <>
+      <h3>World League of Legends</h3>
+      <div className="video-carousel">
+        <div className="video-container">
+          {videoList.map((video) => (
+            <div className="video-card" key={video.id}>
+              <VideoCard
+                videoSrc={video.videoSrc}
+                caption={video.caption}
+                title={video.title}
+                description={video.description}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 Video.propTypes = {

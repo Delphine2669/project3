@@ -80,7 +80,7 @@ function MyVideos() {
 
   const video1 = "/videos/Cyberpucnk_2077_court_circuit.mp4";
   const video2 = "/videos/Cyberpucnk_2077_Panam_in_trouble.mp4";
-  const video3 = "/videos/CoD_Modern_Warfare.mp4";
+  const video3 = "/videos/Video3.mp4";
   const video4 = "/videos/Cyberpucnk_2077_court_circuit.mp4";
 
   const videoList = [
@@ -117,6 +117,9 @@ function MyVideos() {
   return (
     <>
       <Caroussel photoList={photoList} />
+      <Video videoList={videoList} />
+      <Video videoList={videoList} />
+      <Video videoList={videoList} />
       <Video videoList={videoList} />
       <Video videoList={videoList} />
       <Video videoList={videoList} />
