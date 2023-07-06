@@ -1,12 +1,14 @@
 import axios from "axios";
 
-async function videoCall2() {
+async function videoCall() {
   try {
-    const response = await axios.get("http://localhost:6000/videos");
+    const response = await axios.get(
+      `${import.meta.env.VITE_BACKEND_URL}/videos`
+    );
     const videosFromDatabase = response.data;
     const videos = videosFromDatabase.map((video) => ({
       id: video.id,
-      videoSrc: video.add_videos,
+      videoSrc: video.data,
       caption: video.title,
       title: video.title,
       description: video.description,
@@ -21,4 +23,4 @@ async function videoCall2() {
   }
 }
 
-export default videoCall2;
+export default videoCall;
