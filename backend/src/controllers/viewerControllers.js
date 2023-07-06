@@ -49,8 +49,7 @@ const edit = (req, res) => {
 const add = (req, res) => {
   const viewer = req.body;
   models.viewer
-    .inset(viewer)
-
+    .insert(viewer)
     .then(([result]) => {
       res.location(`/viewer/${result.insertId}`).sendStatus(204);
     })
@@ -77,6 +76,22 @@ const destroy = (req, res) => {
       res.status(500).send("error retrieving data from database");
     });
 };
+const getUserByEmailWithPasswordAndPassToNext = (req, res) => {
+  const { email } = req.body;
+  models.viewer
+    .getUserByEmailWithPasswordAndPassToNext({ email })
+    .then(([result]) => {
+      if (result.length > 0) {
+        res.json(result[0]);
+      } else {
+        res.sendStatus(401);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error retrieving data from database");
+    });
+};
 
 module.export = {
   browse,
@@ -84,4 +99,5 @@ module.export = {
   edit,
   add,
   destroy,
+  getUserByEmailWithPasswordAndPassToNext,
 };

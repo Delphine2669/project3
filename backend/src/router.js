@@ -11,10 +11,13 @@ router.put("/videos/:id", videoControllers.edit);
 router.post("/videos", videoControllers.add);
 router.delete("/videos/:id", videoControllers.destroy);
 router.get("/viewer", viewerControllers.browse);
-router.get("/videos/:id", viewerControllers.read);
-router.put("/videos/:id", viewerControllers.edit);
-router.post("/videos", viewerControllers.add);
-router.delete("/videos/:id", viewerControllers.destroy);
+router.get("/viewer/:id", viewerControllers.read);
+router.put("/viewer/:id", viewerControllers.edit);
+router.post("/viewer", viewerControllers.add);
+router.delete("/viewer/:id", viewerControllers.destroy);
 
-router.post("/videos/login");
+router.post(
+  "/viewer/login",
+  viewerControllers.getUserByEmailWithPasswordAndPassToNext
+);
 module.exports = router;

@@ -33,5 +33,12 @@ class ViewerManager extends AbstractManager {
       ]
     );
   }
+
+  getUserByEmailWithPasswordAndPassToNext(email) {
+    return this.database.query(`SELECT * FROM ${this.table} where email =?`, [
+      email,
+    ]);
+  }
 }
+
 module.exports = ViewerManager;
