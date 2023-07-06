@@ -28,7 +28,7 @@ const router = require("./router");
 
 app.use(router);
 
-// serve the `backend/public` folder for public resources
+// serve the `backend/public` folder for public resources4
 
 app.use(express.static(path.join(__dirname, "../public")));
 

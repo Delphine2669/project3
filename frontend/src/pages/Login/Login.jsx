@@ -1,44 +1,53 @@
 import React, { useState } from "react";
-import "./Login.scss";
+import "./Login.css";
+import { useNavigate, NavLink } from "react-router-dom";
 
-function Login() {
+export default function Login() {
   const [username, setUsername] = useState("");
-  const [passWord, setPassWord] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    navigate("/");
+  };
 
   return (
-    <div className="container">
-      <div className="screen">
-        <div className="screen-content">
-          <form className="login">
-            <div className="login-field">
-              <i className="login-icon fas fa-user" />
-              <input
-                type="text"
-                className="login-input"
-                value={username}
-                placeholder="Nom d'utilisateur"
-                onChange={(e) => setUsername(e.target.value)}
-              />
-            </div>
-            <div className="login-field">
-              <i className="login-icon fas fa-lock" />
-              <input
-                type="password"
-                className="login-input"
-                value={passWord}
-                placeholder="Mot de passe"
-                onChange={(e) => setPassWord(e.target.value)}
-              />
-            </div>
-            <button type="button" className="button login-submit">
-              <span className="button-text">Se connecter</span>
-              <i className="button-icon fas fa-chevron-right" />
-            </button>
-          </form>
+    <div className="login_container">
+      <form className="login" onSubmit={handleSubmit}>
+        <h3 className="title">login to your account</h3>
+        <div className="login-field">
+          <input
+            type="text"
+            className="login-input"
+            value={username}
+            placeholder="Username"
+            onChange={(e) => setUsername(e.target.value)}
+          />
         </div>
-      </div>
+        <div className="login-field">
+          <input
+            type="password"
+            className="login-input"
+            value={password}
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <p className="new-user">
+          New user?
+          <NavLink to="/SignUp" className="subscribe">
+            Create an Account
+          </NavLink>
+        </p>
+        <button
+          type="submit"
+          className="button login-submit"
+          data-hover="Let's Go!!"
+        >
+          <div className="button-text">sign in</div>
+        </button>
+      </form>
     </div>
   );
 }
-
-export default Login;

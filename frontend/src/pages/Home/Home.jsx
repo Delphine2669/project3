@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
-import NavBar from "../../components/NavBar/Navbar";
-import Caroussel from "../../components/Caroussel/Caroussel";
-import VideoCarousel from "../../components/Caroussel/VideoCarousel";
+import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer";
 import "../../components/Footer.scss";
 import photoList from "../../components/PhotoList";
+import VideoCarousel from "../../components/Caroussel/VideoCarousel";
+import Caroussel from "../../components/Caroussel/Caroussel";
 import CarousselDynamic from "../../components/Caroussel/CarousselDynamic";
 import HeroSlider from "../../components/HeroSlider/HeroSlider";
 
@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="main-container">
       <div className="Header">
-        <NavBar />
+        <Header />
       </div>
       <div className="content">
         <Outlet />
