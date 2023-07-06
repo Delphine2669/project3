@@ -1,7 +1,3 @@
-input::placeholder {
-  color: white;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,7 +5,7 @@ input::placeholder {
 }
 
 body {
-  background-color: --body-color;
+  background-color: var(--body-color);
   background-size: 40% 100dvh;
 }
 
@@ -18,8 +14,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--color-3);
   min-height: 15dvh;
-  border: 1px solid var(--font-foot-head);
+  border: 1px solid white;
   margin-left: 5dvw;
   margin-right: 5dvw;
 }
@@ -33,6 +30,8 @@ body {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
   height: auto;
   width: 40%;
 }
@@ -48,6 +47,10 @@ body {
 
 .login-field {
   padding: 4dvh 0dvh;
+}
+
+.title {
+  color: var(--background-color);
 }
 
 .login-input {
@@ -85,11 +88,9 @@ body {
 }
 
 .button.login-submit {
-  background-color: var(--color-3);
 }
 
 .subscribe {
-  background-color: var(--body-color);
 }
 
 .button div {
