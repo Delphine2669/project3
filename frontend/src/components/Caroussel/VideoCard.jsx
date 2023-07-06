@@ -3,7 +3,6 @@ import "./VideoCard.scss";
 
 function VideoCard({ videoSrc, caption, title }) {
   return (
-    // <div className="card-dynamic">
     <div>
       <video className="video" controls width="100%" src={videoSrc}>
         <track default kind="captions" srcLang="fr" src={caption} />
