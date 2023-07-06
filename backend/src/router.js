@@ -17,7 +17,7 @@ router.post("/viewer", viewerControllers.add);
 router.delete("/viewer/:id", viewerControllers.destroy);
 
 router.post(
-  "/viewer/login",
+  "/login",
   viewerControllers.getUserByEmailWithPasswordAndPassToNext
 );
 module.exports = router;
