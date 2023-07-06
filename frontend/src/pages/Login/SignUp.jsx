@@ -17,7 +17,7 @@ export default function SignUp() {
   return (
     <div className="login_container">
       <form className="login" onSubmit={handleSubmit}>
-        <h2 className="title">Create your account</h2>
+        <h3 className="title">Create your account</h3>
         <div className="login-field">
           <input
             type="text"
