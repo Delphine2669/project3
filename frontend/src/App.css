@@ -1,0 +1,30 @@
+:root {
+  --head-foot-color: rgb(50, 50, 50);
+  --body-color: rgb(26, 29, 41);
+  --color-2: #2d4059;
+  --color-3: #ff5722;
+  --font-foot-head: #eeeeee;
+  --color-2scd-2: #eeeeee;
+  --body-font: Arial, Helvetica, sans-serif;
+}
+.catégories {
+  color: var(--color-3);
+  margin-top: 10%;
+  margin-bottom: -5%;
+  font-weight: bold;
+  font-size: smaller;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--body-color);
+}
+
+footer {
+  border: solid 2px var(--font-foot-head);
+  background-color: var(--head-foot-color);
+  color: var(--font-foot-head);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
