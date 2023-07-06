@@ -4,9 +4,7 @@ import Caroussel from "../../components/Caroussel/Caroussel";
 import VideoCarousel from "../../components/Caroussel/VideoCarousel";
 import Footer from "../../components/Footer";
 import "../../components/Footer.scss";
-import videoList from "../../components/VideoList";
 import photoList from "../../components/PhotoList";
-import videoList2 from "../../components/DynamicVideoList";
 import CarousselDynamic from "../../components/Caroussel/CarousselDynamic";
 import HeroSlider from "../../components/HeroSlider/HeroSlider";
 
@@ -22,8 +20,8 @@ export default function Home() {
         <br />
         <HeroSlider photoList={photoList} />
         <br />
-        <CarousselDynamic videoList2={videoList2} />
-        <VideoCarousel videoList={videoList} />
+        <CarousselDynamic />
+        <VideoCarousel />
       </div>
       <br />
       <div className="Footer">

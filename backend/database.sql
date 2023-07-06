@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.33, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.33, for macos13 (x86_64)
 --
 -- Host: localhost    Database: mydb
 -- ------------------------------------------------------
--- Server version	8.0.33-0ubuntu0.22.04.2
+-- Server version	8.0.33
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -23,9 +23,10 @@ DROP TABLE IF EXISTS `categorie`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `categorie` (
-  `nom_id` int NOT NULL,
+  `nom_id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`nom_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -34,6 +35,7 @@ CREATE TABLE `categorie` (
 
 LOCK TABLES `categorie` WRITE;
 /*!40000 ALTER TABLE `categorie` DISABLE KEYS */;
+INSERT INTO `categorie` VALUES (1,'Worlds League of Legends'),(2,'Counter Strike: Global Offensive Major'),(3,'Call of Duty World Championship'),(4,'Call of Duty League'),(5,'Fortnite World Cup'),(6,'Dota 2'),(7,'Intel Extreme Masters 2023'),(8,'Overwatch League 2023'),(9,'PUBG Continental Serie'),(10,'World Cyber Gamers'),(11,'Fifa eWorld Cup'),(12,'Lyon e-Sport'),(13,'ZEvent'),(14,'eSports World Convention');
 /*!40000 ALTER TABLE `categorie` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -63,7 +65,7 @@ CREATE TABLE `video` (
 
 LOCK TABLES `video` WRITE;
 /*!40000 ALTER TABLE `video` DISABLE KEYS */;
-INSERT INTO `video` VALUES (3,'Cyberpucnk_2077_court_circuit',7,'premier_test','2023-06-14',0,1,'~/backend/public/assets/videos/Cyberpucnk_2077_court_circuit.mp4'),(4,'Cyberpucnk_2077_Panam_in_trouble',11,'second_test','2023-06-15',0,1,'~/backend/public/assets/videos/Cyberpucnk_2077_Panam_in_trouble.mp4');
+INSERT INTO `video` VALUES (3,'Cyberpucnk_2077_court_circuit',7,'premier_test','2023-06-14',0,1,'/videos/Cyberpucnk_2077_court_circuit.mp4'),(4,'Cyberpucnk_2077_Panam_in_trouble',11,'second_test','2023-06-15',0,1,'/videos/Cyberpucnk_2077_Panam_in_trouble.mp4');
 /*!40000 ALTER TABLE `video` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -75,13 +77,13 @@ DROP TABLE IF EXISTS `video_has_categorie`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `video_has_categorie` (
-  `VIDEOS_id` int NOT NULL,
-  `CATEGORIES_nom_id` int NOT NULL,
-  PRIMARY KEY (`VIDEOS_id`,`CATEGORIES_nom_id`),
-  KEY `fk_VIDEOS_has_CATEGORIES_CATEGORIES1_idx` (`CATEGORIES_nom_id`),
-  KEY `fk_VIDEOS_has_CATEGORIES_VIDEOS1_idx` (`VIDEOS_id`),
-  CONSTRAINT `fk_VIDEOS_has_CATEGORIES_CATEGORIES1` FOREIGN KEY (`CATEGORIES_nom_id`) REFERENCES `categorie` (`nom_id`),
-  CONSTRAINT `fk_VIDEOS_has_CATEGORIES_VIDEOS1` FOREIGN KEY (`VIDEOS_id`) REFERENCES `video` (`id`)
+  `videos_id` int NOT NULL,
+  `categories_nom_id` int NOT NULL,
+  PRIMARY KEY (`videos_id`,`categories_nom_id`),
+  KEY `fk_VIDEOS_has_CATEGORIES_CATEGORIES1_idx` (`categories_nom_id`),
+  KEY `fk_VIDEOS_has_CATEGORIES_VIDEOS1_idx` (`videos_id`),
+  CONSTRAINT `fk_VIDEOS_has_CATEGORIES_CATEGORIES1` FOREIGN KEY (`categories_nom_id`) REFERENCES `categorie` (`nom_id`),
+  CONSTRAINT `fk_VIDEOS_has_CATEGORIES_VIDEOS1` FOREIGN KEY (`videos_id`) REFERENCES `video` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -102,13 +104,13 @@ DROP TABLE IF EXISTS `video_has_viewer`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `video_has_viewer` (
-  `VIDEOS_id` int NOT NULL,
-  `VIEWERS_id` int NOT NULL,
-  PRIMARY KEY (`VIDEOS_id`,`VIEWERS_id`),
-  KEY `fk_VIDEOS_has_VIEWERS_VIEWERS1_idx` (`VIEWERS_id`),
-  KEY `fk_VIDEOS_has_VIEWERS_VIDEOS1_idx` (`VIDEOS_id`),
-  CONSTRAINT `fk_VIDEOS_has_VIEWERS_VIDEOS1` FOREIGN KEY (`VIDEOS_id`) REFERENCES `video` (`id`),
-  CONSTRAINT `fk_VIDEOS_has_VIEWERS_VIEWERS1` FOREIGN KEY (`VIEWERS_id`) REFERENCES `viewer` (`id`)
+  `videos_id` int NOT NULL,
+  `viewers_id` int NOT NULL,
+  PRIMARY KEY (`videos_id`,`viewers_id`),
+  KEY `fk_videos_has_viewers_viewers1_idx` (`viewers_id`),
+  KEY `fk_videos_has_viewers_videos1_idx` (`videos_id`),
+  CONSTRAINT `fk_VIDEOS_has_viewers_videos1` FOREIGN KEY (`videos_id`) REFERENCES `video` (`id`),
+  CONSTRAINT `fk_VIDEOS_has_viewers_viewers1` FOREIGN KEY (`viewers_id`) REFERENCES `viewer` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -137,7 +139,7 @@ CREATE TABLE `viewer` (
   `is_favorite` tinyint DEFAULT NULL,
   `is_admin` tinyint DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -146,6 +148,7 @@ CREATE TABLE `viewer` (
 
 LOCK TABLES `viewer` WRITE;
 /*!40000 ALTER TABLE `viewer` DISABLE KEYS */;
+INSERT INTO `viewer` VALUES (1,'BGdu26','bgdu26@tsn.game','cocorico','1998-07-10',1,0),(2,'superAdmin','admin@tsn.game','adminPassword','1980-05-31',1,1),(3,'User1234','User1234@tsn.game','userPassword','2000-10-25',0,0);
 /*!40000 ALTER TABLE `viewer` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -158,4 +161,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-21 12:18:11
+-- Dump completed on 2023-07-05 12:12:24

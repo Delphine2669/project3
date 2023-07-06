@@ -13,8 +13,10 @@ function CarousselDCard({ videoSrc, caption }) {
     </div>
   );
 }
+
 CarousselDCard.propTypes = {
   videoSrc: PropTypes.string.isRequired,
   caption: PropTypes.string.isRequired,
 };
+
 export default CarousselDCard;
