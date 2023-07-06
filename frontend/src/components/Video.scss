@@ -1,4 +1,4 @@
-h3 {
+.categories-title {
   color: var(--color-2scd-2);
   margin-bottom: 2dvh;
   margin-top: 3dvh;
@@ -11,12 +11,22 @@ h3 {
 .video-container {
   display: flex;
   width: 100dvw;
-  // bakground test juste pour la mise //
 }
 .video-carousel {
   overflow-x: scroll;
-  width: 100dvw;
+  width: 100vw;
+  scrollbar-width: thin; /* Largeur de la barre de défilement */
+  scrollbar-color: transparent transparent; /* Couleur de la barre de défilement */
 }
+
+.video-carousel::-webkit-scrollbar {
+  width: 8px; /* Largeur de la barre de défilement */
+}
+
+.video-carousel::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Couleur de la poignée de la barre de défilement */
+}
+
 .video.video {
   width: 30dvw;
 }
