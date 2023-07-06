@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
-import VideoCard from "./VideoCard";
-import "./VideoCard.scss";
+import VideoCard from "./Caroussel/VideoCard";
 
 function Video({ videoList }) {
   return (
