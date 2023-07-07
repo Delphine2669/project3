@@ -9,6 +9,7 @@ import Login from "./pages/Login/Login";
 import SignUp from "./pages/Login/SignUp";
 import Caroussel from "./components/Caroussel/Caroussel";
 import Video from "./components/Video";
+import ImageGallery from "./components/ImageGallery";
 
 const router = createBrowserRouter([
   {
@@ -44,7 +45,7 @@ function MyVideos() {
   const photo1 = "/video1.png";
   const photo2 = "/video2.png";
   const photo3 = "/video3.png";
-  const photo4 = "/video1.png";
+  const photo4 = "/video4.png";
 
   const photoList = [
     {
@@ -75,13 +76,13 @@ function MyVideos() {
 
   const caption1 = "/video1.vtt";
   const caption2 = "/video2.vtt";
-  const caption3 = "/video1.vtt";
-  const caption4 = "/video1.vtt";
+  const caption3 = "/video3.vtt";
+  const caption4 = "/video4.vtt";
 
-  const video1 = "/videos/Cyberpucnk_2077_court_circuit.mp4";
-  const video2 = "/videos/Cyberpucnk_2077_Panam_in_trouble.mp4";
-  const video3 = "/videos/Video3.mp4";
-  const video4 = "/videos/Cyberpucnk_2077_court_circuit.mp4";
+  const video1 = "/videos/video1.mp4";
+  const video2 = "/videos/video2.mp4";
+  const video3 = "/videos/video3.mp4";
+  const video4 = "/videos/video4.mp4";
 
   const videoList = [
     {
