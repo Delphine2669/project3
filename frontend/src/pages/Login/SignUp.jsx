@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./SignUp.css";
 import { useNavigate, NavLink } from "react-router-dom";
 
 export default function SignUp() {
