@@ -8,8 +8,10 @@ function VideoCard({ videoSrc, caption }) {
     </video>
   );
 }
+
 VideoCard.propTypes = {
   videoSrc: PropTypes.string.isRequired,
   caption: PropTypes.string.isRequired,
 };
+
 export default VideoCard;

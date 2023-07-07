@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import VideoCard from "./Caroussel/VideoCard";
+<<<<<<< HEAD
 import "./Video.scss";
 
 function Video({ videoList }) {
@@ -21,6 +22,26 @@ function Video({ videoList }) {
         </div>
       </div>
     </>
+=======
+
+function Video({ videoList }) {
+  return (
+    <div className="video-carousel">
+      <p className="catégories"> Catégorie RPG</p>
+      <div className="video-container">
+        {videoList.map((video) => (
+          <div key={video.id}>
+            <VideoCard
+              videoSrc={video.videoSrc}
+              caption={video.caption}
+              title={video.title}
+              description={video.description}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+>>>>>>> dev
   );
 }
 Video.propTypes = {
