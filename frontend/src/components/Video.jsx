@@ -5,7 +5,7 @@ import "./Video.scss";
 function Video({ videoList }) {
   return (
     <>
-      <h3>World League of Legends</h3>
+      <h3 className="categorie-title">World League of Legends</h3>
       <div className="video-carousel">
         <div className="video-container">
           {videoList.map((video) => (

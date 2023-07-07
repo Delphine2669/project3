@@ -1,6 +1,7 @@
-.foot {
-  text-align: center;
-  width: 100%;
-  height: 6dvh;
-  position: relative;
+footer {
+  border: solid 2px var(--font-foot-head);
+  color: var(--font-foot-head);
+  position: fixed;
+  bottom: 0;
+  width: 100dvw;
 }
