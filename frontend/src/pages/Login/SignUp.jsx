@@ -54,7 +54,7 @@ export default function SignUp() {
           />
         </div>
         <NavLink to="/Login" className="subscribe">
-          Sing In
+          Sign In
         </NavLink>
         <button
           type="submit"

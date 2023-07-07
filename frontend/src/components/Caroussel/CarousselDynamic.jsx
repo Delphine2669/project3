@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import videoCall from "../../utils";
-import CarouselDCard from "./CarousselDCard";
+import CarousselDCard from "./CarousselDCard";
 import "./CarousselDynamic.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "react-responsive-carousel/lib/styles/carousel.css";
@@ -25,7 +25,7 @@ function CarousselDynamic() {
     <div className="caroussel-dynamic">
       {videos.map((video) => (
         <div key={video.id}>
-          <CarouselDCard
+          <CarousselDCard
             videoSrc={video.videoSrc}
             caption={video.caption}
             title={video.title}
