@@ -9,7 +9,7 @@ import Login from "./pages/Login/Login";
 import SignUp from "./pages/Login/SignUp";
 import Caroussel from "./components/Caroussel/Caroussel";
 import Video from "./components/Video";
-import ImageGallery from "./components/ImageGallery";
+import DysneyCat from "./components/Caroussel/DysneyLike/DisneyCat";
 
 const router = createBrowserRouter([
   {
@@ -89,28 +89,28 @@ function MyVideos() {
       id: 1,
       videoSrc: video1,
       caption: caption1,
-      title: "cyberpucnk court circuit",
+      title: "video1",
       description: "RPG",
     },
     {
       id: 2,
       videoSrc: video2,
       caption: caption2,
-      title: "cyberpucnk panam in trouble",
+      title: "video2",
       description: "FPS",
     },
     {
       id: 3,
       videoSrc: video3,
       caption: caption3,
-      title: "call of Duty modern warfare",
+      title: "video3",
       description: "RPG",
     },
     {
       id: 4,
       videoSrc: video4,
       caption: caption4,
-      title: "cyberpucnk court circuit",
+      title: "video4",
       description: "RPG",
     },
   ];
@@ -118,6 +118,7 @@ function MyVideos() {
   return (
     <>
       <Caroussel photoList={photoList} />
+      <DysneyCat />
       <Video videoList={videoList} />
       <Video videoList={videoList} />
       <Video videoList={videoList} />
