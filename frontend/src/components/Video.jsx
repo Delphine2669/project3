@@ -7,18 +7,16 @@ function Video({ videoList }) {
     <>
       <h3 className="categories-title">World League of Legends</h3>
       <div className="video-carousel">
-        <div className="video-container">
-          {videoList.map((video) => (
-            <div className="video-card" key={video.id}>
-              <VideoCard
-                videoSrc={video.videoSrc}
-                caption={video.caption}
-                title={video.title}
-                description={video.description}
-              />
-            </div>
-          ))}
-        </div>
+        {videoList.map((video) => (
+          <div className="video-card" key={video.id}>
+            <VideoCard
+              videoSrc={video.videoSrc}
+              caption={video.caption}
+              title={video.title}
+              description={video.description}
+            />
+          </div>
+        ))}
       </div>
     </>
   );

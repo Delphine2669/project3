@@ -2,10 +2,10 @@ import PropTypes from "prop-types";
 
 function VideoCard({ videoSrc, caption }) {
   return (
-    <video className="video" src={videoSrc}>
-      <track default kind="captions" srcLang="fr" src={caption} />
-      Sorry, your browser doesn't support videos.
-    </video>
+    <div className="video-border">
+      <img alt="" className="video-caption" src={caption} />
+      <img alt="" className="video-caption hover-video" src={videoSrc} />
+    </div>
   );
 }
 

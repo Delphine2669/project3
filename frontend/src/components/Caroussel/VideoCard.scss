@@ -1,26 +1,40 @@
-.video-container {
-  display: flex;
-  width: 100dvw;
-  height: 100%;
-  gap: 5%;
-}
-.video-carousel {
-  overflow-x: scroll;
-  width: 100dvw;
-  height: 100%;
+.video-border {
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px,
+    rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
+  border-radius: 10px;
+  border: 4px solid rgba(249, 249, 249, 0.1);
+  transition: transform 250ms ease-in-out, border 250ms ease-in-out,
+    box-shadow 250ms ease-in-out;
 }
 
-.video.video {
-  width: 100dvw;
-  height: 100%;
-}
-.card-title {
-  font-size: 10px;
-  text-align: center;
-}
-.video {
+.video-caption {
   width: 100%;
   height: 100%;
   border-radius: 5px;
   z-index: 1;
+}
+
+.video-caption.hover-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+  visibility: hidden;
+}
+
+.video-border:hover .video-border {
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 40px 58px -16px,
+    rgba(0, 0, 0, 0.72) 0px 30px 22px -10px;
+  transform: scale(1.05);
+  border: 4px solid rgba(249, 249, 249, 0.8);
+}
+
+.video-border:hover .video-caption hover-video {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  opacity: 1;
+  visibility: visible;
 }

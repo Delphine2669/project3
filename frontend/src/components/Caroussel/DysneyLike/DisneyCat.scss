@@ -1,11 +1,10 @@
-.container {
+.DysneyCatBox {
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
 }
 
 .item {
-  width: 35%;
   position: relative;
   padding: 15px;
   cursor: pointer;
