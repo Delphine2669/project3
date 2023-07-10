@@ -26,7 +26,7 @@ function CarousselDynamic() {
       {videos.map((video) => (
         <div key={video.id}>
           <CarouselDCard
-            videoSrc={`${import.meta.env.VITE_BACKEND_URL}/assets/${
+            videoSrc={`${import.meta.env.VITE_BACKEND_URL}/assets/videos/${
               video.videoSrc
             }`}
             caption={video.caption}
