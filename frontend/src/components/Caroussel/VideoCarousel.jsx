@@ -20,11 +20,11 @@ function Video() {
   }, []);
 
   return (
-    <div className="video-carousel">
-      <p className="catégories"> Catégorie RPG</p>
-      <div className="video-container">
+    <>
+      <h3 className="categories-title">World League of Legends</h3>
+      <div className="video-carousel">
         {videos.map((video) => (
-          <div key={video.id}>
+          <div className="video-card" key={video.id}>
             <VideoCard
               videoSrc={video.videoSrc}
               caption={video.caption}
@@ -34,7 +34,7 @@ function Video() {
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 }
 
