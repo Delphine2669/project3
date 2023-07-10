@@ -49,7 +49,7 @@ const edit = (req, res) => {
 const add = (req, res) => {
   const viewer = req.body;
   models.viewer
-    .inset(viewer)
+    .insert(viewer)
 
     .then(([result]) => {
       res.location(`/viewer/${result.insertId}`).sendStatus(204);
@@ -78,7 +78,7 @@ const destroy = (req, res) => {
     });
 };
 
-module.export = {
+module.exports = {
   browse,
   read,
   edit,

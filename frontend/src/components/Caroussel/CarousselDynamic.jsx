@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import videoCall from "../../utils";
-import CarousselDCard from "./CarousselDCard";
+import CarouselDCard from "./CarousselDCard";
 import "./CarousselDynamic.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "react-responsive-carousel/lib/styles/carousel.css";
@@ -25,8 +25,10 @@ function CarousselDynamic() {
     <div className="caroussel-dynamic">
       {videos.map((video) => (
         <div key={video.id}>
-          <CarousselDCard
-            videoSrc={video.videoSrc}
+          <CarouselDCard
+            videoSrc={`${import.meta.env.VITE_BACKEND_URL}/assets/${
+              video.videoSrc
+            }`}
             caption={video.caption}
             title={video.title}
             description={video.description}
