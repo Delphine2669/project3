@@ -1,4 +1,3 @@
-import { Outlet } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer";
 import "../../components/Footer.scss";
@@ -15,7 +14,6 @@ export default function Home() {
         <Header />
       </div>
       <div className="content">
-        <Outlet />
         <Caroussel photoList={photoList} />
         <br />
         <HeroSlider photoList={photoList} />
