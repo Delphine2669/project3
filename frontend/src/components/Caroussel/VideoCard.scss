@@ -1,17 +1,18 @@
 .video-container {
   display: flex;
-  width: 100dvw;
+  width: 70dvw;
   height: 100%;
   gap: 5%;
 }
 .video-carousel {
   overflow-x: scroll;
-  width: 100dvw;
+  width: 70dvw;
   height: 100%;
+  margin-bottom: 5%;
 }
 
 .video.video {
-  width: 100dvw;
+  width: 70dvw;
   height: 100%;
 }
 .card-title {
@@ -19,6 +20,6 @@
   text-align: center;
 }
 .video {
-  width: 100dvw;
+  width: 80dvw;
   height: 100%;
 }

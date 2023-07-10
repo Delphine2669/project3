@@ -26,7 +26,9 @@ function Video() {
         {videos.map((video) => (
           <div key={video.id}>
             <VideoCard
-              videoSrc={video.videoSrc}
+              videoSrc={`${import.meta.env.VITE_BACKEND_URL}/assets/${
+                video.videoSrc
+              }`}
               caption={video.caption}
               title={video.title}
               description={video.description}
