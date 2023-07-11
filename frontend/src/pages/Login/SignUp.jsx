@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./SignUp.css";
 import { useNavigate, NavLink } from "react-router-dom";
 
 export default function SignUp() {
@@ -17,7 +16,7 @@ export default function SignUp() {
   return (
     <div className="login_container">
       <form className="login" onSubmit={handleSubmit}>
-        <h2 className="title">Create your account</h2>
+        <h3 className="title">Create your account</h3>
         <div className="login-field">
           <input
             type="text"
@@ -55,7 +54,7 @@ export default function SignUp() {
           />
         </div>
         <NavLink to="/Login" className="subscribe">
-          Sing In
+          Sign In
         </NavLink>
         <button
           type="submit"

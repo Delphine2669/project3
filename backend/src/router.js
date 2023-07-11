@@ -4,9 +4,8 @@ const router = express.Router();
 
 const videoControllers = require("./controllers/videoControllers");
 const viewerControllers = require("./controllers/viewerControllers");
-const authControllers = require("./controllers/authControllers");
 
-const { hashPassword } = require("./middlewares/services/auth");
+const { hashPassword, verifyPassword } = require("./middlewares/services/auth");
 
 router.get("/videos/:id", videoControllers.read);
 router.put("/videos/:id", videoControllers.edit);
@@ -18,5 +17,12 @@ router.get("/viewer/:id", viewerControllers.read);
 router.delete("/viewer/:id", viewerControllers.destroy);
 router.post("/viewer", hashPassword, viewerControllers.add);
 router.put("/viewer/:id", hashPassword, viewerControllers.edit);
-router.post("/login", authControllers.login);
+
+const authControllers = require("./controllers/authControllers");
+
+router.post(
+  "/login",
+  authControllers.getUserByUsernameWithPasswordAndPassToNext,
+  verifyPassword
+);
 module.exports = router;

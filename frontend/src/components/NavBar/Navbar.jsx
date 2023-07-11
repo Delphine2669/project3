@@ -6,7 +6,7 @@ import logo from "../../assets/TSN_logo.png";
 function NavBar() {
   return (
     <div className="nav-container">
-      <NavLink to="/videos">
+      <NavLink to="/">
         <img className="logo" src={logo} alt="Logo TSN Game" />
       </NavLink>
       <div className="link">

@@ -33,5 +33,12 @@ class ViewerManager extends AbstractManager {
       ]
     );
   }
+
+  findByUsernameWithHashedPassword(viewer) {
+    return this.database.query(
+      `SELECT username, hashedPassword from  ${this.table} where username = ?`,
+      [viewer.username]
+    );
+  }
 }
 module.exports = ViewerManager;

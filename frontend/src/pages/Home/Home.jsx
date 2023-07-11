@@ -1,7 +1,12 @@
-import { Outlet } from "react-router-dom";
 import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer";
-import "../../components/Footer.scss";
+import Footer from "../../components/Footer/Footer";
+import "../../components/Footer/Footer.scss";
+import photoList from "../../components/PhotoList";
+import VideoCarousel from "../../components/Caroussel/VideoCarousel";
+import Caroussel from "../../components/Caroussel/Caroussel";
+import CarousselDynamic from "../../components/Caroussel/CarousselDynamic";
+import HeroSlider from "../../components/HeroSlider/HeroSlider";
+import DysneyCat from "../../components/Caroussel/DysneyLike/DisneyCat";
 
 export default function Home() {
   return (
@@ -10,9 +15,12 @@ export default function Home() {
         <Header />
       </div>
       <div className="content">
-        <Outlet />
+        <Caroussel photoList={photoList} />
+        <DysneyCat />
+        <HeroSlider photoList={photoList} />
+        <CarousselDynamic />
+        <VideoCarousel />
       </div>
-      <br />
       <div className="Footer">
         <Footer />
       </div>

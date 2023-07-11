@@ -1,18 +1,34 @@
-import React from "react";
-import PropTypes from "prop-types";
-
+import React, { useState, useEffect } from "react";
+import videoCall from "../../utils";
 import CarouselDCard from "./CarousselDCard";
 import "./CarousselDynamic.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "react-responsive-carousel/lib/styles/carousel.css";
 
-function CarousselDynamic({ videoList2 }) {
+function CarousselDynamic() {
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    async function fetchVideos() {
+      try {
+        const fetchedVideos = await videoCall();
+        setVideos(fetchedVideos);
+      } catch (error) {
+        console.error("Erreur lors de la récupération des vidéos:", error);
+      }
+    }
+
+    fetchVideos();
+  }, []);
+
   return (
     <div className="caroussel-dynamic">
-      {videoList2.map((video) => (
+      {videos.map((video) => (
         <div key={video.id}>
           <CarouselDCard
-            videoSrc={video.videoSrc}
+            videoSrc={`${import.meta.env.VITE_BACKEND_URL}/assets/${
+              video.videoSrc
+            }`}
             caption={video.caption}
             title={video.title}
             description={video.description}
@@ -22,15 +38,5 @@ function CarousselDynamic({ videoList2 }) {
     </div>
   );
 }
-CarousselDynamic.propTypes = {
-  videoList2: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      videoSrc: PropTypes.string.isRequired,
-      caption: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-};
+
 export default CarousselDynamic;

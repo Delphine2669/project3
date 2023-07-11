@@ -15,7 +15,7 @@ const browse = (req, res) => {
 const read = (req, res) => {
   models.viewer
     .find(req.params.id)
-    .then(([rows]) => {
+    .then((rows) => {
       if (rows[0] == null) {
         res.send(404);
       } else {
@@ -42,7 +42,7 @@ const edit = (req, res) => {
     })
     .catch((err) => {
       console.error(err);
-      res.status(500).send("error retrieving data from database");
+      res.status(500).send("error editing data from database");
     });
 };
 
@@ -71,7 +71,7 @@ const destroy = (req, res) => {
     })
     .catch((err) => {
       console.error(err);
-      res.status(500).send("error retrieving data from database");
+      res.status(500).send("error deleting data from database");
     });
 };
 

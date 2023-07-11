@@ -15,7 +15,7 @@ export default function Login() {
   return (
     <div className="login_container">
       <form className="login" onSubmit={handleSubmit}>
-        <h2 className="title">login to your account</h2>
+        <h3 className="title">login to your account</h3>
         <div className="login-field">
           <input
             type="text"
@@ -40,11 +40,7 @@ export default function Login() {
             Create an Account
           </NavLink>
         </p>
-        <button
-          type="submit"
-          className="button login-submit"
-          data-hover="Let's Go!!"
-        >
+        <button type="submit" className="button login-submit">
           <div className="button-text">sign in</div>
         </button>
       </form>
