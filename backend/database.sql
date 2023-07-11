@@ -55,6 +55,7 @@ CREATE TABLE `video` (
   `is_favorite` tinyint DEFAULT NULL,
   `is_accessible` tinyint NOT NULL,
   `data` varchar(255) DEFAULT NULL,
+  `thumbnail` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -65,7 +66,7 @@ CREATE TABLE `video` (
 
 LOCK TABLES `video` WRITE;
 /*!40000 ALTER TABLE `video` DISABLE KEYS */;
-INSERT INTO `video` VALUES (3,'Cyberpucnk_2077_court_circuit',7,'premier_test','2023-06-14',0,1,'~/backend/public/assets/videos/Cyberpucnk_2077_court_circuit.mp4'),(4,'Cyberpucnk_2077_Panam_in_trouble',11,'second_test','2023-06-15',0,1,'~/backend/public/assets/videos/Cyberpucnk_2077_Panam_in_trouble.mp4');
+INSERT INTO `video` VALUES (3,'Cyberpucnk_2077_court_circuit',7,'premier_test','2023-06-14',0,1,'/videos/Cyberpucnk_2077_court_circuit.mp4',NULL),(4,'Cyberpucnk_2077_Panam_in_trouble',11,'second_test','2023-06-15',0,1,'/videos/Cyberpucnk_2077_Panam_in_trouble.mp4',NULL);
 /*!40000 ALTER TABLE `video` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -132,14 +133,14 @@ DROP TABLE IF EXISTS `viewer`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `viewer` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `pseudo` varchar(45) NOT NULL,
+  `username` varchar(45) NOT NULL,
   `email` varchar(45) NOT NULL,
-  `mdp` varchar(45) NOT NULL,
   `birthday` date NOT NULL,
   `is_favorite` tinyint DEFAULT NULL,
   `is_admin` tinyint DEFAULT NULL,
+  `hashedPassword` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -148,7 +149,7 @@ CREATE TABLE `viewer` (
 
 LOCK TABLES `viewer` WRITE;
 /*!40000 ALTER TABLE `viewer` DISABLE KEYS */;
-INSERT INTO `viewer` VALUES (1,'BGdu26','bgdu26@tsn.game','cocorico','1998-07-10',1,0),(2,'superAdmin','admin@tsn.game','adminPassword','1980-05-31',1,1),(3,'User1234','User1234@tsn.game','userPassword','2000-10-25',0,0);
+INSERT INTO `viewer` VALUES (4,'BGdu26','bgdu26@tsn.game','1998-07-10',1,0,'blablabla'),(5,'superAdmin','admind@tsn.game','1980-05-31',1,1,'superman'),(6,'User1234','User1234@tsn.game','2000-10-25',0,0,'easyPassword');
 /*!40000 ALTER TABLE `viewer` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -161,4 +162,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-07-05 12:12:24
+-- Dump completed on 2023-07-10 20:58:09

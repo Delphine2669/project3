@@ -3,7 +3,7 @@ const models = require("../models");
 const browse = (req, res) => {
   models.viewer
     .findAll()
-    .then(([rows]) => {
+    .then((rows) => {
       res.send(rows);
     })
     .catch((err) => {
@@ -55,15 +55,13 @@ const add = (req, res) => {
     })
     .catch((err) => {
       console.error(err);
-      res.status(500).send("error retrieving data from database");
+      res.status(500).send("error saving data into the database");
     });
 };
 
 const destroy = (req, res) => {
-  const viewer = req.body;
-  viewer.id = parseInt(req.params.id, 10);
   models.viewer
-    .delete(viewer)
+    .delete(req.params.id)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
@@ -76,28 +74,11 @@ const destroy = (req, res) => {
       res.status(500).send("error retrieving data from database");
     });
 };
-const getUserByEmailWithPasswordAndPassToNext = (req, res) => {
-  const { email } = req.body;
-  models.viewer
-    .getUserByEmailWithPasswordAndPassToNext({ email })
-    .then(([result]) => {
-      if (result.length > 0) {
-        res.json(result[0]);
-      } else {
-        res.sendStatus(401);
-      }
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send("Error retrieving data from database");
-    });
-};
 
-module.export = {
+module.exports = {
   browse,
   read,
   edit,
   add,
   destroy,
-  getUserByEmailWithPasswordAndPassToNext,
 };
