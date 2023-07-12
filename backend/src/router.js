@@ -3,7 +3,13 @@ const express = require("express");
 const router = express.Router();
 
 const videoControllers = require("./controllers/videoControllers");
+
+router.get("/videos/:id", videoControllers.read);
+router.get("/videos", videoControllers.browse);
 const viewerControllers = require("./controllers/viewerControllers");
+
+router.get("/viewer", viewerControllers.browse);
+router.get("/viewer/:id", viewerControllers.read);
 
 const {
   hashPassword,
@@ -11,9 +17,6 @@ const {
   verifyToken,
 } = require("./middlewares/services/auth");
 
-router.get("/videos/:id", videoControllers.read);
-router.get("/viewer", viewerControllers.browse);
-router.get("/viewer/:id", viewerControllers.read);
 router.post("/viewer", hashPassword, viewerControllers.add);
 
 const authControllers = require("./controllers/authControllers");
