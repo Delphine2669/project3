@@ -4,8 +4,8 @@ import "../../components/Footer.scss";
 import photoList from "../../components/PhotoList";
 import VideoCarousel from "../../components/Caroussel/VideoCarousel";
 import Caroussel from "../../components/Caroussel/Caroussel";
-import CarousselDynamic from "../../components/Caroussel/CarousselDynamic";
 import HeroSlider from "../../components/HeroSlider/HeroSlider";
+import Grid from "../../components/Grid";
 
 export default function Home() {
   return (
@@ -15,13 +15,10 @@ export default function Home() {
       </div>
       <div className="content">
         <Caroussel photoList={photoList} />
-        <br />
         <HeroSlider photoList={photoList} />
-        <br />
-        <CarousselDynamic />
         <VideoCarousel />
+        <Grid />
       </div>
-      <br />
       <div className="Footer">
         <Footer />
       </div>
