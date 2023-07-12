@@ -1,9 +1,10 @@
 const express = require("express");
 const multer = require("multer");
-// const fs = require("fs");
+const fs = require("fs");
+const { v4: uuidv4 } = require("uuid");
 
 const router = express.Router();
-const upload = multer({ dest: "../public/uploads" });
+const upload = multer({ dest: "./public/uploads" });
 const {
   hashPassword,
   verifyPassword,
@@ -18,8 +19,17 @@ const viewerControllers = require("./controllers/viewerControllers");
 router.get("/viewer", viewerControllers.browse);
 router.get("/viewer/:id", viewerControllers.read);
 
-router.post("/viewer/video", upload.single("video"), (req, res) => {
-  res.send("File uploaded");
+router.post("/viewer/video", upload.single("videoData"), (req, res) => {
+  const { originalname } = req.file;
+  const { filename } = req.file;
+  fs.rename(
+    `./uploads/${filename}`,
+    `./public/uploads/${uuidv4()}-${originalname}`,
+    (err) => {
+      if (err) throw err;
+      res.send("File uploaded");
+    }
+  );
 });
 
 router.post("/viewer", hashPassword, viewerControllers.add);

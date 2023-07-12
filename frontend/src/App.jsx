@@ -3,7 +3,7 @@ import Home from "./pages/Home/Home";
 import "./App.css";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/Login/SignUp";
-import AddVideoForm from "./pages/Home/Form/AddVideoForm";
+import AddVideoForm from "./pages/Form/AddVideoForm";
 
 export default function App() {
   return (

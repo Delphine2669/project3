@@ -2,7 +2,21 @@
 
 $foot-color: #222831;
 $body-color: #222831;
-
+$grad-admin: linear-gradient(
+  to top,
+  #0d0108,
+  #160814,
+  #1b0f1e,
+  #1d1429,
+  #1c1a35,
+  #1a1d3c,
+  #162144,
+  #0f254b,
+  #0e264f,
+  #0e2852,
+  #0d2956,
+  #0c2b5a
+);
 /*random var name*/
 
 $color-2: #2d4059;
@@ -12,7 +26,53 @@ $font-foot-head: #eeeeee;
 /* -- Secondary colors -- random var name -- */
 
 $color-2scd-2: #eeeeee;
+:root {
+  --head-foot-color: rgb(0, 0, 0);
+  --body-color: rgb(26, 29, 41);
+  --color-2: #2d4059;
+  --color-3: #ff5722;
+  --font-foot-head: #eeeeee;
+  --color-2scd-2: #eeeeee;
+  --body-font: Lato, Arial, Helvetica, sans-serif;
+  --grad-body: linear-gradient(
+    to bottom,
+    #0d0108,
+    #160814,
+    #1b0f1e,
+    #1d1429,
+    #1c1a35,
+    #1a1d3c,
+    #162144,
+    #0f254b,
+    #0e264f,
+    #0e2852,
+    #0d2956,
+    #0c2b5a
+  );
 
+  --grad-admin: linear-gradient(
+    to top,
+    #0d0108,
+    #160814,
+    #1b0f1e,
+    #1d1429,
+    #1c1a35,
+    #1a1d3c,
+    #162144,
+    #0f254b,
+    #0e264f,
+    #0e2852,
+    #0d2956,
+    #0c2b5a
+  );
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.main-container {
+  background-image: var(--grad-body);
+}
 .catégories {
   color: $color-3;
   margin-top: 10%;
