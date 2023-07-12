@@ -22,7 +22,7 @@ function CarouselStatic() {
   }, []);
 
   return (
-    <div className="caroussel-dynamic">
+    <div className="caroussel-static">
       {videos.map((video) => (
         <div key={video.id}>
           <CarouselDCard

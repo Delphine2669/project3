@@ -1,6 +1,5 @@
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import "../../components/Footer/Footer.scss";
 import photoList from "../../components/PhotoList";
 import VideoCarousel from "../../components/Carousel/VideoCarousel";
 import HeroSlider from "../../components/HeroSlider/HeroSlider";

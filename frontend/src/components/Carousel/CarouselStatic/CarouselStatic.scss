@@ -1,9 +1,10 @@
 .video {
   height: 100%;
-  width: 100dvw;
+  width: 100%;
+  border: solid 10px yellowgreen;
 }
-.caroussel-dynamic {
-  width: 100dvw;
+.caroussel-static {
+  width: 100%;
   height: 100%;
   display: flex;
   overflow-x: scroll;
