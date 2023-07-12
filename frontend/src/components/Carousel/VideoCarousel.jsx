@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import videoCall from "../../utils";
-import VideoCard from "./VideoCard";
-import "./VideoCard.scss";
+import VideoCard from "./VideoCard/VideoCard";
+
+/* DELETED IMPORT VIDEOCARD.SCSS I DONT SEE THE WHY WE IMPORT IT- TV */
 
 function Video() {
   const [videos, setVideos] = useState([]);

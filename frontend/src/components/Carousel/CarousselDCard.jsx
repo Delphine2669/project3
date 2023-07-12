@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import "./CarousselDynamic.scss";
+/* DELETE import "./CarousselDynamic.scss"; */
 
 function CarousselDCard({ videoSrc, caption }) {
   return (

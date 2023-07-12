@@ -1,11 +1,11 @@
-import "./Caroussel.scss";
 import PropTypes from "prop-types";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "react-responsive-carousel/lib/styles/carousel.css";
-import PhotoCard from "./PhotoCard";
+import PhotoCard from "../PhotoCard/PhotoCard";
+import "./Caroussel.scss";
 
-function Caroussel({ photoList }) {
+function CarouselDynamic({ photoList }) {
   return (
     <div className="carousel-photocard-container">
       <Carousel autoPlay infiniteLoop showThumbs={false}>
@@ -23,7 +23,7 @@ function Caroussel({ photoList }) {
     </div>
   );
 }
-Caroussel.propTypes = {
+CarouselDynamic.propTypes = {
   photoList: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -34,4 +34,4 @@ Caroussel.propTypes = {
   ).isRequired,
 };
 
-export default Caroussel;
+export default CarouselDynamic;

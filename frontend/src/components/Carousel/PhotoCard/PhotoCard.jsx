@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./Caroussel.scss";
+import "./PhotoCard.scss";
 
 function Card({ imageSrc, alt, title }) {
   return (

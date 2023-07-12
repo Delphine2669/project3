@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import videoCall from "../../utils";
-import CarouselDCard from "./CarousselDCard";
-import "./CarousselDynamic.scss";
+import videoCall from "../../../utils";
+import CarouselDCard from "../CarousselDCard";
+import "./CarouselStatic.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "react-responsive-carousel/lib/styles/carousel.css";
 
-function CarousselDynamic() {
+function CarouselStatic() {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
@@ -39,4 +39,4 @@ function CarousselDynamic() {
   );
 }
 
-export default CarousselDynamic;
+export default CarouselStatic;
