@@ -1,7 +1,14 @@
 const express = require("express");
+const multer = require("multer");
+// const fs = require("fs");
 
 const router = express.Router();
-
+const upload = multer({ dest: "../public/uploads" });
+const {
+  hashPassword,
+  verifyPassword,
+  verifyToken,
+} = require("./middlewares/services/auth");
 const videoControllers = require("./controllers/videoControllers");
 
 router.get("/videos/:id", videoControllers.read);
@@ -11,11 +18,9 @@ const viewerControllers = require("./controllers/viewerControllers");
 router.get("/viewer", viewerControllers.browse);
 router.get("/viewer/:id", viewerControllers.read);
 
-const {
-  hashPassword,
-  verifyPassword,
-  verifyToken,
-} = require("./middlewares/services/auth");
+router.post("/viewer/video", upload.single("video"), (req, res) => {
+  res.send("File uploaded");
+});
 
 router.post("/viewer", hashPassword, viewerControllers.add);
 
