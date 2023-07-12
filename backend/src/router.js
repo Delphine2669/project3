@@ -20,11 +20,11 @@ const viewerControllers = require("./controllers/viewerControllers");
 router.get("/viewer", viewerControllers.browse);
 router.get("/viewer/:id", viewerControllers.read);
 
-router.post("/viewer/video", upload.single("video"), (req, res) => {
+router.post("/viewer/video", upload.single("videoData"), (req, res) => {
   const { originalname } = req.file;
   const { filename } = req.file;
   fs.rename(
-    `./public/uploads/${filename}`,
+    `./uploads/${filename}`,
     `./public/uploads/${uuidv4()}-${originalname}`,
     (err) => {
       if (err) throw err;

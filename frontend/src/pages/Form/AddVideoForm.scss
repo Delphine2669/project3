@@ -1,0 +1,18 @@
+@import "../../App.scss";
+.add-video-form {
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: space-around;
+  background: var(--grad-admin);
+  text-align: center;
+  color: $color-3;
+}
+input::placeholder {
+  color: #804582;
+}
+label {
+  padding: 5%;
+}
+.add-video-form.input {
+  padding: 15%;
+}
