@@ -17,7 +17,6 @@ function CarousselDynamic() {
         console.error("Erreur lors de la récupération des vidéos:", error);
       }
     }
-
     fetchVideos();
   }, []);
 

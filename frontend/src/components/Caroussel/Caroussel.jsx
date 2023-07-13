@@ -1,19 +1,34 @@
-import "./Caroussel.scss";
-import PropTypes from "prop-types";
+import React, { useState, useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
+import PhotoCard from "./PhotoCard";
+import photoCall from "../../utils";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "react-responsive-carousel/lib/styles/carousel.css";
-import PhotoCard from "./PhotoCard";
+import "./Caroussel.scss";
 
-function Caroussel({ photoList }) {
+function Caroussel() {
+  const [pictures, setPictures] = useState([]);
+
+  useEffect(() => {
+    async function fetchPhotos() {
+      try {
+        const fetchedPhotos = await photoCall();
+        setPictures(fetchedPhotos);
+      } catch (error) {
+        console.error("Erreur lors de la récupération des vidéos:", error);
+      }
+    }
+    fetchPhotos();
+  }, []);
   return (
     <div className="carousel-photocard-container">
       <Carousel autoPlay infiniteLoop showThumbs={false}>
-        {photoList.map((photo) => (
+        {pictures.map((photo) => (
           <div key={photo.id} className="carousel-photocard-body">
             <PhotoCard
-              imageSrc={photo.src}
-              alt={photo.alt}
+              imageSrc={`${import.meta.env.VITE_BACKEND_URL}/assets/${
+                photo.videoSrc
+              }`}
               title={photo.title}
               description={photo.description}
             />
@@ -23,15 +38,5 @@ function Caroussel({ photoList }) {
     </div>
   );
 }
-Caroussel.propTypes = {
-  photoList: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      src: PropTypes.string.isRequired,
-      alt: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-};
 
 export default Caroussel;

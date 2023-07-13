@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.33, for macos13 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.33, for Linux (x86_64)
 --
 -- Host: localhost    Database: mydb
 -- ------------------------------------------------------
--- Server version	8.0.33
+-- Server version	8.0.33-0ubuntu0.22.04.2
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -40,6 +40,32 @@ INSERT INTO `categorie` VALUES (1,'Worlds League of Legends'),(2,'Counter Strike
 UNLOCK TABLES;
 
 --
+-- Table structure for table `photo`
+--
+
+DROP TABLE IF EXISTS `photo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `photo` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `imageSrc` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `photo`
+--
+
+LOCK TABLES `photo` WRITE;
+/*!40000 ALTER TABLE `photo` DISABLE KEYS */;
+INSERT INTO `photo` VALUES (1,'call of duty','gameplay de jeux de tir','/image/callof.png'),(2,'Cyber Punk','gameplay RPG','/image/cyber1.png'),(3,'Cyber Punk','gameplay RPG','/image/cyber2.png');
+/*!40000 ALTER TABLE `photo` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `video`
 --
 
@@ -56,7 +82,7 @@ CREATE TABLE `video` (
   `is_accessible` tinyint NOT NULL,
   `data` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,12 +91,7 @@ CREATE TABLE `video` (
 
 LOCK TABLES `video` WRITE;
 /*!40000 ALTER TABLE `video` DISABLE KEYS */;
-INSERT INTO `video` VALUES (3,'Cyberpunck_2077_court_circuit',7,'premier_test','2023-06-14',0,1,'/videos/Cyberpunck_2077_court_circuit.mp4'),
-(4,'Cyberpunck_2077_Panam_in_trouble',11,'second_test','2023-06-15',0,1,'/videos/Cyberpunck_2077_Panam_in_trouble.mp4'),
-(5,'Cacahuette',9,'call Of video 1','2023-07-10',0,1,'/videos/video1.mp4'),
-(6,'Cacahuette 2 le retour',10,'call Of video 2','2023-07-10',0,1,'/videos/video2.mp4'),
-(7,'Cacahuette 3 la suite de trop ?',10,'call Of video 3','2023-07-10',0,1,'/videos/video3.mp4'),
-(8,"Cacahuette 4, trop c'est trop",10,'call Of video 4','2023-07-10',0,1,'/videos/video4.mp4');
+INSERT INTO `video` VALUES (3,'Cyberpucnk_2077_court_circuit',7,'premier_test','2023-06-14',0,1,'/videos/Cyberpucnk_2077_court_circuit.mp4'),(4,'Cyberpucnk_2077_Panam_in_trouble',11,'second_test','2023-06-15',0,1,'/videos/Cyberpucnk_2077_Panam_in_trouble.mp4'),(5,'Cacahuette',9,'call Of video 1','2023-07-10',0,1,'/videos/video1.mp4'),(6,'Cacahuette 2 le retour',10,'call Of video 2','2023-07-10',0,1,'/videos/video2.mp4'),(7,'Cacahuette 3 la suite de trop ?',10,'call Of video 3','2023-07-10',0,1,'/videos/video3.mp4'),(8,'Cacahuette 4 trop cest trop',10,'call Of video 4','2023-07-10',0,1,'/videos/video4.mp4'),(9,'Cacahuette 5 bientÃ´t fini',10,'call Of video 5','2023-07-10',0,1,'/videos/video5.mp4');
 /*!40000 ALTER TABLE `video` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -98,6 +119,7 @@ CREATE TABLE `video_has_categorie` (
 
 LOCK TABLES `video_has_categorie` WRITE;
 /*!40000 ALTER TABLE `video_has_categorie` DISABLE KEYS */;
+INSERT INTO `video_has_categorie` VALUES (7,2),(4,4),(8,5),(6,8),(5,9),(9,10),(3,13);
 /*!40000 ALTER TABLE `video_has_categorie` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -116,7 +138,7 @@ CREATE TABLE `video_has_viewer` (
   KEY `fk_videos_has_viewers_videos1_idx` (`videos_id`),
   CONSTRAINT `fk_VIDEOS_has_viewers_videos1` FOREIGN KEY (`videos_id`) REFERENCES `video` (`id`),
   CONSTRAINT `fk_VIDEOS_has_viewers_viewers1` FOREIGN KEY (`viewers_id`) REFERENCES `viewer` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -137,14 +159,15 @@ DROP TABLE IF EXISTS `viewer`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `viewer` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `pseudo` varchar(45) NOT NULL,
+  `username` varchar(45) NOT NULL,
   `email` varchar(45) NOT NULL,
-  `mdp` varchar(45) NOT NULL,
-  `birthday` date NOT NULL,
+  `birthday` date DEFAULT NULL,
   `is_favorite` tinyint DEFAULT NULL,
   `is_admin` tinyint DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+  `hashedPassword` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -153,7 +176,7 @@ CREATE TABLE `viewer` (
 
 LOCK TABLES `viewer` WRITE;
 /*!40000 ALTER TABLE `viewer` DISABLE KEYS */;
-INSERT INTO `viewer` VALUES (1,'BGdu26','bgdu26@tsn.game','cocorico','1998-07-10',1,0),(2,'superAdmin','admin@tsn.game','adminPassword','1980-05-31',1,1),(3,'User1234','User1234@tsn.game','userPassword','2000-10-25',0,0);
+INSERT INTO `viewer` VALUES (4,'BGdu26','bgdu26@tsn.game','1998-07-10',1,0,'$argon2id$v=19$m=16,t=2,p=1$emVmemVmemVmemZlenplZHpkZGZ6ZnpmZXphZGF6ZGQ$UKaGZ9hGFn/S5SBQDMe/Uw'),(5,'superAdmin','admind@tsn.game','1980-05-31',1,1,'superman'),(6,'User1234','User1234@tsn.game','2000-10-25',0,0,'easyPassword');
 /*!40000 ALTER TABLE `viewer` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -166,4 +189,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-07-05 12:12:24
+-- Dump completed on 2023-07-12 15:29:37
