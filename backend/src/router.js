@@ -24,7 +24,7 @@ router.post("/viewer/video", upload.single("videoData"), (req, res) => {
   const { originalname } = req.file;
   const { filename } = req.file;
   fs.rename(
-    `./uploads/${filename}`,
+    `./public/uploads/${filename}`,
     `./public/uploads/${uuidv4()}-${originalname}`,
     (err) => {
       if (err) throw err;
