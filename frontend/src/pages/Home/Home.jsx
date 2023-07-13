@@ -4,7 +4,7 @@ import photoList from "../../components/PhotoList";
 import VideoCarousel from "../../components/Carousel/VideoCarousel";
 import HeroSlider from "../../components/HeroSlider/HeroSlider";
 import DysneyCat from "../../components/Carousel/DysneyLike/DisneyCat";
-import CarouselDynamic from "../../components/Carousel/CarouselDynamic/Caroussel";
+import CarouselDynamic from "../../components/Carousel/CarouselDynamic/CarouselDynamic";
 import CarouselStatic from "../../components/Carousel/CarouselStatic/CarouselStatic";
 
 export default function Home() {

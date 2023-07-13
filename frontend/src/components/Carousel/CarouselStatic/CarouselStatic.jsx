@@ -17,7 +17,6 @@ function CarouselStatic() {
         console.error("Erreur lors de la récupération des vidéos:", error);
       }
     }
-
     fetchVideos();
   }, []);
 
