@@ -25,7 +25,5 @@
 body {
   margin: 0;
   padding: 0;
-}
-.main-container {
   background-image: var(--grad-body);
 }

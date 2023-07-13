@@ -19,9 +19,9 @@ export default function Home() {
         <HeroSlider photoList={photoList} />
         <CarouselStatic />
         <VideoCarousel />
-      </div>
-      <div className="Footer">
-        <Footer />
+        <div className="Footer">
+          <Footer />
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import videoCall from "../../../utils";
-import CarouselDCard from "../CarousselDCard";
+import CarouselCard from "../CarouselCard/CarousselCard";
 import "./CarouselStatic.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "react-responsive-carousel/lib/styles/carousel.css";
@@ -25,7 +25,7 @@ function CarouselStatic() {
     <div className="caroussel-static">
       {videos.map((video) => (
         <div key={video.id}>
-          <CarouselDCard
+          <CarouselCard
             videoSrc={`${import.meta.env.VITE_BACKEND_URL}/assets/${
               video.videoSrc
             }`}
