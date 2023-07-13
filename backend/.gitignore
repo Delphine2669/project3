@@ -1,4 +1,4 @@
 node_modules
 .env
-/public/assets/videos/
-*mp4
+.mp4 
+./public
