@@ -5,7 +5,7 @@ function CarousselCard({ videoSrc, caption, title }) {
   return (
     <>
       <h3>{title}</h3>
-      <div className="carouselCard-static">
+      <div className="carousel-card-static">
         <div>
           <video className="video" controls width="100%" src={videoSrc}>
             <track default kind="captions" srcLang="fr" src={caption} />
