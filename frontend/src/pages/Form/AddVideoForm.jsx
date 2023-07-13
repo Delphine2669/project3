@@ -4,6 +4,7 @@ import "./AddVideoForm.scss";
 
 function AddVideoForm() {
   const inputRef = useRef(null);
+
   const [data, setData] = useState({
     title: "",
     time: "",
@@ -23,7 +24,7 @@ function AddVideoForm() {
 
     try {
       await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/viewer/video`,
+        `${import.meta.env.VITE_BACKEND_URL}/public/uploads`,
         formData,
         {
           headers: {
@@ -36,7 +37,6 @@ function AddVideoForm() {
       console.error("Error uploading file:", error);
     }
   };
-
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };

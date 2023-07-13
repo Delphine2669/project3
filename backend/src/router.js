@@ -32,7 +32,7 @@ router.post("/viewer/video", upload.single("videoData"), (req, res) => {
     }
   );
 });
-
+router.post("/videos", videoControllers.add);
 router.post("/viewer", hashPassword, viewerControllers.add);
 
 const authControllers = require("./controllers/authControllers");
@@ -46,7 +46,7 @@ router.use(verifyToken);
 router.delete("/viewer/:id", viewerControllers.destroy);
 router.put("/viewer/:id", hashPassword, viewerControllers.edit);
 router.put("/videos/:id", videoControllers.edit);
-router.post("/videos", videoControllers.add);
+
 router.delete("/videos/:id", videoControllers.destroy);
 
 module.exports = router;
