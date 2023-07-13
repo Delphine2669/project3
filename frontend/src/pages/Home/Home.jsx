@@ -16,12 +16,12 @@ export default function Home() {
       <div className="content">
         <CarouselDynamic photoList={photoList} />
         <DysneyCat />
-        <HeroSlider photoList={photoList} />
+        {/*<HeroSlider photoList={photoList} />*/}
         <CarouselStatic />
         <VideoCarousel />
-      </div>
-      <div className="Footer">
-        <Footer />
+        <div className="Footer">
+          <Footer />
+        </div>
       </div>
     </div>
   );
