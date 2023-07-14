@@ -1,6 +1,13 @@
 .logo {
-  width: 17svh;
-  height: 6svh;
+  width: 19svh;
+  height: auto;
+  margin-left: 2dvw;
+  margin-top: 1dvh;
+}
+
+.ManButton {
+  width: 1rem;
+  height: auto;
 }
 
 .nav-container {
@@ -19,7 +26,7 @@
   left: 0;
   background-color: #f2f2f2;
   padding: 10px;
-  margin-right: 2svh;
+  margin-right: 2dvh;
 }
 
 .reset-button {

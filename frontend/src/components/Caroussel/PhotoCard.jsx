@@ -5,7 +5,7 @@ import "./Caroussel.scss";
 function Card({ imageSrc, alt, title }) {
   return (
     <div className="photocard">
-      <img src={imageSrc} alt={alt} className="photocard-image" />
+      <img src={imageSrc} alt={alt} className="photocard-image" height="50px" />
       <div className="photocard-content">
         <h2 className="photocard-title">{title}</h2>
       </div>

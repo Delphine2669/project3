@@ -11,7 +11,7 @@
 
 .photocard-image {
   width: 100dvw;
-  height: 100%;
+  height: 40%;
   margin-left: 2%;
   margin-top: 5%;
   margin-bottom: 2%;
@@ -30,4 +30,8 @@
 .photocard-content {
   width: 100dvw;
   height: 100%;
+}
+h2.photocard-title {
+  color: var(--color-3);
+  font-size: 3.5dvw;
 }

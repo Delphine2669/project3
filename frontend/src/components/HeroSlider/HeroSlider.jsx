@@ -34,26 +34,29 @@ function HeroSlider({ photoList }) {
   }, []);
 
   return (
-    <div className="hero-slider">
-      {photoList.map((photo, index) => (
-        <div
-          key={photo.id}
-          className={`hero-slider-slide ${
-            index === currentSlide ? "active" : ""
-          }`}
-          onClick={() => handleSlideClick(index)}
-          onKeyDown={handleKeyDown}
-          role="button"
-          tabIndex="0"
-        >
-          <img src={photo.src} alt={photo.alt} />
-          <div className="hero-slider-content">
-            <h2>{photo.title}</h2>
-            <p>{photo.description}</p>
+    <>
+      <p className="hero-slider-categorie">New videos of the week</p>
+      <div className="hero-slider">
+        {photoList.map((photo, index) => (
+          <div
+            key={photo.id}
+            className={`hero-slider-slide ${
+              index === currentSlide ? "active" : ""
+            }`}
+            onClick={() => handleSlideClick(index)}
+            onKeyDown={handleKeyDown}
+            role="button"
+            tabIndex="0"
+          >
+            <img src={photo.src} alt={photo.alt} />
+            <div className="hero-slider-content">
+              <h2>{photo.title}</h2>
+              <p>{photo.description}</p>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </>
   );
 }
 HeroSlider.propTypes = {

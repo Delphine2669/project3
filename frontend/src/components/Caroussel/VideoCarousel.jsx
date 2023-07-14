@@ -21,7 +21,7 @@ function Video() {
 
   return (
     <div className="video-carousel">
-      <p className="catégories"> Catégorie RPG</p>
+      <p className="catégories"> Worlds League of Legends</p>
       <div className="video-container">
         {videos.map((video) => (
           <div key={video.id}>

@@ -5,20 +5,22 @@
 }
 
 body {
-  background-color: var(--body-color);
+  background-image: var(--grad-body);
   background-size: 40% 100dvh;
 }
 
 .login_container {
-  margin-top: 5dvh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-3);
+  background-color: var(--color2);
   min-height: 15dvh;
   border: 1px solid white;
-  margin-left: 5dvw;
-  margin-right: 5dvw;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 8%;
+  width: 80dvw;
+  height: 70dvh;
 }
 
 .screen {
@@ -29,36 +31,51 @@ body {
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  height: auto;
-  width: 40%;
-}
-
 .login {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 40dvh;
   padding: 4dvh;
-  border: #000000;
+  border: #d17015;
 }
 
 .login-field {
   padding: 4dvh 0dvh;
+  margin-top: -2dvh;
 }
 
 .title {
   color: var(--background-color);
 }
 
+h3.title {
+  margin-top: 8dvh;
+  margin-bottom: 2dvh;
+  font-size: 7dvw;
+  color: #e26145;
+}
+
+.new-user {
+  color: var(--color-2scd-2);
+  font-size: small;
+  margin-top: 1rem;
+}
+
+a.subscribe {
+  margin-top: 2dvh;
+  color: rgb(212, 212, 241);
+  font-size: small;
+}
+
 .login-input {
+  color: white;
   border: none;
   border-bottom: 0.2dvh solid var(--color-2scd-2);
   background: none;
   padding: 2dvh;
   font-weight: 700;
+  font-size: larger;
   width: 100%;
   transition: 0.2s;
 }
@@ -67,7 +84,7 @@ body {
 .login-input:focus,
 .login-input:hover {
   outline: none;
-  border-bottom-color: #000000;
+  border-bottom-color: #f4f1f0;
 }
 
 .login-submit {
@@ -87,10 +104,18 @@ body {
   position: relative;
 }
 
-.button.login-submit {
+::placeholder {
+  color: #dbaa9f;
+  font-size: small;
 }
 
-.subscribe {
+.button-text {
+  padding: 5px;
+}
+
+.button.login-submit {
+  margin-top: 10dvh;
+  padding: 5px;
 }
 
 .button div {
@@ -100,6 +125,15 @@ body {
   font-size: 0.8em;
   transition: all 0.3s ease-in-out;
 }
-.new-user {
-  color: var(--color-2scd-2);
+
+img.login-logo {
+  width: 65%;
+  margin-left: 20%;
+  padding: 3%;
+}
+
+form.login {
+  width: 50dvw;
+  margin-top: -20%;
+  font-size: large;
 }

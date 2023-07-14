@@ -15,40 +15,40 @@ export default function SignUp() {
   };
 
   return (
-    <div className="login_container">
-      <form className="login" onSubmit={handleSubmit}>
+    <div className="signup_container">
+      <form className="signup" onSubmit={handleSubmit}>
         <h3 className="title">Create your account</h3>
-        <div className="login-field">
+        <div className="signup-field">
           <input
             type="text"
-            className="login-input"
+            className="signup-input"
             value={username}
             placeholder="Username"
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
-        <div className="login-field">
+        <div className="signup-field">
           <input
             type="email"
-            className="login-input"
+            className="signup-input"
             value={email}
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div className="login-field">
+        <div className="signup-field">
           <input
             type="password"
-            className="login-input"
+            className="signup-input"
             value={password}
             placeholder="password"
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <div className="login-field">
+        <div className="signup-field">
           <input
             type="password"
-            className="login-input"
+            className="signup-input"
             value={confirmPassword}
             placeholder="Password confirmation"
             onChange={(e) => setConfirmPassword(e.target.value)}

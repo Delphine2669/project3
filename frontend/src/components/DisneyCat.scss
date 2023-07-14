@@ -1,0 +1,64 @@
+.DysneyCatBox {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.item {
+  position: relative;
+  padding: 2dvw;
+  cursor: pointer;
+  width: 30dvw;
+}
+
+.item-border {
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px,
+    rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
+  border-radius: 10px;
+  border: 2px solid rgba(198, 81, 18, 0.645);
+  transition: transform 250ms ease-in-out, border 250ms ease-in-out,
+    box-shadow 250ms ease-in-out;
+}
+
+.item-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.item-image.hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+  visibility: hidden;
+}
+
+.item:hover .item-border {
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 40px 58px -16px,
+    rgba(0, 0, 0, 0.72) 0px 30px 22px -10px;
+  transform: scale(1.05);
+  border: 4px solid rgba(249, 249, 249, 0.8);
+}
+
+.item:hover .item-image.hover-image {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  opacity: 1;
+  visibility: visible;
+}
+/*
+@media only screen and (min-width: 992px) {
+  .container {
+    flex-direction: row;
+  }
+  .item {
+    width: 20%;
+  }
+}
+*/

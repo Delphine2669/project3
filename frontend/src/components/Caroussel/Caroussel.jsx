@@ -14,7 +14,7 @@ function Caroussel({ photoList }) {
             <PhotoCard
               imageSrc={photo.src}
               alt={photo.alt}
-              title={photo.title}
+              /* title={photo.title} */
               description={photo.description}
             />
           </div>
@@ -28,6 +28,7 @@ Caroussel.propTypes = {
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       src: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
       alt: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
     })

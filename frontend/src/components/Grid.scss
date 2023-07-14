@@ -12,3 +12,19 @@
   gap: 1rem;
   color: white;
 }
+.video-grid-categorie {
+  font-size: 3.5dvw;
+  color: var(--color-3);
+  margin-bottom: 3%;
+  margin-left: 4%;
+}
+
+.voirPlus {
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2dvh;
+  margin: auto;
+  border-radius: 50%;
+  border-color: var(--color-3);
+}

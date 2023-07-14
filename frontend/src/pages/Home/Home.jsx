@@ -6,6 +6,7 @@ import VideoCarousel from "../../components/Caroussel/VideoCarousel";
 import Caroussel from "../../components/Caroussel/Caroussel";
 import HeroSlider from "../../components/HeroSlider/HeroSlider";
 import Grid from "../../components/Grid";
+import DysneyCat from "../../components/DisneyCat";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <div className="content">
         <Caroussel photoList={photoList} />
         <HeroSlider photoList={photoList} />
+        <DysneyCat />
         <VideoCarousel />
         <Grid />
       </div>

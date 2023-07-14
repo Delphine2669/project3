@@ -1,9 +1,13 @@
 .video-container {
   display: flex;
+  justify-content: flex-start;
+  margin-left: 3dvw;
+  margin-bottom: 3dvh;
   width: 70dvw;
   height: 100%;
   gap: 5%;
 }
+
 .video-carousel {
   overflow-x: scroll;
   width: 100dvw;
@@ -12,13 +16,25 @@
 }
 
 .video.video {
-  width: 40dvw;
+  width: 44dvw;
   height: 100%;
+  border-radius: 5px;
 }
+
+.video-card.hovered video::-webkit-media-controls-overlay-play-button {
+  display: initial !important;
+}
+
+.video-card.hovered video {
+  cursor: pointer;
+}
+
 .card-title {
-  font-size: 10px;
+  font-size: 2.5dvw;
+  color: white;
   text-align: center;
 }
+
 .video {
   width: 100dvw;
   height: 100%;

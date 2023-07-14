@@ -6,6 +6,8 @@ import "./Grid.scss";
 
 function Grid() {
   const [videos, setVideos] = useState([]);
+  const [videoPlus, setVideoPlus] = useState(4);
+  const videoToLoad = 15;
 
   useEffect(() => {
     async function fetchVideos() {
@@ -20,10 +22,18 @@ function Grid() {
     fetchVideos();
   }, []);
 
+  const loadMoreVideos = () => {
+    setVideoPlus((prevVisibleVideos) => prevVisibleVideos + videoToLoad);
+  };
+
+  const visibleVideoData = videos.slice(0, videoPlus);
+  const showLoadMoreButton = videoPlus < videos.length;
+
   return (
     <div className="video-grid">
+      <p className="video-grid-categorie">Intel Extreme Masters 2023</p>
       <div className="grid-container">
-        {videos.map((video) => (
+        {visibleVideoData.map((video) => (
           <div key={video.id}>
             <VideoCard
               videoSrc={`${import.meta.env.VITE_BACKEND_URL}/assets/${
@@ -36,6 +46,11 @@ function Grid() {
           </div>
         ))}
       </div>
+      {showLoadMoreButton && (
+        <button className="voirPlus" type="button" onClick={loadMoreVideos}>
+          +
+        </button>
+      )}
     </div>
   );
 }
