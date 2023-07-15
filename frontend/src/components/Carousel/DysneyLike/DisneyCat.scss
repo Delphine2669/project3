@@ -1,7 +1,7 @@
 .DysneyCatBox {
   display: flex;
-  justify-content: space-evenly;
   flex-direction: row;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
@@ -9,7 +9,7 @@
   position: relative;
   padding: 2dvw;
   cursor: pointer;
-  width: 30dvw;
+  width: 25dvw;
 }
 
 .item-border {
