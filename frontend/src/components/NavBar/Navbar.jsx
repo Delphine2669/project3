@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "./Navbar.scss";
 import ProfileMenu from "../ProfileMenu/ProfileMenu";
-import logo from "../../assets/TSN_logo.png";
+import logo from "../../assets/logo.png";
 
 function NavBar() {
   return (

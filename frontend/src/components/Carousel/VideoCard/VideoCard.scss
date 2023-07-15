@@ -1,3 +1,42 @@
+.video-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 3dvw;
+  margin-bottom: 3dvh;
+  width: 70dvw;
+  height: 100%;
+  gap: 5%;
+}
+
+.video-carousel {
+  overflow-x: scroll;
+  width: 100dvw;
+  height: 100%;
+  margin-bottom: 5%;
+}
+
+.video.video {
+  width: 44dvw;
+  height: 100%;
+  border-radius: 5px;
+  border: 5px solid var(--color-3);
+}
+
+.video-card.hovered video::-webkit-media-controls-overlay-play-button {
+  display: initial !important;
+}
+
+.video-card.hovered video {
+  cursor: pointer;
+}
+
 .card-title {
-  color: var(--color-2scd-2);
+  font-size: 2.5dvw;
+  color: white;
+  text-align: center;
+}
+
+.video {
+  width: 100dvw;
+  height: 100%;
 }
