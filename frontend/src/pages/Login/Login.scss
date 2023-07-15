@@ -1,15 +1,31 @@
 input::placeholder {
-  color: white;
+  color: var(--color-3);
+  font-family: var(--text-font);
+  font-size: 1.4em;
 }
 
 .login_container {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid var(--body-color);
+  border: 5px solid var(--color-4);
   border-radius: 1%;
+  background-color: var(--login-box-bg);
+  margin-top: 7.4dvh;
   margin-left: 5dvw;
   margin-right: 5dvw;
+  margin-bottom: 7.4dvh;
+
+  h2,
+  p {
+    font-family: var(--text-font);
+    color: transparent;
+    -webkit-text-fill-color: transparent; // prise en charge des navigateurs WebKit
+    background-image: var(--logo-color-gradient);
+    background-clip: text;
+    -webkit-background-clip: text; // prise en charge des navigateurs WebKit
+    font-size: 1.2em;
+  }
 }
 
 .logo {
@@ -31,7 +47,7 @@ input::placeholder {
 
 .login-input {
   border: none;
-  border-bottom: 0.2vh solid black;
+  border-bottom: 0.2vh solid var(--color-3);
   background: none;
   padding: 2vh;
   padding-left: 4vh;
@@ -74,7 +90,6 @@ input::placeholder {
 .new-user {
   color: var(--color-3);
 }
-
 input.login-input {
   color: white;
 }

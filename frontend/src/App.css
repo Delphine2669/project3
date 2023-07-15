@@ -1,10 +1,12 @@
 :root {
+  --text-font: lato, sans-serif;
+  --font-2scd: roboto, sans-serif;
   --head-foot-color: rgb(0, 0, 0);
   --body-color: rgb(26, 29, 41);
-  --color-2: #2d4059;
-  --color-3: #ff5722;
-  --font-foot-head: #eeeeee;
-  --color-2scd-2: #eeeeee;
+  --color-2: rgba(45, 64, 89, 1);
+  --color-3: rgba(238, 69, 64, 1);
+  --font-foot-head: rgba(238, 238, 238, 1);
+  --color-2scd-2: rgba(238, 238, 238, 1);
   --body-font: Lato, Arial, Helvetica, sans-serif;
   --grad-body: linear-gradient(
     to bottom,
@@ -20,6 +22,23 @@
     #0e2852,
     #0d2956,
     #0c2b5a
+  );
+  --login-box-bg: rgba(3, 136, 252, 0.2);
+  --color-4: rgba(238, 69, 64, 0.3);
+  --logo-color-gradient: linear-gradient(
+    to right top,
+    #ee4540,
+    #ec4b40,
+    #ea5141,
+    #e75642,
+    #e55b43,
+    #e5644b,
+    #e46c53,
+    #e3745b,
+    #e3826c,
+    #e1907d,
+    #df9d8e,
+    #dbaa9f
   );
 }
 body {
