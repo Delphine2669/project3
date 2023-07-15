@@ -46,7 +46,7 @@ router.use(verifyToken);
 router.delete("/viewer/:id", viewerControllers.destroy);
 router.put("/viewer/:id", hashPassword, viewerControllers.edit);
 router.put("/videos/:id", videoControllers.edit);
-
+router.post("/submit");
 router.delete("/videos/:id", videoControllers.destroy);
 
 module.exports = router;

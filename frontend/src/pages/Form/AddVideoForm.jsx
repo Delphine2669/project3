@@ -10,7 +10,7 @@ function AddVideoForm() {
     time: "",
     description: "",
     publicationDate: "",
-    videoData: null, // Initialize videoData as null
+    videoData: null,
   });
 
   const handleSubmit = async (event) => {
@@ -23,6 +23,14 @@ function AddVideoForm() {
     formData.append("videoData", data.videoData);
 
     try {
+      const token = getToken(); // Replace this with your actual token retrieval logic
+      const config = {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${token}`, // Include the token in the Authorization header
+        },
+        timeout: 5000,
+      };
       await axios.post(
         `${import.meta.env.VITE_BACKEND_URL}/public/uploads`,
         formData,
