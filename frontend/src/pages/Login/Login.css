@@ -1,7 +1,7 @@
 input::placeholder {
-  color: white;
+  color: red;
 }
-
+.signup_container,
 .login_container {
   display: flex;
   align-items: center;
@@ -10,13 +10,14 @@ input::placeholder {
   border-radius: 1%;
   margin-left: 5dvw;
   margin-right: 5dvw;
+  background-image: var(--grad-body);
 }
 
 .logo {
   height: auto;
   width: 40%;
 }
-
+.signup,
 .login {
   display: flex;
   flex-direction: column;
@@ -24,29 +25,32 @@ input::placeholder {
   width: 40vh;
   padding: 4vh;
 }
-
+.signup-field,
 .login-field {
   padding: 4vh 0vh;
 }
-
-.login-input {
+.signup-input .login-input {
   border: none;
   border-bottom: 0.2vh solid black;
-  background: none;
+  background: blue;
   padding: 2vh;
   padding-left: 4vh;
   font-weight: 700;
   width: 100%;
   transition: 0.2s;
+  background-color: blue;
 }
-
+.signup-input:active,
+.signup-input:focus,
+.signup-input:hover,
 .login-input:active,
 .login-input:focus,
 .login-input:hover {
   outline: none;
   border-bottom-color: var(--color-3);
+  background-color: blue;
 }
-
+.signup-submit,
 .login-submit {
   font-size: 1.5vh;
   margin-top: 4vh;
@@ -74,7 +78,7 @@ input::placeholder {
 .new-user {
   color: var(--color-3);
 }
-
+input.signup-input,
 input.login-input {
   color: white;
 }
