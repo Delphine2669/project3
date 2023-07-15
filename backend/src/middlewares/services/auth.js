@@ -34,9 +34,9 @@ const verifyPassword = (req, res) => {
         const token = jwt.sign(payload, process.env.JWT_SECRET, {
           expiresIn: "1h",
         });
-        res.send("Credentials are valid");
         delete req.viewer.hashedPassword;
-        res.send({ token, viewer: req.viewer });
+        const message = "Credentials are valid ";
+        res.send({ message, token, viewer: req.viewer });
       } else {
         res.sendStatus(401);
       }

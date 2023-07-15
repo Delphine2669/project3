@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useAuth } from "./contexts/AuthContext";
 
 async function videoCall() {
   try {
@@ -24,3 +25,11 @@ async function videoCall() {
 }
 
 export default videoCall;
+
+export function authFetch(url, options = {}, token) {
+  const headers = {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${token}`,
+  };
+  return fetch(url, { ...options, headers });
+}
