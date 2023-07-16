@@ -15,36 +15,48 @@ function AddVideoForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    const { title, time, description, publicationDate, videoData } = data;
+
     const formData = new FormData();
-    formData.append("title", data.title);
-    formData.append("time", data.time);
-    formData.append("description", data.description);
-    formData.append("publicationDate", data.publicationDate);
-    formData.append("videoData", data.videoData);
+    formData.append("title", title);
+    formData.append("time", time);
+    formData.append("description", description);
+    formData.append("publicationDate", publicationDate);
+    formData.append("videoData", videoData);
+
+    const payload = {
+      title,
+      time,
+      description,
+      publication_date: publicationDate,
+      videoData: `/videos/${videoData.name}`,
+    };
+
+    formData.append("payload", JSON.stringify(payload));
 
     try {
-      // const token = getToken(); // Replace this with your actual token retrieval logic
-      // const config = {
-      //   headers: {
-      //     "Content-Type": "multipart/form-data",
-      //     Authorization: `Bearer ${token}`, // Include the token in the Authorization header
-      //   },
-      //   timeout: 5000,
-      // };
-      await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/public/uploads`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-          timeout: 5000,
-        }
-      );
+      await axios.post(`${import.meta.env.VITE_BACKEND_URL}/videos`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+        timeout: 5000,
+      });
+      alert("Video successfully added!");
+      setData({
+        title: "",
+        time: "",
+        description: "",
+        publicationDate: "",
+        videoData: null,
+      });
+      inputRef.current.value = "";
     } catch (error) {
       console.error("Error uploading file:", error);
+      alert("Video upload failed.");
     }
   };
+
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
@@ -58,12 +70,11 @@ function AddVideoForm() {
       <form
         method="POST"
         encType="multipart/form-data"
-        action={`http://localhost:${
-          import.meta.env.VITE_BACKEND_URL
-        }/viewer/video`}
+        action={`${import.meta.env.VITE_BACKEND_URL}/videos`}
         className="add-video-form"
         onSubmit={handleSubmit}
       >
+        {/* Input fields */}
         <div className="title-section">
           <label htmlFor="title">Titre:</label>
           <input

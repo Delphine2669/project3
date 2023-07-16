@@ -19,7 +19,7 @@ const viewerControllers = require("./controllers/viewerControllers");
 router.get("/viewer", viewerControllers.browse);
 router.get("/viewer/:id", viewerControllers.read);
 
-router.post("/viewer/video", upload.single("videoData"), (req, res) => {
+router.post("/videos", upload.single("videoData"), (req, res) => {
   const { originalname } = req.file;
   const { filename } = req.file;
   fs.rename(
@@ -31,7 +31,7 @@ router.post("/viewer/video", upload.single("videoData"), (req, res) => {
     }
   );
 });
-router.post("/videos", videoControllers.add);
+router.post("/videos", upload.single("videoData"), videoControllers.add);
 router.post("/viewer", hashPassword, viewerControllers.add);
 
 const authControllers = require("./controllers/authControllers");

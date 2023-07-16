@@ -1,6 +1,14 @@
 import axios from "axios";
 import { useAuth } from "./contexts/AuthContext";
 
+export function authFetch(url, token, options = {}) {
+  const headers = {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${token}`,
+  };
+  return fetch(url, { ...options, headers });
+}
+
 async function videoCall() {
   try {
     const response = await axios.get(
@@ -9,7 +17,7 @@ async function videoCall() {
     const videosFromDatabase = response.data;
     const videos = videosFromDatabase.map((video) => ({
       id: video.id,
-      videoSrc: video.data,
+      videoSrc: video.videoData,
       caption: video.title,
       title: video.title,
       description: video.description,
@@ -25,11 +33,3 @@ async function videoCall() {
 }
 
 export default videoCall;
-
-export function authFetch(url, options = {}, token) {
-  const headers = {
-    "Content-Type": "application/json",
-    Authorization: `Bearer ${token}`,
-  };
-  return fetch(url, { ...options, headers });
-}

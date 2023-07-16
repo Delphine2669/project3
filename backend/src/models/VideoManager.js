@@ -7,7 +7,7 @@ class VideoManager extends AbstractManager {
 
   insert(video) {
     return this.database.query(
-      `insert into ${this.table} (title, time, description, publication_date, is_favorite, is_accessible, data ) values (?, ?, ?, ?, ?, ?, ?)`,
+      `insert into ${this.table} (title, time, description, publication_date, is_favorite, is_accessible, videoData ) values (?, ?, ?, ?, ?, ?, ?)`,
       [
         video.title,
         video.time,
@@ -15,14 +15,14 @@ class VideoManager extends AbstractManager {
         video.publication_date,
         video.is_favorite,
         video.is_accessible,
-        video.data,
+        video.videoData,
       ]
     );
   }
 
   update(video) {
     return this.database.query(
-      `update ${this.table} set title = ? where id = ?, time = ?, description = ?, publication_date = ?, is_favorite = ?, is_accessible = ?, data = ?`,
+      `update ${this.table} set title = ? where id = ?, time = ?, description = ?, publication_date = ?, is_favorite = ?, is_accessible = ?, videoData = ?`,
       [
         video.title,
         video.id,
@@ -31,7 +31,7 @@ class VideoManager extends AbstractManager {
         video.publication_date,
         video.is_favorite,
         video.is_accessible,
-        video.data,
+        video.videoData,
       ]
     );
   }
