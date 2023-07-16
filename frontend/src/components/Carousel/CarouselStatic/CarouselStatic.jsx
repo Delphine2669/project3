@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import videoCall from "../../../utils";
+import ApiCalls from "../../../utils";
 import CarouselCard from "../CarouselCard/CarousselCard";
 import "./CarouselStatic.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -11,7 +11,7 @@ function CarouselStatic() {
   useEffect(() => {
     async function fetchVideos() {
       try {
-        const fetchedVideos = await videoCall();
+        const fetchedVideos = await ApiCalls.videoCall();
         setVideos(fetchedVideos);
       } catch (error) {
         console.error("Erreur lors de la récupération des vidéos:", error);
@@ -25,7 +25,7 @@ function CarouselStatic() {
       {videos.map((video) => (
         <div key={video.id}>
           <CarouselCard
-            videoSrc={`${import.meta.env.VITE_BACKEND_URL}/assets/${
+            videoSrc={`${import.meta.env.VITE_BACKEND_URL}/assets${
               video.videoSrc
             }`}
             caption={video.caption}

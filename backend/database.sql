@@ -61,7 +61,11 @@ CREATE TABLE `photo` (
 
 LOCK TABLES `photo` WRITE;
 /*!40000 ALTER TABLE `photo` DISABLE KEYS */;
-INSERT INTO `photo` VALUES (1,'call of duty','gameplay de jeux de tir','/image/callof.png'),(2,'Cyber Punk','gameplay RPG','/image/cyber1.png'),(3,'Cyber Punk','gameplay RPG','/image/cyber2.png');
+INSERT INTO `photo`
+VALUES
+(1,'call of duty','gameplay de jeux de tir','/image/callof.png'),
+(2,'Cyber Punk','gameplay RPG','/image/cyber1.png'),
+(3,'Cyber Punk','gameplay RPG','/image/cyber2.png');
 /*!40000 ALTER TABLE `photo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -91,7 +95,7 @@ CREATE TABLE `video` (
 
 LOCK TABLES `video` WRITE;
 /*!40000 ALTER TABLE `video` DISABLE KEYS */;
-INSERT INTO `video` VALUES (3,'Cyberpucnk_2077_court_circuit',7,'premier_test','2023-06-14',0,1,'/videos/Cyberpucnk_2077_court_circuit.mp4'),(4,'Cyberpucnk_2077_Panam_in_trouble',11,'second_test','2023-06-15',0,1,'/videos/Cyberpucnk_2077_Panam_in_trouble.mp4'),(5,'Cacahuette',9,'call Of video 1','2023-07-10',0,1,'/videos/video1.mp4'),(6,'Cacahuette 2 le retour',10,'call Of video 2','2023-07-10',0,1,'/videos/video2.mp4'),(7,'Cacahuette 3 la suite de trop ?',10,'call Of video 3','2023-07-10',0,1,'/videos/video3.mp4'),(8,'Cacahuette 4 trop cest trop',10,'call Of video 4','2023-07-10',0,1,'/videos/video4.mp4'),(9,'Cacahuette 5 bientÃ´t fini',10,'call Of video 5','2023-07-10',0,1,'/videos/video5.mp4');
+INSERT INTO `video` VALUES (3,'Cyberpunck_2077_court_circuit',7,'premier_test','2023-06-14',0,1,'/videos/Cyberpunck_2077_court_circuit.mp4'),(4,'Cyberpunck_2077_Panam_in_trouble',11,'second_test','2023-06-15',0,1,'/videos/Cyberpunck_2077_Panam_in_trouble.mp4'),(5,'Cacahuette',9,'call Of video 1','2023-07-10',0,1,'/videos/video1.mp4'),(6,'Cacahuette 2 le retour',10,'call Of video 2','2023-07-10',0,1,'/videos/video2.mp4'),(7,'Cacahuette 3 la suite de trop ?',10,'call Of video 3','2023-07-10',0,1,'/videos/video3.mp4'),(8,'Cacahuette 4 trop cest trop',10,'call Of video 4','2023-07-10',0,1,'/videos/video4.mp4'),(9,'Cacahuette 5 bientÃ´t fini',10,'call Of video 5','2023-07-10',0,1,'/videos/video5.mp4');
 /*!40000 ALTER TABLE `video` ENABLE KEYS */;
 UNLOCK TABLES;
 
