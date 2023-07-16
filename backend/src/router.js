@@ -4,7 +4,6 @@ const fs = require("fs");
 const { v4: uuidv4 } = require("uuid");
 
 const router = express.Router();
-
 const upload = multer({ dest: "./public/uploads" });
 const {
   hashPassword,

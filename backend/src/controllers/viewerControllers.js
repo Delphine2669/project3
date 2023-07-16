@@ -4,7 +4,7 @@ const browse = (req, res) => {
   models.viewer
     .findAll()
     .then((rows) => {
-      res.send(rows);
+      res.send(rows[0]);
     })
     .catch((err) => {
       console.error(err);
