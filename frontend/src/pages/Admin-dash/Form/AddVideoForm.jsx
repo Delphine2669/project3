@@ -10,7 +10,7 @@ function AddVideoForm() {
     time: "",
     description: "",
     publicationDate: "",
-    isAccessible: "",
+    // isAccessible: "",
     videoData: null,
   });
 
@@ -22,7 +22,7 @@ function AddVideoForm() {
       time,
       description,
       publicationDate,
-      isAccessible,
+      // isAccessible,
       videoData,
     } = data;
 
@@ -31,7 +31,7 @@ function AddVideoForm() {
     formData.append("time", time);
     formData.append("description", description);
     formData.append("publicationDate", publicationDate);
-    formData.append("isAccessible", isAccessible);
+    // formData.append("isAccessible", isAccessible);
     formData.append("videoData", videoData);
 
     const payload = {
@@ -39,7 +39,7 @@ function AddVideoForm() {
       time,
       description,
       publication_date: publicationDate,
-      is_accessible: isAccessible,
+      // is_accessible: isAccessible,
       videoData: `/videos/${videoData.name}`,
     };
 
@@ -57,7 +57,7 @@ function AddVideoForm() {
         title: "",
         time: "",
         description: "",
-        isAccessible: "",
+        // isAccessible: "",
         publicationDate: "",
         videoData: null,
       });
@@ -68,16 +68,10 @@ function AddVideoForm() {
   };
 
   const handleChange = (e) => {
-    if (e.target.type === "radio") {
-      const isAccessible = e.target.value === "1" ? 1 : 0;
-      setData({ ...data, isAccessible: String(isAccessible) });
-    } else {
-      setData({ ...data, [e.target.name]: e.target.value });
-    }
+    setData({ ...data, [e.target.name]: e.target.value });
   };
-
-  const handleFileChange = (e) => {
-    setData({ ...data, videoData: e.target.files[0] });
+  const handleFileChange = (ev) => {
+    setData({ ...data, videoData: ev.target.files[0] });
   };
 
   return (
@@ -139,7 +133,7 @@ function AddVideoForm() {
           />
         </div>
         <br />
-        <div className="isAccessible">
+        {/* <div className="isAccessible">
           <label htmlFor="isAccessible">Is Accessible:</label>
           <div className="is-accessible-section">
             <label className="is-accessible-yes">
@@ -168,7 +162,7 @@ function AddVideoForm() {
             </label>
           </div>
         </div>
-        <br />
+        <br /> */}
         <div className="video-data-section">
           <label htmlFor="videoData">Vidéo:</label>
           <input
@@ -180,7 +174,7 @@ function AddVideoForm() {
           />
         </div>
         <br />
-        <button type="submit">Valider</button>
+        <button type="submit">Add video</button>
       </form>
     </div>
   );

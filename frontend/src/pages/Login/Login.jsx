@@ -32,6 +32,7 @@ export default function Login() {
 
         if (data && data.token && data.viewer) {
           const { token, viewer } = data;
+          localStorage.setItem("token", token);
           setToken(token);
           setIsAdmin(viewer.is_admin);
           alert("Login successful");

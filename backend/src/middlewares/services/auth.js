@@ -65,7 +65,7 @@ const verifyToken = (req, res, next) => {
 
     next();
   } catch (err) {
-    console.error(err);
+    console.error("Error while verifying token:", err);
     res.sendStatus(401);
   }
 };

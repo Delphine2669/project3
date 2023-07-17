@@ -6,11 +6,13 @@ import SignUp from "./pages/Login/SignUp";
 import AddVideoForm from "./pages/Admin-dash/Form/AddVideoForm";
 import { AuthProvider } from "./contexts/AuthContext";
 import AdminPage from "./pages/Admin-dash/AdminPage";
+import DeleteVideosForm from "./pages/Admin-dash/DeleteVideosForm";
 
 export default function App() {
-  // const { token, isAdmin } = useAuth();
+  const storedToken = localStorage.getItem("token");
+
   return (
-    <AuthProvider>
+    <AuthProvider initialToken={storedToken}>
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -22,6 +24,7 @@ export default function App() {
           /> */}
           <Route path="/addvideos" element={<AddVideoForm />} />
           <Route path="/adminpage" element={<AdminPage />} />
+          <Route path="/deletevideos" element={<DeleteVideosForm />} />
         </Routes>
       </Router>
     </AuthProvider>
