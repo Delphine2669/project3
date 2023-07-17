@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useAuth } from "./contexts/AuthContext";
 
-export function authFetch(url, token, options = {}) {
+export function authFetch(url, options = {}, token) {
   const headers = {
     "Content-Type": "application/json",
     Authorization: `Bearer ${token}`,

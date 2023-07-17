@@ -1,0 +1,38 @@
+@import "../../../App.scss";
+.add-video-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: $color-3;
+  margin: 3%;
+  padding: 3%;
+}
+input::placeholder {
+  color: #804582;
+}
+label {
+  padding: 5%;
+}
+.add-video-form.input {
+  padding: 15%;
+}
+.add-video-form-title {
+  color: #ee4540;
+  text-align: center;
+  padding: 3%;
+}
+.add-video-form-container {
+  background: var(--grad-admin);
+}
+.is-accessible-section {
+  display: flex;
+  margin: 8%;
+  padding: 5%;
+}
+
+.is-accessible-yes,
+.is-accessible-no {
+  padding: 15%;
+}

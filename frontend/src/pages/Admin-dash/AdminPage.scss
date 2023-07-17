@@ -1,0 +1,13 @@
+.page-container {
+  display: flex;
+  background: var(--grad-admin);
+  flex-direction: column;
+  align-items: center;
+}
+.admin-title {
+  color: #ee4540;
+}
+.link {
+  padding: 4%;
+  color: #804582;
+}

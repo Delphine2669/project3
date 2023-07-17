@@ -79,7 +79,7 @@ CREATE TABLE `video` (
   `description` varchar(255) DEFAULT NULL,
   `publication_date` varchar(255) DEFAULT NULL,
   `is_favorite` tinyint DEFAULT NULL,
-  `is_accessible` tinyint NOT NULL,
+  `is_accessible` tinyint NULL,
   `videoData` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;

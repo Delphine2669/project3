@@ -19,18 +19,31 @@ const viewerControllers = require("./controllers/viewerControllers");
 router.get("/viewer", viewerControllers.browse);
 router.get("/viewer/:id", viewerControllers.read);
 
-router.post("/videos", upload.single("videoData"), (req, res) => {
-  const { originalname } = req.file;
-  const { filename } = req.file;
-  fs.rename(
-    `./public/uploads/${filename}`,
-    `./public/uploads/${uuidv4()}-${originalname}`,
-    (err) => {
-      if (err) throw err;
-      res.send("File uploaded");
-    }
-  );
-});
+router.post(
+  "/videos",
+  upload.single("videoData"),
+  (req, res, next) => {
+    const { originalname, filename } = req.file;
+    const ourPath = `./public/uploads/${uuidv4()}-${originalname}`;
+    fs.rename(`./public/uploads/${filename}`, ourPath, (err) => {
+      if (err) {
+        console.error(err);
+        return res.sendStatus(500);
+      }
+      req.videoData = {
+        title: req.body.title,
+        time: req.body.time,
+        description: req.body.description,
+        publicationDate: req.body.publicationDate,
+        isAccessible: req.body.isAccessible,
+        videoData: ourPath,
+      };
+      return null;
+    });
+    next();
+  },
+  videoControllers.add
+);
 router.post("/videos", upload.single("videoData"), videoControllers.add);
 router.post("/viewer", hashPassword, viewerControllers.add);
 

@@ -10,19 +10,28 @@ function AddVideoForm() {
     time: "",
     description: "",
     publicationDate: "",
+    isAccessible: "",
     videoData: null,
   });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const { title, time, description, publicationDate, videoData } = data;
+    const {
+      title,
+      time,
+      description,
+      publicationDate,
+      isAccessible,
+      videoData,
+    } = data;
 
     const formData = new FormData();
     formData.append("title", title);
     formData.append("time", time);
     formData.append("description", description);
     formData.append("publicationDate", publicationDate);
+    formData.append("isAccessible", isAccessible);
     formData.append("videoData", videoData);
 
     const payload = {
@@ -30,6 +39,7 @@ function AddVideoForm() {
       time,
       description,
       publication_date: publicationDate,
+      is_accessible: isAccessible,
       videoData: `/videos/${videoData.name}`,
     };
 
@@ -47,10 +57,10 @@ function AddVideoForm() {
         title: "",
         time: "",
         description: "",
+        isAccessible: "",
         publicationDate: "",
         videoData: null,
       });
-      inputRef.current.value = "";
     } catch (error) {
       console.error("Error uploading file:", error);
       alert("Video upload failed.");
@@ -58,7 +68,12 @@ function AddVideoForm() {
   };
 
   const handleChange = (e) => {
-    setData({ ...data, [e.target.name]: e.target.value });
+    if (e.target.type === "radio") {
+      const isAccessible = e.target.value === "1" ? 1 : 0;
+      setData({ ...data, isAccessible: String(isAccessible) });
+    } else {
+      setData({ ...data, [e.target.name]: e.target.value });
+    }
   };
 
   const handleFileChange = (e) => {
@@ -66,7 +81,8 @@ function AddVideoForm() {
   };
 
   return (
-    <div>
+    <div className="add-video-form-container">
+      <h1 className="add-video-form-title">Add Videos</h1>
       <form
         method="POST"
         encType="multipart/form-data"
@@ -76,7 +92,7 @@ function AddVideoForm() {
       >
         {/* Input fields */}
         <div className="title-section">
-          <label htmlFor="title">Titre:</label>
+          <label htmlFor="title">Title:</label>
           <input
             id="title"
             placeholder="Titre"
@@ -88,10 +104,10 @@ function AddVideoForm() {
         </div>
         <br />
         <div className="time-section">
-          <label htmlFor="time">Durée:</label>
+          <label htmlFor="time">Duration:</label>
           <input
             id="time"
-            placeholder="Durée en seconde"
+            placeholder="Duration in seconds"
             type="number"
             name="time"
             value={data.time}
@@ -112,7 +128,7 @@ function AddVideoForm() {
         </div>
         <br />
         <div className="publication-date-section">
-          <label htmlFor="publicationDate">Date de publication:</label>
+          <label htmlFor="publicationDate">Publication date:</label>
           <input
             id="publicationDate"
             placeholder="Date de publication"
@@ -121,6 +137,36 @@ function AddVideoForm() {
             value={data.publicationDate}
             onChange={handleChange}
           />
+        </div>
+        <br />
+        <div className="isAccessible">
+          <label htmlFor="isAccessible">Is Accessible:</label>
+          <div className="is-accessible-section">
+            <label className="is-accessible-yes">
+              <input
+                id="isAccessibleTrue"
+                placeholder="isAccessible"
+                type="radio"
+                name="isAccessible"
+                value="1"
+                checked={data.isAccessible === "1"}
+                onChange={handleChange}
+              />
+              Yes
+            </label>
+            <label className="is-accessible-no">
+              <input
+                id="isAccessibleFalse"
+                placeholder="isAccessible"
+                type="radio"
+                name="isAccessible"
+                value="0"
+                checked={data.isAccessible === "0"}
+                onChange={handleChange}
+              />
+              No
+            </label>
+          </div>
         </div>
         <br />
         <div className="video-data-section">
