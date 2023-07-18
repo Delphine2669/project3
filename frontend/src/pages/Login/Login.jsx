@@ -15,7 +15,7 @@ export default function Login() {
   };
 
   return (
-    <>
+    <div className="login-box">
       <Header />
       <div>
         <div className="login_container">
@@ -50,6 +50,6 @@ export default function Login() {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }

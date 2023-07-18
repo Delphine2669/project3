@@ -1,5 +1,7 @@
+.login-box {
+  height: 100%;
+}
 .login_container {
-  height: 66dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,6 +12,7 @@
   margin-right: 10dvw;
   margin-top: 5dvh;
   margin-bottom: 6dvh;
+  text-align: center;
 
   .title {
     margin-top: 8dvh;
@@ -21,6 +24,7 @@
     background-clip: text;
     -webkit-background-clip: text; // prise en charge des navigateurs WebKit
     font-size: 1.5em;
+    text-align: center;
   }
 }
 
@@ -57,6 +61,7 @@ a.subscribe {
   font-weight: 700;
   font-size: larger;
   width: 75%;
+  text-align: center;
 }
 
 .login-input:active,
