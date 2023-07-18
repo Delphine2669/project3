@@ -49,15 +49,14 @@ a.subscribe {
 }
 
 .login-input {
-  color: white;
+  color: var(--color-2scd-2);
   border: none;
   border-bottom: 0.2dvh solid var(--color-3);
   background: none;
   padding: 2dvh;
   font-weight: 700;
   font-size: larger;
-  width: 100%;
-  transition: 0.2s;
+  width: 75%;
 }
 
 .login-input:active,
@@ -118,7 +117,4 @@ form.login {
 }
 .new-user {
   color: var(--color-3);
-}
-NavLink {
-  color: red;
 }

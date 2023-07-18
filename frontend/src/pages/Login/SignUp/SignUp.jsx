@@ -17,7 +17,7 @@ export default function SignUp() {
   };
 
   return (
-    <>
+    <div className="signup-box">
       <Header />
       <div className="signup_container">
         <form className="signup" onSubmit={handleSubmit}>
@@ -61,16 +61,12 @@ export default function SignUp() {
           <NavLink to="/Login" className="subscribe">
             Sign In
           </NavLink>
-          <button
-            type="submit"
-            className="button login-submit"
-            data-hover="Let's Go!"
-          >
+          <button type="submit" className="button login-signup">
             <div className="button-text">Sign Up</div>
           </button>
         </form>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }

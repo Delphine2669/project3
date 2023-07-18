@@ -18,7 +18,6 @@ export default function Login() {
     <>
       <Header />
       <div>
-        {" "}
         <div className="login_container">
           <form className="login" onSubmit={handleSubmit}>
             <h2 className="title">LOGIN</h2>
@@ -44,11 +43,7 @@ export default function Login() {
             <NavLink to="/SignUp" className="subscribe">
               Create an Account
             </NavLink>
-            <button
-              type="submit"
-              className="button login-submit"
-              data-hover="Let's Go!!"
-            >
+            <button type="submit" className="button login-submit">
               <div className="button-text">sign in</div>
             </button>
           </form>
