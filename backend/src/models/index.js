@@ -30,9 +30,15 @@ database.getConnection().catch(() => {
 const models = {};
 
 const VideoManager = require("./VideoManager");
+const VideoCatManager = require("./VideoCatManager");
+const ViewerManager = require("./ViewerManager");
 
 models.video = new VideoManager();
 models.video.setDatabase(database);
+models.video_has_categorie = new VideoCatManager();
+models.video_has_categorie.setDatabase(database);
+models.viewer = new ViewerManager();
+models.viewer.setDatabase(database);
 
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model
