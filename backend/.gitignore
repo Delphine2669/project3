@@ -1,5 +1,4 @@
 node_modules
 .env
-/public/assets/videos/
-*mp4
-.vscode/*
+.mp4 
+./public.vscode/*
