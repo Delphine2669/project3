@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import videoCall from "../../utils";
+import "./VideoCarousel.scss";
 import VideoCard from "./VideoCard/VideoCard";
-import "./VideoCard/VideoCard.scss";
 
 function Video() {
   const [videos, setVideos] = useState([]);
