@@ -83,9 +83,9 @@ a.subscribe {
   position: relative;
 }
 
-::placeholder {
-  color: #dbaa9f;
-  font-size: small;
+input::placeholder {
+  color: var(--color-3);
+  font-size: 0.7em;
 }
 
 .button-text {
@@ -115,4 +115,10 @@ form.login {
   width: 50dvw;
   margin-top: -20%;
   font-size: large;
+}
+.new-user {
+  color: var(--color-3);
+}
+NavLink {
+  color: red;
 }
