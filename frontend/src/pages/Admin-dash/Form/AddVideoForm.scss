@@ -1,11 +1,11 @@
-@import "../../../App.scss";
+@import "../../../App.css";
 .add-video-form,
 .delete-video-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: $color-3;
+  color: var(--color-3);
   margin: 3%;
   padding: 3%;
 }
