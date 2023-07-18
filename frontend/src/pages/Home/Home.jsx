@@ -1,10 +1,10 @@
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-// import photoList from "../../components/PhotoList";
+import photoList from "../../components/PhotoList";
 import VideoCarousel from "../../components/Carousel/VideoCarousel";
-// import HeroSlider from "../../components/HeroSlider/HeroSlider";
+import HeroSlider from "../../components/HeroSlider/HeroSlider";
 import DysneyCat from "../../components/Carousel/DysneyLike/DisneyCat";
-// import CarouselDynamic from "../../components/Carousel/CarouselDynamic/CarouselDynamic";
+import CarouselDynamic from "../../components/Carousel/CarouselDynamic/CarouselDynamic";
 import CarouselStatic from "../../components/Carousel/CarouselStatic/CarouselStatic";
 
 export default function Home() {
@@ -14,9 +14,9 @@ export default function Home() {
         <Header />
       </div>
       <div className="content">
-        {/* <CarouselDynamic /> */}
+        <CarouselDynamic />
         <DysneyCat />
-        {/* <HeroSlider /> */}
+        <HeroSlider photoList={photoList} />
         <CarouselStatic />
         <VideoCarousel />
         <div className="Footer">
