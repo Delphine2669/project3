@@ -1,7 +1,8 @@
 require("dotenv").config();
 
 const mysql = require("mysql2/promise");
-
+const VideoManager = require("./VideoManager");
+const PhotoManager = require("./PhotoManager");
 // create a connection pool to the database
 
 const { DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME } = process.env;
@@ -29,10 +30,11 @@ database.getConnection().catch(() => {
 
 const models = {};
 
-const VideoManager = require("./VideoManager");
-
 models.video = new VideoManager();
 models.video.setDatabase(database);
+
+models.photo = new PhotoManager();
+models.photo.setDatabase(database);
 
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model

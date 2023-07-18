@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import videoCall from "../../utils";
+import ApiCalls from "../../utils";
 import VideoCard from "./VideoCard/VideoCard";
 
 function Video() {
@@ -8,7 +8,7 @@ function Video() {
   useEffect(() => {
     async function fetchVideos() {
       try {
-        const fetchedVideos = await videoCall();
+        const fetchedVideos = await ApiCalls.videoCall();
         setVideos(fetchedVideos);
       } catch (error) {
         console.error("Erreur lors de la récupération des vidéos:", error);

@@ -91,7 +91,7 @@ CREATE TABLE `video` (
 
 LOCK TABLES `video` WRITE;
 /*!40000 ALTER TABLE `video` DISABLE KEYS */;
-INSERT INTO `video` VALUES (3,'Cyberpucnk_2077_court_circuit',7,'premier_test','2023-06-14',0,1,'/videos/Cyberpucnk_2077_court_circuit.mp4'),(4,'Cyberpucnk_2077_Panam_in_trouble',11,'second_test','2023-06-15',0,1,'/videos/Cyberpucnk_2077_Panam_in_trouble.mp4');
+INSERT INTO `video` VALUES (3,'Cyberpunck_2077_court_circuit',7,'premier_test','2023-06-14',0,1,'/videos/Cyberpunck_2077_court_circuit.mp4'),(4,'Cyberpunck_2077_Panam_in_trouble',11,'second_test','2023-06-15',0,1,'/videos/Cyberpunck_2077_Panam_in_trouble.mp4');
 /*!40000 ALTER TABLE `video` ENABLE KEYS */;
 UNLOCK TABLES;
 

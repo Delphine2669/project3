@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 import PhotoCard from "../PhotoCard/PhotoCard";
-import photoCall from "../../../utils";
+import ApiCalls from "../../../utils";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "react-responsive-carousel/lib/styles/carousel.css";
 import "./CarouselDynamic.scss";
@@ -12,7 +12,7 @@ function CarouselDynamic() {
   useEffect(() => {
     async function fetchPhotos() {
       try {
-        const fetchedPhotos = await photoCall();
+        const fetchedPhotos = await ApiCalls.photoCall();
         setPictures(fetchedPhotos);
       } catch (error) {
         console.error("Erreur lors de la récupération des vidéos:", error);
@@ -20,6 +20,7 @@ function CarouselDynamic() {
     }
     fetchPhotos();
   }, []);
+
   return (
     <div className="carousel-photocard-container">
       <Carousel autoPlay infiniteLoop showThumbs={false}>
@@ -27,7 +28,7 @@ function CarouselDynamic() {
           <div key={photo.id} className="carousel-photocard-body">
             <PhotoCard
               imageSrc={`${import.meta.env.VITE_BACKEND_URL}/assets/${
-                photo.videoSrc
+                photo.imageSrc
               }`}
               title={photo.title}
               description={photo.description}
