@@ -1,8 +1,10 @@
 import React, { useRef } from "react";
-import "./Login.css";
 import { useNavigate, NavLink } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import { authFetch } from "../../utils";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import "./Login.scss";
 
 export default function Login() {
   const usernameRef = useRef();
@@ -49,35 +51,41 @@ export default function Login() {
     }
   };
   return (
-    <div className="login_container">
-      <form className="login" onSubmit={handleSubmit}>
-        <h3 className="title">Login to your account</h3>
-        <div className="login-field">
-          <input
-            type="text"
-            id="username"
-            ref={usernameRef}
-            placeholder="Username"
-          />
+    <>
+      <Header />
+      <div>
+        <div className="login_container">
+          <form className="login" onSubmit={handleSubmit}>
+            <h3 className="title">Login to your account</h3>
+            <div className="login-field">
+              <input
+                type="text"
+                id="username"
+                ref={usernameRef}
+                placeholder="Username"
+              />
+            </div>
+            <div className="login-field">
+              <input
+                type="password"
+                id="password"
+                ref={passwordRef}
+                placeholder="Password"
+              />
+            </div>
+            <button type="submit" className="button login-submit">
+              <div className="button-text">Sign In</div>
+            </button>
+            <p className="new-user">
+              New user?{" "}
+              <NavLink to="/SignUp" className="subscribe">
+                Create an Account
+              </NavLink>
+            </p>
+          </form>
         </div>
-        <div className="login-field">
-          <input
-            type="password"
-            id="password"
-            ref={passwordRef}
-            placeholder="Password"
-          />
-        </div>
-        <button type="submit" className="button login-submit">
-          <div className="button-text">Sign In</div>
-        </button>
-        <p className="new-user">
-          New user?{" "}
-          <NavLink to="/SignUp" className="subscribe">
-            Create an Account
-          </NavLink>
-        </p>
-      </form>
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 }

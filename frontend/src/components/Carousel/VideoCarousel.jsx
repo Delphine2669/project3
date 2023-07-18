@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ApiCalls from "../../utils";
 import VideoCard from "./VideoCard/VideoCard";
+import "./VideoCard/VideoCard.scss";
 
 function Video() {
   const [videos, setVideos] = useState([]);
@@ -19,11 +20,11 @@ function Video() {
   }, []);
 
   return (
-    <>
-      <h3 className="categories-title">World League of Legends</h3>
-      <div className="video-carousel">
+    <div className="video-carousel">
+      <p className="catégories"> Worlds League of Legends</p>
+      <div className="video-container">
         {videos.map((video) => (
-          <div className="video-card" key={video.id}>
+          <div key={video.id}>
             <VideoCard
               videoSrc={`${import.meta.env.VITE_BACKEND_URL}/assets/${
                 video.videoSrc
@@ -35,7 +36,7 @@ function Video() {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
