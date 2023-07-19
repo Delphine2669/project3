@@ -1,0 +1,14 @@
+.catégories {
+  display: inline-block;
+  font-family: var(--title-font);
+  font-size: 1.4em;
+  margin-left: 1dvh;
+  border-bottom: solid 1px var(--color-2scd-2);
+  border-image: var(--border-color-gradient);
+  color: transparent;
+  -webkit-text-fill-color: transparent; // prise en charge des navigateurs WebKit
+  background-image: var(--logo-color-gradient);
+  background-clip: text;
+  -webkit-background-clip: text; // prise en charge des navigateurs WebKit
+  margin-bottom: 4dvh;
+}
