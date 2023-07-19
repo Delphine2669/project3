@@ -55,9 +55,9 @@ const add = (req, res) => {
     title: req.body.title,
     time: req.body.time,
     description: req.body.description,
-    publicationDate: req.body.publicationDate,
-    isAccessible: req.body.isAccessible,
-    videoData: req.file.path, // Update with the file path
+    publicationDate: req.body.publication_date,
+    isAccessible: req.body.is_accessible,
+    videoData: req.file.path,
   };
   // TODO validations (length, format...)
 

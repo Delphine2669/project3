@@ -13,7 +13,9 @@ const { VITE_BACKEND_URL } = import.meta.env;
 const ApiCalls = {
   videoCall: async () => {
     try {
-      const response = await axios.get(`${VITE_BACKEND_URL}/videos`);
+      const response = await axios.get(
+        `${import.meta.env.VITE_BACKEND_URL}/videos`
+      );
       const videosFromDatabase = response.data;
       const videos = videosFromDatabase.map((video) => ({
         id: video.id,
@@ -39,6 +41,7 @@ const ApiCalls = {
       const photos = photoFromDatabase.map((photo) => ({
         id: photo.id,
         title: photo.title,
+        alt: photo.title,
         description: photo.description,
         imageSrc: photo.imageSrc,
       }));

@@ -10,7 +10,7 @@ function AddVideoForm() {
     time: "",
     description: "",
     publicationDate: "",
-    // isAccessible: "",
+    isAccessible: "",
     videoData: null,
   });
 
@@ -22,7 +22,7 @@ function AddVideoForm() {
       time,
       description,
       publicationDate,
-      // isAccessible,
+      isAccessible,
       videoData,
     } = data;
 
@@ -30,16 +30,16 @@ function AddVideoForm() {
     formData.append("title", title);
     formData.append("time", time);
     formData.append("description", description);
-    formData.append("publicationDate", publicationDate);
-    // formData.append("isAccessible", isAccessible);
+    formData.append("publication_date", publicationDate);
+    formData.append("is_accessible", isAccessible);
     formData.append("videoData", videoData);
 
     const payload = {
       title,
       time,
       description,
-      publication_date: publicationDate,
-      // is_accessible: isAccessible,
+      publicationDate,
+      isAccessible,
       videoData: `/videos/${videoData.name}`,
     };
 
@@ -57,7 +57,7 @@ function AddVideoForm() {
         title: "",
         time: "",
         description: "",
-        // isAccessible: "",
+        isAccessible: "",
         publicationDate: "",
         videoData: null,
       });
@@ -122,26 +122,26 @@ function AddVideoForm() {
         </div>
         <br />
         <div className="publication-date-section">
-          <label htmlFor="publicationDate">Publication date:</label>
+          <label htmlFor="publication_date">Publication date:</label>
           <input
-            id="publicationDate"
+            id="publication_date"
             placeholder="Date de publication"
             type="date"
-            name="publicationDate"
+            name="publication_date"
             value={data.publicationDate}
             onChange={handleChange}
           />
         </div>
         <br />
-        {/* <div className="isAccessible">
+        <div className="isAccessible">
           <label htmlFor="isAccessible">Is Accessible:</label>
           <div className="is-accessible-section">
             <label className="is-accessible-yes">
               <input
                 id="isAccessibleTrue"
-                placeholder="isAccessible"
+                placeholder="is_accessible"
                 type="radio"
-                name="isAccessible"
+                name="is_accessible"
                 value="1"
                 checked={data.isAccessible === "1"}
                 onChange={handleChange}
@@ -150,10 +150,10 @@ function AddVideoForm() {
             </label>
             <label className="is-accessible-no">
               <input
-                id="isAccessibleFalse"
-                placeholder="isAccessible"
+                id="is_accessibleFalse"
+                placeholder="is_accessible"
                 type="radio"
-                name="isAccessible"
+                name="is_accessible"
                 value="0"
                 checked={data.isAccessible === "0"}
                 onChange={handleChange}
@@ -162,7 +162,7 @@ function AddVideoForm() {
             </label>
           </div>
         </div>
-        <br /> */}
+        <br />
         <div className="video-data-section">
           <label htmlFor="videoData">Vidéo:</label>
           <input

@@ -4,12 +4,10 @@ import "./VideoCard.scss";
 function VideoCard({ videoSrc, caption, title }) {
   return (
     <div>
-      {" "}
       <video className="video" controls width="100%" src={videoSrc}>
-        {" "}
         <track default kind="captions" srcLang="fr" src={caption} /> Sorry, your
         browser doesn't support videos.{" "}
-      </video>{" "}
+      </video>
       <p className="card-title">{title}</p>{" "}
     </div>
   );

@@ -13,15 +13,14 @@ const {
 const videoControllers = require("./controllers/videoControllers");
 const photoControllers = require("./controllers/photoControllers");
 const viewerControllers = require("./controllers/viewerControllers");
+const authControllers = require("./controllers/authControllers");
 
 router.get("/videos", videoControllers.browse);
 router.get("/videos/:id", videoControllers.read);
-router.put("/videos/:id", videoControllers.edit);
-router.post("/videos", videoControllers.add);
-router.delete("/videos/:id", videoControllers.destroy);
-
-router.get("/viewer", viewerControllers.browse);
-router.get("/viewer/:id", viewerControllers.read);
+router.get("/photos", photoControllers.browse);
+router.get("/photos/:id", photoControllers.read);
+router.get("/viewers", viewerControllers.browse);
+router.get("/viewers/:id", viewerControllers.read);
 
 router.post(
   "/videos",
@@ -38,8 +37,8 @@ router.post(
         title: req.body.title,
         time: req.body.time,
         description: req.body.description,
-        publicationDate: req.body.publicationDate,
-        isAccessible: req.body.isAccessible,
+        publicationDate: req.body.publication_date,
+        isAccessible: req.body.is_accessible,
         videoData: ourPath,
       };
       return null;
@@ -49,26 +48,24 @@ router.post(
   videoControllers.add
 );
 router.post("/videos", upload.single("videoData"), videoControllers.add);
-router.post("/viewer", hashPassword, viewerControllers.add);
-
-const authControllers = require("./controllers/authControllers");
+router.post("/viewers", hashPassword, viewerControllers.add);
 
 router.post(
   "/login",
   authControllers.getUserByUsernameWithPasswordAndPassToNext,
   verifyPassword
 );
-router.use(verifyToken);
-router.delete("/viewer/:id", viewerControllers.destroy);
 
-router.get("/photos", photoControllers.browse);
-router.get("/photos/:id", photoControllers.read);
+router.delete("/viewers/:id", verifyToken, viewerControllers.destroy);
 router.put("/photos/:id", photoControllers.edit);
 router.post("/photos", photoControllers.add);
 router.delete("/photos/:id", photoControllers.destroy);
-router.put("/viewer/:id", hashPassword, viewerControllers.edit);
+router.put("/viewers/:id", hashPassword, viewerControllers.edit);
 router.put("/videos/:id", videoControllers.edit);
-router.post("/submit");
+// router.post("/submit");
+router.delete("/videos/:id", videoControllers.destroy);
+router.put("/videos/:id", videoControllers.edit);
+router.post("/videos", videoControllers.add);
 router.delete("/videos/:id", videoControllers.destroy);
 
 module.exports = router;
