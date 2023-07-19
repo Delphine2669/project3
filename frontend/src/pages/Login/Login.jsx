@@ -51,7 +51,7 @@ export default function Login() {
     }
   };
   return (
-    <>
+    <div className="login-box">
       <Header />
       <div>
         <div className="login_container">
@@ -76,16 +76,15 @@ export default function Login() {
             <button type="submit" className="button login-submit">
               <div className="button-text">Sign In</div>
             </button>
-            <p className="new-user">
-              New user?{" "}
-              <NavLink to="/SignUp" className="subscribe">
-                Create an Account
-              </NavLink>
-            </p>
+            <p className="new-user">New user?</p>
+            <NavLink to="/SignUp" className="subscribe">
+              Create an Account
+            </NavLink>
+            {/* </p> */}
           </form>
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }

@@ -6,7 +6,8 @@ import SignUp from "./pages/Login/SignUp/SignUp";
 import AddVideoForm from "./pages/Admin-dash/Form/AddVideoForm";
 import { AuthProvider } from "./contexts/AuthContext";
 import AdminPage from "./pages/Admin-dash/AdminPage";
-import DeleteVideosForm from "./pages/Admin-dash/DeleteVideosForm";
+import DeleteVideosForm from "./pages/Admin-dash/Form/DeleteVideosForm";
+import EditVideosForm from "./pages/Admin-dash/Form/EditVideosForm";
 
 export default function App() {
   const storedToken = localStorage.getItem("token");
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="/addvideos" element={<AddVideoForm />} />
           <Route path="/adminpage" element={<AdminPage />} />
           <Route path="/deletevideos" element={<DeleteVideosForm />} />
+          <Route path="/editvideos" element={<EditVideosForm />} />
         </Routes>
       </Router>
     </AuthProvider>

@@ -1,5 +1,5 @@
 @import "../../../App.css";
-.add-video-form {
+.edit-video-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,29 +7,30 @@
   color: var(--color-3);
   margin: 3%;
   padding: 3%;
+  justify-content: space-around;
 }
-.add-video-form-box {
-  height: 100dvh;
+.edit-video-form.label {
+  padding: 15%;
 }
 
+.edit-video-form.input {
+  padding: 15%;
+}
 input::placeholder {
   color: #804582;
 }
-.add-video-form > label {
-  padding: 5%;
-}
-.add-video-form.input {
-  padding: 15%;
-}
-.add-video-form-title {
+.edit-video-form-title {
   color: #ee4540;
   text-align: center;
   padding: 3%;
 }
-.add-video-form-container {
+.edit-video-form-container {
   background: var(--grad-admin);
 }
-.back-button {
-  text-decoration: none;
-  color: #804582;
+.edit-video-label {
+  justify-content: space-around;
+  padding: 1%;
+}
+label.edit-video-label {
+  padding-bottom: 2%;
 }
