@@ -1,7 +1,7 @@
 const models = require("../models");
 
 const browse = (req, res) => {
-  models.video
+  models.photo
     .findAll()
     .then(([rows]) => {
       res.send(rows);
@@ -13,7 +13,7 @@ const browse = (req, res) => {
 };
 
 const read = (req, res) => {
-  models.video
+  models.photo
     .find(req.params.id)
     .then(([rows]) => {
       if (rows[0] == null) {
@@ -29,14 +29,14 @@ const read = (req, res) => {
 };
 
 const edit = (req, res) => {
-  const video = req.body;
+  const photo = req.body;
 
   // TODO validations (length, format...)
 
-  video.id = parseInt(req.params.id, 10);
+  photo.id = parseInt(req.params.id, 10);
 
   models.video
-    .update(video)
+    .update(photo)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
@@ -51,20 +51,14 @@ const edit = (req, res) => {
 };
 
 const add = (req, res) => {
-  const video = {
-    title: req.body.title,
-    time: req.body.time,
-    description: req.body.description,
-    publicationDate: req.body.publication_date,
-    isAccessible: req.body.is_accessible,
-    videoData: req.file.path,
-  };
+  const photo = req.body;
+
   // TODO validations (length, format...)
 
-  models.video
-    .insert(video)
+  models.photo
+    .insert(photo)
     .then(([result]) => {
-      res.location(`/videos/${result.insertId}`).sendStatus(201);
+      res.location(`/photos/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);
@@ -73,7 +67,7 @@ const add = (req, res) => {
 };
 
 const destroy = (req, res) => {
-  models.video
+  models.photo
     .delete(req.params.id)
     .then(([result]) => {
       if (result.affectedRows === 0) {
