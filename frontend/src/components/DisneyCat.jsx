@@ -10,7 +10,7 @@ export default function DisneyCat() {
   const fetchCategories = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_BACKEND_URL}/videos/category`
+        `${import.meta.env.VITE_BACKEND_URL}/categories`
       );
       setCategories(response.data);
     } catch (error) {
@@ -21,25 +21,23 @@ export default function DisneyCat() {
   const fetchVideosByCategory = async (category) => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_BACKEND_URL}/videos/category/${category}`
+        `${import.meta.env.VITE_BACKEND_URL}/categories/${category.id}`
       );
       setVideosByCategory((prevState) => ({
         ...prevState,
-        [category]: response.data,
+        [category.id]: response.data,
       }));
     } catch (error) {
       console.error("Error fetching videos by category:", error);
     }
   };
 
-  const handleCategoryClick = (category) => {
-    setSelectedCategory(category);
-  };
-
-  const handleKeyDown = (e, category) => {
-    if (e.key === "Enter" || e.key === " ") {
-      handleCategoryClick(category);
-    }
+  const handleCategoryChange = (event) => {
+    const selectedCategoryId = event.target.value;
+    const selectedCategoryA = categories.find(
+      (category) => category.id === parseInt(selectedCategoryId, 10)
+    );
+    setSelectedCategory(selectedCategoryA);
   };
 
   useEffect(() => {
@@ -54,33 +52,42 @@ export default function DisneyCat() {
 
   return (
     <div className="DisneyCatBox">
-      {categories.map((category) => (
-        <div key={category}>
-          <button
-            type="button"
-            className="category-button"
-            onClick={() => handleCategoryClick(category)}
-            onKeyDown={(e) => handleKeyDown(e, category)}
-          >
-            {category}
-          </button>
+      <select
+        className="category-select"
+        onChange={handleCategoryChange}
+        value={selectedCategory?.id || ""}
+      >
+        <option value="">Select a category</option>
+        {categories.map((category) => (
+          <option key={category.id} value={category.id}>
+            {category.name}
+          </option>
+        ))}
+      </select>
+      <div className="video-list">
+        {selectedCategory && videosByCategory[selectedCategory.id] && (
           <div className="video-list">
-            {selectedCategory === category &&
-              videosByCategory[category]?.map((video) => (
-                <div className="item" key={video.id}>
-                  <div className="item-border">
-                    <img alt="" className="item-image" src={video.data} />
-                    <img
-                      alt=""
-                      className="item-image hover-image"
-                      src={video.data}
-                    />
-                  </div>
-                </div>
-              ))}
+            {videosByCategory[selectedCategory.id].map((video) => (
+              <div className="video-cat_container" key={video.id}>
+                <video
+                  controls
+                  className="minia"
+                  src={`${import.meta.env.VITE_BACKEND_URL}/assets/${
+                    video.videoData
+                  }`}
+                  type="video.mp4"
+                >
+                  <track
+                    src="../../assets/WEBVTT.vtt"
+                    kind="captions"
+                    label="French"
+                  />
+                </video>
+              </div>
+            ))}
           </div>
-        </div>
-      ))}
+        )}
+      </div>
     </div>
   );
 }

@@ -16,27 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `categorie`
+-- Table structure for table `category`
 --
 
-DROP TABLE IF EXISTS `categorie`;
+DROP TABLE IF EXISTS `category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `categorie` (
-  `nom_id` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `category` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`nom_id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `categorie`
+-- Dumping data for table `category`
 --
 
-LOCK TABLES `categorie` WRITE;
-/*!40000 ALTER TABLE `categorie` DISABLE KEYS */;
-INSERT INTO `categorie` VALUES (1,'Worlds League of Legends'),(2,'Counter Strike: Global Offensive Major'),(3,'Call of Duty World Championship'),(4,'Call of Duty League'),(5,'Fortnite World Cup'),(6,'Dota 2'),(7,'Intel Extreme Masters 2023'),(8,'Overwatch League 2023'),(9,'PUBG Continental Serie'),(10,'World Cyber Gamers'),(11,'Fifa eWorld Cup'),(12,'Lyon e-Sport'),(13,'ZEvent'),(14,'eSports World Convention');
-/*!40000 ALTER TABLE `categorie` ENABLE KEYS */;
+LOCK TABLES `category` WRITE;
+/*!40000 ALTER TABLE `category` DISABLE KEYS */;
+INSERT INTO `category` VALUES (1,'Worlds League of Legends'),(2,'Counter Strike: Global Offensive Major'),(3,'Call of Duty World Championship'),(4,'Call of Duty League'),(5,'Fortnite World Cup'),(6,'Dota 2'),(7,'Intel Extreme Masters 2023'),(8,'Overwatch League 2023'),(9,'PUBG Continental Serie'),(10,'World Cyber Gamers'),(11,'Fifa eWorld Cup'),(12,'Lyon e-Sport'),(13,'ZEvent'),(14,'eSports World Convention');
+/*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -80,7 +80,7 @@ CREATE TABLE `video` (
   `publication_date` varchar(255) DEFAULT NULL,
   `is_favorite` tinyint DEFAULT NULL,
   `is_accessible` tinyint NOT NULL,
-  `data` varchar(255) DEFAULT NULL,
+  `videoData` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -91,53 +91,53 @@ CREATE TABLE `video` (
 
 LOCK TABLES `video` WRITE;
 /*!40000 ALTER TABLE `video` DISABLE KEYS */;
-INSERT INTO `video` VALUES (3,'Cyberpucnk_2077_court_circuit',7,'premier_test','2023-06-14',0,1,'/videos/Cyberpucnk_2077_court_circuit.mp4'),(4,'Cyberpucnk_2077_Panam_in_trouble',11,'second_test','2023-06-15',0,1,'/videos/Cyberpucnk_2077_Panam_in_trouble.mp4'),(5,'Cacahuette',9,'call Of video 1','2023-07-10',0,1,'/videos/video1.mp4'),(6,'Cacahuette 2 le retour',10,'call Of video 2','2023-07-10',0,1,'/videos/video2.mp4'),(7,'Cacahuette 3 la suite de trop ?',10,'call Of video 3','2023-07-10',0,1,'/videos/video3.mp4'),(8,'Cacahuette 4 trop cest trop',10,'call Of video 4','2023-07-10',0,1,'/videos/video4.mp4'),(9,'Cacahuette 5 bientôt fini',10,'call Of video 5','2023-07-10',0,1,'/videos/video5.mp4');
+INSERT INTO `video` VALUES (1,'The World Is In Danger',9,'call Of video 1','2023-07-10',0,1,'/videos/video1.mp4'),(2,'You Can Do It !',10,'call Of video 2','2023-07-10',0,1,'/videos/video2.mp4'),(3,'Always Troubles',10,'call Of video 3','2023-07-10',0,1,'/videos/video3.mp4'),(4,'The Last Chance',10,'call Of video 4','2023-07-10',0,1,'/videos/video4.mp4'),(5,'CyberPunck Rise',10,'call Of video 5','2023-07-10',0,1,'/videos/video5.mp4'),(6,'Ghost Danger',5,'Starwars 1','2023-07-19',0,1,'/videos/video6.mp4'),(7,'Back To The Future',8,'Starwars 2','2023-07-19',0,1,'/videos/video7.mp4'),(8,'Dark Side',10,'Starwars 3','2023-07-19',0,1,'/videos/video8.mp4'),(9,'Winter Is Coming',10,'Starwars 4','2023-07-19',0,1,'/videos/video9.mp4'),(10,'Never Give Up',10,'Starwars 5','2023-07-19',0,1,'/videos/video10.mp4'),(11,'Cyberpucnk 2077',7,'premier_test','2023-06-14',0,1,'/videos/Cyberpucnk_2077_court_circuit.mp4'),(12,'Cyberpucnk Panam in trouble',11,'second_test','2023-06-15',0,1,'/videos/Cyberpucnk_2077_Panam_in_trouble.mp4');
 /*!40000 ALTER TABLE `video` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `video_has_categorie`
+-- Table structure for table `videoCat`
 --
 
-DROP TABLE IF EXISTS `video_has_categorie`;
+DROP TABLE IF EXISTS `videoCat`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `video_has_categorie` (
+CREATE TABLE `videoCat` (
   `videos_id` int NOT NULL,
-  `categories_nom_id` int NOT NULL,
-  PRIMARY KEY (`videos_id`,`categories_nom_id`),
-  KEY `fk_VIDEOS_has_CATEGORIES_CATEGORIES1_idx` (`categories_nom_id`),
-  KEY `fk_VIDEOS_has_CATEGORIES_VIDEOS1_idx` (`videos_id`),
-  CONSTRAINT `fk_VIDEOS_has_CATEGORIES_CATEGORIES1` FOREIGN KEY (`categories_nom_id`) REFERENCES `categorie` (`nom_id`),
-  CONSTRAINT `fk_VIDEOS_has_CATEGORIES_VIDEOS1` FOREIGN KEY (`videos_id`) REFERENCES `video` (`id`)
+  `category_id` int NOT NULL,
+  PRIMARY KEY (`videos_id`,`category_id`),
+  KEY `fk_VIDEOSCATEGORIES_CATEGORIES1_idx` (`category_id`),
+  KEY `fk_VIDEOSCATEGORIES_VIDEOS1_idx` (`videos_id`),
+  CONSTRAINT `fk_VIDEOsCATEGORIES_CATEGORIES1` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`),
+  CONSTRAINT `fk_VIDEOSCATEGORIES_VIDEOS1` FOREIGN KEY (`videos_id`) REFERENCES `video` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `video_has_categorie`
+-- Dumping data for table `video_has_category`
 --
 
-LOCK TABLES `video_has_categorie` WRITE;
-/*!40000 ALTER TABLE `video_has_categorie` DISABLE KEYS */;
-INSERT INTO `video_has_categorie` VALUES (7,2),(4,4),(8,5),(6,8),(5,9),(9,10),(3,13);
-/*!40000 ALTER TABLE `video_has_categorie` ENABLE KEYS */;
+LOCK TABLES `videoCat` WRITE;
+/*!40000 ALTER TABLE `videoCat` DISABLE KEYS */;
+INSERT INTO `videoCat` VALUES (1,13),(2,12),(3,11),(4,10),(5,9),(6,8),(7,7),(8,6),(9,5),(10,4),(11,3),(12,1);
+/*!40000 ALTER TABLE `videoCat` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `video_has_viewer`
+-- Table structure for table `videoViewer`
 --
 
-DROP TABLE IF EXISTS `video_has_viewer`;
+DROP TABLE IF EXISTS `videoViewer`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `video_has_viewer` (
+CREATE TABLE `videoViewer` (
   `videos_id` int NOT NULL,
   `viewers_id` int NOT NULL,
   PRIMARY KEY (`videos_id`,`viewers_id`),
-  KEY `fk_videos_has_viewers_viewers1_idx` (`viewers_id`),
-  KEY `fk_videos_has_viewers_videos1_idx` (`videos_id`),
-  CONSTRAINT `fk_VIDEOS_has_viewers_videos1` FOREIGN KEY (`videos_id`) REFERENCES `video` (`id`),
-  CONSTRAINT `fk_VIDEOS_has_viewers_viewers1` FOREIGN KEY (`viewers_id`) REFERENCES `viewer` (`id`)
+  KEY `fk_videosViewers_viewers1_idx` (`viewers_id`),
+  KEY `fk_videosViewers_videos1_idx` (`videos_id`),
+  CONSTRAINT `fk_VIDEOSVIEWERS_videos1` FOREIGN KEY (`videos_id`) REFERENCES `video` (`id`),
+  CONSTRAINT `fk_VIDEOSVIEWERS_viewers1` FOREIGN KEY (`viewers_id`) REFERENCES `viewer` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -145,9 +145,9 @@ CREATE TABLE `video_has_viewer` (
 -- Dumping data for table `video_has_viewer`
 --
 
-LOCK TABLES `video_has_viewer` WRITE;
-/*!40000 ALTER TABLE `video_has_viewer` DISABLE KEYS */;
-/*!40000 ALTER TABLE `video_has_viewer` ENABLE KEYS */;
+LOCK TABLES `videoViewer` WRITE;
+/*!40000 ALTER TABLE `videoViewer` DISABLE KEYS */;
+/*!40000 ALTER TABLE `videoViewer` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --

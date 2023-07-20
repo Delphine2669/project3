@@ -30,13 +30,16 @@ database.getConnection().catch(() => {
 const models = {};
 
 const VideoManager = require("./VideoManager");
+const CatManager = require("./CatManager");
 const VideoCatManager = require("./VideoCatManager");
 const ViewerManager = require("./ViewerManager");
 
 models.video = new VideoManager();
 models.video.setDatabase(database);
-models.video_has_categorie = new VideoCatManager();
-models.video_has_categorie.setDatabase(database);
+models.category = new CatManager();
+models.category.setDatabase(database);
+models.videoCat = new VideoCatManager();
+models.videoCat.setDatabase(database);
 models.viewer = new ViewerManager();
 models.viewer.setDatabase(database);
 

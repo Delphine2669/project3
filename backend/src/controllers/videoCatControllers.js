@@ -1,23 +1,9 @@
 const models = require("../models");
 
-const getCategories = (req, res) => {
-  models.video_has_categorie
-    .getAllCategories()
-    .then((categories) => {
-      res.send(categories);
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
-};
-
 const filterByCategory = (req, res) => {
-  const { category } = req.params;
-
-  models.video_has_categorie
-    .findByCategory(category)
-    .then((videos) => {
+  models.videoCat
+    .findByCategory(req.params.id)
+    .then(([videos]) => {
       res.send(videos);
     })
     .catch((err) => {
@@ -27,6 +13,5 @@ const filterByCategory = (req, res) => {
 };
 
 module.exports = {
-  getCategories,
   filterByCategory,
 };

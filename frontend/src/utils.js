@@ -8,7 +8,7 @@ async function videoCall() {
     const videosFromDatabase = response.data;
     const videos = videosFromDatabase.map((video) => ({
       id: video.id,
-      videoSrc: video.data,
+      videoSrc: video.videoData,
       caption: video.title,
       title: video.title,
       description: video.description,

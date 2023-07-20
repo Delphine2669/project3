@@ -34,7 +34,6 @@ function ProfileMenu() {
         <Dropdown menu={{ items }} trigger={["click"]}>
           <Space>
             <Button
-              className="ManButton"
               shape="circle"
               icon={<UserOutlined />}
               onClick={handleClick}

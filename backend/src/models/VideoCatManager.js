@@ -2,19 +2,15 @@ const AbstractManager = require("./AbstractManager");
 
 class VideoCatManager extends AbstractManager {
   constructor() {
-    super({ table: "video_has_categorie" });
-  }
-
-  getAllCategories() {
-    return this.database.query(`SELECT c.name FROM categorie as c`);
+    super({ table: "videoCat" });
   }
 
   findByCategory(category) {
     return this.database.query(
-      `SELECT v.* FROM video as v
-      INNER JOIN video_has_categorie as vc ON v.id = vc.videos_id
-      INNER JOIN categorie as c ON vc.categories_nom_id = c.nom_id
-      WHERE c.name = ?`,
+      `SELECT * FROM video as v
+      INNER JOIN videoCat as vc ON v.id = vc.videos_id
+      INNER JOIN category as c ON vc.category_id = c.id
+      WHERE c.id = ?`,
       [category]
     );
   }
