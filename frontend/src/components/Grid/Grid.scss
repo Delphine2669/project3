@@ -15,7 +15,7 @@
 .video-grid-categorie {
   display: inline-block;
   font-family: var(--title-font);
-  font-size: 1.4em;
+  font-size: 4dvw;
   margin-left: 1dvh;
   border-bottom: solid 1px var(--color-2scd-2);
   border-image: var(--border-color-gradient);
@@ -27,18 +27,17 @@
   margin-bottom: 4dvh;
 }
 .button.show-more {
-  margin-top: 5dvh;
+  margin-top: 3dvh;
 }
 .show-more {
-  width: 70dvw;
-  margin-left: 15dvw;
-  margin-right: 15dvw;
+  width: 45dvw;
+  margin: auto;
   border-radius: 26px;
   color: var(--color-3);
   cursor: pointer;
   border: none;
-  font-size: 1.2em;
+  font-size: 3.5dvw;
 }
 .button-text {
-  padding: 1dvh;
+  padding-top: 1dvh;
 }

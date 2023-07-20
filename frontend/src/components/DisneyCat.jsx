@@ -57,7 +57,7 @@ export default function DisneyCat() {
         onChange={handleCategoryChange}
         value={selectedCategory?.id || ""}
       >
-        <option value="">Select a category</option>
+        <option value="">Find your video by category</option>
         {categories.map((category) => (
           <option key={category.id} value={category.id}>
             {category.name}
@@ -68,7 +68,7 @@ export default function DisneyCat() {
         {selectedCategory && videosByCategory[selectedCategory.id] && (
           <div className="video-list">
             {videosByCategory[selectedCategory.id].map((video) => (
-              <div className="video-cat_container" key={video.id}>
+              <div className="video-cat-container" key={video.id}>
                 <video
                   controls
                   className="minia"

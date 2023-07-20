@@ -35,7 +35,7 @@ function HeroSlider({ photoList }) {
 
   return (
     <>
-      <p className="hero-slider-categorie">New videos of the week</p>
+      <p className="hero-slider-categorie">Summer Z-Event 2023</p>
       <div className="hero-slider">
         {photoList.map((photo, index) => (
           <div
@@ -49,10 +49,7 @@ function HeroSlider({ photoList }) {
             tabIndex="0"
           >
             <img src={photo.src} alt={photo.alt} />
-            <div className="hero-slider-content">
-              <h2>{photo.title}</h2>
-              <p>{photo.description}</p>
-            </div>
+            <div className="hero-slider-content" />
           </div>
         ))}
       </div>
