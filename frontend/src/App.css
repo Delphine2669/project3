@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Clinton";
+  src: url("./font/Clinton/Clinton\ semibold.ttf") format("truetype"); /* Modifiez le chemin du fichier de police selon votre structure de projet */
+  font-weight: normal;
+  font-style: normal;
+}
 :root {
   --text-font: lato, sans-serif;
   --font-2scd: roboto, sans-serif;
@@ -8,6 +14,8 @@
   --font-foot-head: rgba(238, 238, 238, 1);
   --color-2scd-2: rgba(238, 238, 238, 1);
   --body-font: Lato, Arial, Helvetica, sans-serif;
+  --title-font: "Plus Jakarta Sans", sans-serif;
+  --video-title-font: Clinton, sans-serif;
   --grad-body: linear-gradient(
     to bottom,
     #0d0108,
@@ -40,6 +48,22 @@
     #df9d8e,
     #dbaa9f
   );
+  --border-color-gradient: linear-gradient(
+      to right,
+      #ee4540,
+      #ec4b40,
+      #ea5141,
+      #e75642,
+      #e55b43,
+      #e5644b,
+      #e46c53,
+      #e3745b,
+      #e3826c,
+      #e1907d,
+      #df9d8e,
+      #dbaa9f
+    )
+    1;
 }
 body {
   margin: 0;

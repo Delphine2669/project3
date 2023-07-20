@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
+import "./VideoCarousel.scss";
 import ApiCalls from "../../utils";
 import VideoCard from "./VideoCard/VideoCard";
-import "./VideoCard/VideoCard.scss";
 
 function Video() {
   const [videos, setVideos] = useState([]);
@@ -20,23 +20,25 @@ function Video() {
   }, []);
 
   return (
-    <div className="video-carousel">
-      <p className="catégories"> Worlds League of Legends</p>
-      <div className="video-container">
-        {videos.map((video) => (
-          <div key={video.id}>
-            <VideoCard
-              videoSrc={`${import.meta.env.VITE_BACKEND_URL}/assets${
-                video.videoSrc
-              }`}
-              caption={video.caption}
-              title={video.title}
-              description={video.description}
-            />
-          </div>
-        ))}
+    <>
+      <h2 className="catégories"> Worlds League of Legends</h2>
+      <div className="video-carousel">
+        <div className="video-container">
+          {videos.map((video) => (
+            <div key={video.id}>
+              <VideoCard
+                videoSrc={`${import.meta.env.VITE_BACKEND_URL}/assets${
+                  video.videoSrc
+                }`}
+                caption={video.caption}
+                title={video.title}
+                description={video.description}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

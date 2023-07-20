@@ -6,9 +6,9 @@ function VideoCard({ videoSrc, caption, title }) {
     <div>
       <video className="video" controls width="100%" src={videoSrc}>
         <track default kind="captions" srcLang="fr" src={caption} /> Sorry, your
-        browser doesn't support videos.{" "}
+        browser doesn't support videos.
       </video>
-      <p className="card-title">{title}</p>{" "}
+      <div className="card-title">{title}</div>
     </div>
   );
 }

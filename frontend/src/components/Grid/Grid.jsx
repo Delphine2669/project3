@@ -29,28 +29,34 @@ function Grid() {
   const showLoadMoreButton = videoPlus < videos.length;
 
   return (
-    <div className="video-grid">
-      <p className="video-grid-categorie">Intel Extreme Masters 2023</p>
-      <div className="grid-container">
-        {visibleVideoData.map((video) => (
-          <div key={video.id}>
-            <VideoCard
-              videoSrc={`${import.meta.env.VITE_BACKEND_URL}/assets${
-                video.videoSrc
-              }`}
-              caption={video.caption}
-              title={video.title}
-              description={video.description}
-            />
-          </div>
-        ))}
+    <>
+      <h2 className="video-grid-categorie">Intel Extreme Masters 2023</h2>
+      <div className="video-grid">
+        <div className="grid-container">
+          {visibleVideoData.map((video) => (
+            <div className="video-container-grid" key={video.id}>
+              <VideoCard
+                videoSrc={`${import.meta.env.VITE_BACKEND_URL}/assets${
+                  video.videoSrc
+                }`}
+                caption={video.caption}
+                title={video.title}
+                description={video.description}
+              />
+            </div>
+          ))}
+        </div>
+        {showLoadMoreButton && (
+          <button
+            className="button show-more"
+            type="button"
+            onClick={loadMoreVideos}
+          >
+            <div className="button-text">Show more</div>
+          </button>
+        )}
       </div>
-      {showLoadMoreButton && (
-        <button className="voirPlus" type="button" onClick={loadMoreVideos}>
-          +
-        </button>
-      )}
-    </div>
+    </>
   );
 }
 

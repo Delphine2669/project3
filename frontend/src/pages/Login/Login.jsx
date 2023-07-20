@@ -80,7 +80,6 @@ export default function Login() {
             <NavLink to="/SignUp" className="subscribe">
               Create an Account
             </NavLink>
-            {/* </p> */}
           </form>
         </div>
       </div>
