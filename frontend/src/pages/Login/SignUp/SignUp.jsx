@@ -51,13 +51,13 @@ export default function SignUp() {
   return (
     <div className="signup-box">
       <Header />
-      <div className="signup_container">
+      <div className="signup-container">
         <form className="signup" onSubmit={handleSubmit}>
-          <h3 className="title">Create your account</h3>
+          <h2 className="title">Create your account</h2>
           <div className="signup-field">
             <input
-              type="text"
               className="signup-input"
+              type="text"
               value={username}
               placeholder="Username"
               required
@@ -66,8 +66,8 @@ export default function SignUp() {
           </div>
           <div className="signup-field">
             <input
-              type="email"
               className="signup-input"
+              type="email"
               value={email}
               placeholder="Email"
               required
@@ -76,8 +76,8 @@ export default function SignUp() {
           </div>
           <div className="signup-field">
             <input
-              type="password"
               className="signup-input"
+              type="password"
               value={password}
               placeholder="password"
               required
@@ -86,8 +86,8 @@ export default function SignUp() {
           </div>
           <div className="signup-field">
             <input
-              type="password"
               className="signup-input"
+              type="password"
               value={confirmPassword}
               required
               placeholder="Password confirmation"
@@ -96,8 +96,8 @@ export default function SignUp() {
           </div>
 
           <button
-            type="submit"
             className="button signup-submit"
+            type="submit"
             data-hover="Let's Go!"
           >
             <div className="button-text">Sign Up</div>
