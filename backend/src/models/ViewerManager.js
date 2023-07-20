@@ -7,38 +7,38 @@ class ViewerManager extends AbstractManager {
 
   insert(viewer) {
     return this.database.query(
-      `INSERT INTO ${this.table} (pseudo, email,mdp,birthday,is_favorite, is_admin) VALUES (?,?,?,?,?,?)`,
+      `INSERT INTO ${this.table} (username, email, birthday, is_favorite, is_admin, hashedPassword) VALUES (?,?,?,?,?,?)`,
       [
-        viewer.pseudo,
+        viewer.username,
         viewer.email,
-        viewer.mdp,
         viewer.birthday,
         viewer.is_favorite,
         viewer.is_admin,
+        viewer.hashedPassword,
       ]
     );
   }
 
   update(viewer) {
     return this.database.query(
-      `UPDATE ${this.table} SET pseudo=?, email=?, mdp=?, birthday=?, is_favorite=?, is_admin=? WHERE id=?`,
+      `UPDATE ${this.table} SET username=?, email=?, birthday=?, is_favorite=?, is_admin=? , hashedPassword =? WHERE id=?`,
       [
-        viewer.pseudo,
+        viewer.username,
         viewer.email,
-        viewer.mdp,
         viewer.birthday,
         viewer.is_favorite,
         viewer.is_admin,
+        viewer.hashedPassword,
         viewer.id,
       ]
     );
   }
 
-  getUserByEmailWithPasswordAndPassToNext(email) {
-    return this.database.query(`SELECT * FROM ${this.table} where email =?`, [
-      email,
-    ]);
+  findByUsernameWithHashedPassword(viewer) {
+    return this.database.query(
+      `SELECT username, hashedPassword from  ${this.table} where username = ?`,
+      [viewer.username]
+    );
   }
 }
-
 module.exports = ViewerManager;

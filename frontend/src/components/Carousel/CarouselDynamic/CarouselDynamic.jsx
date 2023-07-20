@@ -27,7 +27,7 @@ function CarouselDynamic() {
         {pictures.map((photo) => (
           <div key={photo.id} className="carousel-photocard-body">
             <PhotoCard
-              imageSrc={`${import.meta.env.VITE_BACKEND_URL}/assets/${
+              imageSrc={`${import.meta.env.VITE_BACKEND_URL}/assets${
                 photo.imageSrc
               }`}
               title={photo.title}

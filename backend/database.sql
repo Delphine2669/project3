@@ -83,8 +83,8 @@ CREATE TABLE `video` (
   `description` varchar(255) DEFAULT NULL,
   `publication_date` varchar(255) DEFAULT NULL,
   `is_favorite` tinyint DEFAULT NULL,
-  `is_accessible` tinyint NOT NULL,
-  `data` varchar(255) DEFAULT NULL,
+  `is_accessible` tinyint NULL,
+  `videoData` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -95,7 +95,13 @@ CREATE TABLE `video` (
 
 LOCK TABLES `video` WRITE;
 /*!40000 ALTER TABLE `video` DISABLE KEYS */;
-INSERT INTO `video` VALUES (3,'Cyberpunck_2077_court_circuit',7,'premier_test','2023-06-14',0,1,'/videos/Cyberpunck_2077_court_circuit.mp4'),(4,'Cyberpunck_2077_Panam_in_trouble',11,'second_test','2023-06-15',0,1,'/videos/Cyberpunck_2077_Panam_in_trouble.mp4'),(5,'Cacahuette',9,'call Of video 1','2023-07-10',0,1,'/videos/video1.mp4'),(6,'Cacahuette 2 le retour',10,'call Of video 2','2023-07-10',0,1,'/videos/video2.mp4'),(7,'Cacahuette 3 la suite de trop ?',10,'call Of video 3','2023-07-10',0,1,'/videos/video3.mp4'),(8,'Cacahuette 4 trop cest trop',10,'call Of video 4','2023-07-10',0,1,'/videos/video4.mp4'),(9,'Cacahuette 5 bientÃ´t fini',10,'call Of video 5','2023-07-10',0,1,'/videos/video5.mp4');
+INSERT INTO `video` VALUES (1,'Cyberpunck_2077_court_circuit',7,'premier_test','2023-06-14',0,1,'/videos/Cyberpunck_2077_court_circuit.mp4'),
+(2,'Cyberpunck_2077_Panam_in_trouble',11,'second_test','2023-06-15',0,1,'/videos/Cyberpunck_2077_Panam_in_trouble.mp4'),
+(3,'Cacahuette',9,'call Of video 1','2023-07-10',0,1,'/videos/video1.mp4'),
+(4,'Cacahuette 2 le retour',10,'call Of video 2','2023-07-10',0,1,'/videos/video2.mp4'),
+(5,'Cacahuette 3 la suite de trop ?',10,'call Of video 3','2023-07-10',0,1,'/videos/video3.mp4'),
+(6,'Cacahuette 4 trop cest trop',10,'call Of video 4','2023-07-10',0,1,'/videos/video4.mp4'),
+(7,'Cacahuette 5 bientÃ´t fini',10,'call Of video 5','2023-07-10',0,1,'/videos/video5.mp4');
 /*!40000 ALTER TABLE `video` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -163,15 +169,14 @@ DROP TABLE IF EXISTS `viewer`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `viewer` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `username` varchar(45) NOT NULL,
+  `username` varchar(45) NOT NULL unique,
   `email` varchar(45) NOT NULL,
-  `birthday` date DEFAULT NULL,
+  `birthday` date NULL,
   `is_favorite` tinyint DEFAULT NULL,
   `is_admin` tinyint DEFAULT NULL,
   `hashedPassword` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -180,7 +185,7 @@ CREATE TABLE `viewer` (
 
 LOCK TABLES `viewer` WRITE;
 /*!40000 ALTER TABLE `viewer` DISABLE KEYS */;
-INSERT INTO `viewer` VALUES (4,'BGdu26','bgdu26@tsn.game','1998-07-10',1,0,'$argon2id$v=19$m=16,t=2,p=1$emVmemVmemVmemZlenplZHpkZGZ6ZnpmZXphZGF6ZGQ$UKaGZ9hGFn/S5SBQDMe/Uw'),(5,'superAdmin','admind@tsn.game','1980-05-31',1,1,'superman'),(6,'User1234','User1234@tsn.game','2000-10-25',0,0,'easyPassword');
+INSERT INTO `viewer` VALUES (1,'BGdu26','bgdu26@tsn.game','1998-07-10',1,0,'$argon2id$v=19$m=16,t=2,p=1$emVmemVmemVmemZlenplZHpkZGZ6ZnpmZXphZGF6ZGQ$UKaGZ9hGFn/S5SBQDMe/Uw'),(2,'superAdmin','admind@tsn.game','1980-05-31',1,1,'superman'),(3,'User1234','User1234@tsn.game','2000-10-25',0,0,'easyPassword');
 /*!40000 ALTER TABLE `viewer` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -193,4 +198,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-07-12 15:29:37
+-- Dump completed on 2023-07-05 12:12:24
