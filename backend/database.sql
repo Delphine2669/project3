@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: mydb
 -- ------------------------------------------------------
--- Server version	8.0.33-0ubuntu0.22.04.2
+-- Server version	8.0.33-0ubuntu0.22.04.2-0ubuntu0.22.04.2
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -79,7 +79,7 @@ CREATE TABLE `video` (
   `description` varchar(255) DEFAULT NULL,
   `publication_date` varchar(255) DEFAULT NULL,
   `is_favorite` tinyint DEFAULT NULL,
-  `is_accessible` tinyint NOT NULL,
+  `is_accessible` tinyint NULL,
   `videoData` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;
@@ -176,7 +176,7 @@ CREATE TABLE `viewer` (
 
 LOCK TABLES `viewer` WRITE;
 /*!40000 ALTER TABLE `viewer` DISABLE KEYS */;
-INSERT INTO `viewer` VALUES (4,'BGdu26','bgdu26@tsn.game','1998-07-10',1,0,'$argon2id$v=19$m=16,t=2,p=1$emVmemVmemVmemZlenplZHpkZGZ6ZnpmZXphZGF6ZGQ$UKaGZ9hGFn/S5SBQDMe/Uw'),(5,'superAdmin','admind@tsn.game','1980-05-31',1,1,'superman'),(6,'User1234','User1234@tsn.game','2000-10-25',0,0,'easyPassword');
+INSERT INTO `viewer` VALUES (1,'BGdu26','bgdu26@tsn.game','1998-07-10',1,0,'$argon2id$v=19$m=16,t=2,p=1$emVmemVmemVmemZlenplZHpkZGZ6ZnpmZXphZGF6ZGQ$UKaGZ9hGFn/S5SBQDMe/Uw'),(2,'superAdmin','admind@tsn.game','1980-05-31',1,1,'superman'),(3,'User1234','User1234@tsn.game','2000-10-25',0,0,'easyPassword');
 /*!40000 ALTER TABLE `viewer` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

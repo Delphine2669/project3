@@ -22,16 +22,16 @@ class VideoManager extends AbstractManager {
 
   update(video) {
     return this.database.query(
-      `update ${this.table} set title = ? where id = ?, time = ?, description = ?, publication_date = ?, is_favorite = ?, is_accessible = ?, videoData = ?`,
+      `update ${this.table} set title = ?, time = ?, description = ?, publication_date = ?, is_favorite = ?, is_accessible = ?, videoData = ? where id=?`,
       [
         video.title,
-        video.id,
         video.time,
         video.description,
         video.publication_date,
         video.is_favorite,
         video.is_accessible,
         video.videoData,
+        video.id,
       ]
     );
   }

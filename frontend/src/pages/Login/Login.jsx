@@ -1,56 +1,89 @@
-import React, { useState } from "react";
-import "./Login.css";
+import React, { useRef } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
-import logo from "../../assets/TSN_logo.png";
+import { useAuth } from "../../contexts/AuthContext";
+import { authFetch } from "../../utils";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import "./Login.scss";
 
 export default function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const usernameRef = useRef();
+  const passwordRef = useRef();
+
+  const { setToken, setIsAdmin } = useAuth();
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    navigate("/");
-  };
+    try {
+      const response = await authFetch(
+        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5001"}/login`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: usernameRef.current.value,
+            password: passwordRef.current.value,
+          }),
+        }
+      );
+      if (response.ok) {
+        const data = await response.json();
 
+        if (data && data.token && data.viewer) {
+          const { token, viewer } = data;
+          localStorage.setItem("token", token);
+          setToken(token);
+          setIsAdmin(viewer.is_admin);
+          alert("Login successful");
+          navigate("/");
+        } else {
+          throw new Error("Invalid response data");
+        }
+      } else {
+        alert("Error: Login failed");
+        console.error("Login failed");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
-    <div>
-      {" "}
-      <img src={logo} alt="TSN logo" className="login-logo" />
-      <div className="login_container">
-        <form className="login" onSubmit={handleSubmit}>
-          <h3 className="title">LOGIN</h3>
-          <div className="login-field">
-            <input
-              type="text"
-              className="login-input"
-              value={username}
-              placeholder="Username"
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </div>
-          <div className="login-field">
-            <input
-              type="password"
-              className="login-input"
-              value={password}
-              placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <p className="new-user">New user ?</p>
-          <NavLink to="/SignUp" className="subscribe">
-            Create an Account
-          </NavLink>
-          <button
-            type="submit"
-            className="button login-submit"
-            data-hover="Let's Go!!"
-          >
-            <div className="button-text">sign in</div>
-          </button>
-        </form>
+    <div className="login-box">
+      <Header />
+      <div>
+        <div className="login_container">
+          <form className="login" onSubmit={handleSubmit}>
+            <h3 className="title">Login to your account</h3>
+            <div className="login-field">
+              <input
+                type="text"
+                id="username"
+                ref={usernameRef}
+                placeholder="Username"
+              />
+            </div>
+            <div className="login-field">
+              <input
+                type="password"
+                id="password"
+                ref={passwordRef}
+                placeholder="Password"
+              />
+            </div>
+            <button type="submit" className="button login-submit">
+              <div className="button-text">Sign In</div>
+            </button>
+            <p className="new-user">New user?</p>
+            <NavLink to="/SignUp" className="subscribe">
+              Create an Account
+            </NavLink>
+          </form>
+        </div>
       </div>
+      <Footer />
     </div>
   );
 }

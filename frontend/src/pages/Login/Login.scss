@@ -1,0 +1,125 @@
+.login-box {
+  height: 100%;
+}
+.login_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--login-box-bg);
+  border: 0.4dvh solid var(--color-3);
+  border-radius: 5px;
+  margin-left: 10dvw;
+  margin-right: 10dvw;
+  margin-top: 5dvh;
+  margin-bottom: 6dvh;
+  text-align: center;
+
+  .title {
+    margin-top: 8dvh;
+    margin-bottom: 2dvh;
+    font-family: var(--text-font);
+    color: transparent;
+    -webkit-text-fill-color: transparent; // prise en charge des navigateurs WebKit
+    background-image: var(--logo-color-gradient);
+    background-clip: text;
+    -webkit-background-clip: text; // prise en charge des navigateurs WebKit
+    font-size: 1.5em;
+    text-align: center;
+  }
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40dvh;
+  padding: 4dvh;
+  border: #d17015;
+}
+
+.login-field {
+  padding: 4dvh 0dvh;
+  margin-top: -2dvh;
+}
+
+.new-user {
+  color: var(--color-2scd-2);
+  margin-top: 1rem;
+}
+
+a.subscribe {
+  margin-top: 2dvh;
+  color: rgb(241, 212, 212);
+}
+
+.login-input {
+  color: var(--color-2scd-2);
+  border: none;
+  border-bottom: 0.2dvh solid var(--color-3);
+  background: none;
+  padding: 2dvh;
+  font-weight: 700;
+  font-size: larger;
+  width: 75%;
+  text-align: center;
+}
+
+.login-input:active,
+.login-input:focus,
+.login-input:hover {
+  outline: none;
+}
+
+.login-submit {
+  font-size: 1.5dvh;
+  margin-top: 2dvh;
+  padding: 2dvh 2dvh;
+  border-radius: 26px;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: var(--color-3);
+  cursor: pointer;
+  border: none;
+  position: relative;
+}
+
+input::placeholder {
+  color: var(--color-3);
+  font-size: 0.7em;
+}
+
+.button-text {
+  padding: 5px;
+}
+
+.button.login-submit {
+  margin-top: 10dvh;
+  padding: 5px;
+}
+
+.button div {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 800;
+  font-size: 0.8em;
+  transition: all 0.3s ease-in-out;
+}
+
+img.login-logo {
+  width: 65%;
+  margin-left: 20%;
+  padding: 3%;
+}
+
+form.login {
+  width: 50dvw;
+  margin-top: -20%;
+  font-size: large;
+}
+.login {
+  color: var(--color-3);
+}

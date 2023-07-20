@@ -1,12 +1,11 @@
 import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer";
-import "../../components/Footer.scss";
 import photoList from "../../components/PhotoList";
-import VideoCarousel from "../../components/Caroussel/VideoCarousel";
-import Caroussel from "../../components/Caroussel/Caroussel";
-import HeroSlider from "../../components/HeroSlider/HeroSlider";
-import Grid from "../../components/Grid";
 import DysneyCat from "../../components/DisneyCat";
+import HeroSlider from "../../components/HeroSlider/HeroSlider";
+import CarouselDynamic from "../../components/Carousel/CarouselDynamic/CarouselDynamic";
+import VideoCarousel from "../../components/Carousel/VideoCarousel";
+import Grid from "../../components/Grid/Grid";
+import Footer from "../../components/Footer/Footer";
 
 export default function Home() {
   return (
@@ -15,14 +14,14 @@ export default function Home() {
         <Header />
       </div>
       <div className="content">
-        <Caroussel photoList={photoList} />
+        <CarouselDynamic />
         <HeroSlider photoList={photoList} />
         <DysneyCat />
         <VideoCarousel />
         <Grid />
-      </div>
-      <div className="Footer">
-        <Footer />
+        <div className="Footer">
+          <Footer />
+        </div>
       </div>
     </div>
   );

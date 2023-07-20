@@ -1,35 +1,43 @@
-const photo1 = "/video1.png";
-const photo2 = "/video2.png";
-const photo3 = "/video3.png";
-const photo4 = "/video1.png";
+const esport1 = "/esport1.jpg";
+const esport2 = "/esport2.jpg";
+const esport3 = "/esport3.jpg";
+const esport4 = "/esport4.jpg";
+const esport5 = "/esport5.jpg";
 
 const photoList = [
   {
     id: 1,
-    src: photo1,
-    alt: "screen video 1",
-    title: "cyberpunk",
+    src: esport1,
+    alt: "esport1",
+    title: "ESport1",
     description: "RPG",
   },
   {
     id: 2,
-    src: photo2,
-    alt: "screen video 2",
-    title: "cyberpunk",
+    src: esport2,
+    alt: "esport 2",
+    title: "ESport2",
     description: "FPS",
   },
   {
     id: 3,
-    src: photo3,
+    src: esport3,
     alt: "screen video 3",
-    title: "cyberpunk",
+    title: "ESport3",
     description: "FPS",
   },
   {
     id: 4,
-    src: photo4,
+    src: esport4,
     alt: "screen video 4",
-    title: "COD",
+    title: "ESport4",
+    description: "RPG",
+  },
+  {
+    id: 5,
+    src: esport5,
+    alt: "screen video 4",
+    title: "ESport5",
     description: "RPG",
   },
 ];

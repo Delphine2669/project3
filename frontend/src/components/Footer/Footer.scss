@@ -1,0 +1,15 @@
+.foot {
+  font-family: roboto;
+  font-size: 2em;
+  text-align: center;
+  position: relative;
+  height: 10dvh;
+  width: 100dvw;
+  bottom: 0;
+  padding-top: 5dvh;
+  color: transparent;
+  -webkit-text-fill-color: transparent; // prise en charge des navigateurs WebKit
+  background-image: var(--logo-color-gradient);
+  background-clip: text;
+  -webkit-background-clip: text; // prise en charge des navigateurs WebKit
+}
