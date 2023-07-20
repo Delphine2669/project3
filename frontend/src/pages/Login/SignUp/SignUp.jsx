@@ -33,7 +33,6 @@ export default function SignUp() {
           body: JSON.stringify(viewer),
         }
       );
-
       if (res.ok) {
         setUsername("");
         setPassword("");
