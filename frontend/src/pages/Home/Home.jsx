@@ -1,6 +1,6 @@
 import Header from "../../components/Header/Header";
 import photoList from "../../components/PhotoList";
-import DysneyCat from "../../components/Carousel/DysneyLike/DisneyCat";
+import DysneyCat from "../../components/DisneyCat";
 import HeroSlider from "../../components/HeroSlider/HeroSlider";
 import CarouselDynamic from "../../components/Carousel/CarouselDynamic/CarouselDynamic";
 import VideoCarousel from "../../components/Carousel/VideoCarousel";

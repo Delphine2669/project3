@@ -11,12 +11,16 @@ const {
   verifyToken,
 } = require("./middlewares/services/auth");
 const videoControllers = require("./controllers/videoControllers");
+const catControllers = require("./controllers/catControllers");
+const videoCatControllers = require("./controllers/videoCatControllers");
 const photoControllers = require("./controllers/photoControllers");
 const viewerControllers = require("./controllers/viewerControllers");
 const authControllers = require("./controllers/authControllers");
 
 router.get("/videos", videoControllers.browse);
 router.get("/videos/:id", videoControllers.read);
+router.get("/categories", catControllers.getCategories);
+router.get("/categories/:id", videoCatControllers.filterByCategory);
 router.get("/photos", photoControllers.browse);
 router.get("/photos/:id", photoControllers.read);
 router.get("/viewers", viewerControllers.browse);
@@ -62,10 +66,15 @@ router.post("/photos", photoControllers.add);
 router.delete("/photos/:id", photoControllers.destroy);
 router.put("/viewers/:id", hashPassword, viewerControllers.edit);
 router.put("/videos/:id", videoControllers.edit);
-// router.post("/submit");
+
 router.delete("/videos/:id", videoControllers.destroy);
 router.put("/videos/:id", videoControllers.edit);
 router.post("/videos", videoControllers.add);
 router.delete("/videos/:id", videoControllers.destroy);
+router.get("/viewer", viewerControllers.browse);
+router.get("/viewer/:id", viewerControllers.read);
+router.put("/viewer/:id", viewerControllers.edit);
+router.post("/viewer", viewerControllers.add);
+router.delete("/viewer/:id", viewerControllers.destroy);
 
 module.exports = router;

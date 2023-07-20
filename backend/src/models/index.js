@@ -29,15 +29,21 @@ database.getConnection().catch(() => {
 // declare and fill models: that's where you should register your own managers
 
 const models = {};
+const CatManager = require("./CatManager");
+const VideoCatManager = require("./VideoCatManager");
 const ViewerManager = require("./ViewerManager");
 
 models.video = new VideoManager();
 models.video.setDatabase(database);
+models.category = new CatManager();
+models.category.setDatabase(database);
+models.videoCat = new VideoCatManager();
+models.videoCat.setDatabase(database);
+models.viewer = new ViewerManager();
+models.viewer.setDatabase(database);
 
 models.photo = new PhotoManager();
 models.photo.setDatabase(database);
-models.viewer = new ViewerManager();
-models.viewer.setDatabase(database);
 
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model
