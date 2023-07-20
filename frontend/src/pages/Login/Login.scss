@@ -11,7 +11,7 @@
   margin-left: 10dvw;
   margin-right: 10dvw;
   margin-top: 5dvh;
-  margin-bottom: 6dvh;
+  margin-bottom: 9dvh;
   text-align: center;
 
   .title {
@@ -73,7 +73,7 @@
   border: none;
   position: relative;
 }
-input::placeholder {
+.login-input::placeholder {
   color: var(--color-3);
   font-size: 0.7em;
 }
@@ -98,4 +98,13 @@ form.login {
 }
 .new-user {
   color: var(--color-3);
+}
+a.subscribe {
+  color: var(--color-2scd-2);
+}
+a.subscribe:hover {
+  color: var(--a-hover);
+}
+a.subscribe:active {
+  color: var(--a-active);
 }

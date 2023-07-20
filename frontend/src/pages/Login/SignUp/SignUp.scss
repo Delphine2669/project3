@@ -1,5 +1,5 @@
 .signup-box {
-  height: 100%;
+  height: 200dvh;
 }
 .signup-container {
   display: flex;
@@ -68,8 +68,7 @@
   border: none;
   position: relative;
 }
-// Note TV à remplacer par une par un class
-input::placeholder {
+.signup-input::placeholder {
   color: var(--color-3);
   font-size: 0.7em;
 }
