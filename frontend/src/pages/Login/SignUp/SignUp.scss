@@ -63,8 +63,7 @@ a.subscribe {
   border-bottom: 0.2dvh solid var(--color-2scd-2);
   background: none;
   padding: 2dvh;
-  font-weight: 700;
-  font-size: larger;
+  font-size: medium;
   width: 100%;
   transition: 0.2s;
 }
@@ -103,16 +102,9 @@ a.subscribe {
 }
 
 .button.signup-submit {
+  width: 30dvw;
   margin-top: 10dvh;
   padding: 5px;
-}
-
-.button div {
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-weight: 800;
-  font-size: 0.8em;
-  transition: all 0.3s ease-in-out;
 }
 
 img.signup-logo {

@@ -7,7 +7,8 @@
   position: relative;
   width: 100%;
   height: 100%;
-  margin-top: 30px;
+  margin-top: 2dvh;
+  overflow-x: scroll;
 }
 
 .hero-slider-slide {
@@ -58,7 +59,8 @@
   display: inline-block;
   font-family: var(--title-font);
   font-size: 4.5dvw;
-  margin-left: 1dvh;
+  margin-top: 4dvh;
+  margin-left: 11dvh;
   margin-bottom: -2dvh;
   border-bottom: solid 1px var(--color-2scd-2);
   border-image: var(--border-color-gradient);
@@ -92,4 +94,14 @@
   max-height: 100%;
   display: block;
   margin: 0 auto;
+}
+
+.modal-close-button {
+  background-color: #172255;
+  color: rgb(220, 155, 123);
+  font-size: 4dvw;
+  border-radius: 20px;
+  position: absolute;
+  top: 32%;
+  right: 2%;
 }

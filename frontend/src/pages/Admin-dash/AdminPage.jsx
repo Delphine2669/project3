@@ -19,7 +19,9 @@ function AdminPage() {
           Deleting a video
         </NavLink>
       </div>
-      <Footer />
+      <div className="footerAdmin">
+        <Footer />
+      </div>
     </div>
   );
 }

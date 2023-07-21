@@ -64,10 +64,17 @@
       #dbaa9f
     )
     1;
+  --grad-dt-body: linear-gradient(
+    0deg,
+    rgba(53, 87, 140, 1) 0%,
+    rgba(22, 60, 112, 1) 41%,
+    rgba(26, 10, 57, 1) 75%,
+    rgba(1, 9, 15, 1) 100%
+  );
 }
 body {
   margin: 0;
   padding: 0;
-  background-image: var(--grad-body);
+  background-image: var(--grad-dt-body);
   height: 100%;
 }

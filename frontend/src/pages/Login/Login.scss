@@ -10,7 +10,7 @@
   border-radius: 5px;
   margin-left: 10dvw;
   margin-right: 10dvw;
-  margin-top: 5dvh;
+  margin-top: 18dvh;
   margin-bottom: 6dvh;
   text-align: center;
 
@@ -44,7 +44,7 @@
 
 .new-user {
   color: var(--color-2scd-2);
-  margin-top: 1rem;
+  margin-top: 5dvh;
 }
 
 a.subscribe {
@@ -55,6 +55,7 @@ a.subscribe {
 .login-input {
   color: var(--color-2scd-2);
   border: none;
+  border-radius: 5px;
   border-bottom: 0.2dvh solid var(--color-3);
   background: none;
   padding: 2dvh;
@@ -97,7 +98,7 @@ input::placeholder {
 }
 
 .button.login-submit {
-  margin-top: 10dvh;
+  width: 30dvw;
   padding: 5px;
 }
 

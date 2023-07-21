@@ -8,6 +8,7 @@
   color: var(--color-3);
   margin: 3%;
   padding: 3%;
+  gap: 5dvh;
 }
 .delete-video-form-box {
   height: 100dvh;
@@ -19,4 +20,9 @@
 }
 .delete-video-form-container {
   background: var(--grad-admin);
+}
+
+.footerAdmin {
+  position: fixed;
+  bottom: 1%;
 }

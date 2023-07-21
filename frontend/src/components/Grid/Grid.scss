@@ -24,7 +24,8 @@
   background-image: var(--logo-color-gradient);
   background-clip: text;
   -webkit-background-clip: text; // prise en charge des navigateurs WebKit
-  margin-bottom: 4dvh;
+  margin-bottom: 3dvh;
+  margin-left: 20dvw;
 }
 .button.show-more {
   margin-top: 3dvh;

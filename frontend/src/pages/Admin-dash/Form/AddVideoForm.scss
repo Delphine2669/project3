@@ -7,6 +7,7 @@
   color: var(--color-3);
   margin: 3%;
   padding: 3%;
+  gap: 2dvh;
 }
 .add-video-form-box {
   height: 100dvh;
@@ -32,4 +33,9 @@ input::placeholder {
 .back-button {
   text-decoration: none;
   color: #804582;
+}
+
+.footerAdmin {
+  position: fixed;
+  bottom: 1%;
 }
