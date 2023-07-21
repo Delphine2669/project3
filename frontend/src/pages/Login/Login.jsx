@@ -56,9 +56,10 @@ export default function Login() {
       <div>
         <div className="login_container">
           <form className="login" onSubmit={handleSubmit}>
-            <h3 className="title">Login to your account</h3>
+            <h2 className="title">LOGIN</h2>
             <div className="login-field">
               <input
+                className="login-input"
                 type="text"
                 id="username"
                 ref={usernameRef}
@@ -67,6 +68,7 @@ export default function Login() {
             </div>
             <div className="login-field">
               <input
+                className="login-input"
                 type="password"
                 id="password"
                 ref={passwordRef}

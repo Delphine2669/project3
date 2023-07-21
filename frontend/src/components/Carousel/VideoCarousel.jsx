@@ -21,7 +21,7 @@ function Video() {
 
   return (
     <>
-      <h2 className="catégories"> Worlds League of Legends</h2>
+      <h2 className="categories"> Worlds League of Legends</h2>
       <div className="video-carousel">
         <div className="video-container">
           {videos.map((video) => (

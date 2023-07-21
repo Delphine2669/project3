@@ -13,6 +13,9 @@
   --color-3: rgba(238, 69, 64, 1);
   --font-foot-head: rgba(238, 238, 238, 1);
   --color-2scd-2: rgba(238, 238, 238, 1);
+  --a-hover: red;
+  --a-active: rgba(238, 69, 64, 0.6);
+  --a-visited: rgba(238, 69, 64, 0.3);
   --body-font: Lato, Arial, Helvetica, sans-serif;
   --title-font: "Plus Jakarta Sans", sans-serif;
   --video-title-font: Clinton, sans-serif;
