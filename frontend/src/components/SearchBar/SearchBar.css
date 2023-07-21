@@ -1,0 +1,25 @@
+.search-box {
+  display: flex;
+}
+
+.input-search {
+  height: 5dvh;
+  width: 9dvw;
+  border-style: none;
+  outline: none;
+  border-radius: 25px;
+  transition: all 0.5s ease-in-out;
+  background-color: #f80404;
+  color: #ffffff;
+}
+.input-search::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.input-search:focus {
+  width: 50dvw;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.555);
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
