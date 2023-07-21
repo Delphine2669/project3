@@ -30,7 +30,6 @@ function CarouselDynamic() {
               imageSrc={`${import.meta.env.VITE_BACKEND_URL}/assets${
                 photo.imageSrc
               }`}
-              title={photo.title}
               description={photo.description}
             />
           </div>
