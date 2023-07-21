@@ -4,7 +4,7 @@ import "./CarouselCard.scss";
 function CarousselCard({ videoSrc, caption, title }) {
   return (
     <>
-      <h3 className="video-tilte">{title}</h3>
+      <h3 className="video-title">{title}</h3>
       <div className="carousel-card-static">
         <div>
           <video className="video" controls width="100%" src={videoSrc}>
