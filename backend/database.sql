@@ -77,9 +77,9 @@ CREATE TABLE `video` (
   `title` varchar(255) DEFAULT NULL,
   `time` int DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
-  `publication_date` varchar(255) DEFAULT NULL,
-  `is_favorite` tinyint DEFAULT NULL,
-  `is_accessible` tinyint NULL,
+  `publicationDate` varchar(255) DEFAULT NULL,
+  `isFavorite` tinyint DEFAULT NULL,
+  `isAccessible` tinyint NULL,
   `videoData` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;

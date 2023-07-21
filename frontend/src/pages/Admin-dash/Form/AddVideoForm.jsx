@@ -13,26 +13,40 @@ function AddVideoForm() {
     time: "",
     description: "",
     publicationDate: "",
+    isFavorite: "",
+    isAccessible: "",
     videoData: null,
   });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const { title, time, description, publicationDate, videoData } = data;
+    const {
+      title,
+      time,
+      description,
+      publicationDate,
+      isFavorite,
+      isAccessible,
+      videoData,
+    } = data;
 
     const formData = new FormData();
     formData.append("title", title);
     formData.append("time", time);
     formData.append("description", description);
-    formData.append("publication_date", publicationDate);
+    formData.append("publicationDate", publicationDate);
     formData.append("videoData", videoData);
+    formData.append("isAccessible", isAccessible);
+    formData.append("isFavorite", isFavorite);
 
     const payload = {
       title,
       time,
       description,
       publicationDate,
+      isAccessible,
+      isFavorite,
       videoData: `/videos/${videoData.name}`,
     };
 
@@ -51,6 +65,8 @@ function AddVideoForm() {
         time: "",
         description: "",
         publicationDate: "",
+        isAccessible: "",
+        isFavorite: "",
         videoData: null,
       });
     } catch (error) {
@@ -86,6 +102,7 @@ function AddVideoForm() {
           <div className="title-section">
             <label htmlFor="title">Title:</label>
             <input
+              className="input-avf"
               id="title"
               placeholder="Titre"
               type="text"
@@ -98,6 +115,7 @@ function AddVideoForm() {
           <div className="time-section">
             <label htmlFor="time">Duration:</label>
             <input
+              className="input-avf"
               id="time"
               placeholder="Duration in seconds"
               type="number"
@@ -110,6 +128,7 @@ function AddVideoForm() {
           <div className="description-section">
             <label htmlFor="description">Description:</label>
             <input
+              className="input-avf"
               id="description"
               placeholder="Description"
               type="text"
@@ -120,15 +139,76 @@ function AddVideoForm() {
           </div>
           <br />
           <div className="publication-date-section">
-            <label htmlFor="publication_date">Publication date:</label>
+            <label htmlFor="publicationDate">Publication date:</label>
             <input
-              id="publication_date"
+              className="input-avf"
+              id="publicationDate"
               placeholder="Date de publication"
               type="date"
               name="publicationDate"
-              value={data.publication_date}
+              value={data.publicationDate}
               onChange={handleChange}
             />
+          </div>
+          <br />
+          <div className="is-Accessible-section-block">
+            <label htmlFor="isAccessible">is Accessible ?</label>
+            <div className="is-Accessible-section">
+              <label className="is-Accessible-yes">
+                <input
+                  className="input-avf"
+                  id="isAccessibleTrue"
+                  type="radio"
+                  name="isAccessible"
+                  value="1"
+                  checked={data.isAccessible === "1"}
+                  onChange={handleChange}
+                />
+                Yes:
+              </label>
+              <label className="is-Accessible-no">
+                <input
+                  className="input-avf"
+                  id="isAccessibleFalse"
+                  type="radio"
+                  name="isAccessible"
+                  value="0"
+                  checked={data.isAccessible === "0"}
+                  onChange={handleChange}
+                />
+                No:
+              </label>
+            </div>
+          </div>
+          <br />
+          <div className="is-Favorite-section-block">
+            <label htmlFor="isFavorite">is Favorite ?</label>
+            <div className="is-Favorite-section">
+              <label className="is-Favorite-yes">
+                <input
+                  className="input-avf"
+                  id="isFavoriteTrue"
+                  type="radio"
+                  name="isFavorite"
+                  value="1"
+                  checked={data.isFavorite === "1"}
+                  onChange={handleChange}
+                />
+                Yes:
+              </label>
+              <label className="is-Favorite-no">
+                <input
+                  className="input-avf"
+                  id="isFavoriteFalse"
+                  type="radio"
+                  name="isFavorite"
+                  value="0"
+                  checked={data.isFavorite === "0"}
+                  onChange={handleChange}
+                />
+                No:
+              </label>
+            </div>
           </div>
           <br />
           <div className="video-data-section">

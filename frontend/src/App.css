@@ -11,6 +11,9 @@
   --body-color: rgb(26, 29, 41);
   --color-2: rgba(45, 64, 89, 1);
   --color-3: rgba(238, 69, 64, 1);
+  --color-yellow-dt: #cdad19;
+  --color-green-dt: #c2b532;
+  --color-input-form-dt: #1a0a39;
   --font-foot-head: rgba(238, 238, 238, 1);
   --color-2scd-2: rgba(238, 238, 238, 1);
   --body-font: Lato, Arial, Helvetica, sans-serif;
@@ -64,7 +67,16 @@
       #dbaa9f
     )
     1;
+
+  --grad-dt-body: linear-gradient(
+    0deg,
+    rgba(53, 87, 140, 1) 0%,
+    rgba(22, 60, 112, 1) 41%,
+    rgba(26, 10, 57, 1) 75%,
+    rgba(1, 9, 15, 1) 100%
+  );
 }
+
 body {
   margin: 0;
   padding: 0;

@@ -57,6 +57,7 @@ function DeleteVideosForm() {
         >
           <label htmlFor="videoID">Id of the Video:</label>
           <input
+            className="input-dvf"
             id="videoId"
             type="number"
             placeholder="Enter the id of the video to delete"

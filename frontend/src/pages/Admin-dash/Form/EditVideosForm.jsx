@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
-import { authFetch } from "../../../utils";
 import "./EditVideosForm.scss";
 import Footer from "../../../components/Footer/Footer";
 import Header from "../../../components/Header/Header";
@@ -18,16 +17,14 @@ function EditVideoForm() {
   });
 
   useEffect(() => {
-    // Fetch the video data based on the videoId
     const fetchVideoData = async () => {
       try {
-        const token = localStorage.getItem("token");
-        const response = await authFetch(
+        // const token = localStorage.getItem("token");
+        const response = await fetch(
           `${import.meta.env.VITE_BACKEND_URL}/videos/${videoId}`,
           {
             method: "GET",
-          },
-          token
+          }
         );
         const data = await response.json();
         setVideoData((prevData) => ({
@@ -53,15 +50,11 @@ function EditVideoForm() {
     formData.append("videoData", videoData.file);
 
     try {
-      const token = localStorage.getItem("token");
-      await authFetch(
-        `${import.meta.env.VITE_BACKEND_URL}/videos/${videoId}`,
-        {
-          method: "PUT",
-          body: formData,
-        },
-        token
-      );
+      // const token = localStorage.getItem("token");
+      await fetch(`${import.meta.env.VITE_BACKEND_URL}/videos/${videoId}`, {
+        method: "PUT",
+        body: formData,
+      });
       alert("Video successfully updated!");
     } catch (error) {
       console.error("Error updating video:", error);
@@ -116,7 +109,7 @@ function EditVideoForm() {
             type="number"
             placeholder="Enter the id of the video to edit"
             value={videoId}
-            className="video-id-input"
+            className="video-id-input input-evf"
             onChange={handleVideoIdChange}
           />
           <br />
@@ -125,6 +118,7 @@ function EditVideoForm() {
               Title:
             </label>
             <input
+              className="input-evf"
               id="title"
               placeholder="Title"
               type="text"
@@ -139,6 +133,7 @@ function EditVideoForm() {
               Duration:
             </label>
             <input
+              className="input-evf"
               id="time"
               placeholder="Duration in seconds"
               type="number"
@@ -153,6 +148,7 @@ function EditVideoForm() {
               Description:
             </label>
             <input
+              className="input-evf"
               id="description"
               placeholder="Description"
               type="text"
@@ -167,6 +163,7 @@ function EditVideoForm() {
               Publication date:
             </label>
             <input
+              className="input-evf"
               id="publicationDate"
               placeholder="Publication Date"
               type="date"

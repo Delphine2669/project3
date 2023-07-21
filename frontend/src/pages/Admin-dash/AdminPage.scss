@@ -1,18 +1,20 @@
 .page-container {
   display: flex;
-  background: var(--grad-admin);
   flex-direction: column;
   align-items: center;
 }
 .admin-title {
-  color: #ee4540;
+  color: var(--color-green-dt);
 }
-.link {
+.add-video-link,
+.delete-video-link,
+.edit-video-link {
   padding: 4%;
-  color: #804582;
+  color: var(--color-yellow-dt);
   font-size: large;
   text-decoration: none;
 }
 .page-container-box {
   height: 100dvh;
+  background: var(--grad-dt-body);
 }
