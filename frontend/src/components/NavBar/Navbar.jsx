@@ -10,9 +10,8 @@ function NavBar() {
       <NavLink to="/">
         <img className="logo" src={logo} alt="Logo TSN Game" />
       </NavLink>
-      <Searchbar />
-
       <div className="link">
+        <Searchbar />
         <ProfileMenu />
       </div>
     </div>

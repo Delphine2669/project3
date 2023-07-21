@@ -1,39 +1,69 @@
 import { useState, useEffect } from "react";
 import "./SearchBar.css";
-import { Input } from "antd";
 import ApiCalls from "../../utils";
-
-const { Search } = Input;
 
 function Searchbar() {
   const [videos, setVideos] = useState([]);
   const [allVideos, setAllVideos] = useState([]);
+  const [isSearchBarActive, setIsSearchBarActive] = useState(false);
 
   useEffect(() => {
     async function fetchTitle() {
       try {
         const fetchedVideos = await ApiCalls.videoCall();
-        setVideos(fetchedVideos);
-        setAllVideos(fetchedVideos); // Save all videos to another state for filtering later
+        setAllVideos(fetchedVideos);
+        if (isSearchBarActive) {
+          // Si la recherche est active, filtrer les vidéos en fonction du texte de recherche
+          const filteredVideos = fetchedVideos.filter((video) =>
+            video.title.toLowerCase().includes(isSearchBarActive.toLowerCase())
+          );
+          setVideos(filteredVideos);
+        }
       } catch (error) {
-        console.error("Error retrieving video data:", error);
+        console.error(
+          "Erreur lors de la récupération des données vidéo :",
+          error
+        );
       }
     }
     fetchTitle();
-  }, []);
+  }, [isSearchBarActive]);
 
-  const onSearch = (searchText) => {
-    // Filter videos based on the title matching the search text
-    const filteredVideos = allVideos.filter((video) =>
-      video.title.toLowerCase().includes(searchText.toLowerCase())
-    );
-    setVideos(filteredVideos);
+  // const onSearch = (searchText) => {
+  //   if (searchText.trim() !== "") {
+  //     const filteredVideos = allVideos.filter((video) =>
+  //       video.title.toLowerCase().includes(searchText.toLowerCase())
+  //     );
+  //     setVideos(filteredVideos);
+  //   } else {
+  //     setVideos([]);
+  //   }
+  //   setIsSearchBarActive(searchText);
+  // };
+
+  const onChangeSearch = (event) => {
+    const searchText = event.target.value;
+    if (searchText.trim() !== "") {
+      const filteredVideos = allVideos.filter((video) =>
+        video.title.toLowerCase().includes(searchText.toLowerCase())
+      );
+      setVideos(filteredVideos);
+    } else {
+      setVideos([]);
+    }
+    setIsSearchBarActive(searchText);
   };
 
   return (
-    <div className="main-search">
-      <Search placeholder="Rechercher des vidéos" onSearch={onSearch} />
-      <div className="video-list">
+    <div className="search-box">
+      <input
+        type="text"
+        className="input-search"
+        placeholder="Type to Search..."
+        // onSearch={onSearch}
+        onChange={onChangeSearch}
+      />
+      <div className="video-list" hidden={!isSearchBarActive}>
         {videos.map((video) => (
           <div className="video-cat_container" key={video.id}>
             <video
@@ -58,44 +88,3 @@ function Searchbar() {
 }
 
 export default Searchbar;
-
-// import { useState, useEffect } from "react";
-// import "./SearchBar.css";
-// import { Input } from "antd";
-// import ApiCalls from "../../utils";
-
-// const { Search } = Input;
-
-// function Searchbar() {
-//   const [searchTerm, setSearchTerm] = useState("");
-//   const [videos, setVideos] = useState([]);
-
-//   useEffect(() => {
-//     async function fetchTitle() {
-//       try {
-//         const fetchedTitle = await ApiCalls.videoCall();
-//         setVideos(fetchedTitle);
-//       } catch (error) {
-//         console.error("Error retrieving video title:", error);
-//       }
-//     }
-//     fetchTitle();
-//   }, []);
-
-//   const onSearch = (searchTerm) => {
-//     const filteredVideos = videos.filter((video) =>
-//       video.title.toLowerCase().includes(searchTerm.toLowerCase())
-//     );
-
-//     setVideos(filteredVideos);
-//   };
-//   // On filtre les videos en fonction de la searchbar
-
-//   return (
-//     <div className="main-search">
-//       <Search placeholder="input search text" onSearch={onSearch} />
-//     </div>
-//   );
-// }
-
-// export default Searchbar;
