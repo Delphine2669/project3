@@ -1,23 +1,60 @@
+.page-container-box {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #2d293a;
+}
+
 .page-container {
   display: flex;
-  background: var(--grad-admin);
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 2dvh;
+  height: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 .admin-title {
-  color: #ee4540;
+  color: #d9efff;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
-.link {
-  padding: 4%;
+
+.link-add-video-link {
+  padding: 10px 20px;
   color: #804582;
-  font-size: large;
+  font-size: 4dvw;
   text-decoration: none;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  margin-bottom: 2dvh;
+  transition: background-color 0.2s ease;
 }
-.page-container-box {
-  height: 100dvh;
+
+.link-edit-video-link {
+  padding: 10px 20px;
+  color: #804582;
+  font-size: 4dvw;
+  text-decoration: none;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  margin-bottom: 2dvh;
+  transition: background-color 0.2s ease;
+}
+
+.link-delete-video-link {
+  padding: 10px 20px;
+  color: #804582;
+  font-size: 4dvw;
+  text-decoration: none;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  margin-bottom: 2dvh;
+  transition: background-color 0.2s ease;
 }
 
 .footerAdmin {
-  position: fixed;
-  bottom: 1%;
+  margin-top: 20px;
 }

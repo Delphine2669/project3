@@ -96,7 +96,7 @@ function EditVideoForm() {
         </NavLink>
       </div>
       <div className="edit-video-form-container">
-        <h1 className="edit-video-form-title">Edit Video</h1>
+        <h1 className="edit-video-form-title">EDIT VIDEOS</h1>
         <form
           method="POST"
           encType="multipart/form-data"

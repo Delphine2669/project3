@@ -75,7 +75,7 @@ function AddVideoForm() {
         </NavLink>
       </div>
       <div className="add-video-form-container">
-        <h1 className="add-video-form-title">Add Videos</h1>
+        <h1 className="add-video-form-title">ADD VIDEOS</h1>
         <form
           method="POST"
           encType="multipart/form-data"

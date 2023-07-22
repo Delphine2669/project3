@@ -1,28 +1,81 @@
 @import "../../../App.css";
 
+.nav-container {
+  position: fixed;
+  top: 1%;
+}
+
+.delete-video-form-box {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #2d293a;
+}
+
+.delete-video-form-container {
+  margin-top: 2dvh;
+  margin-bottom: 10dvh;
+  border: 2px solid #f0eaf0;
+  border-radius: 10px;
+  padding-top: 4dvh;
+  padding-bottom: 10dvh;
+  width: 80%;
+  max-width: 600px;
+  background-color: #43404c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: monospace;
+}
+
 .delete-video-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--color-3);
-  margin: 3%;
-  padding: 3%;
-  gap: 5dvh;
+  color: white;
+  gap: 4dvh;
 }
-.delete-video-form-box {
-  height: 100dvh;
+
+.delete-video-form > label {
+  padding-top: 5dvh;
+  padding-bottom: -1dvh;
 }
+
 .delete-video-form-title {
-  color: #ee4540;
+  color: #ffffff;
   text-align: center;
-  padding: 3%;
+  font-size: 5.5dvw;
 }
-.delete-video-form-container {
-  background: var(--grad-admin);
+
+.delete-video-form-container input {
+  width: 80%;
+  padding: 2%;
+  margin-bottom: 1dvh;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.delete-video-form-container button {
+  width: 60%;
+  padding: 2%;
+  border-radius: 5px;
+}
+
+.delete-video-form-container input::placeholder {
+  color: #804582;
+  font-size: 14px; /* Réduire la taille de la police pour les placeholders */
+}
+
+.back-button {
+  text-decoration: none;
+  color: #ca9a17;
+  margin-bottom: 5%;
+  font-family: monospace;
+  font-size: 3.5dvw;
+  cursor: pointer;
 }
 
 .footerAdmin {
-  position: fixed;
-  bottom: 1%;
+  margin-top: 20px;
 }

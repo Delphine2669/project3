@@ -48,7 +48,7 @@ function DeleteVideosForm() {
         </NavLink>
       </div>
       <div className="delete-video-form-container">
-        <h1 className="delete-video-form-title">Delete Videos</h1>
+        <h1 className="delete-video-form-title">DELETE VIDEOS</h1>
         <form
           method="POST"
           action={`${import.meta.env.VITE_BACKEND_URL}/videos/${videoId}`}
