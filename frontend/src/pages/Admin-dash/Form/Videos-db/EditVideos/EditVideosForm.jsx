@@ -1,25 +1,24 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "./EditVideosForm.scss";
-import Footer from "../../../components/Footer/Footer";
-import Header from "../../../components/Header/Header";
+import Footer from "../../../../../components/Footer/Footer";
+import Header from "../../../../../components/Header/Header";
 
 function EditVideoForm() {
   const [videoId, setVideoId] = useState("");
-  const inputRef = useRef(null);
+  // const inputRef = useRef(null);
 
   const [videoData, setVideoData] = useState({
     title: "",
     time: "",
     description: "",
     publicationDate: "",
-    file: null,
+    // file: null,
   });
 
   useEffect(() => {
     const fetchVideoData = async () => {
       try {
-        // const token = localStorage.getItem("token");
         const response = await fetch(
           `${import.meta.env.VITE_BACKEND_URL}/videos/${videoId}`,
           {
@@ -27,10 +26,11 @@ function EditVideoForm() {
           }
         );
         const data = await response.json();
-        setVideoData((prevData) => ({
-          ...prevData,
-          ...data,
-        }));
+        setVideoData(data);
+        //  => ({
+        //   ...prevData,
+        //   ...data,
+        // }));
       } catch (error) {
         console.error("Error fetching video data:", error);
       }
@@ -41,19 +41,22 @@ function EditVideoForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    // const { title, time, description, publicationDate, file } = videoData;
 
-    const formData = new FormData();
-    formData.append("title", videoData.title);
-    formData.append("time", videoData.time);
-    formData.append("description", videoData.description);
-    formData.append("publicationDate", videoData.publicationDate);
-    formData.append("videoData", videoData.file);
+    // const formData = new FormData();
+    // formData.append("title", videoData.title);
+    // formData.append("time", videoData.time);
+    // formData.append("description", videoData.description);
+    // formData.append("publicationDate", videoData.publicationDate);
+    // formData.append("videoData", videoData.file);
 
     try {
-      // const token = localStorage.getItem("token");
       await fetch(`${import.meta.env.VITE_BACKEND_URL}/videos/${videoId}`, {
         method: "PUT",
-        body: formData,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(videoData),
       });
       alert("Video successfully updated!");
     } catch (error) {
@@ -73,12 +76,12 @@ function EditVideoForm() {
     }));
   };
 
-  const handleFileChange = (ev) => {
-    setVideoData((prevData) => ({
-      ...prevData,
-      file: ev.target.files[0],
-    }));
-  };
+  // const handleFileChange = (ev) => {
+  //   setVideoData((prevData) => ({
+  //     ...prevData,
+  //     file: ev.target.files[0],
+  //   }));
+  // };
 
   return (
     <div className="edit-video-form-box">
@@ -91,7 +94,7 @@ function EditVideoForm() {
       <div className="edit-video-form-container">
         <h1 className="edit-video-form-title">Edit Video</h1>
         <form
-          method="POST"
+          method="PUT"
           encType="multipart/form-data"
           action={`${import.meta.env.VITE_BACKEND_URL}/videos/${videoId}`}
           className="edit-video-form"
@@ -125,6 +128,7 @@ function EditVideoForm() {
               name="title"
               value={videoData.title}
               onChange={handleChange}
+              required
             />
           </div>
           <br />
@@ -140,6 +144,7 @@ function EditVideoForm() {
               name="time"
               value={videoData.time}
               onChange={handleChange}
+              required
             />
           </div>
           <br />
@@ -155,6 +160,7 @@ function EditVideoForm() {
               name="description"
               value={videoData.description}
               onChange={handleChange}
+              required
             />
           </div>
           <br />
@@ -170,10 +176,11 @@ function EditVideoForm() {
               name="publicationDate"
               value={videoData.publicationDate}
               onChange={handleChange}
+              required
             />
           </div>
           <br />
-          <div className="video-data-section">
+          {/* <div className="video-data-section">
             <label htmlFor="videoData" className="edit-video-label">
               Video:
             </label>
@@ -185,7 +192,7 @@ function EditVideoForm() {
               onChange={handleFileChange}
             />
           </div>
-          <br />
+          <br /> */}
           <button type="submit">Update Video</button>
         </form>
       </div>

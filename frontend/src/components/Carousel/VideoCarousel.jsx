@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./VideoCarousel.scss";
-import ApiCalls from "../../utils";
+import ApiCalls from "../../utilities/utils";
 import VideoCard from "./VideoCard/VideoCard";
 
 function Video() {

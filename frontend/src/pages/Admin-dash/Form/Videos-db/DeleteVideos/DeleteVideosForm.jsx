@@ -1,10 +1,10 @@
 import { useState } from "react";
 // import axios from "axios";
 import { NavLink } from "react-router-dom";
-import { authFetch } from "../../../utils";
+import { authFetch } from "../../../../../utilities/utils";
 import "./DeleteVideosForm.scss";
-import Header from "../../../components/Header/Header";
-import Footer from "../../../components/Footer/Footer";
+import Header from "../../../../../components/Header/Header";
+import Footer from "../../../../../components/Footer/Footer";
 
 function DeleteVideosForm() {
   const [videoId, setVideoId] = useState("");

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 import PhotoCard from "../PhotoCard/PhotoCard";
-import ApiCalls from "../../../utils";
+import ApiCalls from "../../../utilities/utils";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "react-responsive-carousel/lib/styles/carousel.css";
 import "./CarouselDynamic.scss";
@@ -32,6 +32,7 @@ function CarouselDynamic() {
               }`}
               title={photo.title}
               description={photo.description}
+              alt={photo.alt}
             />
           </div>
         ))}

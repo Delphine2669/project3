@@ -162,8 +162,8 @@ CREATE TABLE `viewer` (
   `username` varchar(45) NOT NULL,
   `email` varchar(45) NOT NULL,
   `birthday` date DEFAULT NULL,
-  `is_favorite` tinyint DEFAULT NULL,
-  `is_admin` tinyint DEFAULT NULL,
+  `isFavorite` tinyint DEFAULT NULL,
+  `isAdmin` tinyint DEFAULT NULL,
   `hashedPassword` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)

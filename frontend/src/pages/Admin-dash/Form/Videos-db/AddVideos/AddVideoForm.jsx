@@ -2,8 +2,8 @@ import React, { useState, useRef } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import "./AddVideoForm.scss";
-import Header from "../../../components/Header/Header";
-import Footer from "../../../components/Footer/Footer";
+import Header from "../../../../../components/Header/Header";
+import Footer from "../../../../../components/Footer/Footer";
 
 function AddVideoForm() {
   const inputRef = useRef(null);
