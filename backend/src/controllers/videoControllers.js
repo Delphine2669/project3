@@ -31,7 +31,15 @@ const read = (req, res) => {
 const edit = (req, res) => {
   const videoId = parseInt(req.params.id, 10);
   const videoData = req.body;
-
+  // const videoData = {
+  //   title: req.body.title,
+  //   time: req.body.time,
+  //   description: req.body.description,
+  //   publicationDate: req.body.publicationDate,
+  //   isAccessible: req.body.isAccessible,
+  //   isFavorite: req.body.isFavorite,
+  //   file: req.file.path,
+  // };
   models.video
     .update(videoData, videoId)
     .then(([result]) => {

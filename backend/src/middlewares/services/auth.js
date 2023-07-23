@@ -1,6 +1,7 @@
 const argon2 = require("argon2");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
+const models = require("../../models");
 
 const hashingOptions = {
   type: argon2.argon2id,
@@ -32,7 +33,7 @@ const verifyPassword = (req, res) => {
       if (isVerified) {
         const payload = { sub: req.viewer.id };
         const token = jwt.sign(payload, process.env.JWT_SECRET, {
-          expiresIn: "1h",
+          expiresIn: "10d",
         });
         delete req.viewer.hashedPassword;
         const message = "Credentials are valid ";
@@ -69,8 +70,24 @@ const verifyToken = (req, res, next) => {
     res.sendStatus(401);
   }
 };
+
+const checkingUser = (req, res, next) => {
+  const { username, hashedPassword } = req.body;
+  models.viewer
+    .findByUsernameWithHashedPassword({ username, hashedPassword })
+    .then(([rows]) => {
+      const userInDatabase = rows[0];
+      if (userInDatabase) {
+        res.status(409).json({ error: "Account already exists" });
+      } else {
+        next();
+      }
+    });
+};
+
 module.exports = {
   hashPassword,
   verifyPassword,
   verifyToken,
+  checkingUser,
 };

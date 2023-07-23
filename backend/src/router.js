@@ -9,7 +9,9 @@ const {
   hashPassword,
   verifyPassword,
   verifyToken,
+  checkingUser,
 } = require("./middlewares/services/auth");
+
 const videoControllers = require("./controllers/videoControllers");
 const catControllers = require("./controllers/catControllers");
 const videoCatControllers = require("./controllers/videoCatControllers");
@@ -51,8 +53,33 @@ router.post(
   },
   videoControllers.add
 );
-router.post("/videos", upload.single("videoData"), videoControllers.add);
-router.post("/viewers", hashPassword, viewerControllers.add);
+router.put(
+  "/videos/:id",
+  // upload.single("videoData"),
+  // (req, res, next) => {
+  //   const { originalname, filename } = req.file;
+  //   const ourPath = `./public/uploads/${uuidv4()}-${originalname}`;
+  //   fs.rename(`./public/uploads/${filename}`, ourPath, (err) => {
+  //     if (err) {
+  //       console.error(err);
+  //       return res.sendStatus(500);
+  //     }
+  //     req.videoData = {
+  //       title: req.body.title,
+  //       time: req.body.time,
+  //       description: req.body.description,
+  //       publicationDate: req.body.publication_date,
+  //       isAccessible: req.body.is_accessible,
+  //       videoData: ourPath,
+  //     };
+  //     return null;
+  //   });
+  //   next();
+  // },
+  videoControllers.edit
+);
+
+router.post("/viewers", hashPassword, checkingUser, viewerControllers.add);
 
 router.post(
   "/login",
@@ -60,21 +87,17 @@ router.post(
   verifyPassword
 );
 
-router.delete("/viewers/:id", verifyToken, viewerControllers.destroy);
 router.put("/photos/:id", photoControllers.edit);
 router.post("/photos", photoControllers.add);
 router.delete("/photos/:id", photoControllers.destroy);
-router.put("/viewers/:id", hashPassword, viewerControllers.edit);
-router.put("/videos/:id", videoControllers.edit);
 
-router.delete("/videos/:id", videoControllers.destroy);
-router.put("/videos/:id", videoControllers.edit);
-router.post("/videos", videoControllers.add);
-router.delete("/videos/:id", videoControllers.destroy);
-router.get("/viewer", viewerControllers.browse);
-router.get("/viewer/:id", viewerControllers.read);
-router.put("/viewer/:id", viewerControllers.edit);
-router.post("/viewer", viewerControllers.add);
-router.delete("/viewer/:id", viewerControllers.destroy);
+router.put("/viewers/:id", hashPassword, viewerControllers.edit);
+router.delete("/viewers/:id", verifyToken, viewerControllers.destroy);
+
+router.put("/videos/:id", verifyToken, videoControllers.edit);
+router.delete("/videos/:id", verifyToken, videoControllers.destroy);
+router.post("/videos", verifyToken, videoControllers.add);
+
+router.get("/viewers/:id", viewerControllers.read);
 
 module.exports = router;

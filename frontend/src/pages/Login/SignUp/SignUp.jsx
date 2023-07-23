@@ -59,8 +59,9 @@ export default function SignUp() {
         setConfirmPassword("");
         setEmail("");
         toastr.success("Account created successfully");
-
         navigate("/Login");
+      } else if (res.status === 409) {
+        toastr.error("Account already exists");
       } else {
         toastr.error("Account creation failed");
       }

@@ -1,0 +1,24 @@
+.edit-viewer-form {
+  //   flex-direction: column;
+  //   align-items: center;
+  //   justify-content: center;
+  text-align: center;
+  color: var(--color-green-dt);
+  margin: 3%;
+  padding: 3%;
+  //   justify-content: space-around;
+}
+.back-admin-button {
+  color: var(--color-yellow-dt);
+  text-decoration: none;
+}
+
+.input-evf::placeholder {
+  color: var(--color-input-form-dt);
+}
+
+.edit-viewer-form-title {
+  color: var(--color-yellow-dt);
+  text-align: center;
+  padding: 3%;
+}
