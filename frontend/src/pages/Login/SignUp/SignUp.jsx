@@ -1,8 +1,27 @@
 import React, { useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
+import toastr from "toastr";
 import "./SignUp.scss";
 import Header from "../../../components/Header/Header";
 import Footer from "../../../components/Footer/Footer";
+
+toastr.options = {
+  closeButton: false,
+  debug: false,
+  newestOnTop: false,
+  progressBar: true,
+  positionClass: "toast-top-center",
+  preventDuplicates: false,
+  onclick: null,
+  showDuration: "200",
+  hideDuration: "500",
+  timeOut: "3000",
+  extendedTimeOut: "1000",
+  showEasing: "swing",
+  hideEasing: "linear",
+  showMethod: "fadeIn",
+  hideMethod: "fadeOut",
+};
 
 export default function SignUp() {
   const [username, setUsername] = useState("");
@@ -39,10 +58,11 @@ export default function SignUp() {
         setPassword("");
         setConfirmPassword("");
         setEmail("");
-        alert("Account created successfully");
+        toastr.success("Account created successfully");
+
         navigate("/Login");
       } else {
-        alert("Error. Creation of account failed ");
+        toastr.error("Account creation failed");
       }
     } catch (error) {
       console.error(error);

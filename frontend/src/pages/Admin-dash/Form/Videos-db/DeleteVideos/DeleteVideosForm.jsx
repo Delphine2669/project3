@@ -1,11 +1,28 @@
 import { useState } from "react";
-// import axios from "axios";
 import { NavLink } from "react-router-dom";
+import toastr from "toastr";
 import { authFetch } from "../../../../../utilities/utils";
 import "./DeleteVideosForm.scss";
 import Header from "../../../../../components/Header/Header";
 import Footer from "../../../../../components/Footer/Footer";
 
+toastr.options = {
+  closeButton: false,
+  debug: false,
+  newestOnTop: false,
+  progressBar: true,
+  positionClass: "toast-top-center",
+  preventDuplicates: false,
+  onclick: null,
+  showDuration: "200",
+  hideDuration: "500",
+  timeOut: "3000",
+  extendedTimeOut: "1000",
+  showEasing: "swing",
+  hideEasing: "linear",
+  showMethod: "fadeIn",
+  hideMethod: "fadeOut",
+};
 function DeleteVideosForm() {
   const [videoId, setVideoId] = useState("");
 
@@ -30,10 +47,10 @@ function DeleteVideosForm() {
         },
         token
       );
-      alert("Video successfully deleted!");
+      toastr.success("Video successfully deleted!");
     } catch (error) {
       console.error("Error deleting video:", error);
-      alert("Video deletion failed.");
+      toastr.error("Video deletion failed.");
     }
   };
   const handleVideoIdChange = (event) => {

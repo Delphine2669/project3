@@ -1,9 +1,27 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import toastr from "toastr";
 import "./EditVideosForm.scss";
 import Footer from "../../../../../components/Footer/Footer";
 import Header from "../../../../../components/Header/Header";
 
+toastr.options = {
+  closeButton: false,
+  debug: false,
+  newestOnTop: false,
+  progressBar: true,
+  positionClass: "toast-top-center",
+  preventDuplicates: false,
+  onclick: null,
+  showDuration: "200",
+  hideDuration: "500",
+  timeOut: "3000",
+  extendedTimeOut: "1000",
+  showEasing: "swing",
+  hideEasing: "linear",
+  showMethod: "fadeIn",
+  hideMethod: "fadeOut",
+};
 function EditVideoForm() {
   const [videoId, setVideoId] = useState("");
   // const inputRef = useRef(null);
@@ -58,10 +76,10 @@ function EditVideoForm() {
         },
         body: JSON.stringify(videoData),
       });
-      alert("Video successfully updated!");
+      toastr.success("Video successfully updated!");
     } catch (error) {
       console.error("Error updating video:", error);
-      alert("Video update failed.");
+      toastr.error("Video update failed.");
     }
   };
 

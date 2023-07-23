@@ -1,9 +1,28 @@
 import React, { useState, useRef } from "react";
 import axios from "axios";
+import toastr from "toastr";
 import { NavLink } from "react-router-dom";
 import "./AddVideoForm.scss";
 import Header from "../../../../../components/Header/Header";
 import Footer from "../../../../../components/Footer/Footer";
+
+toastr.options = {
+  closeButton: false,
+  debug: false,
+  newestOnTop: false,
+  progressBar: true,
+  positionClass: "toast-top-center",
+  preventDuplicates: false,
+  onclick: null,
+  showDuration: "200",
+  hideDuration: "500",
+  timeOut: "3000",
+  extendedTimeOut: "1000",
+  showEasing: "swing",
+  hideEasing: "linear",
+  showMethod: "fadeIn",
+  hideMethod: "fadeOut",
+};
 
 function AddVideoForm() {
   const inputRef = useRef(null);
@@ -59,7 +78,7 @@ function AddVideoForm() {
         },
         timeout: 5000,
       });
-      alert("Video successfully added!");
+      toastr.success("Video successfully added!");
       setData({
         title: "",
         time: "",
@@ -71,7 +90,7 @@ function AddVideoForm() {
       });
     } catch (error) {
       console.error("Error uploading file:", error);
-      alert("Video upload failed.");
+      toastr.error("Video upload failed.");
     }
   };
 
@@ -107,6 +126,7 @@ function AddVideoForm() {
               placeholder="Titre"
               type="text"
               name="title"
+              required
               value={data.title}
               onChange={handleChange}
             />
@@ -217,6 +237,7 @@ function AddVideoForm() {
               id="videoData"
               type="file"
               name="videoData"
+              required
               ref={inputRef}
               onChange={handleFileChange}
             />
