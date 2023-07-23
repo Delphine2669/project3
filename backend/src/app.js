@@ -1,8 +1,8 @@
 // import some node modules for later
 const fs = require("node:fs");
 const path = require("node:path");
-
-// create express app
+// const cookieParser = require("cookie-parser");
+// create express appc
 
 const express = require("express");
 
@@ -53,7 +53,7 @@ if (fs.existsSync(reactIndexFile)) {
     res.sendFile(reactIndexFile);
   });
 }
-
+// app.use(cookieParser());
 // ready to export
 
 module.exports = app;
