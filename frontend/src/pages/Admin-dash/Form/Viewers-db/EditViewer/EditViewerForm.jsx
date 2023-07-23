@@ -25,6 +25,10 @@ toastr.options = {
 function EditViewerForm() {
   const [viewerId, setViewerId] = useState("");
   const [viewerData, setViewerData] = useState({
+    username: "",
+    email: "",
+    birthday: "",
+    isFavorite: "",
     isAdmin: "",
   });
 
@@ -80,7 +84,7 @@ function EditViewerForm() {
   };
 
   return (
-    <div className="edit-video-form-box">
+    <div className="edit-viewer-form-box">
       <Header />
       <div>
         <NavLink to="/adminpage" className="back-admin-button">
@@ -109,8 +113,38 @@ function EditViewerForm() {
             placeholder="Enter the id of the viewer to edit"
             value={viewerId}
             className="viewer-id-input input-evf"
+            required
             onChange={handleViewerIdChange}
           />
+          <br />
+          <div className="username-section">
+            <label htmlFor="username" className="edit-viewer-label">
+              Username:
+            </label>
+            <p className="viewer-data-username">{viewerData.username}</p>
+          </div>
+          <br />
+          <div className="email-section">
+            <label htmlFor="email" className="edit-viewer-label">
+              Email:
+            </label>
+            <p className="viewer-data-email">{viewerData.email}</p>
+          </div>
+          <br />
+          <div className="birthday-section">
+            <label htmlFor="birthday" className="edit-video-label">
+              Date of birth:
+            </label>
+            <input
+              className="input-evf"
+              id="birthday"
+              placeholder="Birthday"
+              type="date"
+              name="birthday"
+              value={viewerData.birthday}
+              onChange={handleChange}
+            />
+          </div>
           <br />
           <div className="is-Admin-section-block">
             <label htmlFor="isAdmin" className="edit-viewer-label">

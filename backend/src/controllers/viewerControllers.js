@@ -3,8 +3,8 @@ const models = require("../models");
 const browse = (req, res) => {
   models.viewer
     .findAll()
-    .then((rows) => {
-      res.send(rows[0]);
+    .then(([rows]) => {
+      res.send(rows);
     })
     .catch((err) => {
       console.error(err);
@@ -15,9 +15,9 @@ const browse = (req, res) => {
 const read = (req, res) => {
   models.viewer
     .find(req.params.id)
-    .then((rows) => {
+    .then(([rows]) => {
       if (rows[0] == null) {
-        res.send(404);
+        res.sendStatus(404);
       } else {
         res.send(rows[0]);
       }
@@ -29,10 +29,10 @@ const read = (req, res) => {
 };
 
 const edit = (req, res) => {
-  const viewer = req.body;
-  viewer.id = parseInt(req.params.id, 10);
+  const viewerId = parseInt(req.params.id, 10);
+  const viewerData = req.body;
   models.viewer
-    .update(viewer)
+    .update(viewerData, viewerId)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
@@ -47,11 +47,17 @@ const edit = (req, res) => {
 };
 
 const add = (req, res) => {
-  const viewer = req.body;
+  const viewer = {
+    username: req.body.username,
+    birthday: req.body.birthday,
+    email: req.body.email,
+    isAdmin: req.body.isAdmin,
+    isFavorite: req.body.isFavorite,
+  };
   models.viewer
     .insert(viewer)
     .then(([result]) => {
-      res.location(`/viewer/${result.insertId}`).sendStatus(204);
+      res.location(`/viewers/${result.insertId}`).sendStatus(204);
     })
     .catch((err) => {
       console.error(err);
