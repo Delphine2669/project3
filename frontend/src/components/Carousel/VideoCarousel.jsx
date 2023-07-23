@@ -32,7 +32,6 @@ function Video() {
                 }`}
                 caption={video.caption}
                 title={video.title}
-                description={video.description}
               />
             </div>
           ))}

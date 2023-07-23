@@ -86,7 +86,9 @@ function DeleteVideosForm() {
           </button>
         </form>
       </div>
-      <Footer />
+      <div className="footerAdmin">
+        <Footer />
+      </div>
     </div>
   );
 }

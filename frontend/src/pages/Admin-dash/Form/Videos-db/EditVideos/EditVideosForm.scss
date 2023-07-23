@@ -6,7 +6,13 @@
   margin: 3%;
   padding: 3%;
   justify-content: space-around;
+  gap: 0.5dvh;
 }
+
+.edit-video-form-box {
+  height: 100dvh;
+}
+
 .edit-video-form.label {
   padding: 15%;
 }
@@ -37,4 +43,8 @@ label.edit-video-label {
 }
 form.edit-video-form {
   display: flex;
+}
+.footerAdmin {
+  position: fixed;
+  bottom: 1%;
 }

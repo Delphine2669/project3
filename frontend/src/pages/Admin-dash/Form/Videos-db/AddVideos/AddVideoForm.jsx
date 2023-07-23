@@ -246,7 +246,9 @@ function AddVideoForm() {
           <button type="submit">Add video</button>
         </form>
       </div>
-      <Footer />
+      <div className="footerAdmin">
+        <Footer />
+      </div>
     </div>
   );
 }

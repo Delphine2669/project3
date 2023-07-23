@@ -7,31 +7,32 @@
 }
 
 .category-select {
-  margin: 20px;
+  margin-bottom: 1dvh;
   padding: 10px;
   font-size: 16px;
   background-color: transparent;
-  color: #ff5722;
+  color: #b79c4d;
   border-radius: 30px;
+  border-color: #7d5412;
 }
 
 .category-select option {
   font-size: 14px;
   padding: 8px;
-  background-color: #0e2844;
+  background-color: rgba(22, 60, 112, 1);
 }
 
 .video-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 5%;
 }
 
 .minia {
-  width: 100%;
+  width: 80%;
   height: auto;
-  justify-content: center;
+  margin-top: 1dvh;
+  margin-left: 10%;
 }
 
 .item {

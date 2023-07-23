@@ -30,7 +30,7 @@ function Grid() {
 
   return (
     <>
-      <h2 className="video-grid-categorie">Intel Extreme Masters 2023</h2>
+      <h2 className="video-grid-categorie">Exclusive videos on TSN Game</h2>
       <div className="video-grid">
         <div className="grid-container">
           {visibleVideoData.map((video) => (

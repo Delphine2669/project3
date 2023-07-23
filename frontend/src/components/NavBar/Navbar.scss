@@ -1,5 +1,5 @@
 .logo {
-  width: 19svh;
+  width: 25dvh;
   height: auto;
   margin-left: 2dvw;
   margin-top: 1dvh;
@@ -11,13 +11,13 @@
 }
 
 .link {
-  margin-top: 2dvh;
+  margin-top: 1svh;
+  display: flex;
 }
 .admin-dash-link {
-  color: var(--color-3);
   text-decoration: none;
+  color: var(--color-3);
 }
-
 /*======Style link======*/
 
 .dropdown {

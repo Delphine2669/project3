@@ -1,5 +1,5 @@
 import "./Footer.scss";
 
 export default function Footer() {
-  return <footer className="foot">Mentions légales</footer>;
+  return <footer className="foot">© All rights reserved to TSN Game</footer>;
 }

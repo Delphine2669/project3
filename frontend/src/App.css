@@ -68,7 +68,6 @@
       #dbaa9f
     )
     1;
-
   --grad-dt-body: linear-gradient(
     0deg,
     rgba(53, 87, 140, 1) 0%,
@@ -81,6 +80,6 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: var(--grad-body);
+  background-image: var(--grad-dt-body);
   height: 100%;
 }
