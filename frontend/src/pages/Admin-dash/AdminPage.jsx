@@ -9,17 +9,19 @@ function AdminPage() {
       <Header />
       <div className="page-container">
         <h1 className="admin-title">Admin Page</h1>
-        <NavLink to="/addvideos" className="link add-video-link">
+        <NavLink to="/addvideos" className="link-add-video-link">
           Adding a video
         </NavLink>
-        <NavLink to="/editvideos" className="link edit-video-link">
+        <NavLink to="/editvideos" className="link-edit-video-link">
           Editing a video
         </NavLink>
-        <NavLink to="/deletevideos" className="link delete-video-link">
+        <NavLink to="/deletevideos" className="link-delete-video-link">
           Deleting a video
         </NavLink>
       </div>
-      <Footer />
+      <div className="footer-admin admin-footer">
+        <Footer />
+      </div>
     </div>
   );
 }

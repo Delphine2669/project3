@@ -1,0 +1,33 @@
+.search-box {
+  display: flex;
+}
+
+.input-search {
+  height: 5dvh;
+  width: 10dvw;
+  outline: none;
+  margin-top: 3dvh;
+  margin-right: 10dvw;
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+  background-color: rgb(11, 5, 28);
+  color: rgb(11, 5, 28);
+  border-color: solid 2px white;
+}
+.input-search::placeholder {
+  display: none;
+  color: rgb(11, 5, 28);
+}
+
+.input-search:focus {
+  width: 20dvw;
+  border-radius: 0px;
+  background-color: transparent;
+  border-radius: 5%;
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+  color: aliceblue;
+}
+
+.input-search:focus::placeholder {
+  color: rgb(175, 168, 194);
+}

@@ -1,0 +1,70 @@
+.page-container-box {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #2d293a;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2dvh;
+  height: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.admin-title {
+  color: #d9efff;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.link-add-video-link {
+  padding: 10px 20px;
+  color: #804582;
+  font-size: 4dvw;
+  text-decoration: none;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  margin-bottom: 2dvh;
+  transition: background-color 0.2s ease;
+}
+
+.link-edit-video-link {
+  padding: 10px 20px;
+  color: #804582;
+  font-size: 4dvw;
+  text-decoration: none;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  margin-bottom: 2dvh;
+  transition: background-color 0.2s ease;
+}
+
+.link-delete-video-link {
+  padding: 10px 20px;
+  color: #804582;
+  font-size: 4dvw;
+  text-decoration: none;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  margin-bottom: 2dvh;
+  transition: background-color 0.2s ease;
+}
+
+.footer-admin {
+  margin-top: 20px;
+}
+.admin-footer {
+  margin-left: 6dvw;
+}
+
+.add-video-form-box .logo,
+.edit-video-form-box .logo,
+.delete-video-form-box .logo {
+  position: fixed;
+  top: 0;
+}

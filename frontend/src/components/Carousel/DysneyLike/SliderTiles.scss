@@ -1,0 +1,67 @@
+.DysneyCatBox {
+  display: flex;
+  flex-direction: row;
+  margin-left: 0.5dvw;
+  margin-top: 3dvh;
+}
+
+.item {
+  position: relative;
+  cursor: pointer;
+  width: 25dvw;
+  margin: 0;
+}
+
+.item-border {
+  width: 17dvw;
+  height: auto;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px,
+    rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
+  border-radius: 10px;
+  border: 2px solid;
+  background-color: #172254;
+  transition: transform 250ms ease-in-out, border 250ms ease-in-out,
+    box-shadow 250ms ease-in-out;
+}
+
+.item-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  z-index: 1;
+  object-fit: cover;
+}
+
+.item-image.hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+  visibility: hidden;
+}
+
+.item:hover .item-border {
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 40px 58px -16px,
+    rgba(0, 0, 0, 0.72) 0px 30px 22px -10px;
+  transform: scale(1.05);
+}
+
+.item:hover .item-image.hover-image {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  opacity: 1;
+  visibility: visible;
+}
+/*
+@media only screen and (min-width: 992px) {
+  .container {
+    flex-direction: row;
+  }
+  .item {
+    width: 20%;
+  }
+}
+*/

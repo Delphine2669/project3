@@ -29,14 +29,19 @@ const read = (req, res) => {
 };
 
 const edit = (req, res) => {
-  const video = req.body;
-
-  // TODO validations (length, format...)
-
-  video.id = parseInt(req.params.id, 10);
-
+  const videoId = parseInt(req.params.id, 10);
+  const videoData = req.body;
+  // const videoData = {
+  //   title: req.body.title,
+  //   time: req.body.time,
+  //   description: req.body.description,
+  //   publicationDate: req.body.publicationDate,
+  //   isAccessible: req.body.isAccessible,
+  //   isFavorite: req.body.isFavorite,
+  //   file: req.file.path,
+  // };
   models.video
-    .update(video)
+    .update(videoData, videoId)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
@@ -55,8 +60,9 @@ const add = (req, res) => {
     title: req.body.title,
     time: req.body.time,
     description: req.body.description,
-    publicationDate: req.body.publication_date,
-    isAccessible: req.body.is_accessible,
+    publicationDate: req.body.publicationDate,
+    isAccessible: req.body.isAccessible,
+    isFavorite: req.body.isFavorite,
     videoData: req.file.path,
   };
   // TODO validations (length, format...)

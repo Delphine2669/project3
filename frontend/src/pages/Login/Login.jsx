@@ -1,16 +1,35 @@
 import React, { useRef } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
+import toastr from "toastr";
 import { useAuth } from "../../contexts/AuthContext";
-import { authFetch } from "../../utils";
+import { authFetch } from "../../utilities/utils";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import "./Login.scss";
 
+toastr.options = {
+  closeButton: false,
+  debug: false,
+  newestOnTop: false,
+  progressBar: true,
+  positionClass: "toast-top-center",
+  preventDuplicates: false,
+  onclick: null,
+  showDuration: "200",
+  hideDuration: "500",
+  timeOut: "3000",
+  extendedTimeOut: "1000",
+  showEasing: "swing",
+  hideEasing: "linear",
+  showMethod: "fadeIn",
+  hideMethod: "fadeOut",
+};
+
 export default function Login() {
+  const { setToken, setIsAdmin } = useAuth();
   const usernameRef = useRef();
   const passwordRef = useRef();
-
-  const { setToken, setIsAdmin } = useAuth();
+  // const { handleLogin } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
@@ -36,14 +55,14 @@ export default function Login() {
           const { token, viewer } = data;
           localStorage.setItem("token", token);
           setToken(token);
-          setIsAdmin(viewer.is_admin);
-          alert("Login successful");
+          setIsAdmin(viewer.isAdmin);
+          toastr.success("Successfully logged in");
           navigate("/");
         } else {
           throw new Error("Invalid response data");
         }
       } else {
-        alert("Error: Login failed");
+        toastr.error("Failed to login, check your credentials");
         console.error("Login failed");
       }
     } catch (error) {
@@ -63,6 +82,7 @@ export default function Login() {
                 type="text"
                 id="username"
                 ref={usernameRef}
+                required
                 placeholder="Username"
               />
             </div>
@@ -72,6 +92,7 @@ export default function Login() {
                 type="password"
                 id="password"
                 ref={passwordRef}
+                required
                 placeholder="Password"
               />
             </div>

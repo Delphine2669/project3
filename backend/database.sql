@@ -61,7 +61,7 @@ CREATE TABLE `photo` (
 
 LOCK TABLES `photo` WRITE;
 /*!40000 ALTER TABLE `photo` DISABLE KEYS */;
-INSERT INTO `photo` VALUES (1,'call of duty','gameplay de jeux de tir','/image/callof.png'),(2,'Cyber Punk','gameplay RPG','/image/cyber1.png'),(3,'Cyber Punk','gameplay RPG','/image/cyber2.png');
+INSERT INTO `photo` VALUES (1,'call of duty','gameplay de jeux de tir','/image/fort2.jpg'),(2,'Cyber Punk','gameplay RPG','/image/fifa1.png'),(3,'Cyber Punk','gameplay RPG','/image/cod4.png'),(4,'call of duty','gameplay de jeux de tir','/image/cod2.jpg');
 /*!40000 ALTER TABLE `photo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -77,9 +77,9 @@ CREATE TABLE `video` (
   `title` varchar(255) DEFAULT NULL,
   `time` int DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
-  `publication_date` varchar(255) DEFAULT NULL,
-  `is_favorite` tinyint DEFAULT NULL,
-  `is_accessible` tinyint NULL,
+  `publicationDate` varchar(255) DEFAULT NULL,
+  `isFavorite` tinyint DEFAULT NULL,
+  `isAccessible` tinyint NULL,
   `videoData` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;
@@ -91,7 +91,22 @@ CREATE TABLE `video` (
 
 LOCK TABLES `video` WRITE;
 /*!40000 ALTER TABLE `video` DISABLE KEYS */;
-INSERT INTO `video` VALUES (1,'The World Is In Danger',9,'call Of video 1','2023-07-10',0,1,'/videos/video1.mp4'),(2,'You Can Do It !',10,'call Of video 2','2023-07-10',0,1,'/videos/video2.mp4'),(3,'Always Troubles',10,'call Of video 3','2023-07-10',0,1,'/videos/video3.mp4'),(4,'The Last Chance',10,'call Of video 4','2023-07-10',0,1,'/videos/video4.mp4'),(5,'CyberPunck Rise',10,'call Of video 5','2023-07-10',0,1,'/videos/video5.mp4'),(6,'Ghost Danger',5,'Starwars 1','2023-07-19',0,1,'/videos/video6.mp4'),(7,'Back To The Future',8,'Starwars 2','2023-07-19',0,1,'/videos/video7.mp4'),(8,'Dark Side',10,'Starwars 3','2023-07-19',0,1,'/videos/video8.mp4'),(9,'Winter Is Coming',10,'Starwars 4','2023-07-19',0,1,'/videos/video9.mp4'),(10,'Never Give Up',10,'Starwars 5','2023-07-19',0,1,'/videos/video10.mp4'),(11,'Cyberpucnk 2077',7,'premier_test','2023-06-14',0,1,'/videos/Cyberpucnk_2077_court_circuit.mp4'),(12,'Cyberpucnk Panam in trouble',11,'second_test','2023-06-15',0,1,'/videos/Cyberpucnk_2077_Panam_in_trouble.mp4');
+/*!40000 ALTER TABLE `video` ENABLE KEYS */;
+INSERT INTO `video` VALUES (1,'The World Is In Danger',9,'call Of video 1','2023-07-10',0,1,'/videos/video1.mp4'),(2,'You Can Do It !',10,'call Of video 2','2023-07-10',0,1,'/videos/video2.mp4'),(3,'Always Troubles',10,'call Of video 3','2023-07-10',0,1,'/videos/video3.mp4'),(4,'The Last Chance',10,'call Of video 4','2023-07-10',0,1,'/videos/video4.mp4'),(5,'CyberPunck Rise',10,'call Of video 5','2023-07-10',0,1,'/videos/video5.mp4'),(6,'Ghost Danger',5,'Starwars 1','2023-07-19',0,1,'/videos/video6.mp4'),(7,'Back To The Future',8,'Starwars 2','2023-07-19',0,1,'/videos/video7.mp4'),(8,'Dark Side',10,'Starwars 3','2023-07-19',0,1,'/videos/video8.mp4'),(9,'Winter Is Coming',10,'Starwars 4','2023-07-19',0,1,'/videos/video9.mp4'),(10,'Never Give Up',10,'Starwars 5','2023-07-19',0,1,'/videos/video10.mp4'),(11,'Cyberpucnk 2077',7,'premier_test','2023-06-14',0,1,'/videos/Cyberpucnk_2077_court_circuit.mp4'),(12,'Cyberpucnk Panam in trouble',11,'second_test','2023-06-15',0,1,'/videos/Cyberpucnk_2077_Panam_in_trouble.mp4'),
+(13,'Starting the Adventure!',11,'second_test','2023-06-15',0,1,'/videos/video11.mp4'),
+(14,'Exploring the Open World',11,'second_test','2023-06-15',0,1,'/videos/video12.mp4'),
+(15,'A Deep Dive into the Lore ',11,'second_test','2023-06-15',0,1,'/videos/video13.mp4'),
+(16,'Discovering Hidden Easter Eggs',11,'second_test','2023-06-15',0,1,'/videos/video14.mp4'),
+(17,'The Impact of Hell',11,'second_test','2023-06-15',0,1,'/videos/video15.mp4'),
+(18,'The Art of battle',11,'second_test','2023-06-15',0,1,'/videos/video16.mp4'),
+(19,'The Beast Mods ',11,'second_test','2023-06-15',0,1,'/videos/video17.mp4'),
+(20,'Breaking Down the Storyline ',11,'second_test','2023-06-15',0,1,'/videos/video18.mp4'),
+(21,'Building the Ultimate',11,'second_test','2023-06-15',0,1,'/videos/video19.mp4'),
+(22,'Breaking Barriers: The Fastest',11,'second_test','2023-06-15',0,1,'/videos/video20.mp4'),
+(23,'Inside the Mind of a Speedrunner',11,'second_test','2023-06-15',0,1,'/videos/video21.mp4'),
+(24,'EPIC Moments and Fails',11,'second_test','2023-06-15',0,1,'/videos/video22.mp4'),
+(25,'From Zero to Hero',11,'second_test','2023-06-15',0,1,'/videos/video23.mp4'),
+(26,'Challenge Run: No Hits Taken!',11,'second_test','2023-06-15',0,1,'/videos/video24.mp4');
 /*!40000 ALTER TABLE `video` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,7 +134,7 @@ CREATE TABLE `videoCat` (
 
 LOCK TABLES `videoCat` WRITE;
 /*!40000 ALTER TABLE `videoCat` DISABLE KEYS */;
-INSERT INTO `videoCat` VALUES (1,13),(2,12),(3,11),(4,10),(5,9),(6,8),(7,7),(8,6),(9,5),(10,4),(11,3),(12,1);
+INSERT INTO `videoCat` VALUES (1,1),(2,3),(3,4),(4,8),(5,2),(6,2),(7,7),(8,6),(9,5),(10,4),(11,8),(12,1),(13,10),(14,13),(15,9),(16,7),(17,13),(18,12),(19,10),(20,11),(21,14),(22,12),(23,10),(24,9),(25,6),(26,7);
 /*!40000 ALTER TABLE `videoCat` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -162,8 +177,8 @@ CREATE TABLE `viewer` (
   `username` varchar(45) NOT NULL,
   `email` varchar(45) NOT NULL,
   `birthday` date DEFAULT NULL,
-  `is_favorite` tinyint DEFAULT NULL,
-  `is_admin` tinyint DEFAULT NULL,
+  `isFavorite` tinyint DEFAULT NULL,
+  `isAdmin` tinyint DEFAULT NULL,
   `hashedPassword` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)

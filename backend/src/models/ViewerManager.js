@@ -7,13 +7,13 @@ class ViewerManager extends AbstractManager {
 
   insert(viewer) {
     return this.database.query(
-      `INSERT INTO ${this.table} (username, email, birthday, is_favorite, is_admin, hashedPassword) VALUES (?,?,?,?,?,?)`,
+      `INSERT INTO ${this.table} (username, email, birthday, isFavorite, isAdmin, hashedPassword) VALUES (?,?,?,?,?,?)`,
       [
         viewer.username,
         viewer.email,
         viewer.birthday,
-        viewer.is_favorite,
-        viewer.is_admin,
+        viewer.isFavorite,
+        viewer.isAdmin,
         viewer.hashedPassword,
       ]
     );
@@ -21,13 +21,13 @@ class ViewerManager extends AbstractManager {
 
   update(viewer) {
     return this.database.query(
-      `UPDATE ${this.table} SET username=?, email=?, birthday=?, is_favorite=?, is_admin=? , hashedPassword =? WHERE id=?`,
+      `UPDATE ${this.table} SET username=?, email=?, birthday=?, isFavorite=?, isAdmin=? , hashedPassword =? WHERE id=?`,
       [
         viewer.username,
         viewer.email,
         viewer.birthday,
-        viewer.is_favorite,
-        viewer.is_admin,
+        viewer.isFavorite,
+        viewer.isAdmin,
         viewer.hashedPassword,
         viewer.id,
       ]

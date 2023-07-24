@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useAuth } from "../../contexts/AuthContext";
 import ApiCalls from "../../utils";
 import VideoCard from "../Carousel/VideoCard/VideoCard";
 import "./Grid.scss";
 
 function Grid() {
+  const { isAuthenticated } = useAuth();
   const [videos, setVideos] = useState([]);
   const [videoPlus, setVideoPlus] = useState(4);
   const videoToLoad = 15;
@@ -30,7 +32,7 @@ function Grid() {
 
   return (
     <>
-      <h2 className="video-grid-categorie">Intel Extreme Masters 2023</h2>
+      <h2 className="video-grid-categorie">Exclusive videos on TSN Game</h2>
       <div className="video-grid">
         <div className="grid-container">
           {visibleVideoData.map((video) => (
@@ -46,7 +48,7 @@ function Grid() {
             </div>
           ))}
         </div>
-        {showLoadMoreButton && (
+        {showLoadMoreButton && isAuthenticated && (
           <button
             className="button show-more"
             type="button"

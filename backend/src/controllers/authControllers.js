@@ -13,6 +13,7 @@ const getUserByUsernameWithPasswordAndPassToNext = (req, res, next) => {
     }
   });
 };
+
 module.exports = {
   getUserByUsernameWithPasswordAndPassToNext,
 };

@@ -1,0 +1,55 @@
+/* DisneyCat.scss */
+
+.DisneyCatBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.category-select {
+  margin-bottom: 1dvh;
+  padding: 10px;
+  font-size: 16px;
+  background-color: transparent;
+  color: #b79c4d;
+  border-radius: 30px;
+  border-color: #7d5412;
+}
+
+.category-select option {
+  font-size: 14px;
+  padding: 8px;
+  background-color: rgba(22, 60, 112, 1);
+}
+
+.video-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.minia {
+  width: 80%;
+  height: auto;
+  margin-top: 1dvh;
+  margin-left: 10%;
+}
+
+.item {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-border {
+  border: 1px solid #ddd;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.item-image {
+  max-width: 200px;
+  max-height: 150px;
+  object-fit: cover;
+}

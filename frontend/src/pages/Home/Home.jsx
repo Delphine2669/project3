@@ -5,6 +5,8 @@ import CarouselDynamic from "../../components/Carousel/CarouselDynamic/CarouselD
 import VideoCarousel from "../../components/Carousel/VideoCarousel";
 import Grid from "../../components/Grid/Grid";
 import Footer from "../../components/Footer/Footer";
+import SliderTiles from "../../components/Carousel/DysneyLike/SliderTiles";
+import Cat from "../../components/Categories/Cat";
 
 export default function Home() {
   return (
@@ -14,8 +16,10 @@ export default function Home() {
       </div>
       <div className="content">
         <CarouselDynamic />
+        <SliderTiles />
         <HeroSlider photoList={photoList} />
         <VideoCarousel />
+        <Cat />
         <Grid />
         <div className="Footer">
           <Footer />

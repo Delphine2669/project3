@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./VideoCarousel.scss";
-import ApiCalls from "../../utils";
+import ApiCalls from "../../utilities/utils";
 import VideoCard from "./VideoCard/VideoCard";
 
 function Video() {
@@ -19,12 +19,14 @@ function Video() {
     fetchVideos();
   }, []);
 
+  const displayedVideos = videos.slice(0, 6);
+
   return (
     <>
-      <h2 className="categories"> Worlds League of Legends</h2>
+      <h2 className="categories"> Most viewed videos this week</h2>
       <div className="video-carousel">
         <div className="video-container">
-          {videos.map((video) => (
+          {displayedVideos.map((video) => (
             <div key={video.id}>
               <VideoCard
                 videoSrc={`${import.meta.env.VITE_BACKEND_URL}/assets${
@@ -32,7 +34,6 @@ function Video() {
                 }`}
                 caption={video.caption}
                 title={video.title}
-                description={video.description}
               />
             </div>
           ))}
