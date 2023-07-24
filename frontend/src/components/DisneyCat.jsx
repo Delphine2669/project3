@@ -57,7 +57,7 @@ export default function DisneyCat() {
         onChange={handleCategoryChange}
         value={selectedCategory?.id || ""}
       >
-        <option value="">Find your video by category</option>
+        <option value="">Find your videos by category</option>
         {categories.map((category) => (
           <option key={category.id} value={category.id}>
             {category.name}

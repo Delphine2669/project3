@@ -5,6 +5,12 @@
   margin-top: 1dvh;
 }
 
+#root > div > div.Header > header > div > div > span > div > div > button {
+  width: 10dvw;
+  background-color: rgb(173, 148, 36);
+  margin-left: 18dvw;
+}
+
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -41,4 +47,22 @@
 
 .account:hover .dropdown {
   display: block;
+}
+
+.logOut_button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.logOut_button img {
+  width: 10dvw;
+  height: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: -21dvw;
+  margin-top: 1.5dvh;
 }

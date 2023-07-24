@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import "./App.css";
 import Login from "./pages/Login/Login";
-import SignUp from "./pages/Login/SignUp/SignUp";
+import SignUp from "./pages/Login/SignUp";
 import AddVideoForm from "./pages/Admin-dash/Form/AddVideoForm";
 import { AuthProvider } from "./contexts/AuthContext";
 import AdminPage from "./pages/Admin-dash/AdminPage";

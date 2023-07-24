@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import "./SignUp.scss";
-import Header from "../../../components/Header/Header";
-import Footer from "../../../components/Footer/Footer";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
 export default function SignUp() {
   const [username, setUsername] = useState("");
@@ -50,7 +50,7 @@ export default function SignUp() {
   };
 
   return (
-    <div className="signup-box">
+    <div className="signup-box signup_page">
       <Header />
       <div className="signup_container">
         <form className="signup" onSubmit={handleSubmit}>

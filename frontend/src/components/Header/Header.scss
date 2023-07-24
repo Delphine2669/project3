@@ -1,5 +1,9 @@
 header {
-  height: 8dvh;
+  height: 6vh;
   width: 100%;
-  margin-bottom: 2dvh;
+  margin-bottom: 2vh;
+
+  &.hidden {
+    display: none;
+  }
 }

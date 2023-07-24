@@ -58,3 +58,10 @@
 .footerAdmin {
   margin-top: 20px;
 }
+
+.add-video-form-box .logo,
+.edit-video-form-box .logo,
+.delete-video-form-box .logo {
+  position: fixed;
+  top: 0;
+}
