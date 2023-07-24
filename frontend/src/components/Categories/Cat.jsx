@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./DisneyCat.scss";
+import "./Cat.scss";
 
-export default function DisneyCat() {
+export default function Cat() {
   const [categories, setCategories] = useState([]);
   const [videosByCategory, setVideosByCategory] = useState({});
   const [selectedCategory, setSelectedCategory] = useState(null);

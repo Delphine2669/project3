@@ -1,4 +1,4 @@
-.catégories {
+.categories {
   display: inline-block;
   font-family: var(--title-font);
   font-size: 4.5dvw;
@@ -11,4 +11,21 @@
   background-clip: text;
   -webkit-background-clip: text; // prise en charge des navigateurs WebKit
   margin-bottom: 3dvh;
+}
+.video-carousel {
+  overflow-x: scroll;
+  margin-bottom: 1dvh;
+  scrollbar-color: transparent transparent;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.video-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 3dvw;
+  margin-bottom: 3dvh;
+  width: 70dvw;
+  height: 100%;
+  gap: 5%;
 }

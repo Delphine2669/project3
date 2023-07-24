@@ -1,9 +1,3 @@
-.carousel {
-  border: 10px;
-  width: 100dvw;
-  display: flex;
-  margin-bottom: -10%;
-}
 .carousel-photocard-container {
   display: flex;
   gap: 10px;
@@ -33,4 +27,6 @@
 h2.photocard-title {
   color: var(--color-3);
   font-size: 3.5dvw;
+  margin-left: 3dvw;
+  margin-right: 3dvw;
 }

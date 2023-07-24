@@ -30,15 +30,12 @@
   width: 40dvw;
   border: 4px solid;
 }
-
 .video-card.hovered video::-webkit-media-controls-overlay-play-button {
   display: initial !important;
 }
-
 .video-card.hovered video {
   cursor: pointer;
 }
-
 .card-title {
   margin-top: 1dvh;
   font-size: 3.5dvw;
@@ -48,7 +45,6 @@
   color: var(--color-2scd-2);
   text-align: center;
 }
-
 .video {
   width: 100dvw;
   height: 100%;

@@ -1,12 +1,12 @@
 import Header from "../../components/Header/Header";
 import photoList from "../../components/PhotoList";
-import DysneyCat from "../../components/DisneyCat";
 import HeroSlider from "../../components/HeroSlider/HeroSlider";
 import CarouselDynamic from "../../components/Carousel/CarouselDynamic/CarouselDynamic";
 import VideoCarousel from "../../components/Carousel/VideoCarousel";
 import Grid from "../../components/Grid/Grid";
 import Footer from "../../components/Footer/Footer";
 import SliderTiles from "../../components/Carousel/DysneyLike/SliderTiles";
+import Cat from "../../components/Categories/Cat";
 
 export default function Home() {
   return (
@@ -19,7 +19,7 @@ export default function Home() {
         <SliderTiles />
         <HeroSlider photoList={photoList} />
         <VideoCarousel />
-        <DysneyCat />
+        <Cat />
         <Grid />
         <div className="Footer">
           <Footer />
