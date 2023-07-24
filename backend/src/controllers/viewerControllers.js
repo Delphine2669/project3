@@ -53,6 +53,7 @@ const add = (req, res) => {
     email: req.body.email,
     isAdmin: req.body.isAdmin,
     isFavorite: req.body.isFavorite,
+    hashedPassword: req.body.hashedPassword,
   };
   models.viewer
     .insert(viewer)

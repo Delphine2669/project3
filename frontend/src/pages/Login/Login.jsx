@@ -26,9 +26,10 @@ toastr.options = {
 };
 
 export default function Login() {
+  const { setToken, setIsAdmin } = useAuth();
   const usernameRef = useRef();
   const passwordRef = useRef();
-  const { handleLogin } = useAuth();
+  // const { handleLogin } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
@@ -51,7 +52,10 @@ export default function Login() {
         const data = await response.json();
 
         if (data && data.token && data.viewer) {
-          handleLogin(data);
+          const { token, viewer } = data;
+          localStorage.setItem("token", token);
+          setToken(token);
+          setIsAdmin(viewer.isAdmin);
           toastr.success("Successfully logged in");
           navigate("/");
         } else {

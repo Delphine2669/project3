@@ -9,7 +9,7 @@ export function AuthProvider({ children }) {
 
   const cachedValue = useMemo(
     () => ({ token, setToken, isAdmin, setIsAdmin }),
-    [token, isAdmin, setIsAdmin]
+    [token, isAdmin]
   );
 
   return (
