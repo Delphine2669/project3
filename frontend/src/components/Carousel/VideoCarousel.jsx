@@ -19,12 +19,14 @@ function Video() {
     fetchVideos();
   }, []);
 
+  const displayedVideos = videos.slice(0, 6);
+
   return (
     <>
-      <h2 className="categories"> Worlds League of Legends</h2>
+      <h2 className="categories"> Most viewed videos this week</h2>
       <div className="video-carousel">
         <div className="video-container">
-          {videos.map((video) => (
+          {displayedVideos.map((video) => (
             <div key={video.id}>
               <VideoCard
                 videoSrc={`${import.meta.env.VITE_BACKEND_URL}/assets${

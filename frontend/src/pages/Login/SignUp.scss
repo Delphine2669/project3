@@ -10,8 +10,8 @@
   border-radius: 5px;
   margin-left: 10dvw;
   margin-right: 10dvw;
-  margin-top: 5dvh;
-  margin-bottom: 9dvh;
+  margin-top: 8dvh;
+  // margin-bottom: 9dvh;
   text-align: center;
 }
 .title {
@@ -98,7 +98,6 @@ form.signup {
 .login {
   color: var(--color-2scd-2);
   font-size: small;
-  margin-top: 1rem;
 }
 .login:hover {
   color: var(--a-hover);
@@ -107,7 +106,6 @@ form.signup {
   color: var(--a-active);
 }
 a.login {
-  margin-top: 2dvh;
   color: rgb(212, 212, 241);
   font-size: small;
 }

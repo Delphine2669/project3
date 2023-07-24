@@ -110,7 +110,7 @@ function AddVideoForm() {
         </NavLink>
       </div>
       <div className="add-video-form-container">
-        <h1 className="add-video-form-title">Add Videos</h1>
+        <h1 className="add-video-form-title">ADD VIDEOS</h1>
         <form
           method="POST"
           encType="multipart/form-data"
@@ -200,7 +200,7 @@ function AddVideoForm() {
               </label>
             </div>
           </div>
-          <br />
+          {/* <br />
           <div className="is-Favorite-section-block">
             <label htmlFor="isFavorite">is Favorite ?</label>
             <div className="is-Favorite-section">
@@ -229,7 +229,7 @@ function AddVideoForm() {
                 No:
               </label>
             </div>
-          </div>
+          </div> */}
           <br />
           <div className="video-data-section">
             <label htmlFor="videoData">Vidéo:</label>

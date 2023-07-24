@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import toastr from "toastr";
 import "./SignUp.scss";
-import Header from "../../../components/Header/Header";
-import Footer from "../../../components/Footer/Footer";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
 toastr.options = {
   closeButton: false,
@@ -70,7 +70,7 @@ export default function SignUp() {
   };
 
   return (
-    <div className="signup-box">
+    <div className="signup-box signup_page">
       <Header />
       <div className="signup-container">
         <form className="signup" onSubmit={handleSubmit}>

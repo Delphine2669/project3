@@ -3,7 +3,7 @@ import { useAuth } from "../../contexts/AuthContext";
 import "./Navbar.scss";
 import ProfileMenu from "../ProfileMenu/ProfileMenu";
 import logo from "../../assets/logo.png";
-import Searchbar from "../SearchBar/SearchBar";
+// import Searchbar from "../SearchBar/SearchBar";
 
 function NavBar() {
   const { cachedToken, isAdmin } = useAuth();
@@ -18,7 +18,7 @@ function NavBar() {
         </div>
       )}
       <div className="link">
-        <Searchbar />
+        {/* <Searchbar /> */}
         <ProfileMenu />
       </div>
     </div>

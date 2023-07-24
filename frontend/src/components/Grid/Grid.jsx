@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import ApiCalls from "../../utilities/utils";
+import { useAuth } from "../../contexts/AuthContext";
+import ApiCalls from "../../utils";
 import VideoCard from "../Carousel/VideoCard/VideoCard";
 import "./Grid.scss";
 
 function Grid() {
+  const { isAuthenticated } = useAuth();
   const [videos, setVideos] = useState([]);
   const [videoPlus, setVideoPlus] = useState(4);
   const videoToLoad = 15;
@@ -46,7 +48,7 @@ function Grid() {
             </div>
           ))}
         </div>
-        {showLoadMoreButton && (
+        {showLoadMoreButton && isAuthenticated && (
           <button
             className="button show-more"
             type="button"

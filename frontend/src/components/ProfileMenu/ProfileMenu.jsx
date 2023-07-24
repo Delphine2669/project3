@@ -1,28 +1,34 @@
-import { Button, Dropdown, Space } from "antd";
+import { Button, Dropdown, Menu, Space } from "antd";
 import { LogoutOutlined, UserOutlined } from "@ant-design/icons";
 import { useNavigate, useLocation } from "react-router-dom";
-
-const items = [
-  {
-    key: "1",
-    danger: true,
-    icon: <LogoutOutlined />,
-    label: "Se déconnecter",
-    disabled: false,
-    onClick: () => console.info("logout"),
-  },
-];
+import { useAuth } from "../../contexts/AuthContext";
 
 function ProfileMenu() {
-  // TODO: à contextualisé
-  const isAuthenticated = false;
-
+  const { isAuthenticated, setToken } = useAuth();
   const navigate = useNavigate();
   const { pathname } = useLocation();
-
   const isOnLoginPage = pathname === "/login";
 
-  const handleClick = () => {
+  const handleLogout = () => {
+    setToken("");
+    navigate("/");
+  };
+
+  const handleMenuClick = ({ key }) => {
+    if (key === "logout") {
+      handleLogout();
+    }
+  };
+
+  const menu = (
+    <Menu onClick={handleMenuClick}>
+      <Menu.Item key="logout" icon={<LogoutOutlined />}>
+        Se déconnecter
+      </Menu.Item>
+    </Menu>
+  );
+
+  const handleIconClick = () => {
     if (!isAuthenticated) {
       navigate("/login");
     }
@@ -30,13 +36,13 @@ function ProfileMenu() {
 
   return (
     <span>
-      {isOnLoginPage ? null : (
-        <Dropdown menu={{ items }} trigger={["click"]}>
+      {!isOnLoginPage && (
+        <Dropdown overlay={menu} trigger={["click"]}>
           <Space>
             <Button
               shape="circle"
               icon={<UserOutlined />}
-              onClick={handleClick}
+              onClick={handleIconClick}
             />
           </Space>
         </Dropdown>
