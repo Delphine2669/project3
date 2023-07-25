@@ -1,7 +1,7 @@
 .login-box {
   height: 100%;
 }
-.login_container {
+.login-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,7 +98,7 @@ form.login {
   font-size: large;
 }
 .new-user {
-  color: var(--color-3);
+  color: var(--color-green-dt);
 }
 a.subscribe {
   color: var(--color-2scd-2);
@@ -108,4 +108,37 @@ a.subscribe:hover {
 }
 a.subscribe:active {
   color: var(--a-active);
+}
+
+@media screen and (min-width: 600px) {
+  .login-container {
+    margin-left: 30dvw;
+    margin-right: 30dvw;
+    margin-top: 10dvh;
+    margin-bottom: 8dvh;
+    height: 65dvh;
+  }
+  .login-submit {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1981px) {
+  .login-container {
+    margin-top: 10vh;
+    margin-bottom: 8dvh;
+    height: 65dvh;
+    .title {
+      font-size: 3em;
+      padding-top: 5dvh;
+    }
+  }
+  .login-input {
+    font-size: 2em;
+  }
+  .new-user {
+    font-size: 2em;
+  }
+  a.subscribe {
+    font-size: 2em;
+  }
 }

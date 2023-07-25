@@ -5,14 +5,13 @@
   margin-top: 1dvh;
 }
 
-#root > div > div.Header > header > div > div > span > div > div > button {
-  width: 10dvw;
-  background-color: rgb(173, 148, 36);
-  // margin-left: 28dvw;
-  position: fixed;
-  top: 2;
-  right: 0;
-  margin-right: 3%;
+.log-btn {
+  button {
+    margin-right: 2%;
+    background-color: rgb(173, 148, 36);
+    position: fixed;
+    right: 0;
+  }
 }
 
 .nav-container {
@@ -72,4 +71,13 @@
   right: 0;
   margin-right: -21dvw;
   margin-top: 1.5dvh;
+}
+
+@media screen and (min-width: 600px) {
+  :where(.css-dev-only-do-not-override-12jzuas).ant-btn.ant-btn-icon-only {
+    width: 5dvw;
+    height: 5dvh;
+  }
+}
+@media screen and (min-width: 1981px) {
 }

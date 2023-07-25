@@ -72,39 +72,37 @@ export default function Login() {
   return (
     <div className="login-box">
       <Header />
-      <div>
-        <div className="login_container">
-          <form className="login" onSubmit={handleSubmit}>
-            <h2 className="title">LOGIN</h2>
-            <div className="login-field">
-              <input
-                className="login-input"
-                type="text"
-                id="username"
-                ref={usernameRef}
-                required
-                placeholder="Username"
-              />
-            </div>
-            <div className="login-field">
-              <input
-                className="login-input"
-                type="password"
-                id="password"
-                ref={passwordRef}
-                required
-                placeholder="Password"
-              />
-            </div>
-            <button type="submit" className="button login-submit">
-              <div className="button-text">Sign In</div>
-            </button>
-            <p className="new-user">New user?</p>
-            <NavLink to="/SignUp" className="subscribe">
-              Create an Account
-            </NavLink>
-          </form>
-        </div>
+      <div className="login-container">
+        <form className="login" onSubmit={handleSubmit}>
+          <h2 className="title">LOGIN</h2>
+          <div className="login-field">
+            <input
+              className="login-input"
+              type="text"
+              id="username"
+              ref={usernameRef}
+              required
+              placeholder="Username"
+            />
+          </div>
+          <div className="login-field">
+            <input
+              className="login-input"
+              type="password"
+              id="password"
+              ref={passwordRef}
+              required
+              placeholder="Password"
+            />
+          </div>
+          <button type="submit" className="button login-submit">
+            <div className="button-text">Sign In</div>
+          </button>
+          <p className="new-user">New user ?</p>
+          <NavLink to="/SignUp" className="subscribe">
+            Create an Account
+          </NavLink>
+        </form>
       </div>
       <Footer />
     </div>

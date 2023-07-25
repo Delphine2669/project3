@@ -95,10 +95,6 @@ form.signup {
   margin-top: -20%;
   font-size: large;
 }
-.login {
-  color: var(--color-2scd-2);
-  font-size: small;
-}
 .login:hover {
   color: var(--a-hover);
 }
@@ -106,6 +102,20 @@ form.signup {
   color: var(--a-active);
 }
 a.login {
-  color: rgb(212, 212, 241);
-  font-size: small;
+  color: var(--color-green-dt);
+}
+
+@media screen and (min-width: 600px) {
+  .signup-container {
+    margin-left: 30dvw;
+    margin-right: 30dvw;
+    margin-top: 10dvh;
+    margin-bottom: 8dvh;
+    height: 80dvh;
+  }
+  .signup-submit {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1981px) {
 }

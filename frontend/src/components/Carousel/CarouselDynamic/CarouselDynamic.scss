@@ -3,10 +3,6 @@
   width: 100dvw;
   display: flex;
 }
-.carousel-photocard-container {
-  display: flex;
-  gap: 10px;
-}
 
 .photocard-image {
   width: 100dvw;
@@ -37,4 +33,10 @@ h2.photocard-title {
 
 p.carousel-status {
   margin-top: 9dvh;
+}
+@media screen and (min-width: 600px) {
+  .photocard {
+    width: 50dvw;
+    margin-left: 25dvw;
+  }
 }

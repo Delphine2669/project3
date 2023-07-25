@@ -35,7 +35,7 @@ function ProfileMenu() {
   };
 
   return (
-    <span>
+    <span className="log-btn">
       {!isOnLoginPage && (
         <Dropdown overlay={menu} trigger={["click"]}>
           <Space>

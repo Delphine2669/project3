@@ -14,7 +14,7 @@ function Header() {
     "/deletevideos",
     "/editvideos",
     "/login",
-    "/signup",
+    "/SignUp",
   ];
 
   const isHiddenPage = hiddenHeaderPages.includes(location.pathname);
