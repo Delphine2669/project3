@@ -49,3 +49,18 @@
   width: 100dvw;
   height: 100%;
 }
+
+@media screen and (min-width: 600px) {
+  .video.video {
+    width: 30dvw;
+    height: auto;
+  }
+
+  .video.video:hover {
+    width: 30dvw;
+  }
+
+  .card-title {
+    font-size: 1.6dvw;
+  }
+}

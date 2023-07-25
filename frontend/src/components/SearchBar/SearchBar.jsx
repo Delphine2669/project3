@@ -63,12 +63,12 @@ function Searchbar() {
         // onSearch={onSearch}
         onChange={onChangeSearch}
       />
-      <div className="video-list" hidden={!isSearchBarActive}>
+      <div className="search-list-video" hidden={!isSearchBarActive}>
         {videos.map((video) => (
           <div className="video-cat_container" key={video.id}>
             <video
               controls
-              className="minia"
+              className="miniature"
               src={`${import.meta.env.VITE_BACKEND_URL}/assets/${
                 video.videoData
               }`}
@@ -86,5 +86,4 @@ function Searchbar() {
     </div>
   );
 }
-
 export default Searchbar;

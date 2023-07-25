@@ -7,6 +7,9 @@ import logo from "../../assets/logo.png";
 
 function NavBar() {
   const { cachedToken, isAdmin } = useAuth();
+
+  const isAdminLoaded = isAdmin !== "undefined";
+
   return (
     <div className="nav-container">
       <NavLink to="/">
@@ -14,7 +17,7 @@ function NavBar() {
       </NavLink>
       {cachedToken && isAdmin && (
         <div className="admin-dash-link">
-          <NavLink to={isAdmin ? "/adminpage" : "/"}>Admin Dashboard</NavLink>
+          <NavLink to="/adminpage">Admin Dashboard</NavLink>
         </div>
       )}
       <div className="link">

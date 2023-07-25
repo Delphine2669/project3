@@ -51,7 +51,7 @@ export default function Cat() {
   }, [selectedCategory]);
 
   return (
-    <div className="DisneyCatBox">
+    <div className="CatBox">
       <select
         className="category-select"
         onChange={handleCategoryChange}
