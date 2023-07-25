@@ -55,25 +55,6 @@
 .account:hover .dropdown {
   display: block;
 }
-
-.logOut_button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  display: inline-block;
-}
-
-.logOut_button img {
-  width: 10dvw;
-  height: auto;
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-right: -21dvw;
-  margin-top: 1.5dvh;
-}
-
 @media screen and (min-width: 600px) {
   :where(.css-dev-only-do-not-override-12jzuas).ant-btn.ant-btn-icon-only {
     width: 64px;

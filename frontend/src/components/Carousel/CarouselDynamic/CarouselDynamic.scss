@@ -31,9 +31,10 @@ h2.photocard-title {
   font-size: 3.5dvw;
 }
 
-p.carousel-status {
-  margin-top: 9dvh;
+.carousel-status {
+  display: none;
 }
+
 @media screen and (min-width: 600px) {
   .photocard {
     width: 50dvw;
