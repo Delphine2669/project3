@@ -23,7 +23,7 @@ function ProfileMenu() {
   const menu = (
     <Menu onClick={handleMenuClick}>
       <Menu.Item key="logout" icon={<LogoutOutlined />}>
-        Se déconnecter
+        Disconnect
       </Menu.Item>
     </Menu>
   );

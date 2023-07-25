@@ -55,9 +55,15 @@
 .account:hover .dropdown {
   display: block;
 }
+
 @media screen and (min-width: 600px) {
   :where(.css-dev-only-do-not-override-12jzuas).ant-btn.ant-btn-icon-only {
     width: 64px;
     height: 64px;
   }
+  /* body > div:nth-child(3) > div > ul {
+    position: relative;
+    top: 3%;
+    left: 950%;
+  } */
 }
