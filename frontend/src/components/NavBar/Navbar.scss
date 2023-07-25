@@ -8,9 +8,10 @@
 .log-btn {
   button {
     margin-right: 2%;
-    background-color: rgb(173, 148, 36);
+    background-color: var(--color-green-dt);
     position: fixed;
     right: 0;
+    top: 2;
   }
 }
 
@@ -78,6 +79,4 @@
     width: 64px;
     height: 64px;
   }
-}
-@media screen and (min-width: 1981px) {
 }

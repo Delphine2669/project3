@@ -10,7 +10,6 @@
   margin-top: 2dvh;
   overflow-x: scroll;
 }
-
 .hero-slider-slide {
   display: flex;
   flex-direction: column;
@@ -21,19 +20,16 @@
   transition: opacity 0.5s ease;
   z-index: 0;
 }
-
 .hero-slider-slide.active {
   opacity: 1;
   z-index: 1;
 }
-
 .hero-slider-slide img {
   width: 30dvw;
   height: 15dvh;
   object-fit: cover;
   gap: 1dvw;
 }
-
 .hero-slider-content {
   display: flex;
   flex-direction: column;
@@ -47,11 +43,9 @@
   color: #fff;
   z-index: 2;
 }
-
 .hero-slider-content h2 {
   font-size: 2dvw;
 }
-
 .hero-slider-content p {
   font-size: 1.5dvh;
 }
@@ -63,14 +57,13 @@
   margin-left: 14dvh;
   margin-bottom: -2dvh;
   border-bottom: solid 1px var(--color-2scd-2);
-  border-image: var(--border-color-gradient);
+  border-color: var(--color-yellow-dt);
   color: transparent;
   -webkit-text-fill-color: transparent; // prise en charge des navigateurs WebKit
-  background-image: var(--logo-color-gradient);
+  background-color: var(--color-yellow-dt);
   background-clip: text;
   -webkit-background-clip: text;
 }
-
 .image-modal {
   position: fixed;
   top: 0;
@@ -83,19 +76,16 @@
   align-items: center;
   z-index: 1000;
 }
-
 .image-modal-content {
   max-width: 90%;
   max-height: 90%;
 }
-
 .image-modal-content img {
   max-width: 100%;
   max-height: 100%;
   display: block;
   margin: 0 auto;
 }
-
 .modal-close-button {
   background-color: #172255;
   color: rgb(220, 155, 123);
@@ -104,4 +94,33 @@
   position: absolute;
   top: 32%;
   right: 2%;
+}
+@media screen and (min-width: 600px) {
+  .hero-slider-categorie {
+    display: flex;
+    justify-content: center;
+    font-size: 3dvw;
+    border-bottom: none;
+  }
+  .hero-slider {
+    justify-content: space-between;
+    width: 96dvw;
+    height: auto;
+    margin-left: 2dvw;
+    margin-right: 2dvw;
+    padding-top: 5dvh;
+    padding-bottom: 1dvh;
+  }
+  .hero-slider-slide img {
+    width: 20dvw;
+    height: auto;
+  }
+  .modal-close-button {
+    top: 3%;
+    right: 4%;
+    width: 2dvw;
+    height: 5dvh;
+    font-size: 2dvw;
+    padding-bottom: 2dvh;
+  }
 }
