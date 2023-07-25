@@ -109,13 +109,30 @@ a.login {
   .signup-container {
     margin-left: 30dvw;
     margin-right: 30dvw;
-    margin-top: 10dvh;
+    margin-top: 5dvh;
     margin-bottom: 8dvh;
-    height: 80dvh;
+    height: 75dvh;
+    padding-top: 5dvh;
   }
   .signup-submit {
-    width: 50%;
+    width: 25%;
+  }
+  a.login {
+    font-size: 1.5em;
+  }
+  .title {
+    font-size: 3em;
+    margin-bottom: 5dvh;
+  }
+  .signup-input::placeholder {
+    font-size: 1em;
+  }
+  .signup-field {
+    margin-bottom: 2dvh;
   }
 }
 @media screen and (min-width: 1981px) {
+  .signup-submit {
+    width: 20%;
+  }
 }
