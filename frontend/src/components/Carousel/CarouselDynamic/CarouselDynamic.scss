@@ -38,3 +38,12 @@ h2.photocard-title {
 p.carousel-status {
   margin-top: 9dvh;
 }
+
+@media screen and (min-width: 600px) {
+  .photocard {
+    margin-top: -2dvh;
+    margin-left: 22dvw;
+    width: 60%;
+    height: auto;
+  }
+}

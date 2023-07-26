@@ -56,19 +56,14 @@
   font-size: 1.5dvh;
 }
 .hero-slider-categorie {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   font-family: var(--title-font);
   font-size: 4.5dvw;
+  font-weight: bold;
   margin-top: 4dvh;
-  margin-left: 14dvh;
-  margin-bottom: -2dvh;
-  border-bottom: solid 1px var(--color-2scd-2);
-  border-image: var(--border-color-gradient);
-  color: transparent;
-  -webkit-text-fill-color: transparent; // prise en charge des navigateurs WebKit
-  background-image: var(--logo-color-gradient);
-  background-clip: text;
-  -webkit-background-clip: text;
+  margin-bottom: 1dvh;
+  color: rgb(179, 165, 11);
 }
 
 .image-modal {
@@ -98,36 +93,47 @@
 
 .modal-close-button {
   background-color: #172255;
-  color: rgb(220, 155, 123);
+  color: rgb(204, 179, 36);
   font-size: 4dvw;
   border-radius: 20px;
   position: absolute;
   top: 32%;
   right: 2%;
 }
+
 @media screen and (min-width: 600px) {
-  img.img-hero-slider {
-    height: 25dvh;
-    object-fit: cover;
-    gap: 1dvw;
+  .hero-slider-categorie {
+    display: flex;
+    justify-content: center;
+    font-size: 3dvw;
+    margin-bottom: 2dvh;
   }
+
+  .hero-slider {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10dvh;
+    margin-left: 1dvw;
+    padding-top: 1dvh;
+    padding-bottom: 1dvh;
+  }
+
   .hero-slider-slide img {
-    height: 25dvh;
+    width: 20dvw;
+    height: auto;
   }
+
   .modal-close-button {
-    background-color: #172255;
-    color: rgb(220, 155, 123);
-    font-size: 4dvw;
-    border-radius: 20px;
-    position: fixed;
-    top: 6%;
+    top: 3%;
+    right: 4%;
+    width: 2dvw;
+    height: 5dvh;
+    font-size: 2dvw;
+    padding-bottom: 2dvh;
   }
 }
-@media screen and (min-width: 1900px) {
-  .modal-close-button {
-    top: 10%;
-  }
-  img.img-hero-slider {
-    height: 35dvh;
-  }
+
+@media screen and (min-width: 1981px) {
 }

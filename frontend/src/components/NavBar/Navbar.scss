@@ -6,13 +6,19 @@
 }
 
 #root > div > div.Header > header > div > div > span > div > div > button {
-  width: 10dvw;
   background-color: rgb(173, 148, 36);
-  // margin-left: 28dvw;
   position: fixed;
-  top: 2;
-  right: 0;
-  margin-right: 3%;
+  top: 2%;
+  right: 0%;
+  margin-right: 2%;
+}
+
+body > div:nth-child(3) > div > ul {
+  width: 30dvw;
+  height: 5dvh;
+  position: absolute;
+  top: -3.5dvh;
+  left: 17dvw;
 }
 
 .nav-container {
@@ -27,14 +33,16 @@
 .admin-dash-link {
   text-decoration: none;
   color: var(--color-green-dt);
-  padding: 2dvh;
+  position: relative;
+  top: 7dvh;
+  right: -12dvw;
 }
 /*======Style link======*/
 
 .dropdown {
   top: 2%;
   left: 0;
-  background-color: #f2f2f2;
+  background-color: #fafafa;
   padding: 10px;
   margin-right: 2dvh;
 }
@@ -57,20 +65,29 @@
   display: block;
 }
 
-.logOut_button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  display: inline-block;
-}
+@media screen and (min-width: 600px) {
+  .logo {
+    width: 18dvw;
+    height: auto;
+  }
 
-.logOut_button img {
-  width: 10dvw;
-  height: auto;
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-right: -21dvw;
-  margin-top: 1.5dvh;
+  body > div:nth-child(3) > div > ul {
+    top: 6dvh;
+    left: 60dvw;
+    width: 7dvw;
+    height: 5dvh;
+  }
+
+  #root > div > div.Header > header > div > div > span > div > div > button {
+    top: 4dvh;
+    width: 3dvw;
+    height: 5dvh;
+  }
+
+  .admin-dash-link {
+    position: relative;
+    top: 3dvh;
+    left: 56dvw;
+    font-size: 1.4dvw;
+  }
 }

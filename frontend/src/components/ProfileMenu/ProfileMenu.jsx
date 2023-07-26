@@ -2,6 +2,7 @@ import { Button, Dropdown, Menu, Space } from "antd";
 import { LogoutOutlined, UserOutlined } from "@ant-design/icons";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
+import { removeToken } from "../../utilities/localStorage";
 
 function ProfileMenu() {
   const { isAuthenticated, setToken } = useAuth();
@@ -10,6 +11,7 @@ function ProfileMenu() {
   const isOnLoginPage = pathname === "/login";
 
   const handleLogout = () => {
+    removeToken();
     setToken("");
     navigate("/");
   };
@@ -23,7 +25,7 @@ function ProfileMenu() {
   const menu = (
     <Menu onClick={handleMenuClick}>
       <Menu.Item key="logout" icon={<LogoutOutlined />}>
-        Se déconnecter
+        Disconnect
       </Menu.Item>
     </Menu>
   );

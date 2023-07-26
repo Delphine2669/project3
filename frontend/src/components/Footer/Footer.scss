@@ -13,3 +13,9 @@
   background-clip: text;
   -webkit-background-clip: text; // prise en charge des navigateurs WebKit
 }
+
+@media screen and (min-width: 600px) {
+  .foot {
+    font-size: 1.5dvw;
+  }
+}

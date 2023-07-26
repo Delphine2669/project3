@@ -104,7 +104,8 @@ INSERT INTO `video` VALUES (1,'The World Is In Danger',9,'call Of video 1','2023
 (21,'Building the Ultimate',11,'second_test','2023-06-15',0,1,'/videos/video19.mp4'),
 (22,'Breaking Barriers: The Fastest',11,'second_test','2023-06-15',0,1,'/videos/video20.mp4'),
 (23,'Inside the Mind of a Speedrunner',11,'second_test','2023-06-15',0,1,'/videos/video21.mp4'),
-(24,'EPIC Moments and Fails',11,'second_test','2023-06-15',0,1,'/videos/video22.mp4');
+(24,'EPIC Moments and Fails',11,'second_test','2023-06-15',0,1,'/videos/video22.mp4'),
+(25,'From Zero to Hero',11,'second_test','2023-06-15',0,1,'/videos/video23.mp4');
 /*!40000 ALTER TABLE `video` ENABLE KEYS */;
 UNLOCK TABLES;
 

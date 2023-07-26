@@ -1,9 +1,8 @@
-/* DisneyCat.scss */
-
-.DisneyCatBox {
+.CatBox {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 4dvh;
 }
 
 .category-select {
@@ -35,21 +34,27 @@
   margin-left: 10%;
 }
 
-.item {
-  margin: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+@media screen and (min-width: 600px) {
+  .category-select {
+    padding-left: 8dvw;
+    width: 40%;
+    font-size: 1.5dvw;
+  }
 
-.item-border {
-  border: 1px solid #ddd;
-  padding: 5px;
-  border-radius: 5px;
-}
+  .category-select option {
+    font-size: 1.5dvw;
+  }
 
-.item-image {
-  max-width: 200px;
-  max-height: 150px;
-  object-fit: cover;
+  .video-list {
+    display: flex;
+    justify-content: center;
+    gap: 4dvw;
+    margin-right: 5dvw;
+    margin-top: 3dvh;
+  }
+
+  .minia {
+    width: 40dvw;
+    height: auto;
+  }
 }

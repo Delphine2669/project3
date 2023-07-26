@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import toastr from "toastr";
 import "./EditViewerForm.scss";
 import Footer from "../../../../../components/Footer/Footer";
@@ -23,6 +23,8 @@ toastr.options = {
   hideMethod: "fadeOut",
 };
 function EditViewerForm() {
+  const navigate = useNavigate();
+
   const [viewerId, setViewerId] = useState("");
   const [viewerData, setViewerData] = useState({
     username: "",
@@ -66,6 +68,7 @@ function EditViewerForm() {
         body: JSON.stringify(viewerData),
       });
       toastr.success("Viewer successfully updated!");
+      navigate("/adminpage");
     } catch (error) {
       console.error("Error updating viewer:", error);
       toastr.error("Viewer update failed.");
