@@ -117,6 +117,10 @@ a.subscribe:active {
     margin-top: 10dvh;
     margin-bottom: 8dvh;
     height: 65dvh;
+    .title {
+      font-size: 2em;
+      padding-top: 5dvh;
+    }
   }
   .login-submit {
     width: 50%;

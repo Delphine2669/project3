@@ -110,6 +110,15 @@
     margin-right: 2dvw;
     padding-top: 5dvh;
     padding-bottom: 1dvh;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--color-yellow-dt);
+      border-radius: 25px;
+    }
   }
   .hero-slider-slide img {
     width: 20dvw;
