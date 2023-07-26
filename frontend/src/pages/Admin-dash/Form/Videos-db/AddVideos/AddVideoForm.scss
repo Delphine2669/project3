@@ -9,7 +9,7 @@
 
 .add-video-form-container {
   margin-top: 3dvh;
-  margin-bottom: 6dvh;
+  margin-bottom: 2dvh;
   border: 2px solid #f0eaf0;
   border-radius: 10px;
   padding-bottom: 2dvh;
@@ -69,6 +69,7 @@
 }
 
 .back-button {
+  display: none;
   text-decoration: none;
   color: #ca9a17;
 }

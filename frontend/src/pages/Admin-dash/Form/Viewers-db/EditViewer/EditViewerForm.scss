@@ -11,7 +11,8 @@
   margin-bottom: 6dvh;
   border: 2px solid #f0eaf0;
   border-radius: 10px;
-  padding-bottom: 3dvh;
+  padding-top: 5dvh;
+  padding-bottom: 5dvh;
   width: 80%;
   max-width: 600px;
   background-color: #4a4852;
@@ -43,6 +44,7 @@
   font-size: 14px;
 }
 .back-admin-button {
+  display: none;
   text-decoration: none;
   color: #ca9a17;
   margin-bottom: 5%;
@@ -61,7 +63,7 @@ form.edit-viewer-form {
 }
 
 .edit-viewer-form-title {
-  color: #ffffff;
+  color: #fcfbfb;
   text-align: center;
   font-size: 5dvw;
 }
@@ -71,10 +73,11 @@ form.edit-viewer-form {
 input#viewerId.viewer-id-input {
   width: 55%;
 }
+
 @media screen and (min-width: 600px) {
-}
-.edit-viewer-form-title {
-  font-size: 2.5dvw;
+  .edit-viewer-form-title {
+    font-size: 2.5dvw;
+  }
 }
 @media screen and (min-width: 1400px) {
   .edit-viewer-form-title {

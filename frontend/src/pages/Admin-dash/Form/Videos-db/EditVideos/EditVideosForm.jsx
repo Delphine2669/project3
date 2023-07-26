@@ -211,7 +211,9 @@ function EditVideoForm() {
             />
           </div>
           <br /> */}
-          <button type="submit">Update Video</button>
+          <button className="Update" type="submit">
+            Update Video
+          </button>
         </form>
       </div>
       <div className="footerAdmin">

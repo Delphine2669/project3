@@ -5,13 +5,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 0.4dvh solid var(--color-3);
-  background-color: var(--login-box-bg);
+  border: 0.3dvh solid var(--color-3);
+  background-color: var(--color-lepen);
   border-radius: 5px;
   margin-left: 10dvw;
   margin-right: 10dvw;
   margin-top: 8dvh;
-  // margin-bottom: 9dvh;
+  margin-bottom: 10dvh;
   text-align: center;
 }
 .title {

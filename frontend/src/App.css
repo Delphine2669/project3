@@ -6,8 +6,17 @@
   font-style: normal;
 }
 :root {
+  /* ___Fonts___*/
   --text-font: lato, sans-serif;
-  --font-2scd: roboto, sans-serif;
+  --video-title-font: Clinton, sans-serif;
+  --title-font: "Plus Jakarta Sans", sans-serif;
+  /* ___Colors___*/
+  --color-lepen: rgba(3, 136, 252, 0.2);
+  --color-purple: #74125e;
+  --color-blue: #4169e1;
+  --color-yellow: #ffd700;
+  --color-white-again: #f8f8ff;
+  /* ___old-color___*/
   --head-foot-color: rgb(0, 0, 0);
   --body-color: rgb(26, 29, 41);
   --color-2: rgba(45, 64, 89, 1);
@@ -20,11 +29,14 @@
   --a-hover: red;
   --a-active: rgba(238, 69, 64, 0.6);
   --a-visited: rgba(238, 69, 64, 0.3);
+  --login-box-bg: rgba(3, 136, 252, 0.2);
+  --color-4: rgba(238, 69, 64, 0.3);
+  /* ___Admins___*/
   --color-admin-page: #804582;
-  --body-font: Lato, Arial, Helvetica, sans-serif;
-  --title-font: "Plus Jakarta Sans", sans-serif;
-  --video-title-font: Clinton, sans-serif;
-  --grad-body: linear-gradient(
+  --color-admin-body: #2d293a;
+  --color-admin-back: #4a4852;
+  /* ___Gradients___*/
+  --grad-dt-body: linear-gradient(
     to bottom,
     #0d0108,
     #160814,
@@ -39,8 +51,6 @@
     #0d2956,
     #0c2b5a
   );
-  --login-box-bg: rgba(3, 136, 252, 0.2);
-  --color-4: rgba(238, 69, 64, 0.3);
   --logo-color-gradient: linear-gradient(
     to right,
     #ee4540,
@@ -57,27 +67,19 @@
     #dbaa9f
   );
   --border-color-gradient: linear-gradient(
-      to right,
-      #ee4540,
-      #ec4b40,
-      #ea5141,
-      #e75642,
-      #e55b43,
-      #e5644b,
-      #e46c53,
-      #e3745b,
-      #e3826c,
-      #e1907d,
-      #df9d8e,
-      #dbaa9f
-    )
-    1;
-  --grad-dt-body: linear-gradient(
-    0deg,
-    rgba(53, 87, 140, 1) 0%,
-    rgba(22, 60, 112, 1) 41%,
-    rgba(26, 10, 57, 1) 75%,
-    rgba(1, 9, 15, 1) 100%
+    to right,
+    #ee4540,
+    #ec4b40,
+    #ea5141,
+    #e75642,
+    #e55b43,
+    #e5644b,
+    #e46c53,
+    #e3745b,
+    #e3826c,
+    #e1907d,
+    #df9d8e,
+    #dbaa9f
   );
 }
 
