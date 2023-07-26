@@ -62,7 +62,7 @@ export default function SignUp() {
         setEmail("");
         toastr.success("Account created successfully");
         navigate("/Login");
-      } else if (res.status === 409) {
+      } else if (res.status === 403) {
         toastr.error("Account already exists");
       } else {
         toastr.error("Account creation failed");

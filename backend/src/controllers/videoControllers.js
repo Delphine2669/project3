@@ -56,15 +56,7 @@ const edit = (req, res) => {
 };
 
 const add = (req, res) => {
-  const video = {
-    title: req.body.title,
-    time: req.body.time,
-    description: req.body.description,
-    publicationDate: req.body.publicationDate,
-    isAccessible: req.body.isAccessible,
-    isFavorite: req.body.isFavorite,
-    videoData: req.file.path,
-  };
+  const video = req.videoData;
   // TODO validations (length, format...)
 
   models.video

@@ -78,7 +78,7 @@ const checkingUser = (req, res, next) => {
     .then(([rows]) => {
       const userInDatabase = rows[0];
       if (userInDatabase) {
-        res.status(409).json({ error: "Account already exists" });
+        res.status(403).json({ error: "Account already exists" });
       } else {
         next();
       }

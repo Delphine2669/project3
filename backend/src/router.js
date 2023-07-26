@@ -33,23 +33,25 @@ router.post(
   upload.single("videoData"),
   (req, res, next) => {
     const { originalname, filename } = req.file;
-    const ourPath = `./public/assets/videos/${uuidv4()}-${originalname}`;
+    const nickname = `${uuidv4()}-${originalname}`;
+    const path2 = `/videos/${nickname}`;
+    const ourPath = `./public/assets/videos/${nickname}`;
     fs.rename(`./videos/${filename}`, ourPath, (err) => {
       if (err) {
         console.error(err);
-        return res.sendStatus(500);
+        res.sendStatus(500);
+      } else {
+        req.videoData = {
+          title: req.body.title,
+          time: req.body.time,
+          description: req.body.description,
+          publicationDate: req.body.publicationDate,
+          isAccessible: req.body.isAccessible,
+          videoData: path2,
+        };
+        next();
       }
-      req.videoData = {
-        title: req.body.title,
-        time: req.body.time,
-        description: req.body.description,
-        publicationDate: req.body.publication_date,
-        isAccessible: req.body.is_accessible,
-        videoData: ourPath,
-      };
-      return null;
     });
-    next();
   },
   videoControllers.add
 );
