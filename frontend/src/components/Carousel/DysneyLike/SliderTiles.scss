@@ -1,6 +1,7 @@
 .DysneyCatBox {
   display: flex;
-  margin-top: 5dvw;
+  margin-top: 5dvh;
+  margin-bottom: 1dvh;
   margin-left: 5dvw;
 }
 
@@ -65,7 +66,5 @@
   }
   .item-border {
     width: 10dvw;
-  }
-  .item-image {
   }
 }

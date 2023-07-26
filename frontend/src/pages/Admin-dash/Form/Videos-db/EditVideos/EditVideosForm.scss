@@ -73,3 +73,21 @@ form.edit-video-form {
   position: fixed;
   bottom: 1%;
 }
+@media screen and (min-width: 600px) {
+  .edit-video-form-title {
+    font-size: 3dvw;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  div.edit-video-form-container {
+    max-height: fit-content;
+    max-width: 1200px;
+  }
+  .edit-video-form-title {
+    font-size: 2.5dvw;
+  }
+  a.back-button {
+    font-size: 2.5dvw;
+  }
+}

@@ -10,7 +10,8 @@ function Video() {
     async function fetchVideos() {
       try {
         const fetchedVideos = await ApiCalls.videoCall();
-        setVideos(fetchedVideos);
+        const sortedVideos = fetchedVideos.sort((a, b) => b.id - a.id);
+        setVideos(sortedVideos);
       } catch (error) {
         console.error("Erreur lors de la récupération des vidéos:", error);
       }
@@ -23,7 +24,7 @@ function Video() {
 
   return (
     <>
-      <h2 className="categories"> Most viewed videos this week</h2>
+      <h2 className="categories"> Latest videos uploaded</h2>
       <div className="video-carousel">
         <div className="video-container">
           {displayedVideos.map((video) => (

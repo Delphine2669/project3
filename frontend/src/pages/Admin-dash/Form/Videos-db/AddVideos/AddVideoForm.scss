@@ -1,5 +1,5 @@
 .add-video-form-box {
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,7 +64,7 @@
 }
 
 .add-video-form-container input::placeholder {
-  color: #804582;
+  color: var(--color-admin-page);
   font-size: 14px;
 }
 
@@ -84,4 +84,27 @@
 }
 .is-Accessible-section-block {
   margin-top: -1dvh;
+}
+@media screen and (min-width: 600px) {
+  div.add-video-form-container {
+    max-height: fit-content;
+  }
+  .add-video-form-title {
+    font-size: 3dvw;
+  }
+  a.back-button {
+    font-size: 2.5dvw;
+  }
+}
+@media screen and (min-width: 1900px) {
+  div.add-video-form-container {
+    max-width: 1200px;
+    max-height: fit-content;
+  }
+  .add-video-form-title {
+    font-size: 2dvw;
+  }
+  a.back-button {
+    font-size: 2.5dvw;
+  }
 }

@@ -60,7 +60,7 @@ function HeroSlider({ photoList }) {
             role="button"
             tabIndex="0"
           >
-            <img src={photo.src} alt={photo.alt} />
+            <img src={photo.src} alt={photo.alt} className="img-hero-slider" />
             <div className="hero-slider-content" />
           </div>
         ))}

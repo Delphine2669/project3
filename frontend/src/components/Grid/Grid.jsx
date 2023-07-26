@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../../contexts/AuthContext";
-import ApiCalls from "../../utils";
+import ApiCalls from "../../utilities/utils";
 import VideoCard from "../Carousel/VideoCard/VideoCard";
 import "./Grid.scss";
 

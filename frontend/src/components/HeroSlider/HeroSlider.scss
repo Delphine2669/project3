@@ -50,9 +50,11 @@
   font-size: 1.5dvh;
 }
 .hero-slider-categorie {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   font-family: var(--title-font);
   font-size: 4.5dvw;
+  font-weight: bold;
   margin-top: 4dvh;
   margin-left: 14dvh;
   margin-bottom: -2dvh;
@@ -88,7 +90,7 @@
 }
 .modal-close-button {
   background-color: #172255;
-  color: rgb(220, 155, 123);
+  color: rgb(204, 179, 36);
   font-size: 4dvw;
   border-radius: 20px;
   position: absolute;

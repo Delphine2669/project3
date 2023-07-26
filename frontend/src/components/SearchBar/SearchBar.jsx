@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./SearchBar.css";
-import ApiCalls from "../../utils";
+import ApiCalls from "../../utilities/utils";
 
 function Searchbar() {
   const [videos, setVideos] = useState([]);
@@ -86,5 +86,4 @@ function Searchbar() {
     </div>
   );
 }
-
 export default Searchbar;

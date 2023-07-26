@@ -18,9 +18,12 @@ function AdminPage() {
         <NavLink to="/deletevideos" className="link-delete-video-link">
           Deleting a video
         </NavLink>
+        <NavLink to="/editviewers" className="link-edit-viewer-link">
+          Editing a viewer
+        </NavLink>
       </div>
-      <div className="footer-admin admin-footer">
-        <Footer />
+      <div className="footer-admin ">
+        <Footer className="admin-footer" />
       </div>
     </div>
   );

@@ -41,3 +41,12 @@ h2.photocard-title {
     margin-left: 25dvw;
   }
 }
+
+@media screen and (min-width: 600px) {
+  .photocard {
+    margin-top: -2dvh;
+    margin-left: 22dvw;
+    width: 60%;
+    height: auto;
+  }
+}
