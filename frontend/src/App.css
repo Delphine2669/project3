@@ -1,7 +1,7 @@
 @import "toastr";
 @font-face {
   font-family: "Clinton";
-  src: url("./font/Clinton/Clinton\ semibold.ttf") format("truetype"); /* Modifiez le chemin du fichier de police selon votre structure de projet */
+  src: url("./font/Clinton/Clinton_semibold.ttf") format("truetype"); /* Modifiez le chemin du fichier de police selon votre structure de projet */
   font-weight: normal;
   font-style: normal;
 }
