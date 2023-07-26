@@ -77,7 +77,7 @@ export default function SignUp() {
       <Header />
       <div className="signup-container">
         <form className="signup" onSubmit={handleSubmit}>
-          <h3 className="title">Create your account</h3>
+          <h3 className="signup-title title">Create your account</h3>
           <div className="signup-field">
             <input
               type="text"

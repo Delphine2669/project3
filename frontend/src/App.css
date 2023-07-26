@@ -26,8 +26,8 @@
   --color-input-form-dt: #1a0a39;
   --font-foot-head: rgba(238, 238, 238, 1);
   --color-2scd-2: rgba(238, 238, 238, 1);
-  --a-hover: red;
-  --a-active: rgba(238, 69, 64, 0.6);
+  --a-hover: yellow;
+  --a-active: rgba(238, 229, 64, 0.6);
   --a-visited: rgba(238, 69, 64, 0.3);
   --login-box-bg: rgba(3, 136, 252, 0.2);
   --color-4: rgba(238, 69, 64, 0.3);
@@ -80,6 +80,15 @@
     #e1907d,
     #df9d8e,
     #dbaa9f
+  );
+
+  --logo-color-gradient-dt: linear-gradient(
+    90deg,
+    #ffd700,
+    #ffdf34,
+    #ddcb69,
+    #cbbf7e,
+    #b7b191
   );
 }
 

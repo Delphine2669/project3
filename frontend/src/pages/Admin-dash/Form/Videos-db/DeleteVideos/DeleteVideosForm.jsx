@@ -61,7 +61,7 @@ function DeleteVideosForm() {
       <Header />
       <div>
         <NavLink to="/adminpage" className="back-button">
-          Back to the Admin Page
+          Back
         </NavLink>
       </div>
       <div className="delete-video-form-container">

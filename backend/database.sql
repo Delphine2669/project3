@@ -92,7 +92,7 @@ CREATE TABLE `video` (
 LOCK TABLES `video` WRITE;
 /*!40000 ALTER TABLE `video` DISABLE KEYS */;
 /*!40000 ALTER TABLE `video` ENABLE KEYS */;
-INSERT INTO `video` VALUES (1,'The World Is In Danger',9,'call Of video 1','2023-07-10',0,1,'/videos/video1.mp4'),(2,'You Can Do It !',10,'call Of video 2','2023-07-10',0,1,'/videos/video2.mp4'),(3,'Always Troubles',10,'call Of video 3','2023-07-10',0,1,'/videos/video3.mp4'),(4,'The Last Chance',10,'call Of video 4','2023-07-10',0,1,'/videos/video4.mp4'),(5,'CyberPunck Rise',10,'call Of video 5','2023-07-10',0,1,'/videos/video5.mp4'),(6,'Ghost Danger',5,'Starwars 1','2023-07-19',0,1,'/videos/video6.mp4'),(7,'Back To The Future',8,'Starwars 2','2023-07-19',0,1,'/videos/video7.mp4'),(8,'Dark Side',10,'Starwars 3','2023-07-19',0,1,'/videos/video8.mp4'),(9,'Winter Is Coming',10,'Starwars 4','2023-07-19',0,1,'/videos/video9.mp4'),(10,'Never Give Up',10,'Starwars 5','2023-07-19',0,1,'/videos/video10.mp4'),(11,'Cyberpucnk 2077',7,'premier_test','2023-06-14',0,1,'/videos/video25.mp4'),(12,'Cyberpucnk Panam in trouble',11,'second_test','2023-06-15',0,1,'/videos/video26.mp4'),
+INSERT INTO `video` VALUES (1,'The World Is In Danger',9,'call Of video 1','2023-07-10',0,1,'/videos/video1.mp4'),(2,'You Can Do It !',10,'call Of video 2','2023-07-10',0,1,'/videos/video2.mp4'),(3,'Always Troubles',10,'call Of video 3','2023-07-10',0,1,'/videos/video3.mp4'),(4,'The Last Chance',10,'call Of video 4','2023-07-10',0,1,'/videos/video4.mp4'),(5,'CyberPunck Rise',10,'call Of video 5','2023-07-10',0,1,'/videos/video5.mp4'),(6,'Ghost Danger',5,'Starwars 1','2023-07-19',0,1,'/videos/video6.mp4'),(7,'Back To The Future',8,'Starwars 2','2023-07-19',0,1,'/videos/video7.mp4'),(8,'Dark Side',10,'Starwars 3','2023-07-19',0,1,'/videos/video8.mp4'),(9,'Winter Is Coming',10,'Starwars 4','2023-07-19',0,1,'/videos/video9.mp4'),(10,'Never Give Up',10,'Starwars 5','2023-07-19',0,1,'/videos/video10.mp4'),(11,'Cyberpucnk 2077',7,'premier_test','2023-06-14',0,1,'/videos/Cyberpucnk_2077_court_circuit.mp4'),(12,'Cyberpucnk Panam in trouble',11,'second_test','2023-06-15',0,1,'/videos/Cyberpucnk_2077_Panam_in_trouble.mp4'),
 (13,'Starting the Adventure!',11,'second_test','2023-06-15',0,1,'/videos/video11.mp4'),
 (14,'Exploring the Open World',11,'second_test','2023-06-15',0,1,'/videos/video12.mp4'),
 (15,'A Deep Dive into the Lore ',11,'second_test','2023-06-15',0,1,'/videos/video13.mp4'),
@@ -103,9 +103,7 @@ INSERT INTO `video` VALUES (1,'The World Is In Danger',9,'call Of video 1','2023
 (20,'Breaking Down the Storyline ',11,'second_test','2023-06-15',0,1,'/videos/video18.mp4'),
 (21,'Building the Ultimate',11,'second_test','2023-06-15',0,1,'/videos/video19.mp4'),
 (22,'Breaking Barriers: The Fastest',11,'second_test','2023-06-15',0,1,'/videos/video20.mp4'),
-(23,'Inside the Mind of a Speedrunner',11,'second_test','2023-06-15',0,1,'/videos/video21.mp4'),
-(24,'EPIC Moments and Fails',11,'second_test','2023-06-15',0,1,'/videos/video22.mp4'),
-(25,'From Zero to Hero',11,'second_test','2023-06-15',0,1,'/videos/video23.mp4');
+(23,'Inside the Mind of a Speedrunner',11,'second_test','2023-06-15',0,1,'/videos/video21.mp4');
 /*!40000 ALTER TABLE `video` ENABLE KEYS */;
 UNLOCK TABLES;
 

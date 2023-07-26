@@ -106,7 +106,7 @@ function EditVideoForm() {
       <Header />
       <div>
         <NavLink to="/adminpage" className="back-button">
-          Back to the Admin Page
+          Back
         </NavLink>
       </div>
       <div className="edit-video-form-container">

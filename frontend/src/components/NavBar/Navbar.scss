@@ -93,7 +93,7 @@ body > div:nth-child(3) > div > ul {
 
   #root > div > div.Header > header > div > div > span > div > div > button {
     top: 4dvh;
-    width: 3dvw;
+    width: 4dvw;
     height: 5dvh;
   }
 
@@ -102,5 +102,11 @@ body > div:nth-child(3) > div > ul {
     top: 3dvh;
     left: 46dvw;
     font-size: 1.4dvw;
+  }
+}
+@media screen and (min-width: 1900px) {
+  #root > div > div.Header > header > div > div > span > div > div > button {
+    width: 5dvw;
+    height: 5dvh;
   }
 }
