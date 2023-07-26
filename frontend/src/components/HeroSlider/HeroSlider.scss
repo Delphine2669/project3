@@ -105,3 +105,29 @@
   top: 32%;
   right: 2%;
 }
+@media screen and (min-width: 600px) {
+  img.img-hero-slider {
+    height: 25dvh;
+    object-fit: cover;
+    gap: 1dvw;
+  }
+  .hero-slider-slide img {
+    height: 25dvh;
+  }
+  .modal-close-button {
+    background-color: #172255;
+    color: rgb(220, 155, 123);
+    font-size: 4dvw;
+    border-radius: 20px;
+    position: fixed;
+    top: 6%;
+  }
+}
+@media screen and (min-width: 1900px) {
+  .modal-close-button {
+    top: 10%;
+  }
+  img.img-hero-slider {
+    height: 35dvh;
+  }
+}

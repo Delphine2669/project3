@@ -50,12 +50,12 @@ export default function Login() {
       );
       if (response.ok) {
         const data = await response.json();
-
         if (data && data.token && data.viewer) {
           const { token, viewer } = data;
           localStorage.setItem("token", token);
           setToken(token);
-          setIsAdmin(viewer.isAdmin);
+          const isAdmin = !!viewer.isAdmin;
+          setIsAdmin(isAdmin);
           toastr.success("Successfully logged in");
           navigate("/");
         } else {

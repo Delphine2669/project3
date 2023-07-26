@@ -38,7 +38,10 @@ export default function SignUp() {
       hashedPassword: password,
       email,
     };
-
+    if (password !== confirmPassword) {
+      toastr.info("Password and password confirmation don't match.");
+      return;
+    }
     try {
       const res = await fetch(
         `${

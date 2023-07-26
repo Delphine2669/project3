@@ -18,39 +18,20 @@
 
 .admin-title {
   color: #d9efff;
-  font-size: 24px;
+  font-size: 4dvw;
   margin-bottom: 20px;
 }
 
+.link-edit-viewer-link,
+.link-delete-video-link,
+.link-edit-video-link,
 .link-add-video-link {
-  padding: 10px 20px;
-  color: #804582;
-  font-size: 4dvw;
-  text-decoration: none;
+  color: var(--color-admin-page);
   background-color: #f1f1f1;
+  padding: 2dvh 1dvw;
   border-radius: 5px;
-  margin-bottom: 2dvh;
-  transition: background-color 0.2s ease;
-}
-
-.link-edit-video-link {
-  padding: 10px 20px;
-  color: #804582;
-  font-size: 4dvw;
   text-decoration: none;
-  background-color: #f1f1f1;
-  border-radius: 5px;
-  margin-bottom: 2dvh;
-  transition: background-color 0.2s ease;
-}
-
-.link-delete-video-link {
-  padding: 10px 20px;
-  color: #804582;
   font-size: 4dvw;
-  text-decoration: none;
-  background-color: #f1f1f1;
-  border-radius: 5px;
   margin-bottom: 2dvh;
   transition: background-color 0.2s ease;
 }
@@ -67,4 +48,25 @@
 .delete-video-form-box .logo {
   position: fixed;
   top: 0;
+}
+@media screen and (min-width: 600px) {
+  .link-edit-viewer-link,
+  .link-delete-video-link,
+  .link-edit-video-link,
+  .link-add-video-link {
+    font-size: 2dvw;
+    padding: 2dvh 3dvw;
+  }
+}
+@media screen and (min-width: 1900px) {
+  .link-edit-viewer-link,
+  .link-delete-video-link,
+  .link-edit-video-link,
+  .link-add-video-link {
+    font-size: 2dvw;
+    padding: 2dvh 4dvw;
+  }
+  .admin-title {
+    font-size: 3dvw;
+  }
 }

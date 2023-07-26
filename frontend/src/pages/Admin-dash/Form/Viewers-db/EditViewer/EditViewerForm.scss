@@ -1,28 +1,87 @@
-.edit-viewer-form {
-  //   flex-direction: column;
-  //   align-items: center;
-  //   justify-content: center;
-  text-align: center;
-  color: var(--color-green-dt);
-  margin: 3%;
-  padding: 3%;
-  //   justify-content: space-around;
+.edit-viewer-form-box {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #2d293a;
 }
-.back-admin-button {
-  color: var(--color-yellow-dt);
-  text-decoration: none;
+.edit-viewer-form-container {
+  margin-top: 3dvh;
+  margin-bottom: 6dvh;
+  border: 2px solid #f0eaf0;
+  border-radius: 10px;
+  padding-bottom: 3dvh;
+  width: 80%;
+  max-width: 600px;
+  background-color: #4a4852;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: monospace;
+}
+.edit-viewer-form {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  gap: 0.3dvh;
+}
+.edit-viewer-form-container input {
+  width: 80%;
+  padding: 2%;
+  margin-bottom: 1dvh;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.input-evf::placeholder {
-  color: var(--color-input-form-dt);
+.edit-viewer-form-container button {
+  width: 60%;
+  padding: 2%;
+  border-radius: 5px;
+}
+.edit-viewer-form-container input::placeholder {
+  color: #804582;
+  font-size: 14px;
+}
+.back-admin-button {
+  text-decoration: none;
+  color: #ca9a17;
+  margin-bottom: 5%;
+  font-size: 2.5dvw;
+}
+form.edit-viewer-form {
+  display: flex;
+}
+.edit-viewer-form > label {
+  padding: 5px;
+}
+
+.viewer-data-email,
+.viewer-data-username {
+  color: var(--color-yellow-dt);
 }
 
 .edit-viewer-form-title {
-  color: var(--color-yellow-dt);
+  color: #ffffff;
   text-align: center;
-  padding: 3%;
+  font-size: 5dvw;
 }
-.viewer-data-email,
-.viewer-data-username {
-  color: var(--color-3);
+.is-Admin-section {
+  display: flex;
+}
+input#viewerId.viewer-id-input {
+  width: 55%;
+}
+@media screen and (min-width: 600px) {
+}
+.edit-viewer-form-title {
+  font-size: 2.5dvw;
+}
+@media screen and (min-width: 1400px) {
+  .edit-viewer-form-title {
+    font-size: 3dvw;
+  }
+  div.edit-viewer-form-container {
+    max-width: 1200px;
+    max-height: fit-content;
+  }
 }

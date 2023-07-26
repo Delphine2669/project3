@@ -4,7 +4,7 @@ const fs = require("fs");
 const { v4: uuidv4 } = require("uuid");
 
 const router = express.Router();
-const upload = multer({ dest: "./public/uploads" });
+const upload = multer({ dest: "./videos" });
 const {
   hashPassword,
   verifyPassword,
@@ -33,8 +33,8 @@ router.post(
   upload.single("videoData"),
   (req, res, next) => {
     const { originalname, filename } = req.file;
-    const ourPath = `./public/uploads/${uuidv4()}-${originalname}`;
-    fs.rename(`./public/uploads/${filename}`, ourPath, (err) => {
+    const ourPath = `./public/assets/videos/${uuidv4()}-${originalname}`;
+    fs.rename(`./videos/${filename}`, ourPath, (err) => {
       if (err) {
         console.error(err);
         return res.sendStatus(500);

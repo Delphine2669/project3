@@ -45,7 +45,7 @@ function AddVideoForm() {
       time,
       description,
       publicationDate,
-      isFavorite,
+      // isFavorite,
       isAccessible,
       videoData,
     } = data;
@@ -57,7 +57,7 @@ function AddVideoForm() {
     formData.append("publicationDate", publicationDate);
     formData.append("videoData", videoData);
     formData.append("isAccessible", isAccessible);
-    formData.append("isFavorite", isFavorite);
+    // formData.append("isFavorite", isFavorite);
 
     const payload = {
       title,
@@ -65,7 +65,7 @@ function AddVideoForm() {
       description,
       publicationDate,
       isAccessible,
-      isFavorite,
+      // isFavorite,
       videoData: `/videos/${videoData.name}`,
     };
 
@@ -85,7 +85,7 @@ function AddVideoForm() {
         description: "",
         publicationDate: "",
         isAccessible: "",
-        isFavorite: "",
+        // isFavorite:"",
         videoData: null,
       });
     } catch (error) {

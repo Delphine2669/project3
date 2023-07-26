@@ -10,7 +10,8 @@ function Video() {
     async function fetchVideos() {
       try {
         const fetchedVideos = await ApiCalls.videoCall();
-        setVideos(fetchedVideos);
+        const sortedVideos = fetchedVideos.sort((a, b) => b.id - a.id);
+        setVideos(sortedVideos);
       } catch (error) {
         console.error("Erreur lors de la récupération des vidéos:", error);
       }
