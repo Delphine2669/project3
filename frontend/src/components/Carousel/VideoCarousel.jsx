@@ -23,7 +23,7 @@ function Video() {
 
   return (
     <>
-      <h2 className="categories"> Most viewed videos this week</h2>
+      <h2 className="categories"> Latest videos uploaded</h2>
       <div className="video-carousel">
         <div className="video-container">
           {displayedVideos.map((video) => (

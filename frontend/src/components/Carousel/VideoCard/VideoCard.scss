@@ -52,15 +52,27 @@
 
 @media screen and (min-width: 600px) {
   .video.video {
-    width: 30dvw;
+    width: 25dvw;
     height: auto;
+    border-radius: 10px;
   }
 
   .video.video:hover {
-    width: 30dvw;
+    width: 25dvw;
+    height: auto;
   }
 
   .card-title {
     font-size: 1.6dvw;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .video.video {
+    width: 30dvw;
+  }
+
+  .video.video:hover {
+    width: 30dvw;
   }
 }

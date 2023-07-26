@@ -5,6 +5,7 @@ import { useAuth } from "../../contexts/AuthContext";
 import { authFetch } from "../../utilities/utils";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import { saveToken } from "../../utilities/localStorage";
 import "./Login.scss";
 
 toastr.options = {
@@ -53,7 +54,7 @@ export default function Login() {
 
         if (data && data.token && data.viewer) {
           const { token, viewer } = data;
-          localStorage.setItem("token", token);
+          saveToken(token);
           setToken(token);
           setIsAdmin(viewer.isAdmin);
           toastr.success("Successfully logged in");

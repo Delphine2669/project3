@@ -6,8 +6,6 @@
 }
 
 #root > div > div.Header > header > div > div > span > div > div > button {
-  width: 4dvw;
-  height: 5dvh;
   background-color: rgb(173, 148, 36);
   position: fixed;
   top: 2%;
@@ -16,11 +14,11 @@
 }
 
 body > div:nth-child(3) > div > ul {
-  width: 34dvw;
+  width: 30dvw;
   height: 5dvh;
   position: absolute;
-  top: 0;
-  left: 25%;
+  top: -3.5dvh;
+  left: 17dvw;
 }
 
 .nav-container {
@@ -34,7 +32,10 @@ body > div:nth-child(3) > div > ul {
 }
 .admin-dash-link {
   text-decoration: none;
-  color: var(--color-3);
+  color: var(--color-green-dt);
+  position: relative;
+  top: 7dvh;
+  right: -12dvw;
 }
 /*======Style link======*/
 
@@ -71,19 +72,22 @@ body > div:nth-child(3) > div > ul {
   }
 
   body > div:nth-child(3) > div > ul {
-    position: absolute;
-    top: 3%;
-    left: 950%;
+    top: 6dvh;
+    left: 60dvw;
     width: 7dvw;
     height: 5dvh;
   }
 
   #root > div > div.Header > header > div > div > span > div > div > button {
-    position: absolute;
-    top: 10%;
-    left: 470%;
+    top: 4dvh;
+    width: 3dvw;
+    height: 5dvh;
   }
-}
 
-@media screen and (min-width: 1981px) {
+  .admin-dash-link {
+    position: relative;
+    top: 3dvh;
+    left: 56dvw;
+    font-size: 1.4dvw;
+  }
 }
