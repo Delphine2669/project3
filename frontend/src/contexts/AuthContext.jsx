@@ -29,3 +29,5 @@ AuthProvider.propTypes = {
   // eslint-disable-next-line react/require-default-props
   initialToken: PropTypes.string,
 };
+
+export default AuthContext;
