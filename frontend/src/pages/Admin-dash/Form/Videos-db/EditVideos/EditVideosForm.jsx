@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import toastr from "toastr";
 import "./EditVideosForm.scss";
-import Footer from "../../../../../components/Footer/Footer";
 import Header from "../../../../../components/Header/Header";
 
 toastr.options = {
@@ -213,9 +212,6 @@ function EditVideoForm() {
           <br /> */}
           <button type="submit">Update Video</button>
         </form>
-      </div>
-      <div className="footerAdmin">
-        <Footer />
       </div>
     </div>
   );

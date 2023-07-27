@@ -4,7 +4,6 @@ import toastr from "toastr";
 import { authFetch } from "../../../../../utilities/utils";
 import "./DeleteVideosForm.scss";
 import Header from "../../../../../components/Header/Header";
-import Footer from "../../../../../components/Footer/Footer";
 
 toastr.options = {
   closeButton: false,
@@ -85,9 +84,6 @@ function DeleteVideosForm() {
             Delete video
           </button>
         </form>
-      </div>
-      <div className="footerAdmin">
-        <Footer />
       </div>
     </div>
   );

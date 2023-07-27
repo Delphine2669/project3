@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./AdminPage.scss";
 import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
 
 function AdminPage() {
   return (
@@ -21,9 +20,6 @@ function AdminPage() {
         <NavLink to="/editviewers" className="link-edit-viewer-link">
           Editing a viewer
         </NavLink>
-      </div>
-      <div className="footer-admin ">
-        <Footer className="admin-footer" />
       </div>
     </div>
   );

@@ -4,7 +4,6 @@ import toastr from "toastr";
 import { NavLink } from "react-router-dom";
 import "./AddVideoForm.scss";
 import Header from "../../../../../components/Header/Header";
-import Footer from "../../../../../components/Footer/Footer";
 
 toastr.options = {
   closeButton: false,
@@ -245,9 +244,6 @@ function AddVideoForm() {
           <br />
           <button type="submit">Add video</button>
         </form>
-      </div>
-      <div className="footerAdmin">
-        <Footer />
       </div>
     </div>
   );
