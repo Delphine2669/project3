@@ -90,8 +90,8 @@ function EditViewerForm() {
     <div className="edit-viewer-form-box">
       <Header />
       <div>
-        <NavLink to="/adminpage" className="back-admin-button">
-          Back to the Admin Page
+        <NavLink to="/adminpage" className="back-button">
+          back
         </NavLink>
       </div>
       <div className="edit-viewer-form-container">

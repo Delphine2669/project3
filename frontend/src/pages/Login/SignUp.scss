@@ -5,13 +5,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 0.4dvh solid var(--color-3);
-  background-color: var(--login-box-bg);
+  border: 0.3dvh solid var(--color-yellow);
+  background-color: var(--color-lepen);
   border-radius: 5px;
   margin-left: 10dvw;
   margin-right: 10dvw;
   margin-top: 8dvh;
-  // margin-bottom: 9dvh;
+  margin-bottom: 10dvh;
   text-align: center;
 }
 .title {
@@ -20,7 +20,7 @@
   font-family: var(--text-font);
   color: transparent;
   -webkit-text-fill-color: transparent; // prise en charge des navigateurs WebKit
-  background-image: var(--logo-color-gradient);
+  background-image: var(--logo-color-gradient-dt);
   background-clip: text;
   -webkit-background-clip: text; // prise en charge des navigateurs WebKit
   font-size: 1.5em;
@@ -43,7 +43,7 @@
   color: white;
   border: none;
   border-radius: 5px;
-  border-bottom: 0.2dvh solid var(--color-3);
+  border-bottom: 0.2dvh solid var(--color-yellow);
   background: none;
   padding: 2dvh;
   font-weight: 700;
@@ -67,13 +67,14 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  color: var(--color-3);
+  color: var(--color-blue);
+  background-color: var(--color-yellow);
   cursor: pointer;
   border: none;
   position: relative;
 }
 .signup-input::placeholder {
-  color: var(--color-3);
+  color: var(--color-yellow);
   font-size: 0.7em;
 }
 .button-text {
@@ -102,7 +103,7 @@ form.signup {
   color: var(--a-active);
 }
 a.login {
-  color: var(--color-green-dt);
+  color: var(--color-2scd-2);
 }
 
 @media screen and (min-width: 600px) {

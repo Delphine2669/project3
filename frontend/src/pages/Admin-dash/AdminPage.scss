@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #2d293a;
+  background-color: var(--color-admin-body);
 }
 
 .page-container {
@@ -17,7 +17,7 @@
 }
 
 .admin-title {
-  color: #d9efff;
+  color: var(--color-white-again);
   font-size: 4dvw;
   margin-bottom: 20px;
 }
@@ -27,7 +27,7 @@
 .link-edit-video-link,
 .link-add-video-link {
   color: var(--color-admin-page);
-  background-color: #f1f1f1;
+  background-color: var(--color-white-again);
   padding: 2dvh 1dvw;
   border-radius: 5px;
   text-decoration: none;

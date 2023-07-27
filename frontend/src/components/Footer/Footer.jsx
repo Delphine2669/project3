@@ -1,6 +1,26 @@
+import React from "react";
+import { useLocation } from "react-router-dom";
 import "./Footer.scss";
 
 export default function Footer() {
+  const location = useLocation();
+
+  const excludedPaths = [
+    "/login",
+    "/SignUp",
+    "/adminpage",
+    "/addvideos",
+    "/editvideos",
+    "/deletevideos",
+    "/editviewers",
+  ];
+
+  const hideFooter = excludedPaths.includes(location.pathname);
+
+  if (hideFooter) {
+    return null;
+  }
+
   return (
     <footer className="foot">
       <div className="logo-link">

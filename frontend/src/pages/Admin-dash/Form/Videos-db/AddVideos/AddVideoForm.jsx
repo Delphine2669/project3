@@ -105,7 +105,7 @@ function AddVideoForm() {
       <Header />
       <div>
         <NavLink to="/adminpage" className="back-button">
-          Back to the Admin Page
+          Back
         </NavLink>
       </div>
       <div className="add-video-form-container">
@@ -169,7 +169,7 @@ function AddVideoForm() {
               onChange={handleChange}
             />
           </div>
-          <br />
+          {/* <br />
           <div className="is-Accessible-section-block">
             <label htmlFor="isAccessible">is Accessible ?</label>
             <div className="is-Accessible-section">
@@ -198,7 +198,7 @@ function AddVideoForm() {
                 No:
               </label>
             </div>
-          </div>
+          </div> */}
           {/* <br />
           <div className="is-Favorite-section-block">
             <label htmlFor="isFavorite">is Favorite ?</label>

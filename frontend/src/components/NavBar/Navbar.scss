@@ -20,15 +20,15 @@
   top: 2%;
   right: 0%;
   margin-right: 2%;
-}
+}*/
 
 body > div:nth-child(3) > div > ul {
   width: 30dvw;
   height: 5dvh;
   position: absolute;
-  top: -3.5dvh;
-  left: 17dvw;
-} */
+  top: -2.5dvh;
+  left: 13dvw;
+}
 
 .nav-container {
   display: flex;
@@ -43,7 +43,7 @@ body > div:nth-child(3) > div > ul {
   text-decoration: none;
   color: var(--color-green-dt);
   position: relative;
-  top: 7dvh;
+  top: 5dvh;
   right: -12dvw;
 }
 /*======Style link======*/
@@ -85,22 +85,28 @@ body > div:nth-child(3) > div > ul {
   }
 
   body > div:nth-child(3) > div > ul {
-    top: 6dvh;
-    left: 60dvw;
+    top: 1dvh;
+    left: 56dvw;
     width: 7dvw;
-    height: 5dvh;
+    height: 4dvh;
   }
 
   #root > div > div.Header > header > div > div > span > div > div > button {
     top: 4dvh;
-    width: 3dvw;
+    width: 4dvw;
     height: 5dvh;
   }
 
   .admin-dash-link {
     position: relative;
     top: 3dvh;
-    left: 56dvw;
+    left: 46dvw;
     font-size: 1.4dvw;
+  }
+}
+@media screen and (min-width: 1900px) {
+  #root > div > div.Header > header > div > div > span > div > div > button {
+    width: 5dvw;
+    height: 5dvh;
   }
 }

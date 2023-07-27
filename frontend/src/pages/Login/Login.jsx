@@ -75,7 +75,7 @@ export default function Login() {
       <Header />
       <div className="login-container">
         <form className="login" onSubmit={handleSubmit}>
-          <h2 className="title">LOGIN</h2>
+          <h2 className="login-title title">LOGIN</h2>
           <div className="login-field">
             <input
               className="login-input"

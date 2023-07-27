@@ -4,18 +4,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #2d293a;
+  background-color: var(--color-admin-body);
 }
 
 .add-video-form-container {
   margin-top: 3dvh;
-  margin-bottom: 6dvh;
+  margin-bottom: 2dvh;
   border: 2px solid #f0eaf0;
   border-radius: 10px;
   padding-bottom: 2dvh;
   width: 80%;
   max-width: 600px;
-  background-color: #4a4852;
+  background-color: var(--color-admin-back);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   font-family: monospace;
 }
@@ -28,7 +28,7 @@
   margin: 3%;
   padding: 3%;
   gap: 2dvh;
-  color: white;
+  color: var(--color-white-again);
   gap: 1dvh;
 }
 .add-video-form-box {
@@ -44,7 +44,7 @@
 }
 
 .add-video-form-title {
-  color: #ffffff;
+  color: var(--color-white-again);
   text-align: center;
   font-size: 5dvw;
 }
@@ -70,7 +70,10 @@
 
 .back-button {
   text-decoration: none;
-  color: #ca9a17;
+  color: var(--color-yellow-dt);
+
+  border-radius: 15px;
+  margin-right: 50dvw;
 }
 
 .footerAdmin {
