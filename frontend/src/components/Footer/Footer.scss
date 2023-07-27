@@ -37,6 +37,15 @@
 .link {
   display: flex;
   flex-direction: column;
+  .all-right {
+    color: var(--color-yellow);
+  }
+}
+a.terms-menu-link {
+  color: var(--color-yellow);
+}
+a.privacy-menu-link {
+  color: var(--color-yellow);
 }
 
 @media screen and (min-width: 600px) {

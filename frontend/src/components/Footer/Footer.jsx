@@ -73,7 +73,9 @@ export default function Footer() {
         >
           privacy policy
         </a>
-        <div>© 2013 - 2023 Origins. All rights reserved</div>
+        <div className="all-right">
+          © 2013 - 2023 Origins. All rights reserved
+        </div>
       </div>
     </footer>
   );

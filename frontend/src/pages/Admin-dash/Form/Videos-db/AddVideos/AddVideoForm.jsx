@@ -32,7 +32,7 @@ function AddVideoForm() {
     description: "",
     publicationDate: "",
     isFavorite: "",
-    isAccessible: "",
+    // isAccessible: "",
     videoData: null,
   });
 
@@ -45,7 +45,7 @@ function AddVideoForm() {
       description,
       publicationDate,
       // isFavorite,
-      isAccessible,
+      //  isAccessible,
       videoData,
     } = data;
 
@@ -55,7 +55,7 @@ function AddVideoForm() {
     formData.append("description", description);
     formData.append("publicationDate", publicationDate);
     formData.append("videoData", videoData);
-    formData.append("isAccessible", isAccessible);
+    // formData.append("isAccessible", isAccessible);
     // formData.append("isFavorite", isFavorite);
 
     const payload = {
@@ -63,7 +63,7 @@ function AddVideoForm() {
       time,
       description,
       publicationDate,
-      isAccessible,
+      // isAccessible,
       // isFavorite,
       videoData: `/videos/${videoData.name}`,
     };
@@ -83,7 +83,7 @@ function AddVideoForm() {
         time: "",
         description: "",
         publicationDate: "",
-        isAccessible: "",
+        //  isAccessible: "",
         // isFavorite:"",
         videoData: null,
       });
