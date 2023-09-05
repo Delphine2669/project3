@@ -82,6 +82,7 @@ export default function SignUp() {
             <input
               type="text"
               className="signup-input"
+              id="username"
               value={username}
               placeholder="Username"
               required
@@ -92,6 +93,7 @@ export default function SignUp() {
             <input
               type="email"
               className="signup-input"
+              id="email"
               value={email}
               placeholder="Email"
               required
@@ -101,6 +103,7 @@ export default function SignUp() {
           <div className="signup-field">
             <input
               type="password"
+              id="password"
               className="signup-input"
               value={password}
               placeholder="password"
@@ -111,6 +114,7 @@ export default function SignUp() {
           <div className="signup-field">
             <input
               type="password"
+              id="password"
               className="signup-input"
               value={confirmPassword}
               required
