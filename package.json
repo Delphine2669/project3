@@ -28,7 +28,8 @@
   "devDependencies": {
     "concurrently": "^7.6.0",
     "cross-env": "^7.0.3",
-    "husky": "^8.0.3"
+    "husky": "^8.0.3",
+    "jest": "^29.7.0"
   },
   "dependencies": {
     "toastr": "^2.1.4"

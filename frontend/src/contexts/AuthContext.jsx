@@ -5,6 +5,7 @@ const AuthContext = createContext();
 
 export function AuthProvider({ children, initialToken }) {
   const [token, setToken] = useState(initialToken || "");
+  console.info("Token in AuthProvider state:", token);
   const [isAdmin, setIsAdmin] = useState(false);
   const isAuthenticated = !!token;
 

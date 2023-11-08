@@ -5,6 +5,8 @@ import { useAuth } from "../contexts/AuthContext";
 
 function AdminRoute({ element: Element }) {
   const { token, isAdmin } = useAuth();
+  console.info("Token in AdminRoute:", token);
+  console.info("isAdmin in AdminRoute:", isAdmin);
 
   if (!token) {
     return <Navigate to="/login" />;
