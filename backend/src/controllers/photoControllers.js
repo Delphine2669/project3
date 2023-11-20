@@ -33,10 +33,10 @@ const edit = (req, res) => {
 
   // TODO validations (length, format...)
 
-  photo.id = parseInt(req.params.id, 10);
+  const photoId = parseInt(req.params.id, 10);
 
-  models.video
-    .update(photo)
+  models.photo
+    .update(photo, photoId)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
@@ -59,7 +59,9 @@ const add = (req, res) => {
     .insert(photo)
     .then(([result]) => {
       res.location(`/photos/${result.insertId}`).sendStatus(201);
+      console.info(photo);
     })
+
     .catch((err) => {
       console.error(err);
       res.sendStatus(500);

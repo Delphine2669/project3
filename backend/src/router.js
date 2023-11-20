@@ -5,6 +5,7 @@ const { v4: uuidv4 } = require("uuid");
 
 const router = express.Router();
 const upload = multer({ dest: "./videos" });
+const uploadPC = multer({ dest: "./image" });
 const {
   hashPassword,
   verifyPassword,
@@ -54,6 +55,33 @@ router.post(
     });
   },
   videoControllers.add
+);
+
+router.post(
+  "/photos",
+  uploadPC.single("imageSrc"),
+  (req, res, next) => {
+    const { originalname, filename } = req.file;
+    console.info(req.file);
+    const nickname = `${uuidv4()}-${originalname}`;
+    const path2 = `/image/${nickname}`;
+    const ourPath = `./public/assets/image/${nickname}`;
+    fs.rename(`./image/${filename}`, ourPath, (err) => {
+      if (err) {
+        console.error(err);
+        res.sendStatus(500);
+      } else {
+        req.photo = {
+          title: req.body.title,
+          description: req.body.description,
+          imageSrc: path2,
+        };
+        next();
+        console.info(path2);
+      }
+    });
+  },
+  photoControllers.add
 );
 router.put(
   "/videos/:id",

@@ -16,6 +16,7 @@ function Header() {
     "/login",
     "/SignUp",
     "/editviewers",
+    "/addphotos",
   ];
 
   const isHiddenPage = hiddenHeaderPages.includes(location.pathname);

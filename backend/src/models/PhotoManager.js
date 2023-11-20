@@ -7,8 +7,8 @@ class PhotoManager extends AbstractManager {
 
   insert(photo) {
     return this.database.query(
-      `insert into ${this.table} (id, title, description, imageSrc ) values (?, ?, ?, ?)`,
-      [photo.id, photo.title, photo.description, photo.imageSrc]
+      `insert into ${this.table} ( title, description, imageSrc ) values (?, ?, ?)`,
+      [photo.title, photo.description, photo.imageSrc]
     );
   }
 
