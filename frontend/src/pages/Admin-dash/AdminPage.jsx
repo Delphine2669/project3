@@ -20,6 +20,9 @@ function AdminPage() {
         <NavLink to="/editviewers" className="link-edit-viewer-link">
           Editing a viewer
         </NavLink>
+        <NavLink to="/addphotos" className="link-add-photo-link">
+          Adding a photo
+        </NavLink>
       </div>
     </div>
   );

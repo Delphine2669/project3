@@ -43,6 +43,9 @@ function EditViewerForm() {
             method: "GET",
           }
         );
+        if (!response.ok) {
+          throw new Error("Failed to fetch viewer data");
+        }
         const data = await response.json();
         setViewerData(data);
         //  => ({
@@ -64,9 +67,11 @@ function EditViewerForm() {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
         body: JSON.stringify(viewerData),
       });
+      localStorage.removeItem("token");
       toastr.success("Viewer successfully updated!");
       navigate("/adminpage");
     } catch (error) {
@@ -97,7 +102,7 @@ function EditViewerForm() {
       <div className="edit-viewer-form-container">
         <h1 className="edit-viewer-form-title">Edit Viewer</h1>
         <form
-          method="PUT"
+          method="Post"
           encType="multipart/form-data"
           action={`${import.meta.env.VITE_BACKEND_URL}/viewers/${viewerId}`}
           className="edit-viewer-form"

@@ -51,15 +51,18 @@ export default function Login() {
       );
       if (response.ok) {
         const data = await response.json();
+        console.info(data);
         if (data && data.token && data.viewer) {
           const { token, viewer } = data;
           saveToken(token);
           setToken(token);
+          console.info("token set", token);
           const isAdmin = !!viewer.isAdmin;
           setIsAdmin(isAdmin);
           toastr.success("Successfully logged in");
           navigate("/");
         } else {
+          console.info(data);
           throw new Error("Invalid response data");
         }
       } else {
