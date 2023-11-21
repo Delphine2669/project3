@@ -15,7 +15,7 @@ function CarouselDynamic() {
         const fetchedPhotos = await ApiCalls.photoCall();
         setPictures(fetchedPhotos);
       } catch (error) {
-        console.error("Erreur lors de la récupération des vidéos:", error);
+        console.error("Erreur lors de la récupération des photo:", error);
       }
     }
     fetchPhotos();

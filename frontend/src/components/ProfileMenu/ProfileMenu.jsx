@@ -13,6 +13,7 @@ function ProfileMenu() {
   const handleLogout = () => {
     removeToken();
     setToken("");
+    window.location.reload(true);
     navigate("/");
   };
 
@@ -39,7 +40,7 @@ function ProfileMenu() {
   return (
     <span className="log-btn">
       {!isOnLoginPage && (
-        <Dropdown overlay={menu} trigger={["click"]}>
+        <Dropdown menu={menu} trigger={["click"]}>
           <Space>
             <Button
               shape="circle"

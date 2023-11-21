@@ -26,7 +26,7 @@ function VideoCard({ videoSrc, caption, title }) {
         title="YouTube video player"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
+        allowFullScreen
       >
         Sorry, your browser doesn't support videos.
       </iframe>
