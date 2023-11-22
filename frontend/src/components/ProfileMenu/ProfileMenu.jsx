@@ -22,7 +22,7 @@ function ProfileMenu() {
     }
   };
 
-  const menu = (
+  const items = (
     <Menu onClick={handleMenuClick}>
       <Menu.Item key="logout" icon={<LogoutOutlined />}>
         Disconnect
@@ -39,7 +39,7 @@ function ProfileMenu() {
   return (
     <span className="log-btn">
       {!isOnLoginPage && (
-        <Dropdown overlay={menu} trigger={["click"]}>
+        <Dropdown menu={items} trigger={["click"]}>
           <Space>
             <Button
               shape="circle"

@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import "./Footer.scss";
 
 export default function Footer() {
+  const [year, setYear] = useState(new Date().getFullYear());
+  useEffect(() => {
+    const currentYear = new Date().getFullYear();
+    setYear(currentYear);
+  }, []);
+
   const location = useLocation();
 
   const excludedPaths = [
@@ -74,7 +80,7 @@ export default function Footer() {
           privacy policy
         </a>
         <div className="all-right">
-          © 2013 - 2023 Origins. All rights reserved
+          © 2013 - <span>{year}</span> Origins. All rights reserved
         </div>
       </div>
     </footer>
