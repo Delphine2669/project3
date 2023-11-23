@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import toastr from "toastr";
 import { authFetch } from "../../../../../utilities/utils";
@@ -21,10 +21,17 @@ toastr.options = {
   hideEasing: "linear",
   showMethod: "fadeIn",
   hideMethod: "fadeOut",
+  escapeHtml: true,
 };
 function DeleteVideosForm() {
   const [videoId, setVideoId] = useState("");
-
+  const [videoData, setVideoData] = useState({
+    title: "",
+    time: "",
+    description: "",
+    publicationDate: "",
+    // file: null,
+  });
   //   const inputRef = useRef(null);
   //   const [data, setData] = useState({
   //     title: "",
@@ -33,6 +40,29 @@ function DeleteVideosForm() {
   //     publicationDate: "",
   //     videoData: null,
   //   });
+  useEffect(() => {
+    const fetchVideoData = async () => {
+      try {
+        const response = await fetch(
+          `${import.meta.env.VITE_BACKEND_URL}/videos/${videoId}`,
+          {
+            method: "GET",
+          }
+        );
+        const data = await response.json();
+        setVideoData(data);
+        //  => ({
+        //   ...prevData,
+        //   ...data,
+        // }));
+      } catch (error) {
+        console.error("Error fetching video data:", error);
+      }
+    };
+
+    fetchVideoData();
+  }, [videoId]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
   };
@@ -80,6 +110,13 @@ function DeleteVideosForm() {
             value={videoId}
             onChange={handleVideoIdChange}
           />
+          <br />
+          <div className="title-section">
+            <label htmlFor="title" className="edit-video-label">
+              Title:
+            </label>
+            <p className="video-data-title">{videoData.title}</p>
+          </div>
           <button type="submit" onClick={handleDelete}>
             Delete video
           </button>
