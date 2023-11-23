@@ -19,18 +19,15 @@ function VideoCard({ videoSrc, caption, title }) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <iframe
-        width="560"
-        height="315"
+      <video
+        className="video"
+        controls={isHovered}
+        width="100%"
         src={videoSrc}
-        title="YouTube video player"
-        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
+        allowFullScreen
+        frameBorder="0"
       >
-        Sorry, your browser doesn't support videos.
-      </iframe>
-      <video className="video" controls={isHovered} width="100%" src={videoSrc}>
         <track default kind="captions" srcLang="fr" src={caption} />
       </video>
       <p className="card-title">{title}</p>
