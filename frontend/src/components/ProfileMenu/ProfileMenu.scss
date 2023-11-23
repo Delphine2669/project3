@@ -1,0 +1,23 @@
+.anticon > * {
+  rotate: (-90deg);
+}
+.ant-btn-circle {
+  rotate: (90deg);
+}
+
+.ant-dropdown-menu-title-content {
+  display: none;
+}
+body > div:nth-child(3) > div > ul {
+  width: 10dvw;
+  left: 40dvw;
+}
+@media screen and (min-width: 600px) {
+  body > div:nth-child(3) > div > ul {
+    width: 15dvw;
+    left: 45dvw;
+  }
+  .ant-dropdown-menu-title-content {
+    display: block;
+  }
+}

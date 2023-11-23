@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useAuth } from "../../contexts/AuthContext";
 import "./Cat.scss";
 
 export default function Cat() {
+  const { isAuthenticated } = useAuth();
   const [categories, setCategories] = useState([]);
   const [videosByCategory, setVideosByCategory] = useState({});
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -52,18 +54,20 @@ export default function Cat() {
 
   return (
     <div className="CatBox">
-      <select
-        className="category-select"
-        onChange={handleCategoryChange}
-        value={selectedCategory?.id || ""}
-      >
-        <option value="">Find your videos by category</option>
-        {categories.map((category) => (
-          <option key={category.id} value={category.id}>
-            {category.name}
-          </option>
-        ))}
-      </select>
+      {isAuthenticated && (
+        <select
+          className="category-select"
+          onChange={handleCategoryChange}
+          value={selectedCategory?.id || ""}
+        >
+          <option value="">Find your videos by category</option>
+          {categories.map((category) => (
+            <option key={category.id} value={category.id}>
+              {category.name}
+            </option>
+          ))}
+        </select>
+      )}
       <div className="video-list">
         {selectedCategory && videosByCategory[selectedCategory.id] && (
           <div className="video-list">
