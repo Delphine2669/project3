@@ -176,7 +176,6 @@ CREATE TABLE `viewer` (
 
 LOCK TABLES `viewer` WRITE;
 /*!40000 ALTER TABLE `viewer` DISABLE KEYS */;
-INSERT INTO `viewer` VALUES (1,'awesomeAdmin','awesomeAdmin@tsn.game',1980-05-31,1,1,'$argon2id$v=19$m=65536,t=5,p=1$37YVG6kc1L5bf3hFCasIMw$FKcS9dONHbdlKTGl8FVTK8YTaVtbs08TN0ZlyAEuQTE');
 /*!40000 ALTER TABLE `viewer` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

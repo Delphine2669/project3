@@ -1,4 +1,3 @@
-@import "toastr";
 @font-face {
   font-family: "Clinton";
   src: url("./font/Clinton/Clinton_semibold.ttf") format("truetype");
@@ -90,6 +89,9 @@
     #cbbf7e,
     #b7b191
   );
+
+  /*toast */
+  --toastify-color-success: #0d490f;
 }
 
 body {

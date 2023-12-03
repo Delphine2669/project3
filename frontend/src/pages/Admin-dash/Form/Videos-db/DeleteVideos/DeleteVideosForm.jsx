@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import toastr from "toastr";
+import { toast } from "react-toastify";
 import { authFetch } from "../../../../../utilities/utils";
 import "./DeleteVideosForm.scss";
 import Header from "../../../../../components/Header/Header";
 
-toastr.options = {
+toast.options = {
   closeButton: false,
   debug: false,
   newestOnTop: false,
@@ -76,10 +76,10 @@ function DeleteVideosForm() {
         },
         token
       );
-      toastr.success("Video successfully deleted!");
+      toast.success("Video successfully deleted!");
     } catch (error) {
       console.error("Error deleting video:", error);
-      toastr.error("Video deletion failed.");
+      toast.error("Video deletion failed.");
     }
   };
   const handleVideoIdChange = (event) => {

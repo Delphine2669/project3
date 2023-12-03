@@ -1,5 +1,6 @@
 import { createContext, useContext, useMemo, useState } from "react";
 import PropTypes from "prop-types";
+import { ToastContainer } from "react-toastify";
 
 const AuthContext = createContext();
 
@@ -31,4 +32,10 @@ AuthProvider.propTypes = {
   initialToken: PropTypes.string,
 };
 
+export function ToastProvider({ children }) {
+  return <ToastContainer>{children}</ToastContainer>;
+}
+ToastProvider.propTypes = {
+  children: PropTypes.element.isRequired,
+};
 export default AuthContext;

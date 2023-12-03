@@ -1,22 +1,24 @@
 import React, { useRef } from "react";
+import { toast } from "react-toastify";
 import { useNavigate, NavLink } from "react-router-dom";
-import toastr from "toastr";
+
 import { useAuth } from "../../contexts/AuthContext";
 import { authFetch } from "../../utilities/utils";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { saveToken } from "../../utilities/localStorage";
 import "./Login.scss";
+import "react-toastify/dist/ReactToastify.css";
 
-toastr.options = {
+toast.options = {
   closeButton: false,
   debug: false,
   newestOnTop: false,
   progressBar: true,
-  positionClass: "toast-top-center",
+  position: "top-center",
   preventDuplicates: false,
   onclick: null,
-  showDuration: "200",
+  showDuration: "800",
   hideDuration: "500",
   timeOut: "3000",
   extendedTimeOut: "1000",
@@ -24,6 +26,7 @@ toastr.options = {
   hideEasing: "linear",
   showMethod: "fadeIn",
   hideMethod: "fadeOut",
+  escapeHtml: true,
 };
 
 export default function Login() {
@@ -57,13 +60,13 @@ export default function Login() {
           setToken(token);
           const isAdmin = !!viewer.isAdmin;
           setIsAdmin(isAdmin);
-          toastr.success("Successfully logged in");
+          toast.success("Successfully logged in");
           navigate("/");
         } else {
           throw new Error("Invalid response data");
         }
       } else {
-        toastr.error("Failed to login, check your credentials");
+        toast.error("Failed to login, check your credentials");
         console.error("Login failed");
       }
     } catch (error) {

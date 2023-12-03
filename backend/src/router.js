@@ -95,7 +95,7 @@ router.delete("/photos/:id", photoControllers.destroy);
 
 router.put("/viewers/:id", hashPassword, viewerControllers.edit);
 router.delete("/viewers/:id", verifyToken, viewerControllers.destroy);
-
+router.patch("/viewers/:id", hashPassword, viewerControllers.patch);
 router.put("/videos/:id", verifyToken, videoControllers.edit);
 router.delete("/videos/:id", verifyToken, videoControllers.destroy);
 router.post("/videos", verifyToken, videoControllers.add);

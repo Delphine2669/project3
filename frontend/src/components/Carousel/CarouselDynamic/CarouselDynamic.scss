@@ -35,6 +35,11 @@ h2.photocard-title {
   display: none;
 }
 
+.control-arrow-control-next {
+  margin-top: 20dvh;
+  height: 50%;
+  top: 5dvh;
+}
 @media screen and (min-width: 600px) {
   .photocard {
     width: 50dvw;

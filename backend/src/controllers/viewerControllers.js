@@ -46,6 +46,24 @@ const edit = (req, res) => {
     });
 };
 
+const patch = (req, res) => {
+  const viewerId = parseInt(req.params.id, 10);
+  const viewerData = req.body;
+  models.viewer
+    .patch(viewerData, viewerId)
+    .then(([result]) => {
+      if (result.affectedRows === 0) {
+        res.sendStatus(404);
+      } else {
+        res.sendStatus(204);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("error patching data from database");
+    });
+};
+
 const add = (req, res) => {
   const viewer = {
     username: req.body.username,
@@ -88,4 +106,5 @@ module.exports = {
   edit,
   add,
   destroy,
+  patch,
 };

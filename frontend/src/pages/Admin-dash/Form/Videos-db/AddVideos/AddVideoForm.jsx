@@ -1,11 +1,11 @@
 import React, { useState, useRef } from "react";
 import axios from "axios";
-import toastr from "toastr";
+import { toast } from "react-toastify";
 import { NavLink } from "react-router-dom";
 import "./AddVideoForm.scss";
 import Header from "../../../../../components/Header/Header";
 
-toastr.options = {
+toast.options = {
   closeButton: false,
   debug: false,
   newestOnTop: false,
@@ -21,6 +21,7 @@ toastr.options = {
   hideEasing: "linear",
   showMethod: "fadeIn",
   hideMethod: "fadeOut",
+  escapeHtml: true,
 };
 
 function AddVideoForm() {
@@ -77,7 +78,7 @@ function AddVideoForm() {
         },
         timeout: 5000,
       });
-      toastr.success("Video successfully added!");
+      toast.success("Video successfully added!");
       setData({
         title: "",
         time: "",
@@ -89,7 +90,7 @@ function AddVideoForm() {
       });
     } catch (error) {
       console.error("Error uploading file:", error);
-      toastr.error("Video upload failed.");
+      toast.error("Video upload failed.");
     }
   };
 

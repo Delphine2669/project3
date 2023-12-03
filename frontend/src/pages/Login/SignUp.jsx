@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
-import toastr from "toastr";
+import { toast } from "react-toastify";
 import "./SignUp.scss";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
-toastr.options = {
+toast.options = {
   closeButton: false,
   debug: false,
   newestOnTop: false,
@@ -21,6 +21,7 @@ toastr.options = {
   hideEasing: "linear",
   showMethod: "fadeIn",
   hideMethod: "fadeOut",
+  escapeHtml: true,
 };
 
 export default function SignUp() {
@@ -29,6 +30,8 @@ export default function SignUp() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
+  const passwordRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -39,9 +42,16 @@ export default function SignUp() {
       email,
     };
     if (password !== confirmPassword) {
-      toastr.info("Password and password confirmation don't match.");
+      toast.info("Password and password confirmation don't match.");
       return;
     }
+    if (!passwordRegex.test(password)) {
+      toast.info(
+        "Password must contain at least one uppercase letter, one lowercase letter, one digit, one special character, and be at least 8 characters long."
+      );
+      return;
+    }
+
     try {
       const res = await fetch(
         `${
@@ -60,12 +70,12 @@ export default function SignUp() {
         setPassword("");
         setConfirmPassword("");
         setEmail("");
-        toastr.success("Account created successfully");
+        toast.success("Account created successfully");
         navigate("/Login");
       } else if (res.status === 403) {
-        toastr.error("Account already exists");
+        toast.error("Account already exists");
       } else {
-        toastr.error("Account creation failed");
+        toast.error("Account creation failed");
       }
     } catch (error) {
       console.error(error);

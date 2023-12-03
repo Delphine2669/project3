@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import toastr from "toastr";
+import { toast } from "react-toastify";
 import "./EditViewerForm.scss";
 import Footer from "../../../../../components/Footer/Footer";
 import Header from "../../../../../components/Header/Header";
 
-toastr.options = {
+toast.options = {
   closeButton: false,
   debug: false,
   newestOnTop: false,
@@ -21,6 +21,7 @@ toastr.options = {
   hideEasing: "linear",
   showMethod: "fadeIn",
   hideMethod: "fadeOut",
+  escapeHtml: true,
 };
 function EditViewerForm() {
   const navigate = useNavigate();
@@ -61,17 +62,17 @@ function EditViewerForm() {
     event.preventDefault();
     try {
       await fetch(`${import.meta.env.VITE_BACKEND_URL}/viewers/${viewerId}`, {
-        method: "PUT",
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(viewerData),
       });
-      toastr.success("Viewer successfully updated!");
+      toast.success("Viewer successfully updated!");
       navigate("/adminpage");
     } catch (error) {
       console.error("Error updating viewer:", error);
-      toastr.error("Viewer update failed.");
+      toast.error("Viewer update failed.");
     }
   };
 
@@ -80,12 +81,13 @@ function EditViewerForm() {
   };
 
   const handleChange = (e) => {
+    const { value, type } = e.target;
+
     setViewerData((prevData) => ({
       ...prevData,
-      [e.target.name]: e.target.value,
+      isAdmin: type === "radio" ? value : value,
     }));
   };
-
   return (
     <div className="edit-viewer-form-box">
       <Header />
@@ -97,7 +99,7 @@ function EditViewerForm() {
       <div className="edit-viewer-form-container">
         <h1 className="edit-viewer-form-title">Edit Viewer</h1>
         <form
-          method="PUT"
+          method="Patch"
           encType="multipart/form-data"
           action={`${import.meta.env.VITE_BACKEND_URL}/viewers/${viewerId}`}
           className="edit-viewer-form"

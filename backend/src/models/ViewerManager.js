@@ -34,6 +34,20 @@ class ViewerManager extends AbstractManager {
     );
   }
 
+  patch(viewer) {
+    return this.database.query(
+      `UPDATE ${this.table} SET username=?, email=?, birthday=?, isFavorite=?, isAdmin=? WHERE id=?`,
+      [
+        viewer.username,
+        viewer.email,
+        viewer.birthday,
+        viewer.isFavorite,
+        viewer.isAdmin,
+        viewer.id,
+      ]
+    );
+  }
+
   findByUsernameWithHashedPassword(viewer) {
     return this.database.query(
       `SELECT username, hashedPassword,isAdmin from  ${this.table} where username = ?`,

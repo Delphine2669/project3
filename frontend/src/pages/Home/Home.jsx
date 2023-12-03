@@ -1,3 +1,4 @@
+import { ToastContainer } from "react-toastify";
 import Header from "../../components/Header/Header";
 import photoList from "../../components/PhotoList";
 import HeroSlider from "../../components/HeroSlider/HeroSlider";
@@ -15,6 +16,7 @@ export default function Home() {
         <Header />
       </div>
       <div className="content">
+        <ToastContainer />
         <CarouselDynamic />
         <SliderTiles />
         <HeroSlider photoList={photoList} />

@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import Home from "./pages/Home/Home";
 import "./App.css";
 import Login from "./pages/Login/Login";
@@ -9,6 +10,7 @@ import AdminPage from "./pages/Admin-dash/AdminPage";
 import DeleteVideosForm from "./pages/Admin-dash/Form/Videos-db/DeleteVideos/DeleteVideosForm";
 import EditVideosForm from "./pages/Admin-dash/Form/Videos-db/EditVideos/EditVideosForm";
 import EditViewerForm from "./pages/Admin-dash/Form/Viewers-db/EditViewer/EditViewerForm";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function App() {
   const storedToken = localStorage.getItem("token");
@@ -16,6 +18,7 @@ export default function App() {
   return (
     <AuthProvider initialToken={storedToken}>
       <Router>
+        <ToastContainer />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />

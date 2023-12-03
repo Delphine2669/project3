@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import toastr from "toastr";
+import { toast } from "react-toastify";
 import "./EditVideosForm.scss";
 import Header from "../../../../../components/Header/Header";
 
-toastr.options = {
+toast.options = {
   closeButton: false,
   debug: false,
   newestOnTop: false,
@@ -20,6 +20,7 @@ toastr.options = {
   hideEasing: "linear",
   showMethod: "fadeIn",
   hideMethod: "fadeOut",
+  escapeHtml: true,
 };
 function EditVideoForm() {
   const [videoId, setVideoId] = useState("");
@@ -75,10 +76,10 @@ function EditVideoForm() {
         },
         body: JSON.stringify(videoData),
       });
-      toastr.success("Video successfully updated!");
+      toast.success("Video successfully updated!");
     } catch (error) {
       console.error("Error updating video:", error);
-      toastr.error("Video update failed.");
+      toast.error("Video update failed.");
     }
   };
 
