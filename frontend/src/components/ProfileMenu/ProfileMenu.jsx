@@ -20,6 +20,7 @@ function ProfileMenu() {
   const handleMenuClick = ({ key }) => {
     if (key === "logout") {
       handleLogout();
+      window.location.reload(true);
     }
   };
 

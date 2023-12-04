@@ -18,7 +18,6 @@ function NavBar() {
       {isAdmin && (
         <div>
           <NavLink className="admin-dash-link" to="/adminpage">
-            {/* Admin Dashboard */}
             <img
               className="settings"
               src={settings}

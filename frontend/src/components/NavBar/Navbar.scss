@@ -53,10 +53,8 @@ body > div:nth-child(3) > div > ul {
   display: flex;
 }
 .admin-dash-link {
-  text-decoration: none;
-  color: var(--color-green-dt);
   position: relative;
-  top: 5dvh;
+  top: 1dvh;
   right: -12dvw;
 }
 /*======Style link======*/
@@ -112,9 +110,15 @@ body > div:nth-child(3) > div > ul {
 
   .admin-dash-link {
     position: relative;
-    top: 3dvh;
-    left: 46dvw;
-    font-size: 1.4dvw;
+    top: 1dvh;
+    left: 16dvw;
+    padding: 4dvh 0dvw;
+  }
+  .settings {
+    width: 8dvw;
+  }
+  .username-home {
+    font-size: large;
   }
 }
 @media screen and (min-width: 1900px) {

@@ -38,6 +38,10 @@ function EditViewerForm() {
   useEffect(() => {
     const fetchViewerData = async () => {
       try {
+        if (viewerId === "1") {
+          console.error("You cannot fetch the viewer 1");
+          return;
+        }
         const response = await fetch(
           `${import.meta.env.VITE_BACKEND_URL}/viewers/${viewerId}`,
           {
@@ -60,6 +64,10 @@ function EditViewerForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (viewerId === "1") {
+      console.error("You cannot edit the viewer 1");
+      return;
+    }
     try {
       await fetch(`${import.meta.env.VITE_BACKEND_URL}/viewers/${viewerId}`, {
         method: "PATCH",

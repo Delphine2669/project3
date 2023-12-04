@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { toast } from "react-toastify";
 import { useNavigate, NavLink } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
@@ -32,9 +32,12 @@ export default function Login() {
   const { setToken, setIsAdmin, setUser } = useAuth();
   const usernameRef = useRef();
   const passwordRef = useRef();
+  const [passwordVisible, setPasswordVisible] = useState(false);
   // const { handleLogin } = useAuth();
   const navigate = useNavigate();
-
+  const handleTogglePasswordVisibility = () => {
+    setPasswordVisible((prevVisible) => !prevVisible);
+  };
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -92,12 +95,33 @@ export default function Login() {
           <div className="login-field">
             <input
               className="login-input"
-              type="password"
+              type={passwordVisible ? "text" : "password"}
               id="password"
               ref={passwordRef}
               required
               placeholder="Password"
             />
+            <button
+              type="button"
+              className="toggle-password"
+              onClick={handleTogglePasswordVisibility}
+            >
+              {passwordVisible ? (
+                <img
+                  src="/assets/hidePassword.png"
+                  alt="Hide Password"
+                  height="20"
+                  width="20"
+                />
+              ) : (
+                <img
+                  src="/assets/showPassword.png"
+                  alt="Show Password"
+                  height="20"
+                  width="20"
+                />
+              )}
+            </button>
           </div>
           <button type="submit" className="button login-submit">
             <div className="button-text">Sign In</div>

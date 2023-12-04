@@ -29,10 +29,21 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
   const navigate = useNavigate();
   const passwordRegex =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
+  const handleTogglePasswordVisibility = () => {
+    setPasswordVisible((prevVisible) => !prevVisible);
+  };
+  const handleToggleConfirmPasswordVisibility = () => {
+    setConfirmPasswordVisible((prevVisible) => !prevVisible);
+  };
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -112,18 +123,39 @@ export default function SignUp() {
           </div>
           <div className="signup-field">
             <input
-              type="password"
+              type={passwordVisible ? "text" : "password"}
               id="password"
               className="signup-input"
               value={password}
               placeholder="password"
               required
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={handlePasswordChange}
             />
+            <button
+              type="button"
+              className="toggle-password"
+              onClick={handleTogglePasswordVisibility}
+            >
+              {passwordVisible ? (
+                <img
+                  src="/assets/hidePassword.png"
+                  alt="Hide Password"
+                  height="20"
+                  width="20"
+                />
+              ) : (
+                <img
+                  src="/assets/showPassword.png"
+                  alt="Show Password"
+                  height="20"
+                  width="20"
+                />
+              )}
+            </button>
           </div>
           <div className="signup-field">
             <input
-              type="password"
+              type={confirmPasswordVisible ? "text" : "password"}
               id="password"
               className="signup-input"
               value={confirmPassword}
@@ -131,6 +163,28 @@ export default function SignUp() {
               placeholder="Password confirmation"
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
+            <button
+              type="button"
+              className="toggle-password"
+              onClick={handleToggleConfirmPasswordVisibility}
+            >
+              {confirmPasswordVisible ? (
+                <img
+                  src="/assets/hidePassword.png"
+                  alt="Hide Password"
+                  height="20"
+                  width="20"
+                />
+              ) : (
+                // <i className="fas fa-eye" />
+                <img
+                  src="/assets/showPassword.png"
+                  alt="Show Password"
+                  height="20"
+                  width="20"
+                />
+              )}
+            </button>
           </div>
           <button
             type="submit"
