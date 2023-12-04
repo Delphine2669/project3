@@ -30,7 +30,7 @@ toast.options = {
 };
 
 export default function Login() {
-  const { setToken, setIsAdmin } = useAuth();
+  const { setToken, setIsAdmin, setUser } = useAuth();
   const usernameRef = useRef();
   const passwordRef = useRef();
   // const { handleLogin } = useAuth();
@@ -60,6 +60,7 @@ export default function Login() {
           setToken(token);
           const isAdmin = !!viewer.isAdmin;
           setIsAdmin(isAdmin);
+          setUser(viewer);
           toast.success("Successfully logged in");
           navigate("/");
         } else {

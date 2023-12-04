@@ -17,6 +17,7 @@ export default function Home() {
       </div>
       <div className="content">
         <ToastContainer />
+
         <CarouselDynamic />
         <SliderTiles />
         <HeroSlider photoList={photoList} />
