@@ -49,7 +49,9 @@ function Header() {
     <header className={isHidden ? "hidden" : ""}>
       <Navbar />
       {user ? (
-        <span className="username-home">{user.username}</span>
+        <div className="username-home-div">
+          <span className="username-home">{user.username}</span>
+        </div>
       ) : (
         <span>Log in</span>
       )}

@@ -8,6 +8,11 @@ header {
   }
 }
 .username-home {
-  color: red;
-  margin-left: 70dvw;
+  color: var(--color-2);
+  background-color: var(--color-yellow-dt);
+  width: 15dvw;
+  border-radius: 10dvw;
+  margin-left: 68dvw;
+  margin-top: 2dvh;
+  padding: 0dvh 3dvw;
 }
