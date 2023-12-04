@@ -3,12 +3,12 @@ import { useLocation, NavLink } from "react-router-dom";
 import "./Header.scss";
 import Navbar from "../NavBar/Navbar";
 import logo from "../../assets/logo.png";
-import { useAuth } from "../../contexts/AuthContext";
+// import { useAuth } from "../../contexts/AuthContext";
 
 function Header() {
   const location = useLocation();
   const [isHidden, setIsHidden] = useState(false);
-  const { user } = useAuth();
+  // const { user } = useAuth();
 
   const hiddenHeaderPages = [
     "/adminpage",
@@ -48,13 +48,6 @@ function Header() {
   return (
     <header className={isHidden ? "hidden" : ""}>
       <Navbar />
-      {user ? (
-        <div className="username-home-div">
-          <span className="username-home">{user.username}</span>
-        </div>
-      ) : (
-        <span>Log in</span>
-      )}
     </header>
   );
 }

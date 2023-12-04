@@ -1,5 +1,5 @@
 .logo {
-  width: 25dvh;
+  width: 22dvw;
   height: auto;
   margin-left: 2dvw;
   margin-top: 1dvh;
@@ -11,8 +11,21 @@
     background-color: var(--color-green-dt);
     position: fixed;
     right: 0;
-    top: 2;
+    top: 0;
   }
+}
+.settings {
+  width: 12dvw;
+  margin-right: 2dvh;
+}
+.username-home {
+  color: var(--color-2);
+  background-color: var(--color-yellow-dt);
+  width: 25dvw;
+  height: 4dvh;
+  border-radius: 8dvw;
+  margin-left: 20dvw;
+  padding: 0dvh 3dvw;
 }
 /* #root > div > div.Header > header > div > div > span > div > div > button {
   background-color: rgb(173, 148, 36);

@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { toast } from "react-toastify";
 import { useNavigate, NavLink } from "react-router-dom";
-
 import { useAuth } from "../../contexts/AuthContext";
 import { authFetch } from "../../utilities/utils";
 import Header from "../../components/Header/Header";
