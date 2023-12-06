@@ -1,5 +1,5 @@
 .logo {
-  width: 22dvw;
+  width: 35dvw;
   height: auto;
   margin-left: 2dvw;
   margin-top: 1dvh;
@@ -11,21 +11,22 @@
     background-color: var(--color-green-dt);
     position: fixed;
     right: 0;
-    top: 0;
+    top: 2%;
   }
 }
 .settings {
   width: 12dvw;
-  margin-right: 2dvh;
+  position: fixed;
+  right: 14%;
 }
 .username-home {
-  color: var(--color-2);
-  background-color: var(--color-yellow-dt);
+  font-size: small;
+  color: var(--color-green-dt);
   width: 25dvw;
-  height: 4dvh;
-  border-radius: 8dvw;
-  margin-left: 20dvw;
-  padding: 0dvh 3dvw;
+  height: 3dvh;
+  position: fixed;
+  right: 0;
+  top: 8%;
 }
 /* #root > div > div.Header > header > div > div > span > div > div > button {
   background-color: rgb(173, 148, 36);
@@ -115,15 +116,46 @@ body > div:nth-child(3) > div > ul {
     padding: 4dvh 0dvw;
   }
   .settings {
-    width: 8dvw;
+    width: 8%;
+  }
+  .username-home {
+    right: -10%;
+    top: 7%;
+  }
+}
+// .username-home {
+//   right: -2%;
+//   padding-top: 0.5%;
+// }
+// .settings {
+//   width: 9%;
+//   position: fixed;
+//   top: 2.5%;
+//   right: 12%;
+// }
+
+@media screen and (min-width: 1200px) {
+  .settings {
+    width: 4%;
+    right: 7%;
   }
   .username-home {
     font-size: large;
+    top: 5%;
+    padding-top: 2%;
+    right: -15%;
   }
 }
 @media screen and (min-width: 1900px) {
   #root > div > div.Header > header > div > div > span > div > div > button {
     width: 5dvw;
     height: 5dvh;
+  }
+
+  .username-home {
+    font-size: x-large;
+  }
+  .settings {
+    width: 3%;
   }
 }

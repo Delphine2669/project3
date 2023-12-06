@@ -9,8 +9,8 @@
   display: none;
 }
 body > div:nth-child(3) > div > ul {
-  width: 8dvw;
-  height: 7dvh;
+  width: 8.5dvw;
+  height: 6dvh;
   left: 34dvw;
 }
 @media screen and (min-width: 600px) {
@@ -20,5 +20,21 @@ body > div:nth-child(3) > div > ul {
   }
   .ant-dropdown-menu-title-content {
     display: block;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  :where(.css-dev-only-do-not-override-nnuwmp).ant-btn.ant-btn-icon-only {
+    width: 40px;
+  }
+
+  .ant-btn
+    css-dev-only-do-not-override-nnuwmp
+    ant-btn-circle
+    ant-btn-default
+    ant-btn-icon-only
+    button-menu {
+    width: 2em;
+    height: 1.8em;
   }
 }
