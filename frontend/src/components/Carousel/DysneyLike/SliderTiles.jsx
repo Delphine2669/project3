@@ -25,27 +25,35 @@ export default function SliderTiles() {
   const tilePhotosVideos = [
     {
       id: 1,
-      Photo: "/assets/logo/lollogo.png",
+      Photo: "/assets/logo/lollogo.webp",
       gif: "https://media.tenor.com/Wo5UCMqKYBYAAAAd/darts-pdc.gif",
       video: "/assets/videos/video1.mp4",
+      alt: "league of legend logo",
+      desc: "league of legend tile",
     },
     {
       id: 2,
-      Photo: "/assets/logo/codlogo.png",
+      Photo: "/assets/logo/codlogo.webp",
       gif: "https://media.tenor.com/XQN8fuKuXQcAAAAd/warzone-fight.gif",
       video: "/assets/videos/video2.mp4",
+      alt: "call of duty logo",
+      desc: "call of duty tile",
     },
     {
       id: 3,
-      Photo: "/assets/logo/csgologo.png",
+      Photo: "/assets/logo/csgologo.webp",
       gif: "https://media.tenor.com/X0zmhgHH5QcAAAAC/blast-pro-series-blast.gif",
       video: "/assets/videos/video3.mp4",
+      alt: "counter strike  logo",
+      desc: "counter strike tile",
     },
     {
       id: 4,
-      Photo: "/assets/logo/fortlogo.png",
+      Photo: "/assets/logo/fortlogo.webp",
       gif: "https://media.tenor.com/aevZ-Z7i_ZUAAAAM/fortnite-battle-bus.gif",
       video: "/assets/videos/video4.mp4",
+      alt: "fortnite logo",
+      desc: "fortnite tile",
     },
   ];
 
@@ -53,18 +61,22 @@ export default function SliderTiles() {
     <div className="DysneyCatBox">
       {tilePhotosVideos.map((photoVideo) => (
         <div
-          className="item"
+          className="tile"
           key={photoVideo.id}
           onClick={() => handleSlideClick(photoVideo.video)}
           onKeyDown={(e) => handleKeyDown(e, photoVideo.video)}
           role="button"
           tabIndex="0"
         >
-          <div className="item-border">
-            <img alt="" className="item-image" src={photoVideo.Photo} />
+          <div className="tile-border">
             <img
-              alt=""
-              className="item-image hover-image"
+              alt={photoVideo.alt}
+              className="tile-image"
+              src={photoVideo.Photo}
+            />
+            <img
+              alt={photoVideo.desc}
+              className="tile-image hover-image"
               src={photoVideo.gif}
             />
           </div>

@@ -5,7 +5,12 @@ import "./PhotoCard.scss";
 function Card({ imageSrc, alt }) {
   return (
     <div className="photocard">
-      <img src={imageSrc} alt={alt} className="photocard-image" />
+      <img
+        loading="eager"
+        src={imageSrc}
+        alt={alt}
+        className="photocard-image"
+      />
     </div>
   );
 }

@@ -61,7 +61,7 @@ CREATE TABLE `photo` (
 
 LOCK TABLES `photo` WRITE;
 /*!40000 ALTER TABLE `photo` DISABLE KEYS */;
-INSERT INTO `photo` VALUES (1,'call of duty','gameplay de jeux de tir','/image/fort2.jpg'),(2,'Cyber Punk','gameplay RPG','/image/fifa1.png'),(3,'Cyber Punk','gameplay RPG','/image/cod4.png'),(4,'call of duty','gameplay de jeux de tir','/image/cod2.jpg');
+INSERT INTO `photo` VALUES (1,'call of duty','gameplay de jeux de tir','/image/fort2.webp'),(2,'Cyber Punk','gameplay RPG','/image/fifa1.webp'),(3,'Cyber Punk','gameplay RPG','/image/cod4.webp'),(4,'call of duty','gameplay de jeux de tir','/image/cod2.webp');
 /*!40000 ALTER TABLE `photo` ENABLE KEYS */;
 UNLOCK TABLES;
 

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation, NavLink } from "react-router-dom";
 import "./Header.scss";
 import Navbar from "../NavBar/Navbar";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.webp";
 // import { useAuth } from "../../contexts/AuthContext";
 
 function Header() {
@@ -39,7 +39,7 @@ function Header() {
     return (
       <header className={isHidden ? "hidden" : ""}>
         <NavLink to="/">
-          <img className="logo" src={logo} alt="Logo TSN Game" />
+          <img className="logo" src={logo} width="35dvw" alt="Logo TSN Game" />
         </NavLink>
       </header>
     );

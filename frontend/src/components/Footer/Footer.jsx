@@ -33,22 +33,22 @@ export default function Footer() {
         <a
           href="https://www.origins-digital.com/"
           target="blank"
-          className="logo-link-od"
+          className="logo-link-origins-digital"
         >
           <img
             src="https://assets.website-files.com/605c6a95b5fd727aeb0983c5/609504d9f9c39fe32fc1850e_OriginsLogo_Final-RGB-10.png"
-            alt=""
+            alt="logo of Origins digital"
             className="image-1"
           />
         </a>
         <a
           href="https://www.euromediagroup.com/home"
           target="blank"
-          className="logo-link-emg"
+          className="logo-link-euro-media-group"
         >
           <img
             src="https://assets.website-files.com/605c6a95b5fd727aeb0983c5/605deb704b73251b7edd6cc9_Logo%20-%20EMG.png"
-            alt=""
+            alt="logo of euro media group"
             className="image-2"
           />
         </a>
@@ -59,7 +59,7 @@ export default function Footer() {
         >
           <img
             src="https://assets.website-files.com/605c6a95b5fd727aeb0983c5/605ded6c22941fe410b20205_linkedin-189-721962%20(1).png"
-            alt=""
+            alt="linked in logo"
             className="social-icon"
           />
         </a>

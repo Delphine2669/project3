@@ -27,3 +27,5 @@ dist-ssr
 
 # media file
 *.mp4
+*.webp
+.webp

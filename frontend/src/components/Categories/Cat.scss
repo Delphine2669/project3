@@ -5,7 +5,7 @@
   margin-top: 4dvh;
 }
 
-.category-select {
+.videos-category-select {
   margin-bottom: 1dvh;
   padding: 10px;
   font-size: 16px;
@@ -15,7 +15,7 @@
   border-color: #7d5412;
 }
 
-.category-select option {
+.videos-category-select option {
   font-size: 14px;
   padding: 8px;
   background-color: rgba(22, 60, 112, 1);
@@ -35,13 +35,13 @@
 }
 
 @media screen and (min-width: 600px) {
-  .category-select {
+  .videos-category-select {
     padding-left: 8dvw;
     width: 40%;
     font-size: 1.5dvw;
   }
 
-  .category-select option {
+  .videos-category-select option {
     font-size: 1.5dvw;
   }
 

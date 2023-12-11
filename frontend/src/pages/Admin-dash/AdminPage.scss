@@ -15,6 +15,9 @@
   height: 100%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+.link-download-viewer-list {
+  width: fit-content;
+}
 
 .admin-title {
   color: var(--color-white-again);
@@ -25,7 +28,8 @@
 .link-edit-viewer-link,
 .link-delete-video-link,
 .link-edit-video-link,
-.link-add-video-link {
+.link-add-video-link,
+.link-download-viewer-list {
   color: var(--color-admin-page);
   background-color: var(--color-white-again);
   padding: 2dvh 1dvw;
@@ -34,6 +38,7 @@
   font-size: 4dvw;
   margin-bottom: 2dvh;
   transition: background-color 0.2s ease;
+  cursor: pointer;
 }
 
 .footer-admin {
@@ -53,7 +58,8 @@
   .link-edit-viewer-link,
   .link-delete-video-link,
   .link-edit-video-link,
-  .link-add-video-link {
+  .link-add-video-link,
+  .link-download-viewer-list {
     font-size: 2dvw;
     padding: 2dvh 3dvw;
   }
@@ -62,7 +68,8 @@
   .link-edit-viewer-link,
   .link-delete-video-link,
   .link-edit-video-link,
-  .link-add-video-link {
+  .link-add-video-link,
+  .link-download-viewer-list {
     font-size: 2dvw;
     padding: 2dvh 4dvw;
   }

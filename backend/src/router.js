@@ -101,5 +101,6 @@ router.delete("/videos/:id", verifyToken, videoControllers.destroy);
 router.post("/videos", verifyToken, videoControllers.add);
 
 router.get("/viewers/:id", viewerControllers.read);
+router.get("/export-csv", viewerControllers.exportToCSV);
 
 module.exports = router;

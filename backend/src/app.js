@@ -29,7 +29,7 @@ app.use(router);
 
 // serve the `backend/public` folder for public resources4
 
-app.use(express.static(path.join(__dirname, "../public")));
+app.use(express.static(path.join(__dirname, "../public"), { maxAge: "365d" }));
 
 // serve REACT APP
 
@@ -45,7 +45,11 @@ const reactIndexFile = path.join(
 if (fs.existsSync(reactIndexFile)) {
   // serve REACT resources
 
-  app.use(express.static(path.join(__dirname, "..", "..", "frontend", "dist")));
+  app.use(
+    express.static(path.join(__dirname, "..", "..", "frontend", "dist"), {
+      maxAge: "365d",
+    })
+  );
 
   // redirect all requests to the REACT index file
 

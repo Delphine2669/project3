@@ -145,11 +145,12 @@ function EditViewerForm() {
           </div>
           <br />
           <div className="birthday-section">
-            <label htmlFor="birthday" className="edit-video-label">
+            <label htmlFor="birthday" className="edit-viewer-label">
               Date of birth:
             </label>
+            <br />
             <input
-              className="input-evf"
+              className="input-evf bd"
               id="birthday"
               placeholder="Birthday"
               type="date"
@@ -157,6 +158,16 @@ function EditViewerForm() {
               value={viewerData.birthday}
               onChange={handleChange}
             />
+          </div>
+          <br />
+          <br />
+          <div className="admin-status-section">
+            <label htmlFor="admin-status" className="edit-viewer-label">
+              Admin Status:
+            </label>
+            <p className="viewer-data-admin-status">
+              {viewerData.isAdmin === "1" ? "Admin" : "Simple User"}
+            </p>
           </div>
           <br />
           <div className="is-Admin-section-block">

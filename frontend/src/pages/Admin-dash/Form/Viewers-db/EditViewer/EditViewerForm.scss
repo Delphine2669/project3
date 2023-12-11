@@ -35,7 +35,7 @@
 }
 
 .edit-viewer-form-container button {
-  width: 60%;
+  width: fit-content;
   padding: 2%;
   border-radius: 5px;
 }
@@ -54,11 +54,12 @@ form.edit-viewer-form {
   display: flex;
 }
 .edit-viewer-form > label {
-  padding: 5px;
+  padding: 0.5dvh 0.5dvw;
 }
 
 .viewer-data-email,
-.viewer-data-username {
+.viewer-data-username,
+.viewer-data-admin-status {
   color: var(--color-yellow-dt);
 }
 
@@ -70,8 +71,11 @@ form.edit-viewer-form {
 .is-Admin-section {
   display: flex;
 }
+input#birthday.input-evf.bd {
+  width: fit-content;
+}
 input#viewerId.viewer-id-input {
-  width: 55%;
+  width: fit-content;
 }
 
 @media screen and (min-width: 600px) {

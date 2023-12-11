@@ -56,7 +56,7 @@ export default function Cat() {
     <div className="CatBox">
       {isAuthenticated && (
         <select
-          className="category-select"
+          className="videos-category-select"
           onChange={handleCategoryChange}
           value={selectedCategory?.id || ""}
         >

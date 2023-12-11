@@ -1,3 +1,4 @@
+const fastcsv = require("fast-csv");
 const models = require("../models");
 
 const browse = (req, res) => {
@@ -99,7 +100,24 @@ const destroy = (req, res) => {
       res.status(500).send("error deleting data from database");
     });
 };
+const exportToCSV = async (req, res) => {
+  try {
+    const viewers = await models.viewer.findAll();
+    console.info("viewers:", viewers);
+    const viewerArray = viewers[0];
 
+    const timestamp = new Date().toISOString().replace(/[-:.]/g, "");
+    const fileName = `exported_file_${timestamp}.csv`;
+
+    res.setHeader("Content-Type", "text/csv");
+    res.setHeader("Content-Disposition", `attachment; filename=${fileName}`);
+
+    fastcsv.write(viewerArray, { headers: true }).pipe(res);
+  } catch (error) {
+    console.error("Error exporting to CSV:", error);
+    res.status(500).send("Error exporting to CSV");
+  }
+};
 module.exports = {
   browse,
   read,
@@ -107,4 +125,5 @@ module.exports = {
   add,
   destroy,
   patch,
+  exportToCSV,
 };

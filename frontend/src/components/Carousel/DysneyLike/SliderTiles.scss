@@ -5,13 +5,13 @@
   margin-left: 5dvw;
 }
 
-.item {
+.tile {
   position: relative;
   cursor: pointer;
   width: 25dvw;
 }
 
-.item-border {
+.tile-border {
   width: 17dvw;
   height: auto;
   position: relative;
@@ -24,7 +24,7 @@
     box-shadow 250ms ease-in-out;
 }
 
-.item-image {
+.tile-image {
   width: 100%;
   height: 100%;
   border-radius: 10px;
@@ -32,7 +32,7 @@
   object-fit: cover;
 }
 
-.item-image.hover-image {
+.tile-image.hover-image {
   position: absolute;
   top: 0;
   left: 0;
@@ -41,14 +41,14 @@
   visibility: hidden;
 }
 
-.item:hover .item-border {
+.tile:hover .tile-border {
   box-shadow: rgba(0, 0, 0, 0.8) 0px 40px 58px -16px,
     rgba(0, 0, 0, 0.72) 0px 30px 22px -10px;
   transform: scale(1.05);
   border: 2px solid rgb(121, 210, 255);
 }
 
-.item:hover .item-image.hover-image {
+.tile:hover .tile-image.hover-image {
   position: absolute;
   top: 0;
   z-index: -1;

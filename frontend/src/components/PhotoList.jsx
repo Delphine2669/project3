@@ -1,8 +1,8 @@
-const esport1 = "/esport1.jpg";
-const esport2 = "/esport2.jpg";
-const esport3 = "/esport3.jpg";
-const esport4 = "/esport4.jpg";
-const esport5 = "/esport5.jpg";
+const esport1 = "/esport1.webp";
+const esport2 = "/esport2.webp";
+const esport3 = "/esport3.webp";
+const esport4 = "/esport4.webp";
+const esport5 = "/esport5.webp";
 
 const photoList = [
   {
