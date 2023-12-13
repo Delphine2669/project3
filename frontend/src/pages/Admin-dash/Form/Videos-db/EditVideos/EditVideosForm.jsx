@@ -25,7 +25,7 @@ toast.options = {
 function EditVideoForm() {
   const [videoId, setVideoId] = useState("");
   // const inputRef = useRef(null);
-
+  const [idError, setIdError] = useState("");
   const [videoData, setVideoData] = useState({
     title: "",
     time: "",
@@ -37,20 +37,44 @@ function EditVideoForm() {
   useEffect(() => {
     const fetchVideoData = async () => {
       try {
+        if (!videoId) {
+          console.error("invalid video ID");
+          setIdError("invalid video ID");
+          setVideoData({
+            title: "",
+            time: "",
+            description: "",
+            publicationDate: "",
+          });
+          return;
+        }
         const response = await fetch(
           `${import.meta.env.VITE_BACKEND_URL}/videos/${videoId}`,
           {
             method: "GET",
           }
         );
+        if (!response.ok) {
+          console.error("Video not found");
+          setIdError("Video not found");
+          setVideoData({
+            title: "",
+            time: "",
+            description: "",
+            publicationDate: "",
+          });
+          return;
+        }
         const data = await response.json();
         setVideoData(data);
+        setIdError("");
         //  => ({
         //   ...prevData,
         //   ...data,
         // }));
       } catch (error) {
         console.error("Error fetching video data:", error);
+        setIdError("Error fetching video data");
       }
     };
 
@@ -111,6 +135,9 @@ function EditVideoForm() {
       </div>
       <div className="edit-video-form-container">
         <h1 className="edit-video-form-title">EDIT VIDEOS</h1>
+        {videoId && idError && (
+          <p className="edit-video-error-message">{idError}</p>
+        )}
         <form
           method="PUT"
           encType="multipart/form-data"

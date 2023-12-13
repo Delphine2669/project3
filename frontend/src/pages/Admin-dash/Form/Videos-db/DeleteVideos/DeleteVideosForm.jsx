@@ -32,6 +32,7 @@ function DeleteVideosForm() {
     publicationDate: "",
     // file: null,
   });
+  const [idError, setIdError] = useState("");
   //   const inputRef = useRef(null);
   //   const [data, setData] = useState({
   //     title: "",
@@ -43,20 +44,38 @@ function DeleteVideosForm() {
   useEffect(() => {
     const fetchVideoData = async () => {
       try {
+        if (!videoId) {
+          console.error("Invalid viewer ID");
+          setIdError("Invalid viewer ID");
+          setVideoData({
+            title: "",
+            time: "",
+            description: "",
+            publicationDate: "",
+          });
+          return;
+        }
         const response = await fetch(
           `${import.meta.env.VITE_BACKEND_URL}/videos/${videoId}`,
           {
             method: "GET",
           }
         );
+        if (!response.ok) {
+          console.error("Video not found");
+          setIdError("Video not found");
+          return;
+        }
         const data = await response.json();
         setVideoData(data);
+        setIdError("");
         //  => ({
         //   ...prevData,
         //   ...data,
         // }));
       } catch (error) {
         console.error("Error fetching video data:", error);
+        setIdError("Error fetching video data");
       }
     };
 
@@ -95,6 +114,9 @@ function DeleteVideosForm() {
       </div>
       <div className="delete-video-form-container">
         <h1 className="delete-video-form-title">DELETE VIDEOS</h1>
+        {videoId && idError && (
+          <p className="delete-video-error-message">{idError}</p>
+        )}
         <form
           method="POST"
           action={`${import.meta.env.VITE_BACKEND_URL}/videos/${videoId}`}

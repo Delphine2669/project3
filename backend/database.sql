@@ -167,7 +167,7 @@ CREATE TABLE `viewer` (
   `hashedPassword` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -176,7 +176,7 @@ CREATE TABLE `viewer` (
 
 LOCK TABLES `viewer` WRITE;
 /*!40000 ALTER TABLE `viewer` DISABLE KEYS */;
-INSERT INTO `viewer` VALUES (1,'awesomeAdmin','awesomeAdmin@tsn.game',1980-05-31,1,1,'$argon2id$v=19$m=65536,t=5,p=1$37YVG6kc1L5bf3hFCasIMw$FKcS9dONHbdlKTGl8FVTK8YTaVtbs08TN0ZlyAEuQTE');
+INSERT INTO `viewer` VALUES (1,'awesomeAdmin','awesomeAdmin@tsn.game','1980-05-31',1,1,'$argon2id$v=19$m=65536,t=5,p=1$37YVG6kc1L5bf3hFCasIMw$FKcS9dONHbdlKTGl8FVTK8YTaVtbs08TN0ZlyAEuQTE'),(2,'user12','user12@gmail.com','1992-06-23',0,0,'$argon2id$v=19$m=65536,t=5,p=1$VjXUJGrHM0PT1RZDaYTNnw$lBI5NVemp92ucqqkY83TpTfXJ4NrSRkAjch2u9UO360'),(3,'Jojodu35','Jojo@hotmail.fr','2000-03-25',NULL,NULL,'$argon2id$v=19$m=65536,t=5,p=1$VJ25QB1t6H9G0QlT5HpERQ$nhvDkHCCxl+2J4srBme6CESEvZnm20JOb/cAxlPoRVM');
 /*!40000 ALTER TABLE `viewer` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -189,4 +189,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-03 21:27:22
+-- Dump completed on 2023-12-13 22:33:33

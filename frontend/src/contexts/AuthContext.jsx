@@ -5,7 +5,7 @@ import { ToastContainer } from "react-toastify";
 const AuthContext = createContext();
 
 export function AuthProvider({ children, initialToken }) {
-  const [token, setToken] = useState(initialToken || "");
+  const [token, setToken] = useState(initialToken || null);
   console.info("Token in AuthProvider state:", token);
   const [isAdmin, setIsAdmin] = useState(false);
   const isAuthenticated = !!token;

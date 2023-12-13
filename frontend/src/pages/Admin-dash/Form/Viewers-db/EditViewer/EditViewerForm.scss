@@ -33,7 +33,11 @@
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-
+.edit-viewer-error-message {
+  color: red;
+  background-color: var(--color-white-again);
+  text-align: center;
+}
 .edit-viewer-form-container button {
   width: fit-content;
   padding: 2%;

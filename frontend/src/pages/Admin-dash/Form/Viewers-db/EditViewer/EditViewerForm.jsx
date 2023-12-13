@@ -27,6 +27,7 @@ function EditViewerForm() {
   const navigate = useNavigate();
 
   const [viewerId, setViewerId] = useState("");
+  const [idError, setIdError] = useState("");
   const [viewerData, setViewerData] = useState({
     username: "",
     email: "",
@@ -38,8 +39,16 @@ function EditViewerForm() {
   useEffect(() => {
     const fetchViewerData = async () => {
       try {
-        if (viewerId === "1") {
-          console.error("You cannot fetch the viewer 1");
+        if (!viewerId || viewerId === "1") {
+          console.error("Invalid viewer ID");
+          setIdError("Invalid viewer ID");
+          setViewerData({
+            username: "",
+            email: "",
+            birthday: "",
+            isFavorite: "",
+            isAdmin: "",
+          });
           return;
         }
         const response = await fetch(
@@ -48,14 +57,21 @@ function EditViewerForm() {
             method: "GET",
           }
         );
+        if (!response.ok) {
+          console.error("Viewer not found");
+          setIdError("Viewer not found");
+          return;
+        }
         const data = await response.json();
         setViewerData(data);
+        setIdError("");
         //  => ({
         //   ...prevData,
         //   ...data,
         // }));
       } catch (error) {
         console.error("Error fetching viewer data:", error);
+        setIdError("Error fetching viewer data");
       }
     };
 
@@ -106,6 +122,9 @@ function EditViewerForm() {
       </div>
       <div className="edit-viewer-form-container">
         <h1 className="edit-viewer-form-title">Edit Viewer</h1>
+        {viewerId && idError && (
+          <p className="edit-viewer-error-message">{idError}</p>
+        )}
         <form
           method="Patch"
           encType="multipart/form-data"
@@ -161,14 +180,16 @@ function EditViewerForm() {
           </div>
           <br />
           <br />
-          <div className="admin-status-section">
-            <label htmlFor="admin-status" className="edit-viewer-label">
-              Admin Status:
-            </label>
-            <p className="viewer-data-admin-status">
-              {viewerData.isAdmin === "1" ? "Admin" : "Simple User"}
-            </p>
-          </div>
+          {viewerId && (
+            <div className="admin-status-section">
+              <label htmlFor="admin-status" className="edit-viewer-label">
+                Admin Status:
+              </label>
+              <p className="viewer-data-admin-status">
+                {viewerData.isAdmin === "1" ? "Admin" : "Simple User"}
+              </p>
+            </div>
+          )}
           <br />
           <div className="is-Admin-section-block">
             <label htmlFor="isAdmin" className="edit-viewer-label">

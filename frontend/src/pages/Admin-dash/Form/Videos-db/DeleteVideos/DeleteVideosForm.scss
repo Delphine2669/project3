@@ -11,6 +11,11 @@
   justify-content: center;
   background-color: var(--color-admin-body);
 }
+.delete-video-error-message {
+  color: red;
+  background-color: var(--color-white-again);
+  text-align: center;
+}
 
 .delete-video-form-container {
   margin-top: 3dvh;

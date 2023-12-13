@@ -6,11 +6,15 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
   },
+  video: true,
+  videoCompression: true,
 
   component: {
     devServer: {
       framework: "react",
       bundler: "vite",
     },
+    video: true,
+    videoCompression: true,
   },
 });
