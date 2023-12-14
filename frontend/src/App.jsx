@@ -9,7 +9,9 @@ import AdminPage from "./pages/Admin-dash/AdminPage";
 import DeleteVideosForm from "./pages/Admin-dash/Form/Videos-db/DeleteVideos/DeleteVideosForm";
 import EditVideosForm from "./pages/Admin-dash/Form/Videos-db/EditVideos/EditVideosForm";
 import EditViewerForm from "./pages/Admin-dash/Form/Viewers-db/EditViewer/EditViewerForm";
-import AddPhotoForm from "./pages/Admin-dash/Form/Photos-db/AddPhotoForm";
+import AddPhotoForm from "./pages/Admin-dash/Form/Photos-db/AddPhotos/AddPhotoForm";
+import EditPhotoForm from "./pages/Admin-dash/Form/Photos-db/EditPhotos/EditPhotoForm";
+import DeletePhotoForm from "./pages/Admin-dash/Form/Photos-db/DeletePhotos/DeletePhotoForm";
 
 export default function App() {
   const storedToken = localStorage.getItem("token");
@@ -27,6 +29,8 @@ export default function App() {
           <Route path="/editvideos" element={<EditVideosForm />} />
           <Route path="/editviewers" element={<EditViewerForm />} />
           <Route path="/addphotos" element={<AddPhotoForm />} />
+          <Route path="/editphotos" element={<EditPhotoForm />} />
+          <Route path="/deletephotos" element={<DeletePhotoForm />} />
         </Routes>
       </Router>
     </AuthProvider>

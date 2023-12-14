@@ -15,17 +15,42 @@
   height: 100%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+.admin-table {
+  width: 80dvw;
+  text-align: center;
+}
 
+.tr-photo-title,
+.tr-video-title,
+.tr-viewer-title {
+  color: var(--color-yellow-dt);
+  font-weight: 800;
+}
 .admin-title {
   color: var(--color-white-again);
   font-size: 4dvw;
   margin-bottom: 20px;
 }
+.tr-photo-title,
+.tr-video-title,
+.tr-viewer-title,
+.tr-add-video,
+.tr-add-photo,
+.tr-edit-viewer,
+.tr-edit-video,
+.tr-edit-photo,
+.tr-delete-video,
+.tr-delete-photo {
+  height: 8dvh;
+}
 
 .link-edit-viewer-link,
 .link-delete-video-link,
 .link-edit-video-link,
-.link-add-video-link {
+.link-add-video-link,
+.link-add-photo-link,
+.link-edit-photo-link,
+.link-delete-photo-link {
   color: var(--color-admin-page);
   background-color: var(--color-white-again);
   padding: 2dvh 1dvw;
@@ -53,7 +78,10 @@
   .link-edit-viewer-link,
   .link-delete-video-link,
   .link-edit-video-link,
-  .link-add-video-link {
+  .link-add-video-link,
+  .link-add-photo-link,
+  .link-edit-photo-link,
+  .link-delete-photo-link {
     font-size: 2dvw;
     padding: 2dvh 3dvw;
   }
@@ -62,7 +90,10 @@
   .link-edit-viewer-link,
   .link-delete-video-link,
   .link-edit-video-link,
-  .link-add-video-link {
+  .link-add-video-link,
+  .link-add-photo-link,
+  .link-edit-photo-link,
+  .link-delete-photo-link {
     font-size: 2dvw;
     padding: 2dvh 4dvw;
   }

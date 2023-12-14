@@ -40,7 +40,7 @@ function ProfileMenu() {
   return (
     <span className="log-btn">
       {!isOnLoginPage && (
-        <Dropdown menu={menu} trigger={["click"]}>
+        <Dropdown overlay={menu} trigger={["click"]}>
           <Space>
             <Button
               shape="circle"

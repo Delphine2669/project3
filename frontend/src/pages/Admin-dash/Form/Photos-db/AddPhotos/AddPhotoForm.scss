@@ -1,10 +1,5 @@
-.nav-container {
-  position: fixed;
-  top: 1%;
-}
-
-.delete-photo-form-box {
-  height: 100vh;
+.add-video-form-box {
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,13 +7,12 @@
   background-color: var(--color-admin-body);
 }
 
-.delete-photo-form-container {
+.add-photo-form-container {
   margin-top: 3dvh;
-  margin-bottom: 10dvh;
+  margin-bottom: 2dvh;
   border: 2px solid #f0eaf0;
   border-radius: 10px;
-  padding-top: 4dvh;
-  padding-bottom: 10dvh;
+  padding-bottom: 2dvh;
   width: 80%;
   max-width: 600px;
   background-color: var(--color-admin-back);
@@ -26,27 +20,36 @@
   font-family: monospace;
 }
 
-.delete-photo-form {
+.add-photo-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
-  gap: 4dvh;
+  margin: 3%;
+  padding: 3%;
+  gap: 2dvh;
+  color: var(--color-white-again);
+  gap: 1dvh;
+}
+.add-photo-form-box {
+  height: 100dvh;
 }
 
-.delete-photo-form > label {
-  padding-top: 5dvh;
-  padding-bottom: -1dvh;
+.input-apf::placeholder {
+  color: var(--color-input-form-dt);
 }
 
-.delete-photo-form-title {
+.add-photo-form > label {
+  padding: 5px;
+}
+
+.add-photo-form-title {
   color: var(--color-white-again);
   text-align: center;
-  font-size: 5.5dvw;
+  font-size: 5dvw;
 }
 
-.delete-photo-form-container input {
+.add-photo-form-container input {
   width: 80%;
   padding: 2%;
   margin-bottom: 1dvh;
@@ -54,41 +57,49 @@
   border-radius: 5px;
 }
 
-.delete-photo-form-container button {
+.add-photo-form-container button {
   width: 60%;
   padding: 2%;
   border-radius: 5px;
 }
 
-.delete-photo-form-container input::placeholder {
+.add-photo-form-container input::placeholder {
   color: var(--color-admin-page);
-  font-size: 14px; /* Réduire la taille de la police pour les placeholders */
+  font-size: 14px;
 }
 
 .back-button {
   text-decoration: none;
   color: var(--color-yellow-dt);
-  margin-bottom: 5%;
-  font-family: monospace;
-  font-size: 3.5dvw;
-  cursor: pointer;
+
+  border-radius: 15px;
+  margin-right: 50dvw;
 }
 
 .footerAdmin {
-  margin-top: 20px;
+  position: fixed;
+  bottom: 1%;
+  margin-bottom: -5dvh;
 }
+
 @media screen and (min-width: 600px) {
-  .delete-photo-form-title {
+  div.add-photo-form-container {
+    max-height: fit-content;
+  }
+  .add-photo-form-title {
+    font-size: 3dvw;
+  }
+  a.back-button {
     font-size: 2.5dvw;
   }
 }
 @media screen and (min-width: 1900px) {
-  div.delete-photo-form-container {
-    max-height: fit-content;
+  div.add-photo-form-container {
     max-width: 1200px;
+    max-height: fit-content;
   }
-  .delete-photo-form-title {
-    font-size: 3dvw;
+  .add-photo-form-title {
+    font-size: 2dvw;
   }
   a.back-button {
     font-size: 2.5dvw;

@@ -1,4 +1,5 @@
 const express = require("express");
+
 const multer = require("multer");
 const fs = require("fs");
 const { v4: uuidv4 } = require("uuid");
@@ -6,6 +7,25 @@ const { v4: uuidv4 } = require("uuid");
 const router = express.Router();
 const upload = multer({ dest: "./videos" });
 const uploadPC = multer({ dest: "./image" });
+
+// const photoStorage = multer.diskStorage({
+//   destination: "./image",
+//   filename: (req, file, cb) => {
+//     const fileName = `${uuidv4()}-${file.originalname}`;
+//     cb(null, fileName);
+//   },
+// });
+// const videoStorage = multer.diskStorage({
+//   destination: "./videos",
+//   filename: (req, file, cb) => {
+//     const fileName = `${uuidv4()}-${file.originalname}`;
+//     cb(null, fileName);
+//   },
+// });
+
+// const photoUpload = multer({ storage: photoStorage });
+// const videoUpload = multer({ storage: videoStorage });
+
 const {
   hashPassword,
   verifyPassword,
@@ -62,7 +82,6 @@ router.post(
   uploadPC.single("imageSrc"),
   (req, res, next) => {
     const { originalname, filename } = req.file;
-    console.info(req.file);
     const nickname = `${uuidv4()}-${originalname}`;
     const path2 = `/image/${nickname}`;
     const ourPath = `./public/assets/image/${nickname}`;
@@ -71,18 +90,64 @@ router.post(
         console.error(err);
         res.sendStatus(500);
       } else {
-        req.photo = {
+        req.photoData = {
           title: req.body.title,
           description: req.body.description,
           imageSrc: path2,
         };
         next();
-        console.info(path2);
       }
     });
   },
   photoControllers.add
 );
+// router.post(
+//   "/photos",
+//   uploadPC.single("imageSrc"),
+//   (req, res, next) => {
+//     const { originalname, filename } = req.file;
+//     console.info("filename:", filename);
+
+//     console.info("req.file router 1st console info:", req.file);
+//     const nickname2 = `${uuidv4()}-${originalname}`;
+//     const path2 = `/image/${nickname2}`;
+//     const ourPath2 = `./public/assets/image/${nickname2}`;
+//     fs.rename(`./image/${filename}`, ourPath2, (err) => {
+//       console.info("ourPath2:", ourPath2);
+//       console.info("nickname:", nickname2);
+//       if (err) {
+//         console.error(err);
+//         res
+//           .status(500)
+//           .json({ error: "File renaming failed", details: err.message });
+//       } else {
+//         req.photo = {
+//           title: req.body.title,
+//           description: req.body.description,
+//           imageSrc: path2,
+//         };
+//         console.info(
+//           "req.photo router console info router after rename :",
+//           req.photo
+//         );
+//         console.info("Received payload on the server:", req.body.payload);
+//         console.info(
+//           "payload json in controller:",
+//           JSON.parse(req.body.payload)
+//         );
+//         console.info("req.body payload controller:", req.body);
+//         next();
+//         console.info("path2 router console info apres next :", path2);
+//       }
+//     });
+//   },
+//   (req, res) => {
+//     // Additional logging for debugging
+//     console.info("Received payload on the server:", req.body.payload);
+
+//     photoControllers.add(req, res);
+//   }
+// );
 router.put(
   "/videos/:id",
   // upload.single("videoData"),

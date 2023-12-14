@@ -29,14 +29,13 @@ const read = (req, res) => {
 };
 
 const edit = (req, res) => {
-  const photo = req.body;
+  const photoId = parseInt(req.params.id, 10);
+  const photoData = req.body;
 
   // TODO validations (length, format...)
 
-  const photoId = parseInt(req.params.id, 10);
-
   models.photo
-    .update(photo, photoId)
+    .update(photoData, photoId)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
@@ -51,21 +50,37 @@ const edit = (req, res) => {
 };
 
 const add = (req, res) => {
-  const photo = req.body;
+  try {
+    // const payload = JSON.parse(req.body.payload);
+    // const { title, description, imageSrc } = payload;
+    // console.info("payload json in controller:", payload);
+    // req.photo = {
+    //   title,
+    //   description,
+    //   imageSrc,
+    // };
+    // eslint-disable-next-line no-unused-vars
+    const photoData = req.body;
+    console.info("req.body payload controller:", req.photoData);
 
-  // TODO validations (length, format...)
+    // TODO validations (length, format...)
 
-  models.photo
-    .insert(photo)
-    .then(([result]) => {
-      res.location(`/photos/${result.insertId}`).sendStatus(201);
-      console.info(photo);
-    })
+    models.photo
+      .insert(req.photoData)
+      .then(([result]) => {
+        res.location(`/photos/${result.insertId}`).sendStatus(201);
+        console.info("inserted result controller add:", [result]);
+        console.info("req.photo controller add:", req.photo);
+      })
 
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  } catch (error) {
+    console.error("Error parsing JSON:", error);
+    res.status(400).send("Invalid JSON payload");
+  }
 };
 
 const destroy = (req, res) => {

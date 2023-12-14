@@ -32,3 +32,5 @@ dist-ssr
 # media file
 *.mp4
 .mp4
+*.webp
+.wepb

@@ -3,7 +3,7 @@
   top: 1%;
 }
 
-.delete-photo-form-box {
+.edit-photo-form-box {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -12,7 +12,7 @@
   background-color: var(--color-admin-body);
 }
 
-.delete-photo-form-container {
+.edit-photo-form-container {
   margin-top: 3dvh;
   margin-bottom: 10dvh;
   border: 2px solid #f0eaf0;
@@ -26,7 +26,7 @@
   font-family: monospace;
 }
 
-.delete-photo-form {
+.edit-photo-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,18 +35,18 @@
   gap: 4dvh;
 }
 
-.delete-photo-form > label {
+.edit-photo-form > label {
   padding-top: 5dvh;
   padding-bottom: -1dvh;
 }
 
-.delete-photo-form-title {
+.edit-photo-form-title {
   color: var(--color-white-again);
   text-align: center;
   font-size: 5.5dvw;
 }
 
-.delete-photo-form-container input {
+.edit-photo-form-container input {
   width: 80%;
   padding: 2%;
   margin-bottom: 1dvh;
@@ -54,13 +54,13 @@
   border-radius: 5px;
 }
 
-.delete-photo-form-container button {
+.edit-photo-form-container button {
   width: 60%;
   padding: 2%;
   border-radius: 5px;
 }
 
-.delete-photo-form-container input::placeholder {
+.edit-photo-form-container input::placeholder {
   color: var(--color-admin-page);
   font-size: 14px; /* Réduire la taille de la police pour les placeholders */
 }
@@ -78,16 +78,16 @@
   margin-top: 20px;
 }
 @media screen and (min-width: 600px) {
-  .delete-photo-form-title {
+  .edit-photo-form-title {
     font-size: 2.5dvw;
   }
 }
 @media screen and (min-width: 1900px) {
-  div.delete-photo-form-container {
+  div.edit-photo-form-container {
     max-height: fit-content;
     max-width: 1200px;
   }
-  .delete-photo-form-title {
+  .edit-photo-form-title {
     font-size: 3dvw;
   }
   a.back-button {
