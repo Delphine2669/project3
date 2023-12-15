@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
 import { authFetch } from "../../../../../utilities/utils";
-import "./DeleteVideosForm.scss";
+import "./DeletePhotoForm.scss";
 import Header from "../../../../../components/Header/Header";
 
 toast.options = {
@@ -21,42 +21,35 @@ toast.options = {
   hideEasing: "linear",
   showMethod: "fadeIn",
   hideMethod: "fadeOut",
-  escapeHtml: true,
 };
-function DeleteVideosForm() {
-  const [videoId, setVideoId] = useState("");
-  const [videoData, setVideoData] = useState({
+function DeletePhotoForm() {
+  const [photoId, setPhotoId] = useState("");
+  const [photoData, setPhotoData] = useState({
     title: "",
-    time: "",
     description: "",
-    publicationDate: "",
-    // file: null,
   });
   const [idError, setIdError] = useState("");
+
   //   const inputRef = useRef(null);
   //   const [data, setData] = useState({
   //     title: "",
-  //     time: "",
   //     description: "",
-  //     publicationDate: "",
-  //     videoData: null,
+  //     photoData: null,
   //   });
   useEffect(() => {
-    const fetchVideoData = async () => {
+    const fetchPhotoData = async () => {
       try {
-        if (!videoId) {
+        if (!photoId) {
           console.error("Invalid viewer ID");
           setIdError("Invalid viewer ID");
-          setVideoData({
+          setPhotoData({
             title: "",
-            time: "",
             description: "",
-            publicationDate: "",
           });
           return;
         }
         const response = await fetch(
-          `${import.meta.env.VITE_BACKEND_URL}/videos/${videoId}`,
+          `${import.meta.env.VITE_BACKEND_URL}/photos/${photoId}`,
           {
             method: "GET",
           }
@@ -67,7 +60,7 @@ function DeleteVideosForm() {
           return;
         }
         const data = await response.json();
-        setVideoData(data);
+        setPhotoData(data);
         setIdError("");
         //  => ({
         //   ...prevData,
@@ -79,9 +72,8 @@ function DeleteVideosForm() {
       }
     };
 
-    fetchVideoData();
-  }, [videoId]);
-
+    fetchPhotoData();
+  }, [photoId]);
   const handleSubmit = async (e) => {
     e.preventDefault();
   };
@@ -89,74 +81,70 @@ function DeleteVideosForm() {
     try {
       const token = localStorage.getItem("token");
       await authFetch(
-        `${import.meta.env.VITE_BACKEND_URL}/videos/${videoId}`,
+        `${import.meta.env.VITE_BACKEND_URL}/photos/${photoId}`,
         {
           method: "DELETE",
         },
         token
       );
-      toast.success("Video successfully deleted!");
+      toast.success("photo successfully deleted!");
     } catch (error) {
-      console.error("Error deleting video:", error);
-      toast.error("Video deletion failed.");
+      console.error("Error deleting photo:", error);
+      toast.error("photo deletion failed.");
     }
   };
-  const handleVideoIdChange = (event) => {
-    setVideoId(event.target.value);
+  const handlephotoIdChange = (event) => {
+    setPhotoId(event.target.value);
   };
   return (
-    <div className="delete-video-form-box">
+    <div className="delete-photo-form-box">
       <Header />
       <div>
         <NavLink to="/adminpage" className="back-button">
           Back
         </NavLink>
       </div>
-      <div className="delete-video-form-container">
-        <h1 className="delete-video-form-title">DELETE VIDEOS</h1>
-        {videoId && idError && (
-          <p className="delete-video-error-message">{idError}</p>
+      <div className="delete-photo-form-container">
+        <h1 className="delete-photo-form-title">DELETE PHOTOS</h1>
+        {photoId && idError && (
+          <p className="delete-photo-error-message">{idError}</p>
         )}
         <form
           method="POST"
-          action={`${import.meta.env.VITE_BACKEND_URL}/videos/${videoId}`}
-          className="delete-video-form"
+          action={`${import.meta.env.VITE_BACKEND_URL}/photos/${photoId}`}
+          className="delete-photo-form"
           onSubmit={handleSubmit}
         >
-          <label htmlFor="videoID">Id of the Video:</label>
+          <label htmlFor="photoID">Id of the photo:</label>
           <input
             min="0"
-            className="input-dvf"
-            id="videoId"
+            className="input-dpf"
+            id="photoId"
             type="number"
-            placeholder="Enter the id of the video to delete"
-            value={videoId}
-            onChange={handleVideoIdChange}
+            placeholder="Enter the id of the photo to delete"
+            value={photoId}
+            onChange={handlephotoIdChange}
           />
-          <br />
           <div className="title-section">
-            <label htmlFor="title" className="delete-video-title-label">
+            <label htmlFor="title" className="delete-photo-title-label">
               Title:
             </label>
-            <p className="delete-video-data-title">{videoData.title}</p>
+            <p className="delete-photo-data-title">{photoData.title}</p>
           </div>
           <div className="description-section">
-            <label
-              htmlFor="description"
-              className="delete-video-description-label"
-            >
+            <label htmlFor="description" className="delete-photo-title-label">
               Description:
             </label>
-            <p className="delete-video-data-description">
-              {videoData.description}
+            <p className="delete-photo-data-description">
+              {photoData.description}
             </p>
           </div>
           <button type="submit" onClick={handleDelete}>
-            Delete video
+            Delete photo
           </button>
         </form>
       </div>
     </div>
   );
 }
-export default DeleteVideosForm;
+export default DeletePhotoForm;

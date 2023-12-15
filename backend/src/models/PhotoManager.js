@@ -14,8 +14,8 @@ class PhotoManager extends AbstractManager {
 
   update(photo) {
     return this.database.query(
-      `update ${this.table} set title = ? where id = ?, description = ?, imageSrc = ?`,
-      [photo.title, photo.id, photo.description, photo.imageSrc]
+      `update ${this.table} set title = ? , description = ?, imageSrc = ? where id = ?`,
+      [photo.title, photo.description, photo.imageSrc, photo.id]
     );
   }
 }

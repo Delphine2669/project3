@@ -15,32 +15,78 @@
   height: 100%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.link-download-viewer-list {
-  width: fit-content;
+.admin-table {
+  width: 90dvw;
+  text-align: center;
+  position: fixed;
+  top: 20%;
+  border-collapse: collapse;
+  // border: 1px solid var(--color-yellow-dt);
+  border-radius: 5px;
+}
+
+.admin-table td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+
+.td-photo-title,
+.td-video-title,
+.td-viewer-title {
+  color: var(--color-yellow-dt);
+  font-weight: 800;
+  padding-bottom: 5dvh;
+  height: 3dvh;
 }
 
 .admin-title {
   color: var(--color-white-again);
   font-size: 4dvw;
   margin-bottom: 20px;
+  position: fixed;
+  top: 10%;
 }
 
-.link-edit-viewer-link,
-.link-delete-video-link,
+.td-add-video,
+.td-edit-video,
+.td-delete-video,
+.td-download-viewer-csv,
+.td-add-photo,
+.td-edit-photo,
+.td-delete-photo {
+  height: 10dvh;
+}
+
+.td-edit-viewer {
+  height: max-content;
+}
+
 .link-edit-video-link,
 .link-add-video-link,
-.link-download-viewer-list {
+.link-edit-photo-link,
+.link-add-photo-link {
   color: var(--color-admin-page);
   background-color: var(--color-white-again);
-  padding: 2dvh 1dvw;
   border-radius: 5px;
   text-decoration: none;
-  font-size: 4dvw;
+  width: 29dvw;
   margin-bottom: 2dvh;
   transition: background-color 0.2s ease;
   cursor: pointer;
 }
-
+.link-download-viewer-list {
+  color: var(--color-admin-page);
+  background-color: var(--color-white-again);
+  border-radius: 5px;
+  height: 4dvh;
+}
+.link-delete-photo-link,
+.link-delete-video-link,
+.link-edit-viewer-link {
+  color: var(--color-admin-page);
+  background-color: var(--color-white-again);
+  text-decoration: none;
+}
 .footer-admin {
   margin-top: 20px;
 }
@@ -59,9 +105,14 @@
   .link-delete-video-link,
   .link-edit-video-link,
   .link-add-video-link,
-  .link-download-viewer-list {
+  .link-add-photo-link,
+  .link-edit-photo-link,
+  .link-delete-photo-link {
     font-size: 2dvw;
     padding: 2dvh 3dvw;
+  }
+  .link-download-viewer-list {
+    height: 4dvh;
   }
 }
 @media screen and (min-width: 1900px) {
@@ -69,9 +120,15 @@
   .link-delete-video-link,
   .link-edit-video-link,
   .link-add-video-link,
-  .link-download-viewer-list {
+  .link-add-photo-link,
+  .link-edit-photo-link,
+  .link-delete-photo-link {
     font-size: 2dvw;
     padding: 2dvh 4dvw;
+  }
+  .link-download-viewer-list {
+    font-size: 2dvw;
+    padding: 5dvh 4dvw;
   }
   .admin-title {
     font-size: 3dvw;

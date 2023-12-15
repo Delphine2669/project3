@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "./Navbar.scss";
 import ProfileMenu from "../ProfileMenu/ProfileMenu";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.webp";
 import { useAuth } from "../../contexts/AuthContext";
 // import Searchbar from "../SearchBar/SearchBar";
 import settings from "../../assets/settings.svg";

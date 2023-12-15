@@ -32,8 +32,12 @@ const read = (req, res) => {
 const edit = (req, res) => {
   const viewerId = parseInt(req.params.id, 10);
   const viewerData = req.body;
+  const formattedBirthday = new Date(viewerData.birthday).toLocaleDateString(
+    "en-CA"
+  );
+
   models.viewer
-    .update(viewerData, viewerId)
+    .update({ ...viewerData, birthday: formattedBirthday }, viewerId)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
@@ -50,8 +54,11 @@ const edit = (req, res) => {
 const patch = (req, res) => {
   const viewerId = parseInt(req.params.id, 10);
   const viewerData = req.body;
+  const formattedBirthday = new Date(viewerData.birthday).toLocaleDateString(
+    "en-CA"
+  );
   models.viewer
-    .patch(viewerData, viewerId)
+    .patch({ ...viewerData, birthday: formattedBirthday }, viewerId)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);

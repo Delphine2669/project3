@@ -153,6 +153,7 @@ function EditVideoForm() {
           </label>
           <br />
           <input
+            min="0"
             id="videoId"
             type="number"
             placeholder="Enter the id of the video to edit"

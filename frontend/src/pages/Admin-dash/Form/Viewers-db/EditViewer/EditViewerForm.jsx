@@ -65,6 +65,7 @@ function EditViewerForm() {
         const data = await response.json();
         setViewerData(data);
         setIdError("");
+        console.info(data.isAdmin);
         //  => ({
         //   ...prevData,
         //   ...data,
@@ -133,13 +134,14 @@ function EditViewerForm() {
           onSubmit={handleSubmit}
         >
           <label
-            htmlFor="videoId"
+            htmlFor="viewerId"
             className="viewer-id-input-label edit-viewer-label"
           >
             Id of the Viewer:
           </label>
           <br />
           <input
+            min="0"
             id="viewerId"
             type="number"
             placeholder="Enter the id of the viewer to edit"
@@ -186,7 +188,7 @@ function EditViewerForm() {
                 Admin Status:
               </label>
               <p className="viewer-data-admin-status">
-                {viewerData.isAdmin === "1" ? "Admin" : "Simple User"}
+                {Number(viewerData.isAdmin) === 1 ? "Admin" : "Simple User"}
               </p>
             </div>
           )}

@@ -56,25 +56,69 @@ function AdminPage() {
       <Header />
       <div className="page-container">
         <h1 className="admin-title">Admin Page</h1>
-        <NavLink to="/addvideos" className="link-add-video-link">
-          Adding a video
-        </NavLink>
-        <NavLink to="/editvideos" className="link-edit-video-link">
-          Editing a video
-        </NavLink>
-        <NavLink to="/deletevideos" className="link-delete-video-link">
-          Deleting a video
-        </NavLink>
-        <NavLink to="/editviewers" className="link-edit-viewer-link">
-          Editing a viewer
-        </NavLink>
-        <button
-          type="button"
-          onClick={downloadViewerListAsCSV}
-          className="link-download-viewer-list"
-        >
-          Download viewer list as CSV
-        </button>
+        <table className="admin-table">
+          <thead>
+            <tr>
+              <td className="td-video-title">Video</td>
+              <td className="td-photo-title">Photos</td>
+              <td className="td-viewer-title">Viewer</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="first-row">
+              <td className="td-add-video">
+                <NavLink to="/addvideos" className="link-add-video-link">
+                  Adding a video
+                </NavLink>
+              </td>
+              <td className="td-add-photo">
+                <NavLink to="/addphotos" className="link-add-photo-link">
+                  Adding a photo
+                </NavLink>
+              </td>
+              <td rowSpan="3" className="td-edit-viewer">
+                <NavLink to="/editviewers" className="link-edit-viewer-link">
+                  Editing a viewer
+                </NavLink>
+              </td>
+            </tr>
+            <tr>
+              <td className="td-edit-video">
+                <NavLink to="/editvideos" className="link-edit-video-link">
+                  Editing a video
+                </NavLink>
+              </td>
+              <td className="td-edit-photo">
+                <NavLink to="/editphotos" className="link-edit-photo-link">
+                  Editing a photo
+                </NavLink>
+              </td>
+            </tr>
+            <tr>
+              <td className="td-delete-video">
+                <NavLink to="/deletevideos" className="link-delete-video-link">
+                  Deleting a video
+                </NavLink>
+              </td>
+              <td className="td-delete-photo">
+                <NavLink to="/deletephotos" className="link-delete-photo-link">
+                  Deleting a photo
+                </NavLink>
+              </td>
+            </tr>
+            <tr>
+              <td colSpan="3">
+                <button
+                  type="button"
+                  onClick={downloadViewerListAsCSV}
+                  className="link-download-viewer-list"
+                >
+                  Download viewer list as CSV
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   );

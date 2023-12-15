@@ -11,13 +11,14 @@ function Header() {
   // const { user } = useAuth();
 
   const hiddenHeaderPages = [
-    "/adminpage",
     "/addvideos",
+    "/addphotos",
     "/deletevideos",
+    "/deletephotos",
     "/editvideos",
+    "/editviewer",
     "/login",
     "/SignUp",
-    "/editviewers",
   ];
 
   const isHiddenPage = hiddenHeaderPages.includes(location.pathname);

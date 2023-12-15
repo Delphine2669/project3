@@ -3,7 +3,7 @@
   top: 1%;
 }
 
-.delete-video-form-box {
+.delete-photo-form-box {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -11,13 +11,13 @@
   justify-content: center;
   background-color: var(--color-admin-body);
 }
-.delete-video-error-message {
+.delete-photo-error-message {
   color: red;
   background-color: var(--color-white-again);
   text-align: center;
 }
 
-.delete-video-form-container {
+.delete-photo-form-container {
   margin-top: 3dvh;
   margin-bottom: 10dvh;
   border: 2px solid #f0eaf0;
@@ -30,12 +30,8 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   font-family: monospace;
 }
-.delete-video-data-title,
-.delete-video-data-description {
-  color: var(--color-yellow-dt);
-}
 
-.delete-video-form {
+.delete-photo-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,18 +40,18 @@
   gap: 4dvh;
 }
 
-.delete-video-form > label {
+.delete-photo-form > label {
   padding-top: 5dvh;
   padding-bottom: -1dvh;
 }
 
-.delete-video-form-title {
+.delete-photo-form-title {
   color: var(--color-white-again);
   text-align: center;
   font-size: 5.5dvw;
 }
 
-.delete-video-form-container input {
+.delete-photo-form-container input {
   width: 80%;
   padding: 2%;
   margin-bottom: 1dvh;
@@ -63,13 +59,17 @@
   border-radius: 5px;
 }
 
-.delete-video-form-container button {
+.delete-photo-data-title,
+.delete-photo-data-description {
+  color: var(--color-yellow-dt);
+}
+.delete-photo-form-container button {
   width: 60%;
   padding: 2%;
   border-radius: 5px;
 }
 
-.delete-video-form-container input::placeholder {
+.delete-photo-form-container input::placeholder {
   color: var(--color-admin-page);
   font-size: 14px; /* Réduire la taille de la police pour les placeholders */
 }
@@ -87,16 +87,16 @@
   margin-top: 20px;
 }
 @media screen and (min-width: 600px) {
-  .delete-video-form-title {
+  .delete-photo-form-title {
     font-size: 2.5dvw;
   }
 }
 @media screen and (min-width: 1900px) {
-  div.delete-video-form-container {
+  div.delete-photo-form-container {
     max-height: fit-content;
     max-width: 1200px;
   }
-  .delete-video-form-title {
+  .delete-photo-form-title {
     font-size: 3dvw;
   }
   a.back-button {
