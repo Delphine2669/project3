@@ -34,7 +34,13 @@ export default function SignUp() {
   const navigate = useNavigate();
   const passwordRegex =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
+  const passwordRequirementsMessage = (
+    <p className="password-requirements-p">
+      * Password must contain at least one uppercase letter, one lowercase
+      letter, one digit, one special character, and be at least 8 characters
+      long.
+    </p>
+  );
   const handleTogglePasswordVisibility = () => {
     setPasswordVisible((prevVisible) => !prevVisible);
   };
@@ -152,6 +158,9 @@ export default function SignUp() {
                 />
               )}
             </button>
+            <div className="password-requirements">
+              {passwordRequirementsMessage}
+            </div>
           </div>
           <div className="signup-field">
             <input

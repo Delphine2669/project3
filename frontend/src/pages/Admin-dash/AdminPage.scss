@@ -115,6 +115,12 @@
     height: 4dvh;
   }
 }
+@media screen and (min-width: 1200px) {
+  .admin-table {
+    position: fixed;
+    top: 30%;
+  }
+}
 @media screen and (min-width: 1900px) {
   .link-edit-viewer-link,
   .link-delete-video-link,
@@ -127,8 +133,8 @@
     padding: 2dvh 4dvw;
   }
   .link-download-viewer-list {
-    font-size: 2dvw;
-    padding: 5dvh 4dvw;
+    font-size: 1.4dvw;
+    padding: 4.3dvh 4dvw;
   }
   .admin-title {
     font-size: 3dvw;
