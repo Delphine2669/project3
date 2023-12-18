@@ -21,7 +21,7 @@ export default function App() {
   return (
     <AuthProvider initialToken={storedToken}>
       <Router>
-        <ToastContainer />
+        <ToastContainer position="top-center" autoClose={2500} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
